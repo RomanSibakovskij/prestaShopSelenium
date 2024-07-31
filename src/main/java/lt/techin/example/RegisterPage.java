@@ -13,7 +13,7 @@ import java.time.Duration;
 public class RegisterPage extends BasePage{
 
     //buttons
-    @FindBy(xpath = "//*//form[@id='customer-form']/div/div[1]/div[1]/label[1]//input[@name='id_gender']")
+    @FindBy(css = "input[name='id_gender'][id='field-id_gender-1']")
     private WebElement maleGenderSelector;
 
     @FindBy(css = "#field-id_gender-2")
@@ -40,7 +40,7 @@ public class RegisterPage extends BasePage{
     private WebElement birthDateInputField;
 
     //checkboxes
-    @FindBy(css = ".register-form .row:nth-of-type(8) [class] label > input[name='psgdpr']")
+    @FindBy(css = "input#agree")
     private WebElement agreeToTermCheckbox;
 
     @FindBy(css = "input[name='customer_privacy']")

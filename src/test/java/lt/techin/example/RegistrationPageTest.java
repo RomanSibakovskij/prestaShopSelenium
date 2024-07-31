@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class RegistrationPageTest extends TestMethods{
 
-    //Test 2 -> create a user account with valid data
+    //Test 2 -> create a male user account with valid data
     @Test
     void createNewMaleUserAccountTest(){
         clickOnSignUp();
@@ -13,5 +13,16 @@ public class RegistrationPageTest extends TestMethods{
         registerPage.inputNewUserDetails();
 
         createNewMaleUserAccount(registerPage);
+    }
+
+    //Test 2a -> create a female user account with valid data
+    @Test
+    void createNewFemaleUserAccountTest(){
+        clickOnSignUp();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewFemaleUserAccount(registerPage);
     }
 }

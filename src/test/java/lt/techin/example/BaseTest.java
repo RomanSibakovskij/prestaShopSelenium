@@ -14,7 +14,7 @@ public class BaseTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://192.168.88.237");
+        driver.get("http://192.168.8.186");
         //driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
