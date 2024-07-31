@@ -13,22 +13,22 @@ import java.time.Duration;
 public class HomePage extends BasePage{
 
     @FindBy(xpath = "//ul[@id='footer_account_list']//a[@title='Create account']")
-    private WebElement signInLink;
+    private WebElement signUpLink;
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
     //button click methods
-    public void clickSignInLink() {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", signInLink);
+    public void clickSignUpLink() {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", signUpLink);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(900));
-        wait.until(ExpectedConditions.visibilityOf(signInLink));
-        signInLink.click();
+        wait.until(ExpectedConditions.visibilityOf(signUpLink));
+        signUpLink.click();
     }
 
     //assert methods
-    public boolean isSignInLinkDisplayed() {
-        return signInLink.isDisplayed();
+    public boolean isSignUpLinkDisplayed() {
+        return signUpLink.isDisplayed();
     }
 }

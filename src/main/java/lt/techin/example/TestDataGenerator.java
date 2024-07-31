@@ -7,6 +7,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
 
 public class TestDataGenerator extends BasePage {
 
@@ -21,6 +24,8 @@ public class TestDataGenerator extends BasePage {
         super(driver);
     }
 
+    private static String firstName;
+    private static String lastName;
     private static String emailAddress;
     private static String invalidEmailAddress;
     private static String password;
@@ -52,7 +57,10 @@ public class TestDataGenerator extends BasePage {
     }
 
     // Randomizer methods
-    public static String generateRandomUsername(int length) {
+    public static String generateRandomFirstname(int length) {
+        return generateRandomString(UPPER + LOWER, length);
+    }
+    public static String generateRandomLastname(int length) {
         return generateRandomString(UPPER + LOWER, length);
     }
 
@@ -131,9 +139,25 @@ public class TestDataGenerator extends BasePage {
 
         return password.toString();
     }
+    //birthdate generator
+    public static String generateRandomBirthdate(int minAge, int maxAge, String dateFormat) {
+        Random random = new Random();
+        int randomYear = LocalDate.now().getYear() - (minAge + random.nextInt(maxAge - minAge + 1));
+        int randomDayOfYear = 1 + random.nextInt(365);
+        LocalDate randomDate = LocalDate.ofYearDay(randomYear, randomDayOfYear);
 
-    //getters for email / password
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormat);
+        return randomDate.format(formatter);
+    }
 
+    //getters for names / email / password
+
+    public static String getFirstName(){
+        return firstName;
+    }
+    public static String getLastName(){
+        return lastName;
+    }
     public static String getEmailAddress() {
         return emailAddress;
     }
