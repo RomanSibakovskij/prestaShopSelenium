@@ -13,11 +13,14 @@ import java.time.Duration;
 public class RegisterPage extends BasePage{
 
     //buttons
-    @FindBy(css = "label:nth-of-type(1)  input[name='id_gender']")
+    @FindBy(xpath = "//*//form[@id='customer-form']/div/div[1]/div[1]/label[1]//input[@name='id_gender']")
     private WebElement maleGenderSelector;
 
-    @FindBy(css = "label:nth-of-type(2)  input[name='id_gender']")
+    @FindBy(css = "#field-id_gender-2")
     private WebElement femaleGenderSelector;
+
+    @FindBy(xpath = "//form[@id='customer-form']//button[@type='submit']")
+    private WebElement saveAccountButton;
 
     //inputs
 
@@ -36,7 +39,8 @@ public class RegisterPage extends BasePage{
     @FindBy(css = "input#field-birthday")
     private WebElement birthDateInputField;
 
-    @FindBy(css = "input[name='psgdpr']")
+    //checkboxes
+    @FindBy(css = ".register-form .row:nth-of-type(8) [class] label > input[name='psgdpr']")
     private WebElement agreeToTermCheckbox;
 
     @FindBy(css = "input[name='customer_privacy']")
@@ -67,7 +71,7 @@ public class RegisterPage extends BasePage{
         System.out.println("Last name: " + lastName);
         System.out.println("Email: " + emailAddress);
         System.out.println("Password: " + password);
-        System.out.println("birthdate: " + birthDate);
+        System.out.println("Birthdate: " + birthDate);
     }
 
 
@@ -98,41 +102,53 @@ public class RegisterPage extends BasePage{
     }
 
     public void inputNewUserBirthDate(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", birthDateInputField);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.visibilityOf(birthDateInputField));
         birthDateInputField.sendKeys(birthDate);
     }
 
 
-    //button click methods
+    //selector click methods
     public void selectMaleGender() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
-        wait.until(ExpectedConditions.visibilityOf(maleGenderSelector));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1850));
+        wait.until(ExpectedConditions.elementToBeClickable(maleGenderSelector));
         maleGenderSelector.click();
     }
 
     public void selectFemaleGender() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
-        wait.until(ExpectedConditions.visibilityOf(femaleGenderSelector));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1850));
+        wait.until(ExpectedConditions.elementToBeClickable(femaleGenderSelector));
         femaleGenderSelector.click();
     }
 
-    public void clickAgreeToTermCheckbox() {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", agreeToTermCheckbox);
+    //button click method
+    public void clickSaveButton() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
-        wait.until(ExpectedConditions.visibilityOf(agreeToTermCheckbox));
-        agreeToTermCheckbox.click();
+        wait.until(ExpectedConditions.visibilityOf(saveAccountButton));
+        saveAccountButton.click();
+    }
+
+
+    //checkbox methods
+    public void clickAgreeToTermsCheckbox() {
+        if (!agreeToTermCheckbox.isSelected()) {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+            wait.until(ExpectedConditions.elementToBeClickable(agreeToTermCheckbox));
+            agreeToTermCheckbox.click();
+        }
     }
 
     public void clickCustomerDataPrivacyCheckbox() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
-        wait.until(ExpectedConditions.visibilityOf(customerDataPrivacyCheckbox));
-        customerDataPrivacyCheckbox.click();
+        if (!customerDataPrivacyCheckbox.isSelected()) {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+            wait.until(ExpectedConditions.elementToBeClickable(customerDataPrivacyCheckbox));
+            customerDataPrivacyCheckbox.click();
+        }
     }
 
 
     //assert methods
-
     public boolean isMaleGenderSelectorDisplayed(){
         return maleGenderSelector.isDisplayed();
     }
@@ -148,4 +164,27 @@ public class RegisterPage extends BasePage{
     public boolean isLastNameInputDisplayed(){
         return lastNameInputField.isDisplayed();
     }
+
+    public boolean isEmailAddressInputFieldDisplayed(){
+        return emailInputField.isDisplayed();
+    }
+
+    public boolean isPasswordInputFieldDisplayed(){
+        return passwordInputField.isDisplayed();
+    }
+    public boolean isBirthDateInputFieldDisplayed(){
+        return birthDateInputField.isDisplayed();
+    }
+
+    public boolean isAgreeToTermsCheckboxDisplayed(){
+        return agreeToTermCheckbox.isDisplayed();
+    }
+    public boolean isCustomerDataPrivacyCheckboxDisplayed(){
+        return customerDataPrivacyCheckbox.isDisplayed();
+    }
+
+    public boolean isSaveAccountButtonDisplayed(){
+        return saveAccountButton.isDisplayed();
+    }
+
 }
