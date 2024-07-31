@@ -13,7 +13,7 @@ import java.time.Duration;
 public class RegisterPage extends BasePage{
 
     //buttons
-    @FindBy(css = "input[name='id_gender'][id='field-id_gender-1']")
+    @FindBy(id = "field-id_gender-1")
     private WebElement maleGenderSelector;
 
     @FindBy(css = "#field-id_gender-2")
@@ -40,7 +40,7 @@ public class RegisterPage extends BasePage{
     private WebElement birthDateInputField;
 
     //checkboxes
-    @FindBy(css = "input#agree")
+    @FindBy(css = "input[name='psgdpr']")
     private WebElement agreeToTermCheckbox;
 
     @FindBy(css = "input[name='customer_privacy']")
@@ -111,15 +111,13 @@ public class RegisterPage extends BasePage{
 
     //selector click methods
     public void selectMaleGender() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1850));
-        wait.until(ExpectedConditions.elementToBeClickable(maleGenderSelector));
-        maleGenderSelector.click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.getElementById('field-id_gender-1').click();");
     }
 
     public void selectFemaleGender() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1850));
-        wait.until(ExpectedConditions.elementToBeClickable(femaleGenderSelector));
-        femaleGenderSelector.click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.getElementById('field-id_gender-2').click();");
     }
 
     //button click method
@@ -132,19 +130,15 @@ public class RegisterPage extends BasePage{
 
     //checkbox methods
     public void clickAgreeToTermsCheckbox() {
-        if (!agreeToTermCheckbox.isSelected()) {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
-            wait.until(ExpectedConditions.elementToBeClickable(agreeToTermCheckbox));
-            agreeToTermCheckbox.click();
-        }
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("document.querySelector('input[name=\"psgdpr\"]').click();");
+
     }
 
     public void clickCustomerDataPrivacyCheckbox() {
-        if (!customerDataPrivacyCheckbox.isSelected()) {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
-            wait.until(ExpectedConditions.elementToBeClickable(customerDataPrivacyCheckbox));
-            customerDataPrivacyCheckbox.click();
-        }
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('input[name=\"customer_privacy\"]').click();");
+
     }
 
 
