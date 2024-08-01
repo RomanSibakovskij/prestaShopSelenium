@@ -27,8 +27,15 @@ public class TestDataGenerator extends BasePage {
     private static String firstName;
     private static String lastName;
     private static String emailAddress;
-    private static String invalidEmailAddress;
     private static String password;
+
+    //invalid inputs
+
+    private String longFirstName;
+    private String longLastName;
+    private String longPassword;
+    private String longEmail;
+    private static String invalidEmailAddress;
 
     // Generate random string methods
     private static String generateRandomString(String characters, int length) {
@@ -63,31 +70,11 @@ public class TestDataGenerator extends BasePage {
     public static String generateRandomLastname(int length) {
         return generateRandomString(UPPER + LOWER, length);
     }
-
-    public static String generateRandomProjectName(int length) {
-        return generateRandomString(UPPER + LOWER, length);
-    }
-
-    public static String generateRandomProjectDescription(int length) {
-        return generateRandomString(UPPER + LOWER, length);
-    }
-
-    public static String generateRandomTaskName(int length) {
-        return generateRandomString(UPPER + LOWER, length);
-    }
-
-    public static String generateRandomTaskDescription(int length) {
-        return generateRandomString(UPPER + LOWER, length);
-    }
+    
 
     public static String generateRandomEmailAddress(int length) {
         String emailAddress = generateRandomString(UPPER + LOWER, length);
         return emailAddress + "@example.com";
-    }
-
-    public static String generateRandomInvalidEmailAddress(int length) {
-        String invalidEmailAddress = generateRandomString(UPPER + LOWER, length);
-        return invalidEmailAddress + "@com";
     }
 
     public static String generateRandomPassword() {
@@ -114,6 +101,23 @@ public class TestDataGenerator extends BasePage {
 
         return password.toString();
     }
+    //birthdate generator
+    public static String generateRandomBirthdate(int minAge, int maxAge, String dateFormat) {
+        Random random = new Random();
+        int randomYear = LocalDate.now().getYear() - (minAge + random.nextInt(maxAge - minAge + 1));
+        int randomDayOfYear = 1 + random.nextInt(365);
+        LocalDate randomDate = LocalDate.ofYearDay(randomYear, randomDayOfYear);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormat);
+        return randomDate.format(formatter);
+    }
+
+    //invalid data generation
+
+    public static String generateRandomInvalidEmailAddress(int length) {
+        String invalidEmailAddress = generateRandomString(UPPER + LOWER, length);
+        return invalidEmailAddress + "@com";
+    }
 
     public static String generateRandomInvalidPassword() {
         String numbers = "0123456789";
@@ -138,16 +142,6 @@ public class TestDataGenerator extends BasePage {
         password.append(shuffledNumericPart);
 
         return password.toString();
-    }
-    //birthdate generator
-    public static String generateRandomBirthdate(int minAge, int maxAge, String dateFormat) {
-        Random random = new Random();
-        int randomYear = LocalDate.now().getYear() - (minAge + random.nextInt(maxAge - minAge + 1));
-        int randomDayOfYear = 1 + random.nextInt(365);
-        LocalDate randomDate = LocalDate.ofYearDay(randomYear, randomDayOfYear);
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormat);
-        return randomDate.format(formatter);
     }
 
     //getters for names / email / password

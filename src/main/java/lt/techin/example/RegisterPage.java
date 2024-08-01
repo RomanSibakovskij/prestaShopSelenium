@@ -71,6 +71,12 @@ public class RegisterPage extends BasePage{
     private String password;
     private String birthDate;
 
+    //negative input data
+    private String longFirstName;
+    private String longLastName;
+    private String longEmail;
+    private String longPassword;
+
 
     public RegisterPage(WebDriver driver) {
         super(driver);
@@ -123,6 +129,32 @@ public class RegisterPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.visibilityOf(birthDateInputField));
         birthDateInputField.sendKeys(birthDate);
+    }
+
+    // negative input methods
+
+    public void inputNewUserWithTooLongFirstNameDetails(){
+        longFirstName = TestDataGenerator.generateRandomFirstname(256);
+        lastName = TestDataGenerator.generateRandomLastname(10);
+        emailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = TestDataGenerator.generateRandomPassword();
+        birthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Long first name: " + longFirstName);
+        System.out.println("Last name: " + lastName);
+        System.out.println("Email: " + emailAddress);
+        System.out.println("Password: " + password);
+        System.out.println("Birthdate: " + birthDate);
+    }
+
+
+    //input methods
+
+    public void inputNewUserTooLongFirstName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
+        firstNameInputField.sendKeys(longFirstName);
     }
 
 
