@@ -19,6 +19,9 @@ public class RegisterPage extends BasePage{
     @FindBy(css = "#field-id_gender-2")
     private WebElement femaleGenderSelector;
 
+    @FindBy(css = ".input-group-btn [type]")
+    private WebElement showPasswordButton;
+
     @FindBy(xpath = "//form[@id='customer-form']//button[@type='submit']")
     private WebElement saveAccountButton;
 
@@ -38,6 +41,14 @@ public class RegisterPage extends BasePage{
 
     @FindBy(css = "input#field-birthday")
     private WebElement birthDateInputField;
+
+    //elements
+
+    @FindBy(xpath = "//*[contains(text(), 'Enter a password between 8 and 72 characters')]")
+    private WebElement passwordLengthMessage;
+
+    @FindBy(xpath = "//*[contains(text(), 'The minimum score must be: Strong')]")
+    private WebElement passwordStrengthMessage;
 
     //checkboxes
     @FindBy(css = "input[name='psgdpr']")
@@ -126,7 +137,14 @@ public class RegisterPage extends BasePage{
         js.executeScript("document.getElementById('field-id_gender-2').click();");
     }
 
-    //button click method
+    //button click methods
+
+    public void clickShowPasswordButton() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.visibilityOf(showPasswordButton));
+        showPasswordButton.click();
+    }
+
     public void clickSaveButton() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
         wait.until(ExpectedConditions.visibilityOf(saveAccountButton));
@@ -184,8 +202,20 @@ public class RegisterPage extends BasePage{
     public boolean isPasswordInputFieldDisplayed(){
         return passwordInputField.isDisplayed();
     }
+
+    public boolean isShowPasswordButtonDisplayed(){
+        return showPasswordButton.isDisplayed();
+    }
     public boolean isBirthDateInputFieldDisplayed(){
         return birthDateInputField.isDisplayed();
+    }
+
+    public boolean isPasswordLengthMessageDisplayed(){
+        return passwordLengthMessage.isDisplayed();
+    }
+
+    public boolean isPasswordStrengthMessageDisplayed(){
+        return passwordStrengthMessage.isDisplayed();
     }
 
     public boolean isReceiveOffersCheckbox(){
@@ -215,6 +245,15 @@ public class RegisterPage extends BasePage{
 
     public String getPassword(){
         return password;
+    }
+
+    //getters for password requirements messages
+
+    public String getPasswordStrengthMessage(){
+        return passwordStrengthMessage.getText();
+    }
+    public String getPasswordLengthMessage(){
+        return passwordLengthMessage.getText();
     }
 
 
