@@ -37,4 +37,17 @@ public class RegistrationPageTest extends TestMethods{
         createNewMaleUserAccountTest(registerPage);
         logoutFromUserAccountTest();
     }
+
+    //Test 4 -> login as a registered user with valid data
+    @Test
+    void signInAsRegisteredUserTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        signInRegisteredUserTest();
+    }
 }

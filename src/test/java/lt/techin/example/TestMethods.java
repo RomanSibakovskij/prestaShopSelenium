@@ -47,10 +47,20 @@ public class TestMethods extends BaseTest{
         System.out.println("The birthdate input field is present" + "\n");
         registerPage.inputNewUserBirthDate();
 
+        //assert 'Receive offers' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Receive offers' checkbox is displayed" + "\n");
+        registerPage.clickReceiveOffersCheckbox();
+
         //assert 'Agree to terms' checkbox is displayed
         //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
         System.out.println("The 'Agree to terms' checkbox is displayed" + "\n");
         registerPage.clickAgreeToTermsCheckbox();
+
+        //assert 'Sign up for newsletter' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Sign up for newsletter' checkbox is displayed" + "\n");
+        registerPage.clickSignUpForNewsletterCheckbox();
 
         //assert 'Customer data privacy' checkbox is present
        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
@@ -117,5 +127,13 @@ public class TestMethods extends BaseTest{
         assertTrue(homePage.isSignOutLinkDisplayed(), "The sign out link isn't displayed");
         System.out.println("The sign out link is displayed" + "\n");
         homePage.clickSignOutLink();
+    }
+
+    protected void signInRegisteredUserTest(){
+        HomePage homePage = new HomePage(driver);
+
+        assertTrue(homePage.isSignInLinkDisplayed(), "The 'Sign In' link isn't displayed");
+        System.out.println("The 'Sign In' link is displayed" + "\n");
+        homePage.clickSignInLink();
     }
 }

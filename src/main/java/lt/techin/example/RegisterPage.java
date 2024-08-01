@@ -43,6 +43,12 @@ public class RegisterPage extends BasePage{
     @FindBy(css = "input[name='psgdpr']")
     private WebElement agreeToTermCheckbox;
 
+    @FindBy(css = "input[name='optin']")
+    private WebElement receiveOffersCheckBox;
+
+    @FindBy(css = "input[name='newsletter']")
+    private WebElement signUpForNewsletterCheckbox;
+
     @FindBy(css = "input[name='customer_privacy']")
     private WebElement customerDataPrivacyCheckbox;
 
@@ -141,6 +147,18 @@ public class RegisterPage extends BasePage{
 
     }
 
+    public void clickReceiveOffersCheckbox() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('input[name=\"optin\"]').click();");
+
+    }
+
+    public void clickSignUpForNewsletterCheckbox() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('input[name=\"newsletter\"]').click();");
+
+    }
+
 
     //assert methods
     public boolean isMaleGenderSelectorDisplayed(){
@@ -168,6 +186,14 @@ public class RegisterPage extends BasePage{
     }
     public boolean isBirthDateInputFieldDisplayed(){
         return birthDateInputField.isDisplayed();
+    }
+
+    public boolean isReceiveOffersCheckbox(){
+        return receiveOffersCheckBox.isDisplayed();
+    }
+
+    public boolean isSignupForNewsletterCheckbox(){
+        return signUpForNewsletterCheckbox.isDisplayed();
     }
 
     public boolean isAgreeToTermsCheckboxDisplayed(){
