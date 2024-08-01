@@ -207,4 +207,15 @@ public class RegisterPage extends BasePage{
         return saveAccountButton.isDisplayed();
     }
 
+    //getters for email / password
+
+    public String getEmailAddress(){
+        return emailAddress;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+
 }

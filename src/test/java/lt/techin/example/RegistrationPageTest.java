@@ -26,6 +26,30 @@ public class RegistrationPageTest extends TestMethods{
         createNewFemaleUserAccountTest(registerPage);
     }
 
+    //Test 2b -> attempt to create an account without gender selection (it gets created)
+    @Test
+    void createNewUserAccountNoGenderTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewUserAccountNoGenderTest(registerPage);
+    }
+
+    //Test 2c -> attempt to create an account without first name (it doesn't get created)
+    @Test
+    void createNewUserAccountNoFirstNameTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewUserAccountNoFirstNameTest(registerPage);
+    }
+
+
+
     //Test 3 -> create a user account then logout
     @Test
     void createNewUserAccountAndLogOutTests(){
@@ -36,18 +60,5 @@ public class RegistrationPageTest extends TestMethods{
 
         createNewMaleUserAccountTest(registerPage);
         logoutFromUserAccountTest();
-    }
-
-    //Test 4 -> login as a registered user with valid data
-    @Test
-    void signInAsRegisteredUserTests(){
-        clickOnSignUpTest();
-
-        RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.inputNewUserDetails();
-
-        createNewMaleUserAccountTest(registerPage);
-        logoutFromUserAccountTest();
-        signInRegisteredUserTest();
     }
 }
