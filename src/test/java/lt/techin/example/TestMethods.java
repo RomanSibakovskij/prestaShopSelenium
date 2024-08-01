@@ -2,9 +2,8 @@ package lt.techin.example;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestMethodsRegistrationLoginLogout extends BaseTest{
+public class TestMethods extends BaseTest{
 
-    RegisteredUserArtPage registeredUserArtPage;
 
     //sign up test methods
     protected void clickOnSignUpTest() {
@@ -1316,13 +1315,37 @@ public class TestMethodsRegistrationLoginLogout extends BaseTest{
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+
     // art page test methods
     protected void navigateToArtPageTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
         assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed");
         System.out.println("The 'Art' link is displayed" + "\n");
         registeredUserArtPage.clickArtLink();
-
-
     }
+
+    protected void filterProductsByInStockBoxIconLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by in stock choice is displayed
+        //assertTrue(registeredUserArtPage.isInStockBoxIconLinkPresent(), "The 'In stock' box icon link isn't displayed");
+        System.out.println("The 'In stock' box icon link is displayed" + "\n");
+        registeredUserArtPage.clickInStockBoxIconLink();
+    }
+
+    protected void filterProductsByInStockLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserArtPage.isInStockLinkPresent(), "The 'In stock' link isn't displayed");
+        System.out.println("The 'In stock' link is displayed" + "\n");
+        registeredUserArtPage.clickInStockLink();
+    }
+
+
+
+
+
+
+
+
 }

@@ -2,7 +2,7 @@ package lt.techin.example;
 
 import org.junit.jupiter.api.Test;
 
-public class NavigationToSignUpPageTest extends TestMethodsRegistrationLoginLogout {
+public class NavigationToSignUpPageTest extends TestMethods {
 
     //Test 001 -> click on sign up link
 

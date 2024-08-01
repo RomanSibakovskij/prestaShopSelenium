@@ -16,8 +16,12 @@ public class BaseTest {
 
     @BeforeEach
     public void setUp() {
-        driver = new FirefoxDriver();
-        //driver = new ChromeDriver(); -> for Chrome setup
+        //driver = new ChromeDriver(); -> for Chrome setup at home
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-search-engine-choice-screen");
+        driver = new ChromeDriver(options);
+
         driver.manage().window().maximize();
         driver.get("http://192.168.88.247");
         //driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
