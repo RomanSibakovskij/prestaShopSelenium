@@ -65,6 +65,9 @@ public class RegisterPage extends BasePage{
     @FindBy(xpath = "//*[contains(text(), 'The minimum score must be: Strong')]")
     private WebElement passwordStrengthMessage;
 
+    @FindBy(css = "div:nth-of-type(6) ul > .alert.alert-danger")
+    private WebElement invalidBirthdateMessage;
+
     //checkboxes
     @FindBy(css = "input[name='psgdpr']")
     private WebElement agreeToTermCheckbox;
@@ -276,7 +279,7 @@ public class RegisterPage extends BasePage{
         lastName = TestDataGenerator.generateRandomLastname(12);
         emailAddress = TestDataGenerator.generateRandomEmailAddress(8);
         password = TestDataGenerator.generateRandomPassword();
-        invalidBirthDate = TestDataGenerator.generateRandomBirthdate(90, 200, "yyyy/mm/dd");
+        invalidBirthDate = "1000/01/01";
 
         System.out.println("Generated Data:" + "\n");
         System.out.println("First name: " + firstName);
@@ -434,6 +437,12 @@ public class RegisterPage extends BasePage{
     public String getInvalidLengthPasswordMessage(){
         return invalidPasswordLengthMessage.getText();
     }
+
+    public String getInvalidBirthdateMessage(){
+        return invalidBirthdateMessage.getText();
+    }
+
+
 
     //getters for password requirements messages
 

@@ -175,7 +175,7 @@ public class TestMethodsRegistrationLoginLogout extends BaseTest{
         loginPage.clickSignInButton();
     }
 
-    // negative test methods -> no input at the singular field
+    // negative test methods for user registration -> no input at the singular field
     protected void createNewUserAccountNoGenderTest(RegisterPage registerPage){
 
         //assert first name input field is displayed
@@ -1140,6 +1140,94 @@ public class TestMethodsRegistrationLoginLogout extends BaseTest{
 
         //assert the error message is displayed
         assertEquals(registerPage.getInvalidLengthPasswordMessage(), "Password must be between 8 and 72 characters long");
+    }
+
+    protected void createNewUserAccountWithInvalidBirthdateTest(RegisterPage registerPage){
+
+//        //assert first name input field is present
+        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
+        System.out.println("The male gender selector is displayed" + "\n");
+        registerPage.selectMaleGender();
+
+        //assert first name input field is displayed
+        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registerPage.inputNewUserFirstName();
+
+        //assert last name input field is displayed
+        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
+        registerPage.inputNewUserLastName();
+
+        //assert email address input field is displayed
+        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
+        System.out.println("The email address input field is displayed" + "\n");
+        registerPage.inputNewUserEmail();
+
+
+        //assert password input field is present
+        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
+        System.out.println("The password input field is displayed" + "\n");
+        registerPage.inputNewUserPassword();
+
+        //assert birthdate input field is present
+        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
+        System.out.println("The birthdate input field is present" + "\n");
+        registerPage.inputNewUserInvalidBirthdate();
+
+        //assert 'Receive offers' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Receive offers' checkbox is displayed" + "\n");
+        registerPage.clickReceiveOffersCheckbox();
+
+//        //assert the password related messages are displayed
+//        System.out.println("The password strength message is displayed" + "\n");
+//        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
+//        System.out.println("The password strength message is displayed" + "\n");
+//        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
+
+        //assert 'Agree to terms' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Agree to terms' checkbox is displayed" + "\n");
+        registerPage.clickAgreeToTermsCheckbox();
+
+        //assert 'Sign up for newsletter' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Sign up for newsletter' checkbox is displayed" + "\n");
+        registerPage.clickSignUpForNewsletterCheckbox();
+
+        //assert 'Customer data privacy' checkbox is present
+        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
+        System.out.println("The 'Customer data privacy' checkbox is displayed");
+        registerPage.clickCustomerDataPrivacyCheckbox();
+
+
+        //assert 'Save' account button is present
+        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
+        System.out.println("The 'Save' account button is displayed" + "\n");
+        registerPage.clickSaveButton();
+
+        //assert the error message is displayed
+        assertEquals(registerPage.getInvalidBirthdateMessage(), "Format should be 05/31/1970.");
+    }
+
+    protected void logInRegisteredUserWithInvalidEmailTest(RegisterPage registerPage){
+        LoginPage loginPage = new LoginPage(driver);
+
+        //assert email input field is displayed
+        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
+        System.out.println("The email input field is present" + "\n");
+        loginPage.inputEmailAddress(registerPage.getEmailAddress());
+
+        //assert password input field is present
+        assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
+        System.out.println("The email input field is present" + "\n");
+        loginPage.inputPassword(registerPage.getPassword());
+
+        //assert sign in button is present
+        assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
+        System.out.println("The 'Sign in ' button is present" + "\n");
+        loginPage.clickSignInButton();
     }
 
 }

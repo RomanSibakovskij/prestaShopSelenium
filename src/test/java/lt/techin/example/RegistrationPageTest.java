@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class RegistrationPageTest extends TestMethodsRegistrationLoginLogout {
 
+
     //Test 002 -> create a male user account with valid data
     @Test
     void createNewMaleUserAccountTests(){
@@ -189,6 +190,17 @@ public class RegistrationPageTest extends TestMethodsRegistrationLoginLogout {
         registerPage.inputNewUserWithTooLongPasswordDetails();
 
         createNewUserAccountWithTooLongPasswordTest(registerPage);
+    }
+
+    //Test 002p -> attempt to create an account with too long password (it doesn't created)
+    @Test
+    void createNewUserAccountWithInvalidBirthdateTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserWithInvalidBirthdateDetails();
+
+        createNewUserAccountWithInvalidBirthdateTest(registerPage);
     }
 
 
