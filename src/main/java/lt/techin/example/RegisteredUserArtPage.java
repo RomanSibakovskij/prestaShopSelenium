@@ -1,5 +1,6 @@
 package lt.techin.example;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,15 +12,28 @@ import java.time.Duration;
 
 public class RegisteredUserArtPage extends BasePage{
 
+    //box icon links
+    @FindBy(css = "section:nth-of-type(1) > .collapse .ps-shown-by-js")
+    private WebElement inStockBoxIconLink;
+
+    @FindBy(css = "section:nth-of-type(2) > .collapse .ps-shown-by-js")
+    private WebElement newProductBoxIconLink;
+
     //links
     @FindBy(css = "li:nth-of-type(3) > .dropdown-item")
     private WebElement artPageLink;
 
-    @FindBy(xpath = "//div[@id='search_filters']/section[1]/ul[@class='collapse']//input[@type='checkbox']")
-    private WebElement inStockBoxIconLink;
-
     @FindBy(css = "section:nth-of-type(1) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement inStockLink;
+
+    @FindBy(css = "section:nth-of-type(2) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement newProductLink;
+
+    //elements
+
+    @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
+    private WebElement activeFilterMessage;
+
 
     public RegisteredUserArtPage(WebDriver driver) {
         super(driver);
@@ -38,11 +52,8 @@ public class RegisteredUserArtPage extends BasePage{
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
             wait.until(ExpectedConditions.elementToBeClickable(inStockBoxIconLink));
             inStockBoxIconLink.click();
-        } catch (TimeoutException e) {
-            System.out.println("The 'In stock' box icon isn't clickable within the timeout period: " + e.getMessage());
-        } catch (Exception e) {
-            // This will catch any other exceptions that are not TimeoutException
-            System.out.println("An unexpected error occurred: " + e.getMessage());
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
         }
     }
 
@@ -51,6 +62,22 @@ public class RegisteredUserArtPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
         wait.until(ExpectedConditions.visibilityOf(inStockLink));
         inStockLink.click();
+    }
+
+    public void clickNewProductBoxIconLink(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(newProductBoxIconLink));
+            newProductBoxIconLink.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickNewProductLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        wait.until(ExpectedConditions.visibilityOf(newProductBoxIconLink));
+        newProductBoxIconLink.click();
     }
 
 
@@ -65,6 +92,20 @@ public class RegisteredUserArtPage extends BasePage{
 
     public boolean isInStockLinkPresent(){
         return inStockLink.isDisplayed();
+    }
+
+    public boolean isNewProductBoxIconLinkPresent(){
+        return newProductBoxIconLink.isDisplayed();
+    }
+
+    public boolean isNewProductLinkPresent(){
+        return newProductLink.isDisplayed();
+    }
+
+    //getter
+
+    public String getActiveFilterMessage(){
+        return activeFilterMessage.getText();
     }
 
 }

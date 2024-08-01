@@ -19,7 +19,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
         navigateToArtPageTest();
     }
 
-    //Test 007 -> filter product display by availability in stock (box icon)
+    //Test 007 -> filter product display by availability in stock (box icon) -> (the element click is intercepted)
     @Test
     void filterByInStockBoxIconTest(){
         clickOnSignUpTest();
@@ -51,5 +51,39 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
         navigateToArtPageTest();
         filterProductsByInStockLinkTest();
+    }
+
+    //Test 008 -> filter product display by availability in stock (box icon) -> (the element click is intercepted)
+    @Test
+    void filterByNewProductBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        filterProductsByNewProductBoxIconLinkTest();
+    }
+
+    //Test 008a -> filter product display by availability in stock (link)
+    @Test
+    void filterByNewProductLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        filterProductsByNewProductLinkTest();
     }
 }

@@ -1328,7 +1328,7 @@ public class TestMethods extends BaseTest{
     protected void filterProductsByInStockBoxIconLinkTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by in stock choice is displayed
-        //assertTrue(registeredUserArtPage.isInStockBoxIconLinkPresent(), "The 'In stock' box icon link isn't displayed");
+        assertTrue(registeredUserArtPage.isInStockBoxIconLinkPresent(), "The 'In stock' box icon link isn't displayed");
         System.out.println("The 'In stock' box icon link is displayed" + "\n");
         registeredUserArtPage.clickInStockBoxIconLink();
     }
@@ -1339,7 +1339,25 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isInStockLinkPresent(), "The 'In stock' link isn't displayed");
         System.out.println("The 'In stock' link is displayed" + "\n");
         registeredUserArtPage.clickInStockLink();
+        //assertEquals(registeredUserArtPage.getActiveFilterMessage(), "Availability: In stock");
     }
+
+    protected void filterProductsByNewProductBoxIconLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserArtPage.isInStockBoxIconLinkPresent(), "The 'In stock' box icon link isn't displayed");
+        System.out.println("The 'In stock' box icon link is displayed" + "\n");
+        registeredUserArtPage.clickNewProductBoxIconLink();
+    }
+
+    protected void filterProductsByNewProductLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserArtPage.isInStockLinkPresent(), "The 'In stock' link isn't displayed");
+        System.out.println("The 'In stock' link is displayed" + "\n");
+        registeredUserArtPage.clickNewProductLink();
+    }
+
 
 
 
