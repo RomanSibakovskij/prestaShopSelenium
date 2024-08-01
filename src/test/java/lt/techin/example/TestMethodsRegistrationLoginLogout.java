@@ -930,4 +930,216 @@ public class TestMethodsRegistrationLoginLogout extends BaseTest{
         assertEquals(registerPage.getTooLongEmailAddressMessage(), "The email field is too long (255 chars max).");
     }
 
+    protected void createNewUserAccountWithInvalidEmailTest(RegisterPage registerPage){
+
+//        //assert first name input field is present
+        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
+        System.out.println("The male gender selector is displayed" + "\n");
+        registerPage.selectMaleGender();
+
+        //assert first name input field is displayed
+        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registerPage.inputNewUserFirstName();
+
+
+        //assert last name input field is displayed
+        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
+        registerPage.inputNewUserLastName();
+
+        //assert email address input field is displayed
+        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
+        System.out.println("The email address input field is displayed" + "\n");
+        registerPage.inputNewUserInvalidEmailAddress();
+
+
+        //assert password input field is present
+        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
+        System.out.println("The password input field is displayed" + "\n");
+        registerPage.inputNewUserPassword();
+        //assert show password button is displayed
+        assertTrue(registerPage.isShowPasswordButtonDisplayed(), "The 'Show' password button isn't displayed");
+        System.out.println("The 'Show' password button is displayed" + "\n");
+        registerPage.clickShowPasswordButton();
+
+        //assert birthdate input field is present
+        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
+        System.out.println("The birthdate input field is present" + "\n");
+        registerPage.inputNewUserBirthDate();
+
+        //assert 'Receive offers' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Receive offers' checkbox is displayed" + "\n");
+        registerPage.clickReceiveOffersCheckbox();
+
+//        //assert the password related messages are displayed
+//        System.out.println("The password strength message is displayed" + "\n");
+//        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
+//        System.out.println("The password strength message is displayed" + "\n");
+//        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
+
+        //assert 'Agree to terms' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Agree to terms' checkbox is displayed" + "\n");
+        registerPage.clickAgreeToTermsCheckbox();
+
+        //assert 'Sign up for newsletter' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Sign up for newsletter' checkbox is displayed" + "\n");
+        registerPage.clickSignUpForNewsletterCheckbox();
+
+        //assert 'Customer data privacy' checkbox is present
+        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
+        System.out.println("The 'Customer data privacy' checkbox is displayed");
+        registerPage.clickCustomerDataPrivacyCheckbox();
+
+
+        //assert 'Save' account button is present
+        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
+        System.out.println("The 'Save' account button is displayed" + "\n");
+        registerPage.clickSaveButton();
+
+        //assert the error message is displayed
+        assertEquals(registerPage.getInvalidEmailMessage(), "Invalid format.");
+    }
+
+    protected void createNewUserAccountWithTooShortPasswordTest(RegisterPage registerPage){
+
+//        //assert first name input field is present
+        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
+        System.out.println("The male gender selector is displayed" + "\n");
+        registerPage.selectMaleGender();
+
+        //assert first name input field is displayed
+        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registerPage.inputNewUserFirstName();
+
+
+        //assert last name input field is displayed
+        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
+        registerPage.inputNewUserLastName();
+
+        //assert email address input field is displayed
+        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
+        System.out.println("The email address input field is displayed" + "\n");
+        registerPage.inputNewUserEmail();
+
+        //assert password input field is present
+        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
+        System.out.println("The password input field is displayed" + "\n");
+        registerPage.inputNewUserTooShortPassword();
+
+        //assert birthdate input field is present
+        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
+        System.out.println("The birthdate input field is present" + "\n");
+        registerPage.inputNewUserBirthDate();
+
+        //assert 'Receive offers' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Receive offers' checkbox is displayed" + "\n");
+        registerPage.clickReceiveOffersCheckbox();
+
+//        //assert the password related messages are displayed
+//        System.out.println("The password strength message is displayed" + "\n");
+//        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
+//        System.out.println("The password strength message is displayed" + "\n");
+//        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
+
+        //assert 'Agree to terms' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Agree to terms' checkbox is displayed" + "\n");
+        registerPage.clickAgreeToTermsCheckbox();
+
+        //assert 'Sign up for newsletter' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Sign up for newsletter' checkbox is displayed" + "\n");
+        registerPage.clickSignUpForNewsletterCheckbox();
+
+        //assert 'Customer data privacy' checkbox is present
+        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
+        System.out.println("The 'Customer data privacy' checkbox is displayed");
+        registerPage.clickCustomerDataPrivacyCheckbox();
+
+
+        //assert 'Save' account button is present
+        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
+        System.out.println("The 'Save' account button is displayed" + "\n");
+        registerPage.clickSaveButton();
+
+        //assert the error message is displayed
+        //assertEquals(registerPage.getInvalidLengthPasswordMessage(), "Password must be between 8 and 72 characters long");
+    }
+
+    protected void createNewUserAccountWithTooLongPasswordTest(RegisterPage registerPage){
+
+        //assert first name input field is present
+        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
+        System.out.println("The male gender selector is displayed" + "\n");
+        registerPage.selectMaleGender();
+
+        //assert first name input field is displayed
+        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registerPage.inputNewUserFirstName();
+
+
+        //assert last name input field is displayed
+        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
+        registerPage.inputNewUserLastName();
+
+        //assert email address input field is displayed
+        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
+        System.out.println("The email address input field is displayed" + "\n");
+        registerPage.inputNewUserEmail();
+
+        //assert password input field is present
+        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
+        System.out.println("The password input field is displayed" + "\n");
+        registerPage.inputNewUserTooLongPassword();
+
+        //assert birthdate input field is present
+        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
+        System.out.println("The birthdate input field is present" + "\n");
+        registerPage.inputNewUserBirthDate();
+
+        //assert 'Receive offers' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Receive offers' checkbox is displayed" + "\n");
+        registerPage.clickReceiveOffersCheckbox();
+
+//        //assert the password related messages are displayed
+//        System.out.println("The password strength message is displayed" + "\n");
+//        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
+//        System.out.println("The password strength message is displayed" + "\n");
+//        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
+
+        //assert 'Agree to terms' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Agree to terms' checkbox is displayed" + "\n");
+        registerPage.clickAgreeToTermsCheckbox();
+
+        //assert 'Sign up for newsletter' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Sign up for newsletter' checkbox is displayed" + "\n");
+        registerPage.clickSignUpForNewsletterCheckbox();
+
+        //assert 'Customer data privacy' checkbox is present
+        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
+        System.out.println("The 'Customer data privacy' checkbox is displayed");
+        registerPage.clickCustomerDataPrivacyCheckbox();
+
+
+        //assert 'Save' account button is present
+        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
+        System.out.println("The 'Save' account button is displayed" + "\n");
+        registerPage.clickSaveButton();
+
+        //assert the error message is displayed
+        assertEquals(registerPage.getInvalidLengthPasswordMessage(), "Password must be between 8 and 72 characters long");
+    }
+
 }

@@ -34,7 +34,7 @@ public class TestDataGenerator extends BasePage {
     private String longFirstName;
     private String longLastName;
     private String longPassword;
-    private String longEmail;
+    private String shortPassword;
     private static String invalidEmailAddress;
 
     // Generate random string methods
@@ -164,4 +164,5 @@ public class TestDataGenerator extends BasePage {
     public static String getInvalidEmailAddress() {
         return invalidEmailAddress;
     }
+
 }

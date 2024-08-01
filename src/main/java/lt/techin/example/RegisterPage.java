@@ -53,7 +53,10 @@ public class RegisterPage extends BasePage{
     @FindBy(css = "div:nth-of-type(4) ul > .alert.alert-danger")
     private WebElement tooLongEmailAddressMessage;
 
-    @FindBy(css = "div:nth-of-type(5) ul > .alert.alert-danger")
+    @FindBy(css = "div:nth-of-type(4) ul > .alert.alert-danger")
+    private WebElement invalidEmailAddressMessage;
+
+    @FindBy(css = ".field-password-policy ul > .alert.alert-danger")
     private WebElement invalidPasswordLengthMessage;
 
     @FindBy(xpath = "//*[contains(text(), 'Enter a password between 8 and 72 characters')]")
@@ -86,8 +89,11 @@ public class RegisterPage extends BasePage{
     //negative input data
     private String longFirstName;
     private String longLastName;
+    private String invalidEmailAddress;
     private String longEmail;
+    private String shortPassword;
     private String longPassword;
+    private String invalidBirthDate;
 
 
     public RegisterPage(WebDriver driver) {
@@ -194,8 +200,8 @@ public class RegisterPage extends BasePage{
 
         System.out.println("Generated Data:" + "\n");
         System.out.println("First name: " + firstName);
-        System.out.println("Long last name: " + lastName);
-        System.out.println("Email: " + longEmail);
+        System.out.println("Last name: " + lastName);
+        System.out.println("Long email: " + longEmail);
         System.out.println("Password: " + password);
         System.out.println("Birthdate: " + birthDate);
     }
@@ -203,6 +209,86 @@ public class RegisterPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.visibilityOf(emailInputField));
         emailInputField.sendKeys(longEmail);
+    }
+
+    public void inputNewUserWithInvalidEmailDetails(){
+        firstName = TestDataGenerator.generateRandomFirstname(10);
+        lastName = TestDataGenerator.generateRandomLastname(12);
+        invalidEmailAddress = TestDataGenerator.generateRandomInvalidEmailAddress(5);
+        password = TestDataGenerator.generateRandomPassword();
+        birthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("First name: " + firstName);
+        System.out.println("Last name: " + lastName);
+        System.out.println("Invalid email: " + invalidEmailAddress);
+        System.out.println("Password: " + password);
+        System.out.println("Birthdate: " + birthDate);
+    }
+    public void inputNewUserInvalidEmailAddress(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(emailInputField));
+        emailInputField.sendKeys(invalidEmailAddress);
+    }
+
+    public void inputNewUserWithTooShortPasswordDetails(){
+        firstName = TestDataGenerator.generateRandomFirstname(10);
+        lastName = TestDataGenerator.generateRandomLastname(12);
+        emailAddress = TestDataGenerator.generateRandomEmailAddress(8);
+        shortPassword = "n";
+        birthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("First name: " + firstName);
+        System.out.println("Long last name: " + lastName);
+        System.out.println("Email: " + emailAddress);
+        System.out.println("Short password: " + shortPassword);
+        System.out.println("Birthdate: " + birthDate);
+    }
+    public void inputNewUserTooShortPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys(shortPassword);
+    }
+
+    public void inputNewUserWithTooLongPasswordDetails(){
+        firstName = TestDataGenerator.generateRandomFirstname(10);
+        lastName = TestDataGenerator.generateRandomLastname(12);
+        emailAddress = TestDataGenerator.generateRandomEmailAddress(8);
+        longPassword = ")nFmtCHe**GcQik2~q@QktlP8v>AGR\\pvBIORL235[g'MJ;I}Rujs*Z:Ni{6K4Qm,>\\`t[jf~";
+        birthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("First name: " + firstName);
+        System.out.println("Long last name: " + lastName);
+        System.out.println("Email: " + emailAddress);
+        System.out.println("Short password: " + longPassword);
+        System.out.println("Birthdate: " + birthDate);
+    }
+    public void inputNewUserTooLongPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        passwordInputField.sendKeys(longPassword);
+    }
+
+    public void inputNewUserWithInvalidBirthdateDetails(){
+        firstName = TestDataGenerator.generateRandomFirstname(10);
+        lastName = TestDataGenerator.generateRandomLastname(12);
+        emailAddress = TestDataGenerator.generateRandomEmailAddress(8);
+        password = TestDataGenerator.generateRandomPassword();
+        invalidBirthDate = TestDataGenerator.generateRandomBirthdate(90, 200, "yyyy/mm/dd");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("First name: " + firstName);
+        System.out.println("Long last name: " + lastName);
+        System.out.println("Email: " + emailAddress);
+        System.out.println("Short password: " + longPassword);
+        System.out.println("Birthdate: " + invalidBirthDate);
+    }
+    public void inputNewUserInvalidBirthdate(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(birthDateInputField));
+        birthDateInputField.sendKeys(invalidBirthDate);
     }
 
 
@@ -339,6 +425,10 @@ public class RegisterPage extends BasePage{
 
     public String getTooLongEmailAddressMessage(){
         return tooLongEmailAddressMessage.getText();
+    }
+
+    public String getInvalidEmailMessage(){
+        return invalidEmailAddressMessage.getText();
     }
 
     public String getInvalidLengthPasswordMessage(){

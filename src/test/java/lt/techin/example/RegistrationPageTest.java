@@ -158,6 +158,39 @@ public class RegistrationPageTest extends TestMethodsRegistrationLoginLogout {
         createNewUserAccountWithTooLongEmailTest(registerPage);
     }
 
+    //Test 002m -> attempt to create an account with invalid email (it doesn't created)
+    @Test
+    void createNewUserAccountWithInvalidEmailTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserWithInvalidEmailDetails();
+
+        createNewUserAccountWithInvalidEmailTest(registerPage);
+    }
+
+    //Test 002n -> attempt to create an account with too short password (it doesn't created)
+    @Test
+    void createNewUserAccountWithTooShortPasswordTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserWithTooShortPasswordDetails();
+
+        createNewUserAccountWithTooShortPasswordTest(registerPage);
+    }
+
+    //Test 002o -> attempt to create an account with too long password (it doesn't created)
+    @Test
+    void createNewUserAccountWithTooLongPasswordTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserWithTooLongPasswordDetails();
+
+        createNewUserAccountWithTooLongPasswordTest(registerPage);
+    }
+
 
 
 
