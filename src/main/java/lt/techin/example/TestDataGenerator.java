@@ -70,7 +70,7 @@ public class TestDataGenerator extends BasePage {
     public static String generateRandomLastname(int length) {
         return generateRandomString(UPPER + LOWER, length);
     }
-    
+
 
     public static String generateRandomEmailAddress(int length) {
         String emailAddress = generateRandomString(UPPER + LOWER, length);
@@ -159,7 +159,7 @@ public class TestDataGenerator extends BasePage {
         return password;
     }
 
-    //getters for invalid emails / passwords
+    //getters for invalid / emails / passwords
 
     public static String getInvalidEmailAddress() {
         return invalidEmailAddress;

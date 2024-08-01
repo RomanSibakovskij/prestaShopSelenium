@@ -131,9 +131,20 @@ public class RegistrationPageTest extends TestMethodsRegistrationLoginLogout {
         clickOnSignUpTest();
 
         RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.inputNewUserDetails();
+        registerPage.inputNewUserWithTooLongFirstNameDetails();
 
         createNewUserAccountWithTooLongFirNameTest(registerPage);
+    }
+
+    //Test 002k -> attempt to create an account with too long last name (it doesn't created)
+    @Test
+    void createNewUserAccountWithTooLongLasNameTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserWithTooLongLastNameDetails();
+
+        createNewUserAccountWithTooLongLastNameTest(registerPage);
     }
 
 

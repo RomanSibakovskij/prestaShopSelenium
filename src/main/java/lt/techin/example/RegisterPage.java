@@ -44,6 +44,12 @@ public class RegisterPage extends BasePage{
 
     //elements
 
+    @FindBy(css = "div:nth-of-type(2) ul > .alert.alert-danger")
+    private WebElement tooLongFirstNameMessage;
+
+    @FindBy(css = "div:nth-of-type(3) ul > .alert.alert-danger")
+    private WebElement tooLongLastNameMessage;
+
     @FindBy(xpath = "//*[contains(text(), 'Enter a password between 8 and 72 characters')]")
     private WebElement passwordLengthMessage;
 
@@ -147,14 +153,30 @@ public class RegisterPage extends BasePage{
         System.out.println("Password: " + password);
         System.out.println("Birthdate: " + birthDate);
     }
-
-
-    //input methods
-
     public void inputNewUserTooLongFirstName(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
         firstNameInputField.sendKeys(longFirstName);
+    }
+
+    public void inputNewUserWithTooLongLastNameDetails(){
+        firstName = TestDataGenerator.generateRandomFirstname(10);
+        longLastName = TestDataGenerator.generateRandomLastname(256);
+        emailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = TestDataGenerator.generateRandomPassword();
+        birthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("First name: " + firstName);
+        System.out.println("Long last name: " + longLastName);
+        System.out.println("Email: " + emailAddress);
+        System.out.println("Password: " + password);
+        System.out.println("Birthdate: " + birthDate);
+    }
+    public void inputNewUserTooLongLastName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
+        lastNameInputField.sendKeys(longLastName);
     }
 
 
@@ -277,6 +299,16 @@ public class RegisterPage extends BasePage{
 
     public String getPassword(){
         return password;
+    }
+
+    //getters for first / last name error messages
+
+    public String getTooLongFirstNameMessage(){
+        return tooLongFirstNameMessage.getText();
+    }
+
+    public String getTooLongLastNameMessage(){
+        return tooLongLastNameMessage.getText();
     }
 
     //getters for password requirements messages
