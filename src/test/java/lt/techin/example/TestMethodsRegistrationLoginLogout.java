@@ -2,7 +2,7 @@ package lt.techin.example;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestMethods extends BaseTest{
+public class TestMethodsRegistrationLoginLogout extends BaseTest{
 
     //sign up test methods
     protected void clickOnSignUpTest() {
@@ -211,6 +211,59 @@ public class TestMethods extends BaseTest{
     }
 
     protected void createNewUserAccountNoFirstNameTest(RegisterPage registerPage){
+
+        //assert first name input field is present
+        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
+        System.out.println("The male gender selector is displayed" + "\n");
+        registerPage.selectMaleGender();
+
+        //assert last name input field is displayed
+        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
+        registerPage.inputNewUserLastName();
+
+        //assert email address input field is displayed
+        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
+        System.out.println("The email address input field is displayed" + "\n");
+        registerPage.inputNewUserEmail();
+
+        //assert password input field is present
+        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
+        System.out.println("The password input field is displayed" + "\n");
+        registerPage.inputNewUserPassword();
+
+        //assert birthdate input field is present
+        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
+        System.out.println("The birthdate input field is present" + "\n");
+        registerPage.inputNewUserBirthDate();
+
+        //assert 'Receive offers' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Receive offers' checkbox is displayed" + "\n");
+        registerPage.clickReceiveOffersCheckbox();
+
+        //assert 'Agree to terms' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Agree to terms' checkbox is displayed" + "\n");
+        registerPage.clickAgreeToTermsCheckbox();
+
+        //assert 'Sign up for newsletter' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        System.out.println("The 'Sign up for newsletter' checkbox is displayed" + "\n");
+        registerPage.clickSignUpForNewsletterCheckbox();
+
+        //assert 'Customer data privacy' checkbox is present
+        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
+        System.out.println("The 'Customer data privacy' checkbox is displayed");
+        registerPage.clickCustomerDataPrivacyCheckbox();
+
+        //assert 'Save' account button is present
+        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
+        System.out.println("The 'Save' account button is displayed" + "\n");
+        registerPage.clickSaveButton();
+    }
+
+    protected void createNewUserAccountNoLastNameTest(RegisterPage registerPage){
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail

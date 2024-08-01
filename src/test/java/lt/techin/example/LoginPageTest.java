@@ -2,7 +2,7 @@ package lt.techin.example;
 
 import org.junit.jupiter.api.Test;
 
-public class LoginPageTest extends TestMethods{
+public class LoginPageTest extends TestMethodsRegistrationLoginLogout {
 
     //Test 4 -> login as a registered user with valid data
     @Test

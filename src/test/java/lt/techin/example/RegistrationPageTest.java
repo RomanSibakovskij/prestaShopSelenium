@@ -2,7 +2,7 @@ package lt.techin.example;
 
 import org.junit.jupiter.api.Test;
 
-public class RegistrationPageTest extends TestMethods{
+public class RegistrationPageTest extends TestMethodsRegistrationLoginLogout {
 
     //Test 2 -> create a male user account with valid data
     @Test
