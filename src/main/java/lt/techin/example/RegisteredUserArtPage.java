@@ -32,8 +32,10 @@ public class RegisteredUserArtPage extends BasePage{
     //elements
 
     @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
-    private WebElement activeFilterMessage;
+    private WebElement availabilityFilterMessage;
 
+    @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
+    private WebElement selectionsFilterMessage;
 
     public RegisteredUserArtPage(WebDriver driver) {
         super(driver);
@@ -76,8 +78,8 @@ public class RegisteredUserArtPage extends BasePage{
 
     public void clickNewProductLink(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
-        wait.until(ExpectedConditions.visibilityOf(newProductBoxIconLink));
-        newProductBoxIconLink.click();
+        wait.until(ExpectedConditions.visibilityOf(newProductLink));
+        newProductLink.click();
     }
 
 
@@ -104,8 +106,11 @@ public class RegisteredUserArtPage extends BasePage{
 
     //getter
 
-    public String getActiveFilterMessage(){
-        return activeFilterMessage.getText();
+    public String getAvailabilityFilterMessage(){
+        return availabilityFilterMessage.getText();
     }
 
+    public String getSelectionsFilterMessage(){
+        return selectionsFilterMessage.getText();
+    }
 }

@@ -1339,7 +1339,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isInStockLinkPresent(), "The 'In stock' link isn't displayed");
         System.out.println("The 'In stock' link is displayed" + "\n");
         registeredUserArtPage.clickInStockLink();
-        //assertEquals(registeredUserArtPage.getActiveFilterMessage(), "Availability: In stock");
+        //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
     }
 
     protected void filterProductsByNewProductBoxIconLinkTest(){
@@ -1356,6 +1356,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isInStockLinkPresent(), "The 'In stock' link isn't displayed");
         System.out.println("The 'In stock' link is displayed" + "\n");
         registeredUserArtPage.clickNewProductLink();
+        //assertEquals(registeredUserArtPage.getSelectionsFilterMessage(), "Selections: New product");
     }
 
 
