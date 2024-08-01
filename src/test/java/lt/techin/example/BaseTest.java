@@ -32,6 +32,7 @@ public class BaseTest {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        driver.close();
+        //driver.close();
+        driver.quit();
     }
 }

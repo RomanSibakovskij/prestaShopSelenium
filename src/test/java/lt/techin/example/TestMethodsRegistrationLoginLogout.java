@@ -169,6 +169,11 @@ public class TestMethodsRegistrationLoginLogout extends BaseTest{
         System.out.println("The email input field is present" + "\n");
         loginPage.inputPassword(registerPage.getPassword());
 
+//        //assert 'Show' button is displayed
+        assertTrue(loginPage.isShowPasswordButtonPresent(), "The 'show' button isn't displayed");
+        System.out.println("The 'Show' button is displayed");
+//        loginPage.clickShowPasswordButton(); //-> the button somehow works with the same algorithm as 'Sign In' button
+
         //assert sign in button is present
         assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
         System.out.println("The 'Sign in ' button is present" + "\n");
@@ -1211,7 +1216,64 @@ public class TestMethodsRegistrationLoginLogout extends BaseTest{
         assertEquals(registerPage.getInvalidBirthdateMessage(), "Format should be 05/31/1970.");
     }
 
+    // negative registered user login test methods -> invalid / no input
     protected void logInRegisteredUserWithInvalidEmailTest(RegisterPage registerPage){
+        LoginPage loginPage = new LoginPage(driver);
+
+        //assert email input field is displayed
+        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
+        System.out.println("The email input field is present" + "\n");
+        loginPage.inputInvalidLoginEmailAddress();
+
+        //assert password input field is present
+        assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
+        System.out.println("The email input field is present" + "\n");
+        loginPage.inputPassword(registerPage.getPassword());
+
+        //assert sign in button is present
+        assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
+        System.out.println("The 'Sign in ' button is present" + "\n");
+        loginPage.clickSignInButton();
+    }
+    protected void logInRegisteredUserWithExistingEmailTest(RegisterPage registerPage){
+        LoginPage loginPage = new LoginPage(driver);
+
+        //assert email input field is displayed
+        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
+        System.out.println("The email input field is present" + "\n");
+        loginPage.inputExistingLoginEmailAddress();
+
+        //assert password input field is present
+        assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
+        System.out.println("The email input field is present" + "\n");
+        loginPage.inputPassword(registerPage.getPassword());
+
+        //assert sign in button is present
+        assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
+        System.out.println("The 'Sign in ' button is present" + "\n");
+        loginPage.clickSignInButton();
+    }
+
+    protected void logInRegisteredUserWithNoEmailTest(RegisterPage registerPage){
+        LoginPage loginPage = new LoginPage(driver);
+
+        //assert email input field is displayed
+        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
+        System.out.println("The email input field is present" + "\n");
+        loginPage.inputNoLoginEmailAddress();
+
+        //assert password input field is present
+        assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
+        System.out.println("The email input field is present" + "\n");
+        loginPage.inputPassword(registerPage.getPassword());
+
+        //assert sign in button is present
+        assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
+        System.out.println("The 'Sign in ' button is present" + "\n");
+        loginPage.clickSignInButton();
+    }
+
+    protected void logInRegisteredUserInvalidPasswordTest(RegisterPage registerPage){
         LoginPage loginPage = new LoginPage(driver);
 
         //assert email input field is displayed
@@ -1222,7 +1284,26 @@ public class TestMethodsRegistrationLoginLogout extends BaseTest{
         //assert password input field is present
         assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
         System.out.println("The email input field is present" + "\n");
-        loginPage.inputPassword(registerPage.getPassword());
+        loginPage.inputInvalidLoginPassword();
+
+        //assert sign in button is present
+        assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
+        System.out.println("The 'Sign in ' button is present" + "\n");
+        loginPage.clickSignInButton();
+    }
+
+    protected void logInRegisteredUserNoPasswordTest(RegisterPage registerPage){
+        LoginPage loginPage = new LoginPage(driver);
+
+        //assert email input field is displayed
+        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
+        System.out.println("The email input field is present" + "\n");
+        loginPage.inputEmailAddress(registerPage.getEmailAddress());
+
+        //assert password input field is present
+        assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
+        System.out.println("The email input field is present" + "\n");
+        loginPage.inputNoLoginPassword();
 
         //assert sign in button is present
         assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");

@@ -98,7 +98,6 @@ public class RegisterPage extends BasePage{
     private String longPassword;
     private String invalidBirthDate;
 
-
     public RegisterPage(WebDriver driver) {
         super(driver);
     }
@@ -293,7 +292,6 @@ public class RegisterPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(birthDateInputField));
         birthDateInputField.sendKeys(invalidBirthDate);
     }
-
 
     //selector click methods
     public void selectMaleGender() {

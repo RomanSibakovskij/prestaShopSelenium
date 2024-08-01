@@ -17,7 +17,10 @@ public class LoginPage extends BasePage{
     @FindBy(css = "input#field-password")
     private WebElement passwordInputField;
 
-    //button
+    //buttons
+
+    @FindBy(css = ".input-group-btn [type]")
+    private WebElement showButton;
     @FindBy(css = "button#submit-login")
     private WebElement signInButton;
 
@@ -39,9 +42,48 @@ public class LoginPage extends BasePage{
         passwordInputField.sendKeys(password);
     }
 
-    //button click method
-    public void clickSignInButton(){
+    //invalid input data methods
+
+    public void inputInvalidLoginEmailAddress(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(emailInputField));
+        emailInputField.sendKeys("m9999@example.com");
+    }
+
+    public void inputExistingLoginEmailAddress(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(emailInputField));
+        emailInputField.sendKeys("m0@example.com");
+    }
+
+    public void inputNoLoginEmailAddress(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(emailInputField));
+        emailInputField.sendKeys("");
+    }
+
+    public void inputInvalidLoginPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(passwordInputField));
+        passwordInputField.sendKeys("St334.");
+    }
+
+    public void inputNoLoginPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(passwordInputField));
+        passwordInputField.sendKeys("");
+    }
+
+    //button click methods
+
+    public void clickShowPasswordButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(signInButton));
+        signInButton.click();
+    }
+
+    public void clickSignInButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(4800));
         wait.until(ExpectedConditions.elementToBeClickable(signInButton));
         signInButton.click();
     }
@@ -56,6 +98,9 @@ public class LoginPage extends BasePage{
         return passwordInputField.isDisplayed();
     }
 
+    public boolean isShowPasswordButtonPresent(){
+        return showButton.isDisplayed();
+    }
     public boolean isSignInButtonPresent(){
         return signInButton.isDisplayed();
     }
