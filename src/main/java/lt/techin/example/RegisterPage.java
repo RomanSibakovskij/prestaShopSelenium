@@ -50,6 +50,12 @@ public class RegisterPage extends BasePage{
     @FindBy(css = "div:nth-of-type(3) ul > .alert.alert-danger")
     private WebElement tooLongLastNameMessage;
 
+    @FindBy(css = "div:nth-of-type(4) ul > .alert.alert-danger")
+    private WebElement tooLongEmailAddressMessage;
+
+    @FindBy(css = "div:nth-of-type(5) ul > .alert.alert-danger")
+    private WebElement invalidPasswordLengthMessage;
+
     @FindBy(xpath = "//*[contains(text(), 'Enter a password between 8 and 72 characters')]")
     private WebElement passwordLengthMessage;
 
@@ -177,6 +183,26 @@ public class RegisterPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
         lastNameInputField.sendKeys(longLastName);
+    }
+
+    public void inputNewUserWithTooLongEmailDetails(){
+        firstName = TestDataGenerator.generateRandomFirstname(10);
+        lastName = TestDataGenerator.generateRandomLastname(12);
+        longEmail = TestDataGenerator.generateRandomEmailAddress(256);
+        password = TestDataGenerator.generateRandomPassword();
+        birthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("First name: " + firstName);
+        System.out.println("Long last name: " + lastName);
+        System.out.println("Email: " + longEmail);
+        System.out.println("Password: " + password);
+        System.out.println("Birthdate: " + birthDate);
+    }
+    public void inputNewUserTooLongEmailAddress(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(emailInputField));
+        emailInputField.sendKeys(longEmail);
     }
 
 
@@ -309,6 +335,14 @@ public class RegisterPage extends BasePage{
 
     public String getTooLongLastNameMessage(){
         return tooLongLastNameMessage.getText();
+    }
+
+    public String getTooLongEmailAddressMessage(){
+        return tooLongEmailAddressMessage.getText();
+    }
+
+    public String getInvalidLengthPasswordMessage(){
+        return invalidPasswordLengthMessage.getText();
     }
 
     //getters for password requirements messages
