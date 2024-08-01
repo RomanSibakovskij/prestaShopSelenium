@@ -4,9 +4,11 @@ import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.Point;
 
 import java.time.Duration;
 
@@ -28,6 +30,11 @@ public class RegisteredUserArtPage extends BasePage{
 
     @FindBy(css = "section:nth-of-type(2) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement newProductLink;
+
+    //slider
+
+    @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
+    private WebElement priceSliderLine;
 
     //elements
 
@@ -82,6 +89,37 @@ public class RegisteredUserArtPage extends BasePage{
         newProductLink.click();
     }
 
+    //slider price adjustment method
+
+    public void setPriceSliderValue(double price){
+        // Validate the price value
+        if (price < 9 || price > 35) {
+            throw new IllegalArgumentException("Price must be between 9 and 35 dollars.");
+        }
+
+        // Get the size and location of the slider
+        int sliderWidth = priceSliderLine.getSize().getWidth();
+        Point sliderLocation = priceSliderLine.getLocation();
+
+        // Price range
+        double minPrice = 9.0;
+        double maxPrice = 35.0;
+        double range = maxPrice - minPrice;
+
+        // target position (percentage of the slider width)
+        double percentage = (price - minPrice) / range;
+        int targetX = sliderLocation.getX() + (int) (sliderWidth * percentage);
+        int targetY = sliderLocation.getY() + (priceSliderLine.getSize().getHeight() / 2); // Center vertically
+
+        // Perform the drag and drop action
+        Actions actions = new Actions(driver);
+        actions.clickAndHold(priceSliderLine) // Click and hold on the slider
+                .moveByOffset(targetX - sliderLocation.getX(), targetY - sliderLocation.getY()) // Move to the target position
+                .release() // Release the mouse
+                .build()
+                .perform();
+    }
+
 
     //assert methods
     public boolean isArtPageLinkPresent(){
@@ -102,6 +140,10 @@ public class RegisteredUserArtPage extends BasePage{
 
     public boolean isNewProductLinkPresent(){
         return newProductLink.isDisplayed();
+    }
+
+    public boolean isPricesliderDisplayed(){
+        return priceSliderLine.isDisplayed();
     }
 
     //getter

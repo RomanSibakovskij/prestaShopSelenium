@@ -1317,6 +1317,7 @@ public class TestMethods extends BaseTest{
 
 
     // art page test methods
+
     protected void navigateToArtPageTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
@@ -1325,6 +1326,7 @@ public class TestMethods extends BaseTest{
         registeredUserArtPage.clickArtLink();
     }
 
+    // filter products by test methods
     protected void filterProductsByInStockBoxIconLinkTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by in stock choice is displayed
@@ -1344,7 +1346,7 @@ public class TestMethods extends BaseTest{
 
     protected void filterProductsByNewProductBoxIconLinkTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
-        //assert the filter by in stock choice is displayed
+        //assert the filter by new product choice is displayed
         assertTrue(registeredUserArtPage.isInStockBoxIconLinkPresent(), "The 'In stock' box icon link isn't displayed");
         System.out.println("The 'In stock' box icon link is displayed" + "\n");
         registeredUserArtPage.clickNewProductBoxIconLink();
@@ -1352,14 +1354,22 @@ public class TestMethods extends BaseTest{
 
     protected void filterProductsByNewProductLinkTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
-        //assert the filter by in stock choice is displayed
+        //assert the filter by new product choice is displayed
         assertTrue(registeredUserArtPage.isInStockLinkPresent(), "The 'In stock' link isn't displayed");
         System.out.println("The 'In stock' link is displayed" + "\n");
         registeredUserArtPage.clickNewProductLink();
         //assertEquals(registeredUserArtPage.getSelectionsFilterMessage(), "Selections: New product");
     }
 
-
+    //filter products by price slider
+    protected void filterProductsByPriceSliderTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by price slider is displayed
+        assertTrue(registeredUserArtPage.isPricesliderDisplayed(), "The price slider isn't displayed");
+        System.out.println("The price slider is displayed");
+        double targetPrice = 21.0;
+        registeredUserArtPage.setPriceSliderValue(targetPrice);
+    }
 
 
 

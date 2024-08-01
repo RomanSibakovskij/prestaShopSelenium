@@ -86,4 +86,21 @@ public class RegisteredUserArtPageTest extends TestMethods {
         navigateToArtPageTest();
         filterProductsByNewProductLinkTest();
     }
+
+    //Test 009 -> filter product by price test
+    @Test
+    void filterProductsByPriceSliderTests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        filterProductsByPriceSliderTest();
+    }
 }
