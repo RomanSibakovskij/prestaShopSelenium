@@ -270,10 +270,10 @@ public class TestMethodsRegistrationLoginLogout extends BaseTest{
         System.out.println("The male gender selector is displayed" + "\n");
         registerPage.selectMaleGender();
 
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        System.out.println("The last name input field is displayed" + "\n");
-        registerPage.inputNewUserLastName();
+        //assert first name input field is displayed
+        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registerPage.inputNewUserFirstName();
 
         //assert email address input field is displayed
         assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");

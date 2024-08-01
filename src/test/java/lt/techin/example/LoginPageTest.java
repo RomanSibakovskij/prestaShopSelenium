@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class LoginPageTest extends TestMethodsRegistrationLoginLogout {
 
-    //Test 4 -> login as a registered user with valid data
+    //Test 004 -> login as a registered user with valid data
     @Test
     void signInAsRegisteredUserTests(){
         clickOnSignUpTest();
