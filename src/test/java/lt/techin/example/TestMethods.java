@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestMethods extends BaseTest{
 
     //sign up test methods
-    protected void clickOnSignUp() {
+    protected void clickOnSignUpTest() {
         HomePage homePage = new HomePage(driver);
 
         //assert signin link is displayed
@@ -15,7 +15,7 @@ public class TestMethods extends BaseTest{
         homePage.clickSignUpLink();
     }
 
-    protected void createNewMaleUserAccount(RegisterPage registerPage){
+    protected void createNewMaleUserAccountTest(RegisterPage registerPage){
 
 //        //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -61,10 +61,9 @@ public class TestMethods extends BaseTest{
         assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
         System.out.println("The 'Save' account button is displayed" + "\n");
         registerPage.clickSaveButton();
-
     }
 
-    protected void createNewFemaleUserAccount(RegisterPage registerPage){
+    protected void createNewFemaleUserAccountTest(RegisterPage registerPage){
 
 //        //assert first name input field is present
        // assertTrue(registerPage.isFemaleGenderSelectorDisplayed(), "The female gender selector isn't displayed"); // -> assert cause the click to fail
@@ -110,6 +109,13 @@ public class TestMethods extends BaseTest{
         assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
         System.out.println("The 'Save' account button is displayed" + "\n");
         registerPage.clickSaveButton();
+    }
 
+    protected void logoutFromUserAccountTest(){
+        HomePage homePage = new HomePage(driver);
+        //assert 'Sign out' link is present
+        assertTrue(homePage.isSignOutLinkDisplayed(), "The sign out link isn't displayed");
+        System.out.println("The sign out link is displayed" + "\n");
+        homePage.clickSignOutLink();
     }
 }

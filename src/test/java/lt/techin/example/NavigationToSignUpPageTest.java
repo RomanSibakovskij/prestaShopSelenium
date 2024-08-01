@@ -9,8 +9,8 @@ public class NavigationToSignUpPageTest extends TestMethods{
     //Test 1 -> click on sign up link
 
     @Test
-    void clickOnSignUpTest(){
-        clickOnSignUp();
+    void clickOnSignUpTests(){
+        clickOnSignUpTest();
     }
 
 }
