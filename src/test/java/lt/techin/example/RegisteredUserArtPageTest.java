@@ -2,7 +2,7 @@ package lt.techin.example;
 
 import org.junit.jupiter.api.Test;
 
-public class RegisteredUserArtPageTest extends BaseTest{
+public class RegisteredUserArtPageTest extends TestMethodsRegistrationLoginLogout{
 
     //Test 006 -> navigate to Art page test
     @Test

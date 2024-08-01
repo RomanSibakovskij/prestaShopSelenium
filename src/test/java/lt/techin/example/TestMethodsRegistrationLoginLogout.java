@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestMethodsRegistrationLoginLogout extends BaseTest{
 
+    RegisteredUserArtPage registeredUserArtPage;
+
     //sign up test methods
     protected void clickOnSignUpTest() {
         HomePage homePage = new HomePage(driver);
@@ -1311,4 +1313,16 @@ public class TestMethodsRegistrationLoginLogout extends BaseTest{
         loginPage.clickSignInButton();
     }
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    // art page test methods
+    protected void navigateToArtPageTest(){
+        //assert 'Art' link is displayed on navbar
+        assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed");
+        System.out.println("The 'Art' link is displayed" + "\n");
+        registeredUserArtPage.clickArtLink();
+
+
+    }
 }
