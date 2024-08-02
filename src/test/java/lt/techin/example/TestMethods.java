@@ -1484,7 +1484,16 @@ public class TestMethods extends BaseTest{
         System.out.println("The sort by 'Sales' menu option  is displayed" + "\n");
         registeredUserArtPage.clickSalesOption();
         //assertEquals(registeredUserArtPage.getSalesOptionText(), "Sales, highest to lowest");
+    }
 
+    protected void sortProductsByRelevanceTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by new product choice is displayed
+        registeredUserArtPage.clickSortByDropdownMenu();
+        assertTrue(registeredUserArtPage.isRelevanceOptionDisplayed(), "The sort by 'Relevance' menu option isn't displayed");
+        System.out.println("The sort by 'Relevance' menu option  is displayed" + "\n");
+        registeredUserArtPage.clickRelevanceOption();
+        //assertEquals(registeredUserArtPage.getRelevanceOptionText(), "Relevance");
     }
 
 

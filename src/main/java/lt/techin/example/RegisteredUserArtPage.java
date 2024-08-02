@@ -292,7 +292,15 @@ public class RegisteredUserArtPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(salesOption));
         Actions actions = new Actions(driver);
-        actions.moveToElement(salesOption).clickAndHold().pause(Duration.ofSeconds(2)).release().perform();
+        actions.moveToElement(salesOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+
+    public void clickRelevanceOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(relevanceOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(relevanceOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
 

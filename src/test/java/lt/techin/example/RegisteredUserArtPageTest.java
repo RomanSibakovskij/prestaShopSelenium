@@ -291,7 +291,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
         clickSortByDropdownMenuTest();
     }
 
-    //Test 015 -> click on sort by dropdown menu test
+    //Test 015 -> sort products by sales test
     @Test
     void sortProductsBySalesTests() {
         clickOnSignUpTest();
@@ -306,6 +306,23 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
         navigateToArtPageTest();
         sortProductsBySalesTest();
+    }
+
+    //Test 015a -> sort products by relevance test
+    @Test
+    void sortProductsByRelevanceTests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        sortProductsByRelevanceTest();
     }
 
 
