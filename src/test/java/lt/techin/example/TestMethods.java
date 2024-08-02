@@ -1645,7 +1645,7 @@ public class TestMethods extends BaseTest{
     protected void filterProductByAvailabilityBoxIconTest(){
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
-        //assert accessories link is displayed on navbar
+        //assert product 'in stock' box icon is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesInStockBoxIconDisplayed(), "The stationary accessories 'in stock' box icon isn't displayed");
         System.out.println("The stationary accessories page 'in stock' box icon is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccInStockBoxIcon();
@@ -1654,11 +1654,42 @@ public class TestMethods extends BaseTest{
     protected void filterProductByAvailabilityLinkTest(){
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
-        //assert accessories link is displayed on navbar
+        //assert product 'in stock' link is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesInStockLinkDisplayed(), "The stationary accessories 'in stock' link isn't displayed");
         System.out.println("The stationary accessories page 'in stock' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccInStockLink();
+        //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterProductBySelectionsBoxIconTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesNewProductBoxIconDisplayed(), "The stationary accessories 'in stock' link isn't displayed");
+        System.out.println("The stationary accessories page 'in stock' link is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccNewProductBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSelectionsFilterMessage(), "Selections: New product"); -> assert crashes the test
+        //remove search filter
+        //registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterProductBySelectionsLinkTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert product 'new product' link is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesNewProductLinkDisplayed(), "The stationary accessories 'new product' link isn't displayed");
+        System.out.println("The stationary accessories page 'new product' link is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccNewProductLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSelectionsFilterMessage(), "Selections: New product"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
     }
 }

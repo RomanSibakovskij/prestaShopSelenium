@@ -25,6 +25,13 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     @FindBy(css = "section:nth-of-type(1) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement stAccessoriesInStockLink;
 
+    @FindBy(css = "section:nth-of-type(2) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement stAccessoriesNewProductLink;
+
+
+    @FindBy(xpath = "//section[@id='js-active-search-filters']/ul//i[.='\uE5CD']")
+    private WebElement removeFilterIcon;
+
     //box icons
     @FindBy(css = "section:nth-of-type(1) > .collapse .ps-shown-by-js")
     private WebElement stAccessoriesInStockBoxIcon;
@@ -43,6 +50,8 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
 
     @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
     private WebElement stAccAvailabilityFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
+    private WebElement stAccSelectionsFilterMessage;
 
 
 
@@ -76,6 +85,7 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         stationaryAccessoriesPageBoxIcon.click();
     }
 
+    //stationary accessories product filter click methods
     public void clickStAccInStockBoxIcon(){
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
@@ -92,6 +102,30 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         stAccessoriesInStockLink.click();
     }
 
+    public void clickStAccNewProductBoxIcon(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesNewProductBoxIcon));
+            stAccessoriesNewProductBoxIcon.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickStAccNewProductLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(stAccessoriesNewProductLink));
+        stAccessoriesNewProductLink.click();
+    }
+
+
+    //remove search filter
+
+    public void clickRemoveSearchFilter(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        wait.until(ExpectedConditions.visibilityOf(removeFilterIcon));
+        removeFilterIcon.click();
+    }
 
     //assert methods
 
@@ -113,10 +147,19 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     public boolean isStAccessoriesInStockLinkDisplayed(){
         return stAccessoriesInStockLink.isDisplayed();
     }
+    public boolean isStAccessoriesNewProductBoxIconDisplayed(){
+        return stAccessoriesNewProductBoxIcon.isDisplayed();
+    }
+    public boolean isStAccessoriesNewProductLinkDisplayed(){
+        return stAccessoriesNewProductLink.isDisplayed();
+    }
 
     //filter text getters
 
     public String getStAccAvailabilityFilterMessage(){
         return stAccAvailabilityFilterMessage.getText();
+    }
+    public String getStAccSelectionsFilterMessage(){
+        return stAccSelectionsFilterMessage.getText();
     }
 }

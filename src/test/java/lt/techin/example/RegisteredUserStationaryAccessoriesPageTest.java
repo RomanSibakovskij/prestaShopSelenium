@@ -71,7 +71,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToStationaryAccessoriesPageBoxIconTest();
     }
 
-    //Test 017 -> filter stationary accessories by availability box icon click
+    //Test 017 -> filter stationary accessories by availability box icon click (element click intercepted)
     @Test
     void filterByInStockBoxIconTest(){
         clickOnSignUpTest();
@@ -105,5 +105,41 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToAccessoriesPageTest();
         navigateToStationaryAccessoriesPageLink1Test();
         filterProductByAvailabilityLinkTest();
+    }
+
+    //Test 018 -> filter stationary accessories by selections box icon click  (element click intercepted)
+    @Test
+    void filterByNewProductBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+        filterProductBySelectionsBoxIconTest();
+    }
+
+    //Test 018a -> filter stationary accessories by selections link click
+    @Test
+    void filterByNewProductLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+        filterProductBySelectionsLinkTest();
     }
 }
