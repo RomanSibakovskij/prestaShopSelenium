@@ -380,7 +380,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         sortStAccessoriesProductsByNameAToZTest();
     }
 
-    //Test 024c -> sort stationary accessories by name (Z to A) test
+    //Test 024d -> sort stationary accessories by name (Z to A) test
     @Test
     void clickSortByNameZToATest(){
         clickOnSignUpTest();
@@ -398,4 +398,24 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
         sortStAccessoriesProductsByNameZToATest();
     }
+
+    //Test 024e -> sort stationary accessories by price (low to high) test
+    @Test
+    void clickSortByPriceLowToHighTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+
+        sortStAccessoriesProductsByPriceLowToHighTest();
+    }
+
 }
