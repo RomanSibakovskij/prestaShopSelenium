@@ -291,7 +291,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
         clickSortByDropdownMenuTest();
     }
 
-    //Test 015 -> sort products by sales test
+    //Test 015a -> sort products by sales test
     @Test
     void sortProductsBySalesTests() {
         clickOnSignUpTest();
@@ -308,7 +308,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
         sortProductsBySalesTest();
     }
 
-    //Test 015a -> sort products by relevance test
+    //Test 015b -> sort products by relevance test
     @Test
     void sortProductsByRelevanceTests() {
         clickOnSignUpTest();
@@ -323,6 +323,57 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
         navigateToArtPageTest();
         sortProductsByRelevanceTest();
+    }
+
+    //Test 015c -> sort products by name (A to Z) test
+    @Test
+    void sortProductsByNameAToZTests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        sortProductsByNameAToZTest();
+    }
+
+    //Test 015d -> sort products by name (Z to A) test
+    @Test
+    void sortProductsByNameZToATests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        sortProductsByNameZToATest();
+    }
+
+    //Test 015e -> sort products by price (low to high) test
+    @Test
+    void sortProductsByPriceLowToHighTests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        sortProductsByPriceLowToHighTest();
     }
 
 

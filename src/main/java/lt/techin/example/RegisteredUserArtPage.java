@@ -303,6 +303,34 @@ public class RegisteredUserArtPage extends BasePage{
         actions.moveToElement(relevanceOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
+    public void clickNameAToZOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(nameAtoZOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(nameAtoZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickNameZToAOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(nameZToAOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(nameZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickPriceLowToHighOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(priceLowToHighOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(priceLowToHighOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickPriceHighToLowOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(priceHighToLowOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(priceHighToLowOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
 
     //assert methods
     public boolean isArtPageLinkPresent(){
