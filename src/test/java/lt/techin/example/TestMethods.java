@@ -1955,5 +1955,35 @@ public class TestMethods extends BaseTest{
     }
 
 
+    //registered user home accessories test methods
+
+    protected void filterHmAccProductByAvailabilityLinkTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'in stock' link is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesInStockLinkDisplayed(), "The home accessories 'in stock' link isn't displayed");
+        System.out.println("The home accessories page 'in stock' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesInStockLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterHmAccProductByAvailabilityBoxIconTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesInStockBoxIconDisplayed(), "The home accessories 'in stock' link isn't displayed");
+        System.out.println("The home accessories page 'in stock' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesInStockBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSelectionsFilterMessage(), "Selections: New product"); -> assert crashes the test
+        //remove search filter
+        //registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
 
 }

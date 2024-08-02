@@ -11,13 +11,13 @@ import java.time.Duration;
 public class RegisteredUserArtPage extends BasePage{
 
     //box icon links
-    @FindBy(css = "section:nth-of-type(1) > .collapse .ps-shown-by-js")
+    @FindBy(css = "section:nth-of-type(1) > .collapse .custom-checkbox")
     private WebElement inStockBoxIconLink;
 
-    @FindBy(css = "section:nth-of-type(2) > .collapse .ps-shown-by-js")
+    @FindBy(css = "section:nth-of-type(2) > .collapse .custom-checkbox")
     private WebElement newProductBoxIconLink;
 
-    @FindBy(css = "section:nth-of-type(4) > .collapse .ps-shown-by-js")
+    @FindBy(css = "section:nth-of-type(4) > .collapse .custom-checkbox")
     private WebElement compositionBoxIconLink;
 
     @FindBy(css = "section:nth-of-type(5) > .collapse .custom-checkbox")

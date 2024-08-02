@@ -71,7 +71,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToStationaryAccessoriesPageBoxIconTest();
     }
 
-    //Test 017 -> filter stationary accessories by availability box icon click (element click intercepted)
+    //Test 017 -> filter stationary accessories by availability box icon click
     @Test
     void filterByInStockBoxIconTest(){
         clickOnSignUpTest();
@@ -107,7 +107,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         filterProductByAvailabilityLinkTest();
     }
 
-    //Test 018 -> filter stationary accessories by selections box icon click  (element click intercepted)
+    //Test 018 -> filter stationary accessories by selections box icon click
     @Test
     void filterByNewProductBoxIconTest(){
         clickOnSignUpTest();

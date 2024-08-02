@@ -43,9 +43,9 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement removeFilterIcon;
 
     //box icons
-    @FindBy(css = "section:nth-of-type(1) > .collapse .ps-shown-by-js")
+    @FindBy(css = "section:nth-of-type(1) > .collapse .custom-checkbox")
     private WebElement stAccessoriesInStockBoxIcon;
-    @FindBy(css = "section:nth-of-type(2) > .collapse .ps-shown-by-js")
+    @FindBy(css = "section:nth-of-type(2) > .collapse .custom-checkbox")
     private WebElement stAccessoriesNewProductBoxIcon;
     @FindBy(css = "li:nth-of-type(1) > .facet-label > .custom-checkbox")
     private WebElement stAccessoriesRuledPaperBoxIcon;

@@ -58,6 +58,44 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         navigateToHomeAccessoriesPageBoxIconTest();
     }
 
+    //Test 026 -> filter home accessories products by availability (box icon) test
+    @Test
+    void filterHmAccProductByAvailabilityBoxIconTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByAvailabilityBoxIconTest();
+    }
+
+    //Test 026a -> filter home accessories products by availability (link) test
+    @Test
+    void filterHmAccProductByAvailabilityLinkTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByAvailabilityLinkTest();
+    }
+
 
 
 }

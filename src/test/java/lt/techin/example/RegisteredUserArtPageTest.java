@@ -19,7 +19,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
         navigateToArtPageTest();
     }
 
-    //Test 007 -> filter product display by availability in stock (box icon) -> (the element click is intercepted)
+    //Test 007 -> filter product display by availability in stock (box icon)
     @Test
     void filterByInStockBoxIconTest(){
         clickOnSignUpTest();
@@ -53,7 +53,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
         filterProductsByInStockLinkTest();
     }
 
-    //Test 008 -> filter product display by availability in stock (box icon) -> (the element click is intercepted)
+    //Test 008 -> filter product display by availability in stock (box icon)
     @Test
     void filterByNewProductBoxIconTest(){
         clickOnSignUpTest();
@@ -104,7 +104,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
         filterProductsByPriceSliderTest();
     }
 
-    //Test 010 -> filter product by product composition test (box icon) (element click intercepted)
+    //Test 010 -> filter product by product composition test (box icon)
     @Test
     void filterProductsByCompositionBoxIconTest() {
         clickOnSignUpTest();
