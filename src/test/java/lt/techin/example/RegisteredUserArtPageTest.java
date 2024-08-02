@@ -376,6 +376,23 @@ public class RegisteredUserArtPageTest extends TestMethods {
         sortProductsByPriceLowToHighTest();
     }
 
+    //Test 015f -> sort products by price (high to low) test
+    @Test
+    void sortProductsByPriceHighToLowTests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        sortProductsByPriceHighToLowTest();
+    }
+
 
 
 

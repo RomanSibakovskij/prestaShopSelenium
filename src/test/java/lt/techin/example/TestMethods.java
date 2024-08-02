@@ -1524,7 +1524,7 @@ public class TestMethods extends BaseTest{
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
-        //assert the sort by price 'a to z' option is displayed
+        //assert the sort by price 'low to high' option is displayed
         assertTrue(registeredUserArtPage.isPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
         System.out.println("The sort by price 'low to high' menu option is displayed" + "\n");
         registeredUserArtPage.clickPriceLowToHighOption();
@@ -1535,11 +1535,11 @@ public class TestMethods extends BaseTest{
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
-        //assert the sort by name 'a to z' option is displayed
-        assertTrue(registeredUserArtPage.isPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
-        System.out.println("The sort by price 'low to high' menu option is displayed" + "\n");
-        registeredUserArtPage.clickPriceLowToHighOption();
-        //assertEquals(registeredUserArtPage.getPriceLowToHighOptionText(), "Price,low to high); // -> assert crashes the test, it doesn't find text
+        //assert the sort by price 'high to low' option is displayed
+        assertTrue(registeredUserArtPage.isPriceHighToLowOptionDisplayed(), "The sort by price 'high to low' menu option isn't displayed");
+        System.out.println("The sort by price 'high to low' menu option is displayed" + "\n");
+        registeredUserArtPage.clickPriceHighToLowOption();
+        //assertEquals(registeredUserArtPage.getPriceHighToLowOptionText(), "Price,high to low); // -> assert crashes the test, it doesn't find text
     }
 
 
