@@ -1,9 +1,6 @@
 package lt.techin.example;
 
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -70,10 +67,41 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement stAccRuledPaperFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Paper Type: Plain')]")
     private WebElement stAccPlainPaperFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Squared')]")
+    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Squarred')]")
     private WebElement stAccSquaredPaperFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Paper Type: Doted')]")
     private WebElement stAccDottedPaperFilterMessage;
+
+    //dropdown menu
+
+    @FindBy(xpath = "//*//div[@id='js-product-list-top']//div[@class='row sort-by-row']/div[1]")
+    private WebElement stAccessoriesSortByDropdownMenu;
+
+    //menu options
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(1)")
+    private WebElement stAccessoriesSalesOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(2)")
+    private WebElement stAccessoriesRelevanceOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(3)")
+    private WebElement stAccessoriesNameAtoZOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(4)")
+    private WebElement stAccessoriesNameZToAOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(5)")
+    private WebElement stAccessoriesPriceLowToHighOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(6)")
+    private WebElement stAccessoriesPriceHighToLowOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(7)")
+    private WebElement stAccessoriesReferenceAToZOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(8)")
+    private WebElement stAccessoriesReferenceZToAOption;
 
 
 
@@ -234,7 +262,75 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
                 .perform();
     }
 
+    //dropdown menu methods
 
+    public void clickStSortByDropdownMenu(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesSortByDropdownMenu));
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(stAccessoriesSortByDropdownMenu).clickAndHold().pause(Duration.ofSeconds(2)).release().perform();
+
+    }
+
+    //menu options methods
+
+    public void clickSalesOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesSalesOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(stAccessoriesSalesOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+
+    public void clickRelevanceOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesRelevanceOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(stAccessoriesRelevanceOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickNameAToZOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesNameAtoZOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(stAccessoriesNameAtoZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickNameZToAOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesNameZToAOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(stAccessoriesNameZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickPriceLowToHighOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesPriceLowToHighOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(stAccessoriesPriceLowToHighOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickPriceHighToLowOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesPriceHighToLowOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(stAccessoriesPriceHighToLowOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickReferenceAToZOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesReferenceAToZOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(stAccessoriesReferenceAToZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickReferenceZToAOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesReferenceZToAOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(stAccessoriesReferenceZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
     //remove search filter
 
     public void clickRemoveSearchFilter(){
@@ -297,6 +393,33 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     public boolean isStAccessoriesDottedPaperLinkDisplayed(){
         return stAccessoriesDottedPaperBoxIcon.isDisplayed();
     }
+    public boolean isStAccessoriesSortByDropdownMenuDisplayed(){
+        return stAccessoriesSortByDropdownMenu.isDisplayed();
+    }
+    public boolean isStAccessoriesSalesOptionDisplayed(){
+        return stAccessoriesSalesOption.isDisplayed();
+    }
+    public boolean isStAccessoriesRelevanceOptionDisplayed() {
+        return stAccessoriesRelevanceOption.isDisplayed();
+    }
+    public boolean isStAccessoriesNameAtoZOptionDisplayed(){
+        return stAccessoriesNameAtoZOption.isDisplayed();
+    }
+    public boolean isStAccessoriesNameZToAOptionDisplayed(){
+        return stAccessoriesNameZToAOption.isDisplayed();
+    }
+    public boolean isStAccessoriesPriceLowToHighOptionDisplayed(){
+        return stAccessoriesPriceLowToHighOption.isDisplayed();
+    }
+    public boolean isStAccessoriesPriceHighToLowOptionDisplayed(){
+        return stAccessoriesPriceHighToLowOption.isDisplayed();
+    }
+    public boolean isStAccessoriesReferenceAToZOptionDisplayed(){
+        return stAccessoriesReferenceAToZOption.isDisplayed();
+    }
+    public boolean isStAccessoriesReferenceZToAOptionDisplayed(){
+        return stAccessoriesReferenceZToAOption.isDisplayed();
+    }
 
     //filter text getters
 
@@ -311,5 +434,33 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     }
     public String getStAccRuledPaperFilterMessage(){
         return stAccRuledPaperFilterMessage.getText();
+    }
+
+    //dropdown options getters
+
+    public String getStAccessoriesSalesOptionText(){
+        WebElement stAccessoriesSalesOption = driver.findElement(By.linkText("Sales, highest to lowest"));
+        return stAccessoriesSalesOption.getText();
+    }
+    public String getStAccessoriesRelevanceOptionText(){
+        return stAccessoriesRelevanceOption.getText();
+    }
+    public String getStAccessoriesNameAtoZOptionText(){
+        return stAccessoriesNameAtoZOption.getText();
+    }
+    public String getStAccessoriesNameZToAOptionText(){
+        return stAccessoriesNameZToAOption.getText();
+    }
+    public String getStAccessoriesPriceLowToHighOptionText(){
+        return stAccessoriesPriceLowToHighOption.getText();
+    }
+    public String getStAccessoriesPriceHighToLowOptionText(){
+        return stAccessoriesPriceHighToLowOption.getText();
+    }
+    public String getStAccessoriesReferenceAToZOptionText(){
+        return stAccessoriesReferenceAToZOption.getText();
+    }
+    public String getStAccessoriesReferenceZToAOptionText(){
+        return stAccessoriesReferenceZToAOption.getText();
     }
 }

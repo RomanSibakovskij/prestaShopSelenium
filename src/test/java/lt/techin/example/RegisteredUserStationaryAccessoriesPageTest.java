@@ -269,7 +269,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         filterProductByPaperType3LinkTest();
     }
 
-    //Test 023 -> filter stationary accessories by squared paper type box icon click
+    //Test 023 -> filter stationary accessories by dotted paper type box icon click
     @Test
     void filterByPaperType4BoxIconTest(){
         clickOnSignUpTest();
@@ -287,7 +287,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         filterProductByPaperType4BoxIconTest();
     }
 
-    //Test 023a -> filter stationary accessories by squared paper type link click
+    //Test 023a -> filter stationary accessories by dotted paper type link click
     @Test
     void filterByPaperType4LinkTest(){
         clickOnSignUpTest();
@@ -303,5 +303,23 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToAccessoriesPageTest();
         navigateToStationaryAccessoriesPageLink1Test();
         filterProductByPaperType4LinkTest();
+    }
+
+    //Test 024 -> click on sort by dropdown menu test
+    @Test
+    void clickSortByMenuTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+        clickStAccessoriesSortByDropdownMenuTest();
     }
 }

@@ -1765,8 +1765,8 @@ public class TestMethods extends BaseTest{
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
-        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperBoxIconDisplayed(), "The stationary accessories 'squared' box icon isn't displayed");
-        System.out.println("The stationary accessories page 'squared' box icon is displayed" + "\n");
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperBoxIconDisplayed(), "The stationary accessories 'squarred' box icon isn't displayed");
+        System.out.println("The stationary accessories page 'squarred' box icon is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccSquaredPaperBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSquaredPaperFilterMessage(), "Paper Type: Squared"); -> assert crashes the test
@@ -1778,8 +1778,8 @@ public class TestMethods extends BaseTest{
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' link is displayed
-        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperLinkDisplayed(), "The stationary accessories 'squared' link isn't displayed");
-        System.out.println("The stationary accessories page 'squared' link is displayed" + "\n");
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperLinkDisplayed(), "The stationary accessories 'squarred' link isn't displayed");
+        System.out.println("The stationary accessories page 'squarred' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccSquaredPaperLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSquaredPaperFilterMessage(), "Paper Type: Squared"); -> assert crashes the test
@@ -1812,4 +1812,16 @@ public class TestMethods extends BaseTest{
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
+
+    // dropdown menu test method
+
+    protected void clickStAccessoriesSortByDropdownMenuTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+        //assert the dropdown is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
+        System.out.println("The 'Sort By' dropdown menu is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
+    }
+
+
 }
