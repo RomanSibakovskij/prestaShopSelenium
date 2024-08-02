@@ -1377,7 +1377,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isCompositionLinkPresent(), "The 'Matt paper' link isn't displayed");
         System.out.println("The 'Matt paper' link is displayed" + "\n");
         registeredUserArtPage.clickCompositionLink();
-        //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Composition: Matt paper");
+        //assertEquals(registeredUserArtPage.getCompositionFilterMessage(), "Composition: Matt paper");
     }
 
     protected void filterProductsByCompositionBoxIconLinkTest(){
@@ -1394,7 +1394,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isBrandLinkPresent(), "The 'Graphic Corner' link isn't displayed");
         System.out.println("The 'Graphic Corner' link is displayed" + "\n");
         registeredUserArtPage.clickBrandLink();
-        //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Composition: Matt paper");
+        //assertEquals(registeredUserArtPage.getBrandFilterMessage(), "Brand: Graphic Corner");
     }
 
     protected void filterProductsByBrandBoxIconLinkTest(){
@@ -1403,6 +1403,23 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isBrandBoxIconLinkDisplayed(), "The 'Graphic Corner' box icon link isn't displayed");
         System.out.println("The 'Graphic Corner' box icon link is displayed" + "\n");
         registeredUserArtPage.clickCompositionBoxIconLink();
+    }
+
+    protected void filterProductsByDimension1LinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserArtPage.isDimensionLink1Present(), "The '40x60 cm' link isn't displayed");
+        System.out.println("The '40x60 cm' link is displayed" + "\n");
+        registeredUserArtPage.clickDimension1Link();
+        //assertEquals(registeredUserArtPage.getBrandFilterMessage(), "Brand: Graphic Corner");
+    }
+
+    protected void filterProductsByDimension1BoxIconLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by new product choice is displayed
+        assertTrue(registeredUserArtPage.isDimensionBoxIconLink1Present(), "The '40x60 cm' box icon link isn't displayed");
+        System.out.println("The '40x60 cm' box icon link is displayed" + "\n");
+        registeredUserArtPage.clickDimension1BoxIconLink();
     }
 
 

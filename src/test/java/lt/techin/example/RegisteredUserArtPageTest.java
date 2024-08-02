@@ -172,6 +172,40 @@ public class RegisteredUserArtPageTest extends TestMethods {
         filterProductsByBrandLinkTest();
     }
 
+    //Test 012 -> filter product by product composition test (box icon)
+    @Test
+    void filterProductsByDimension1BoxIconTest() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        filterProductsByDimension1BoxIconLinkTest();
+    }
+
+    //Test 012a -> filter product by product composition test
+    @Test
+    void filterProductsByDimension1LinkTests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        filterProductsByDimension1LinkTest();
+    }
+
 
 
 

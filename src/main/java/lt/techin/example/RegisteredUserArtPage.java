@@ -315,13 +315,30 @@ public class RegisteredUserArtPage extends BasePage{
         return dimensionLink3.isDisplayed();
     }
 
-    //getter
+    //getters
 
     public String getAvailabilityFilterMessage(){
         return availabilityFilterMessage.getText();
     }
-
     public String getSelectionsFilterMessage(){
         return selectionsFilterMessage.getText();
+    }
+    public String getPriceFilterMessage(){
+        return priceFilterMessage.getText();
+    }
+    public String getCompositionFilterMessage(){
+        return compositionFilterMessage.getText();
+    }
+    public String getBrandFilterMessage(){
+        return brandFilterMessage.getText();
+    }
+    public String getDimension1FilterMessage(){
+        return dimension1FilterMessage.getText();
+    }
+    public String getDimension2FilterMessage(){
+        return dimension2FilterMessage.getText();
+    }
+    public String getDimension3FilterMessage(){
+        return dimension3FilterMessage.getText();
     }
 }
