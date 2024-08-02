@@ -275,7 +275,7 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
 
     //menu options methods
 
-    public void clickSalesOption(){
+    public void clickStAccessoriesSalesOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesSalesOption));
         Actions actions = new Actions(driver);

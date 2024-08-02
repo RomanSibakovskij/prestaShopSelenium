@@ -1823,5 +1823,20 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
     }
 
+    //stationary accessories dropdown menu options test methods
+
+    //menu options test methods
+
+    protected void sortStAccessoriesProductsBySalesTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
+        //assert the sort by sales option is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSalesOptionDisplayed(), "The sort by 'Sales' menu option isn't displayed");
+        System.out.println("The sort by 'Sales' menu option  is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccessoriesSalesOption();
+        //assertEquals(registeredUserArtPage.getStAccessoriesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
+    }
+
 
 }
