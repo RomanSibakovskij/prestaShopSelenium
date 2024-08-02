@@ -24,6 +24,19 @@ public class RegisteredUserArtPage extends BasePage{
     @FindBy(css = "section:nth-of-type(4) > .collapse .ps-shown-by-js")
     private WebElement compositionBoxIconLink;
 
+    @FindBy(css = "section:nth-of-type(5) > .collapse .custom-checkbox")
+    private WebElement brandBoxIconLink;
+
+    @FindBy(css = "section:nth-of-type(6) > .collapse > li:nth-of-type(1) > .facet-label > .custom-checkbox")
+    private WebElement dimensionBoxIconLink1;
+
+    @FindBy(css = "section:nth-of-type(6) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
+    private WebElement dimensionBoxIconLink2;
+
+    @FindBy(css = "section:nth-of-type(6) > .collapse > li:nth-of-type(3) > .facet-label > .custom-checkbox")
+    private WebElement dimensionBoxIconLink3;
+
+
     //links
     @FindBy(css = "li:nth-of-type(3) > .dropdown-item")
     private WebElement artPageLink;
@@ -36,6 +49,18 @@ public class RegisteredUserArtPage extends BasePage{
 
     @FindBy(css = "section:nth-of-type(4) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement compositionLink;
+
+    @FindBy(css = "section:nth-of-type(5) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement brandLink;
+
+    @FindBy(css = "section:nth-of-type(6) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement dimensionLink1;
+
+    @FindBy(css = "section:nth-of-type(7) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement dimensionLink2;
+
+    @FindBy(css = "section:nth-of-type(8) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement dimensionLink3;
 
     //slider
 
@@ -174,6 +199,14 @@ public class RegisteredUserArtPage extends BasePage{
 
     public boolean isCompositionLinkPresent(){
         return compositionBoxIconLink.isDisplayed();
+    }
+
+    public boolean isBrandBoxIconLinkPresent(){
+        return brandBoxIconLink.isDisplayed();
+    }
+
+    public boolean isBrandLinkPresent(){
+        return brandLink.isDisplayed();
     }
 
     //getter
