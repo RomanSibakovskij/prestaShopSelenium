@@ -1627,7 +1627,7 @@ public class TestMethods extends BaseTest{
 
         //assert accessories link is displayed on navbar
         assertTrue(registeredUserStationaryAccessoriesPage.isStationaryAccessoriesPageLink2Displayed(), "The stationary accessories page link2 isn't displayed");
-        System.out.println("The accessories page link is displayed on navbar" + "\n");
+        System.out.println("The accessories page link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStationaryAccessoriesPageLink2();
     }
 
@@ -1922,6 +1922,38 @@ public class TestMethods extends BaseTest{
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesReferenceAToZText(), "Reference,A to Z"); // -> assert crashes the test, it doesn't find text
     }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //registered user home accessories page navigation test methods
+
+    protected void navigateToHomeAccessoriesPageLink1Test(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert accessories link is displayed on navbar
+        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesPageLink1Displayed(), "The home accessories page link1 isn't displayed");
+        System.out.println("The home accessories page link1 is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesPageLink1();
+    }
+
+    protected void navigateToHomeAccessoriesPageLink2Test(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert accessories link is displayed on navbar
+        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesPageLink2Displayed(), "The home accessories page link2 isn't displayed");
+        System.out.println("The home accessories page link2 is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesPageLink2();
+    }
+
+    protected void navigateToHomeAccessoriesPageBoxIconTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert accessories link is displayed on navbar
+        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesPageBoxIconDisplayed(), "The home accessories page box icon isn't displayed");
+        System.out.println("The home accessories page box icon is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesPageBoxIcon();
+    }
+
 
 
 }
