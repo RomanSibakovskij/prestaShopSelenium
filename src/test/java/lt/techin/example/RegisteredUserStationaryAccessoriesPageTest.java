@@ -418,4 +418,23 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         sortStAccessoriesProductsByPriceLowToHighTest();
     }
 
+    //Test 024f -> sort stationary accessories by price (high to low) test
+    @Test
+    void clickSortByPriceHighToLowTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+
+        sortStAccessoriesProductsByPriceHighToLowTest();
+    }
+
 }

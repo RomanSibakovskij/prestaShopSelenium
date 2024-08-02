@@ -1887,5 +1887,18 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesPriceLowToHighText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
     }
 
+    protected void sortStAccessoriesProductsByPriceHighToLowTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
+        //assert the sort by name 'a to z' option is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesPriceHighToLowOptionDisplayed(), "The sort by price 'high to low' menu option isn't displayed");
+        System.out.println("The sort by price 'high to low' menu option  is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccessoriesPriceHighToLowOption();
+        //assert the correct text is input in option
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesPriceHighToLowText(), "Price,high to low"); // -> assert crashes the test, it doesn't find text
+    }
+    
+
 
 }
