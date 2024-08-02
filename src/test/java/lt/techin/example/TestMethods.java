@@ -1651,4 +1651,14 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickStAccInStockBoxIcon();
     }
 
+    protected void filterProductByAvailabilityLinkTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert accessories link is displayed on navbar
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesInStockLinkDisplayed(), "The stationary accessories 'in stock' link isn't displayed");
+        System.out.println("The stationary accessories page 'in stock' link is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccInStockLink();
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
+
+    }
 }

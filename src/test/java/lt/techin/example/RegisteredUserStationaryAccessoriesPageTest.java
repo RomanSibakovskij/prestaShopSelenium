@@ -16,6 +16,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         logoutFromUserAccountTest();
         clickSignInRegisteredUserTest();
         logInRegisteredUserTest(registerPage);
+
         navigateToAccessoriesPageTest();
     }
 
@@ -31,6 +32,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         logoutFromUserAccountTest();
         clickSignInRegisteredUserTest();
         logInRegisteredUserTest(registerPage);
+
         navigateToAccessoriesPageTest();
         navigateToStationaryAccessoriesPageLink1Test();
     }
@@ -47,6 +49,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         logoutFromUserAccountTest();
         clickSignInRegisteredUserTest();
         logInRegisteredUserTest(registerPage);
+
         navigateToAccessoriesPageTest();
         navigateToStationaryAccessoriesPageLink2Test();
     }
@@ -63,11 +66,12 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         logoutFromUserAccountTest();
         clickSignInRegisteredUserTest();
         logInRegisteredUserTest(registerPage);
+
         navigateToAccessoriesPageTest();
         navigateToStationaryAccessoriesPageBoxIconTest();
     }
 
-    //Test 017 -> filter products by availability box icon click
+    //Test 017 -> filter stationary accessories by availability box icon click
     @Test
     void filterByInStockBoxIconTest(){
         clickOnSignUpTest();
@@ -79,9 +83,27 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         logoutFromUserAccountTest();
         clickSignInRegisteredUserTest();
         logInRegisteredUserTest(registerPage);
+
         navigateToAccessoriesPageTest();
         navigateToStationaryAccessoriesPageLink1Test();
-
         filterProductByAvailabilityBoxIconTest();
+    }
+
+    //Test 017a -> filter stationary accessories by availability link click
+    @Test
+    void filterByInStockLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+        filterProductByAvailabilityLinkTest();
     }
 }

@@ -39,6 +39,11 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     @FindBy(css = "section:nth-of-type(7) > .collapse .ps-shown-by-js")
     private WebElement stAccessoriesDottedPaperBoxIcon;
 
+    //filter messages
+
+    @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
+    private WebElement stAccAvailabilityFilterMessage;
+
 
 
     public RegisteredUserStationaryAccessoriesPage(WebDriver driver) {
@@ -107,5 +112,11 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     }
     public boolean isStAccessoriesInStockLinkDisplayed(){
         return stAccessoriesInStockLink.isDisplayed();
+    }
+
+    //filter text getters
+
+    public String getStAccAvailabilityFilterMessage(){
+        return stAccAvailabilityFilterMessage.getText();
     }
 }
