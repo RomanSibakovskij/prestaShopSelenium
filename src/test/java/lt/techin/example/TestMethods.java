@@ -1434,7 +1434,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isDimensionLink2Present(), "The '60x90 cm' link isn't displayed");
         System.out.println("The '60x90 cm' link is displayed" + "\n");
         registeredUserArtPage.clickDimension2Link();
-        //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 60x90cm");
+        //assertEquals(registeredUserArtPage.getDimension2FilterMessage(), "Dimension: 60x90cm");
     }
 
     protected void filterProductsByDimension2BoxIconLinkTest(){
@@ -1443,8 +1443,50 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isDimensionBoxIconLink2Present(), "The '60x90 cm' box icon link isn't displayed");
         System.out.println("The '60x90 cm' box icon link is displayed" + "\n");
         registeredUserArtPage.clickDimension2BoxIconLink();
-        //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 60x90cm");
+        //assertEquals(registeredUserArtPage.getDimension2FilterMessage(), "Dimension: 60x90cm");
     }
+
+    protected void filterProductsByDimension3LinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserArtPage.isDimensionLink3Present(), "The '80x120 cm' link isn't displayed");
+        System.out.println("The '80x120 cm' link is displayed" + "\n");
+        registeredUserArtPage.clickDimension3Link();
+        //assertEquals(registeredUserArtPage.getDimension3FilterMessage(), "Dimension: 80x120cm");
+    }
+
+    protected void filterProductsByDimension3BoxIconLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by new product choice is displayed
+        assertTrue(registeredUserArtPage.isDimensionBoxIconLink3Present(), "The '80x120 cm' box icon link isn't displayed");
+        System.out.println("The '80x120 cm' box icon link is displayed" + "\n");
+        registeredUserArtPage.clickDimension3BoxIconLink();
+        //assertEquals(registeredUserArtPage.getDimension3FilterMessage(), "Dimension: 80x120cm");
+    }
+
+    // dropdown menu test methods
+
+    protected void clickSortByDropdownMenuTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by new product choice is displayed
+        assertTrue(registeredUserArtPage.isSortByDropDownMenuPresent(), "The 'Sort By' dropdown menu isn't displayed");
+        System.out.println("The 'Sort By' dropdown menu is displayed" + "\n");
+        registeredUserArtPage.clickSortByDropdownMenu();
+    }
+
+    //menu options test methods
+
+    protected void sortProductsBySalesTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by new product choice is displayed
+        registeredUserArtPage.clickSortByDropdownMenu();
+        assertTrue(registeredUserArtPage.isSalesOptionDisplayed(), "The sort by 'Sales' menu option isn't displayed");
+        System.out.println("The sort by 'Sales' menu option  is displayed" + "\n");
+        registeredUserArtPage.clickSalesOption();
+        //assertEquals(registeredUserArtPage.getSalesOptionText(), "Sales, highest to lowest");
+
+    }
+
 
 
 

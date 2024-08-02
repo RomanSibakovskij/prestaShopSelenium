@@ -1,14 +1,10 @@
 package lt.techin.example;
 
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.Point;
 
 import java.time.Duration;
 
@@ -59,13 +55,43 @@ public class RegisteredUserArtPage extends BasePage{
     @FindBy(css = "li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink2;
 
-    @FindBy(css = "section:nth-of-type(8) > .collapse ._gray-darker.js-search-link.search-link")
+    @FindBy(css = "li:nth-of-type(3) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink3;
 
     //slider
 
     @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
     private WebElement priceSliderLine;
+
+    //dropdown menu
+
+    @FindBy(xpath = "//*//div[@id='js-product-list-top']//div[@class='row sort-by-row']/div[1]")
+    private WebElement sortByDropdownMenu;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(1)")
+    private WebElement salesOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(2)")
+    private WebElement relevanceOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(3)")
+    private WebElement nameAtoZOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(4)")
+    private WebElement nameZToAOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(5)")
+    private WebElement priceLowToHighOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(6)")
+    private WebElement priceHighToLowOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(7)")
+    private WebElement referenceAToZOption;
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(8)")
+    private WebElement referenceZToAOption;
+
 
     //elements
 
@@ -191,7 +217,7 @@ public class RegisteredUserArtPage extends BasePage{
             wait.until(ExpectedConditions.elementToBeClickable(brandBoxIconLink));
             brandBoxIconLink.click();
         } catch (ElementClickInterceptedException e) {
-            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+            System.out.println("The 'Graphic Corner' box icon click is being intercepted: " + e.getMessage());
         }
     }
 
@@ -207,7 +233,7 @@ public class RegisteredUserArtPage extends BasePage{
             wait.until(ExpectedConditions.elementToBeClickable(dimensionBoxIconLink1));
             dimensionBoxIconLink1.click();
         } catch (ElementClickInterceptedException e) {
-            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+            System.out.println("The '40x60 cm' box icon click is being intercepted: " + e.getMessage());
         }
     }
 
@@ -223,7 +249,7 @@ public class RegisteredUserArtPage extends BasePage{
             wait.until(ExpectedConditions.elementToBeClickable(dimensionBoxIconLink2));
             dimensionBoxIconLink2.click();
         } catch (ElementClickInterceptedException e) {
-            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+            System.out.println("The '60x90 cm' box icon click is being intercepted: " + e.getMessage());
         }
     }
 
@@ -239,7 +265,7 @@ public class RegisteredUserArtPage extends BasePage{
             wait.until(ExpectedConditions.elementToBeClickable(dimensionBoxIconLink3));
             dimensionBoxIconLink3.click();
         } catch (ElementClickInterceptedException e) {
-            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+            System.out.println("The '80x120 cm' box icon click is being intercepted: " + e.getMessage());
         }
     }
 
@@ -249,70 +275,102 @@ public class RegisteredUserArtPage extends BasePage{
         dimensionLink3.click();
     }
 
+    //dropdown menu methods
+
+    public void clickSortByDropdownMenu(){
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.elementToBeClickable(sortByDropdownMenu));
+
+            Actions actions = new Actions(driver);
+            actions.moveToElement(sortByDropdownMenu).clickAndHold().pause(Duration.ofSeconds(2)).release().perform();
+
+    }
+
+    //menu options methods
+
+    public void clickSalesOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(salesOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(salesOption).clickAndHold().pause(Duration.ofSeconds(2)).release().perform();
+    }
+
 
     //assert methods
     public boolean isArtPageLinkPresent(){
         return artPageLink.isDisplayed();
     }
-
     public boolean isInStockBoxIconLinkPresent(){
         return inStockBoxIconLink.isDisplayed();
     }
-
     public boolean isInStockLinkPresent(){
         return inStockLink.isDisplayed();
     }
-
     public boolean isNewProductBoxIconLinkPresent(){
         return newProductBoxIconLink.isDisplayed();
     }
-
     public boolean isNewProductLinkPresent(){
         return newProductLink.isDisplayed();
     }
-
     public boolean isPriceSliderDisplayed(){
         return priceSliderLine.isDisplayed();
     }
-
     public boolean isCompositionBoxIconLinkDisplayed(){
         return compositionBoxIconLink.isDisplayed();
     }
-
     public boolean isCompositionLinkPresent(){
         return compositionBoxIconLink.isDisplayed();
     }
-
     public boolean isBrandBoxIconLinkDisplayed(){
         return brandBoxIconLink.isDisplayed();
     }
-
     public boolean isBrandLinkPresent(){
         return brandLink.isDisplayed();
     }
-
     public boolean isDimensionBoxIconLink1Present(){
         return dimensionBoxIconLink1.isDisplayed();
     }
-
     public boolean isDimensionLink1Present(){
         return dimensionLink1.isDisplayed();
     }
-
     public boolean isDimensionBoxIconLink2Present(){
         return dimensionBoxIconLink2.isDisplayed();
     }
-
     public boolean isDimensionLink2Present(){
         return dimensionLink2.isDisplayed();
     }
-
     public boolean isDimensionBoxIconLink3Present(){
         return dimensionBoxIconLink3.isDisplayed();
     }
-
     public boolean isDimensionLink3Present(){
         return dimensionLink3.isDisplayed();
+    }
+    public boolean isSortByDropDownMenuPresent(){
+        return sortByDropdownMenu.isDisplayed();
+    }
+    public boolean isSalesOptionDisplayed(){
+        return salesOption.isDisplayed();
+    }
+    public boolean isRelevanceOptionDisplayed() {
+        return relevanceOption.isDisplayed();
+    }
+    public boolean isNameAToZOptionDisplayed(){
+        return nameAtoZOption.isDisplayed();
+    }
+    public boolean isNameZToAOptionDisplayed(){
+        return nameZToAOption.isDisplayed();
+    }
+    public boolean isPriceLowToHighOptionDisplayed(){
+        return priceLowToHighOption.isDisplayed();
+    }
+    public boolean isPriceHighToLowOptionDisplayed(){
+        return priceHighToLowOption.isDisplayed();
+    }
+    public boolean isReferenceAToZOptionDisplayed(){
+        return referenceAToZOption.isDisplayed();
+    }
+    public boolean isReferenceZToAOptionDisplayed(){
+        return referenceZToAOption.isDisplayed();
     }
 
     //getters
@@ -341,4 +399,33 @@ public class RegisteredUserArtPage extends BasePage{
     public String getDimension3FilterMessage(){
         return dimension3FilterMessage.getText();
     }
+
+    //dropdown options getters
+
+    public String getSalesOptionText(){
+        WebElement salesOption = driver.findElement(By.linkText("Sales, highest to lowest"));
+        return salesOption.getText();
+    }
+    public String getRelevanceOptionText(){
+        return relevanceOption.getText();
+    }
+    public String getNameAToZOptionText(){
+        return nameAtoZOption.getText();
+    }
+    public String getNameZToAOptionText(){
+        return nameZToAOption.getText();
+    }
+    public String getPriceLowToHighOptionText(){
+        return priceLowToHighOption.getText();
+    }
+    public String getPriceHighToLowOptionText(){
+        return priceHighToLowOption.getText();
+    }
+    public String getRelevanceAToZOptionText(){
+        return referenceAToZOption.getText();
+    }
+    public String getRelevanceZToAOptionText(){
+        return referenceZToAOption.getText();
+    }
+
 }

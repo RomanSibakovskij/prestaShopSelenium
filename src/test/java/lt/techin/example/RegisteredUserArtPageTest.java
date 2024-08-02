@@ -240,6 +240,74 @@ public class RegisteredUserArtPageTest extends TestMethods {
         filterProductsByDimension2LinkTest();
     }
 
+    //Test 014 -> filter product by product composition test (box icon)
+    @Test
+    void filterProductsByDimension3BoxIconTest() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        filterProductsByDimension3BoxIconLinkTest();
+    }
+
+    //Test 014a -> filter product by product composition test
+    @Test
+    void filterProductsByDimension3LinkTests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        filterProductsByDimension3LinkTest();
+    }
+
+    //Test 015 -> click on sort by dropdown menu test
+    @Test
+    void clickSortByMenuTest() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        clickSortByDropdownMenuTest();
+    }
+
+    //Test 015 -> click on sort by dropdown menu test
+    @Test
+    void sortProductsBySalesTests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        sortProductsBySalesTest();
+    }
+
 
 
 
