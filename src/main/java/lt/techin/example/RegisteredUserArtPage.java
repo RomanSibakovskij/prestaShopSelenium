@@ -75,6 +75,24 @@ public class RegisteredUserArtPage extends BasePage{
     @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
     private WebElement selectionsFilterMessage;
 
+    @FindBy(xpath = "//*[contains(text(), 'Price:')]")
+    private WebElement priceFilterMessage;
+
+    @FindBy(xpath = "//*[contains(text(), 'Composition: Matt paper')]")
+    private WebElement compositionFilterMessage;
+
+    @FindBy(xpath = "//*[contains(text(), 'Brand: Graphic Corner')]")
+    private WebElement brandFilterMessage;
+
+    @FindBy(xpath = "//*[contains(text(), 'Dimension: 40x60cm')]")
+    private WebElement dimension1FilterMessage;
+
+    @FindBy(xpath = "//*[contains(text(), 'Dimension: 60x90cm')]")
+    private WebElement dimension2FilterMessage;
+
+    @FindBy(xpath = "//*[contains(text(), 'Dimension: 80x120cm')]")
+    private WebElement dimension3FilterMessage;
+
     public RegisteredUserArtPage(WebDriver driver) {
         super(driver);
     }
@@ -167,6 +185,70 @@ public class RegisteredUserArtPage extends BasePage{
         compositionLink.click();
     }
 
+    public void clickBrandBoxIconLink(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(brandBoxIconLink));
+            brandBoxIconLink.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickBrandLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        wait.until(ExpectedConditions.visibilityOf(brandLink));
+        brandLink.click();
+    }
+
+    public void clickDimension1BoxIconLink(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(dimensionBoxIconLink1));
+            dimensionBoxIconLink1.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickDimension1Link(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        wait.until(ExpectedConditions.visibilityOf(dimensionLink1));
+        dimensionLink1.click();
+    }
+
+    public void clickDimension2BoxIconLink(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(dimensionBoxIconLink2));
+            dimensionBoxIconLink2.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickDimension2Link(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        wait.until(ExpectedConditions.visibilityOf(dimensionLink2));
+        dimensionLink2.click();
+    }
+
+    public void clickDimension3BoxIconLink(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(dimensionBoxIconLink3));
+            dimensionBoxIconLink3.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickDimension3Link(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        wait.until(ExpectedConditions.visibilityOf(dimensionLink3));
+        dimensionLink3.click();
+    }
+
 
     //assert methods
     public boolean isArtPageLinkPresent(){
@@ -201,12 +283,36 @@ public class RegisteredUserArtPage extends BasePage{
         return compositionBoxIconLink.isDisplayed();
     }
 
-    public boolean isBrandBoxIconLinkPresent(){
+    public boolean isBrandBoxIconLinkDisplayed(){
         return brandBoxIconLink.isDisplayed();
     }
 
     public boolean isBrandLinkPresent(){
         return brandLink.isDisplayed();
+    }
+
+    public boolean isDimensionBoxIconLink1Present(){
+        return dimensionBoxIconLink1.isDisplayed();
+    }
+
+    public boolean isDimensionLink1Present(){
+        return dimensionLink1.isDisplayed();
+    }
+
+    public boolean isDimensionBoxIconLink2Present(){
+        return dimensionBoxIconLink2.isDisplayed();
+    }
+
+    public boolean isDimensionLink2Present(){
+        return dimensionLink2.isDisplayed();
+    }
+
+    public boolean isDimensionBoxIconLink3Present(){
+        return dimensionBoxIconLink3.isDisplayed();
+    }
+
+    public boolean isDimensionLink3Present(){
+        return dimensionLink3.isDisplayed();
     }
 
     //getter

@@ -1347,16 +1347,16 @@ public class TestMethods extends BaseTest{
     protected void filterProductsByNewProductBoxIconLinkTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by new product choice is displayed
-        assertTrue(registeredUserArtPage.isInStockBoxIconLinkPresent(), "The 'In stock' box icon link isn't displayed");
-        System.out.println("The 'In stock' box icon link is displayed" + "\n");
+        assertTrue(registeredUserArtPage.isNewProductBoxIconLinkPresent(), "The 'New product' box icon link isn't displayed");
+        System.out.println("The 'New product' box icon link is displayed" + "\n");
         registeredUserArtPage.clickNewProductBoxIconLink();
     }
 
     protected void filterProductsByNewProductLinkTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by new product choice is displayed
-        assertTrue(registeredUserArtPage.isInStockLinkPresent(), "The 'In stock' link isn't displayed");
-        System.out.println("The 'In stock' link is displayed" + "\n");
+        assertTrue(registeredUserArtPage.isNewProductLinkPresent(), "The 'New product' link isn't displayed");
+        System.out.println("The 'New product' link is displayed" + "\n");
         registeredUserArtPage.clickNewProductLink();
         //assertEquals(registeredUserArtPage.getSelectionsFilterMessage(), "Selections: New product");
     }
@@ -1375,7 +1375,7 @@ public class TestMethods extends BaseTest{
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserArtPage.isCompositionLinkPresent(), "The 'Matt paper' link isn't displayed");
-        System.out.println("The 'Mat paper' link is displayed" + "\n");
+        System.out.println("The 'Matt paper' link is displayed" + "\n");
         registeredUserArtPage.clickCompositionLink();
         //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Composition: Matt paper");
     }
@@ -1385,6 +1385,23 @@ public class TestMethods extends BaseTest{
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserArtPage.isCompositionBoxIconLinkDisplayed(), "The 'Matt paper' box icon link isn't displayed");
         System.out.println("The 'Matt paper' box icon link is displayed" + "\n");
+        registeredUserArtPage.clickCompositionBoxIconLink();
+    }
+
+    protected void filterProductsByBrandLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserArtPage.isBrandLinkPresent(), "The 'Graphic Corner' link isn't displayed");
+        System.out.println("The 'Graphic Corner' link is displayed" + "\n");
+        registeredUserArtPage.clickBrandLink();
+        //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Composition: Matt paper");
+    }
+
+    protected void filterProductsByBrandBoxIconLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by new product choice is displayed
+        assertTrue(registeredUserArtPage.isBrandBoxIconLinkDisplayed(), "The 'Graphic Corner' box icon link isn't displayed");
+        System.out.println("The 'Graphic Corner' box icon link is displayed" + "\n");
         registeredUserArtPage.clickCompositionBoxIconLink();
     }
 
