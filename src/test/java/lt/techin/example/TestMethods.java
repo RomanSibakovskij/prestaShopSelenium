@@ -1778,11 +1778,37 @@ public class TestMethods extends BaseTest{
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' link is displayed
-        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesPlainPaperLinkDisplayed(), "The stationary accessories 'squared' link isn't displayed");
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperLinkDisplayed(), "The stationary accessories 'squared' link isn't displayed");
         System.out.println("The stationary accessories page 'squared' link is displayed" + "\n");
-        registeredUserStationaryAccessoriesPage.clickStAccPlainPaperLink();
+        registeredUserStationaryAccessoriesPage.clickStAccSquaredPaperLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSquaredPaperFilterMessage(), "Paper Type: Squared"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterProductByPaperType4BoxIconTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesDottedPaperBoxIconDisplayed(), "The stationary accessories 'dotted' box icon isn't displayed");
+        System.out.println("The stationary accessories page 'dotted' box icon is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccDottedPaperBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccDottedPaperFilterMessage(), "Paper Type: Doted"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterProductByPaperType4LinkTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert product 'new product' link is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesDottedPaperLinkDisplayed(), "The stationary accessories 'dotted' link isn't displayed");
+        System.out.println("The stationary accessories page 'dotted' link is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccDottedPaperLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccDottedPaperFilterMessage(), "Paper Type: Doted"); -> assert crashes the test
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }

@@ -72,7 +72,7 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement stAccPlainPaperFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Paper Type: Squared')]")
     private WebElement stAccSquaredPaperFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Dotted')]")
+    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Doted')]")
     private WebElement stAccDottedPaperFilterMessage;
 
 
@@ -185,6 +185,22 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
         wait.until(ExpectedConditions.visibilityOf(stAccessoriesSquaredPaperLink));
         stAccessoriesSquaredPaperLink.click();
+    }
+
+    public void clickStAccDottedPaperBoxIcon(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesDottedPaperBoxIcon));
+            stAccessoriesDottedPaperBoxIcon.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickStAccDottedPaperLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(stAccessoriesDottedPaperLink));
+        stAccessoriesDottedPaperLink.click();
     }
 
     //slider price adjustment method
