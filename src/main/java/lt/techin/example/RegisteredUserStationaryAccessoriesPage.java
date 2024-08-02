@@ -1,5 +1,6 @@
 package lt.techin.example;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +11,7 @@ import java.time.Duration;
 
 public class RegisteredUserStationaryAccessoriesPage extends BasePage{
 
-    //links
+    //navigation links
     @FindBy(xpath = "//ul[@id='top-menu']//a[@href='http://192.168.88.247/6-accessories']")
     private WebElement accessoriesPageLink;
     @FindBy(css = ".category-sub-menu > li:nth-of-type(1) > a")
@@ -19,6 +20,27 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement stationaryAccessoriesPageBoxIcon;
     @FindBy(css = "li:nth-of-type(1) > h5 > .subcategory-name")
     private WebElement stationaryAccessoriesPageLink2;
+
+    //links
+    @FindBy(css = "section:nth-of-type(1) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement stAccessoriesInStockLink;
+
+    //box icons
+    @FindBy(css = "section:nth-of-type(1) > .collapse .ps-shown-by-js")
+    private WebElement stAccessoriesInStockBoxIcon;
+    @FindBy(css = "section:nth-of-type(2) > .collapse .ps-shown-by-js")
+    private WebElement stAccessoriesNewProductBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse .ps-shown-by-js")
+    private WebElement stAccessoriesRuledPaperBoxIcon;
+    @FindBy(css = "section:nth-of-type(5) > .collapse .ps-shown-by-js")
+    private WebElement stAccessoriesPlainPaperBoxIcon;
+    @FindBy(css = "section:nth-of-type(6) > .collapse .ps-shown-by-js")
+    private WebElement stAccessoriesSquaredPaperBoxIcon;
+    @FindBy(css = "section:nth-of-type(7) > .collapse .ps-shown-by-js")
+    private WebElement stAccessoriesDottedPaperBoxIcon;
+
+
+
     public RegisteredUserStationaryAccessoriesPage(WebDriver driver) {
         super(driver);
     }
@@ -49,6 +71,23 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         stationaryAccessoriesPageBoxIcon.click();
     }
 
+    public void clickStAccInStockBoxIcon(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesInStockBoxIcon));
+            stAccessoriesInStockBoxIcon.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickStAccInStockLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(stAccessoriesInStockLink));
+        stAccessoriesInStockLink.click();
+    }
+
+
     //assert methods
 
     public boolean isAccessoriesPageLinkDisplayed(){
@@ -62,5 +101,11 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     }
     public boolean isStationaryAccessoriesPageLink2Displayed(){
         return stationaryAccessoriesPageLink2.isDisplayed();
+    }
+    public boolean isStAccessoriesInStockBoxIconDisplayed(){
+        return stAccessoriesInStockBoxIcon.isDisplayed();
+    }
+    public boolean isStAccessoriesInStockLinkDisplayed(){
+        return stAccessoriesInStockLink.isDisplayed();
     }
 }

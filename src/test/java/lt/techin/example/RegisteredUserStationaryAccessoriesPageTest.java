@@ -19,7 +19,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToAccessoriesPageTest();
     }
 
-    //Test 016a -> navigate to Accessories page test
+    //Test 016a -> navigate to Stationary Accessories page (link 1) test
     @Test
     void goToStationaryAccessoriesPageLink1Test(){
         clickOnSignUpTest();
@@ -35,7 +35,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToStationaryAccessoriesPageLink1Test();
     }
 
-    //Test 016b -> navigate to Accessories page test
+    //Test 016b -> navigate to Stationary Accessories page (link 2) test
     @Test
     void goToStationaryAccessoriesPageLink2Test(){
         clickOnSignUpTest();
@@ -51,7 +51,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToStationaryAccessoriesPageLink2Test();
     }
 
-    //Test 016c -> navigate to Accessories page test
+    //Test 016c -> navigate to Stationary Accessories page (box icon) test
     @Test
     void goToStationaryAccessoriesPageBoxIconTest(){
         clickOnSignUpTest();
@@ -65,5 +65,23 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
         navigateToAccessoriesPageTest();
         navigateToStationaryAccessoriesPageBoxIconTest();
+    }
+
+    //Test 017 -> filter products by availability box icon click
+    @Test
+    void filterByInStockBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+
+        filterProductByAvailabilityBoxIconTest();
     }
 }

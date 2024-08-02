@@ -1640,4 +1640,15 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickStationaryAccessoriesPageBoxIcon();
     }
 
+    // stationary accessories product filter by test methods
+
+    protected void filterProductByAvailabilityBoxIconTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert accessories link is displayed on navbar
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesInStockBoxIconDisplayed(), "The stationary accessories 'in stock' box icon isn't displayed");
+        System.out.println("The stationary accessories page 'in stock' box icon is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccInStockBoxIcon();
+    }
+
 }
