@@ -1600,11 +1600,44 @@ public class TestMethods extends BaseTest{
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    //registered user accessories page navigation test method
 
+    protected void navigateToAccessoriesPageTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
+        //assert accessories link is displayed on navbar
+        assertTrue(registeredUserStationaryAccessoriesPage.isAccessoriesPageLinkDisplayed(), "The accessories page link isn't displayed on navbar");
+        System.out.println("The accessories page link is displayed on navbar" + "\n");
+        registeredUserStationaryAccessoriesPage.clickAccessoriesPageLink();
+    }
 
+    //registered user stationary accessories page navigation test methods
 
+    protected void navigateToStationaryAccessoriesPageLink1Test(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
+        //assert accessories link is displayed on navbar
+        assertTrue(registeredUserStationaryAccessoriesPage.isStationaryAccessoriesPageLink1Displayed(), "The stationary accessories page link1 isn't displayed");
+        System.out.println("The stationary accessories page link is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStationaryAccessoriesPageLink1();
+    }
 
+    protected void navigateToStationaryAccessoriesPageLink2Test(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert accessories link is displayed on navbar
+        assertTrue(registeredUserStationaryAccessoriesPage.isStationaryAccessoriesPageLink2Displayed(), "The stationary accessories page link2 isn't displayed");
+        System.out.println("The accessories page link is displayed on navbar" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStationaryAccessoriesPageLink2();
+    }
+
+    protected void navigateToStationaryAccessoriesPageBoxIconTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert accessories link is displayed on navbar
+        assertTrue(registeredUserStationaryAccessoriesPage.isStationaryAccessoriesPageBoxIconDisplayed(), "The stationary accessories page box icon isn't displayed");
+        System.out.println("The stationary accessories page box icon is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStationaryAccessoriesPageBoxIcon();
+    }
 
 }
