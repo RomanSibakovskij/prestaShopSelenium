@@ -1528,7 +1528,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
         System.out.println("The sort by price 'low to high' menu option is displayed" + "\n");
         registeredUserArtPage.clickPriceLowToHighOption();
-        //assertEquals(registeredUserArtPage.getPriceLowToHighOptionText(), "Price,low to high); // -> assert crashes the test, it doesn't find text
+        //assertEquals(registeredUserArtPage.getPriceLowToHighOptionText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
     }
 
     protected void sortProductsByPriceHighToLowTest(){
@@ -1539,8 +1539,32 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isPriceHighToLowOptionDisplayed(), "The sort by price 'high to low' menu option isn't displayed");
         System.out.println("The sort by price 'high to low' menu option is displayed" + "\n");
         registeredUserArtPage.clickPriceHighToLowOption();
-        //assertEquals(registeredUserArtPage.getPriceHighToLowOptionText(), "Price,high to low); // -> assert crashes the test, it doesn't find text
+        //assertEquals(registeredUserArtPage.getPriceHighToLowOptionText(), "Price,high to low"); // -> assert crashes the test, it doesn't find text
     }
+
+    protected void sortProductsByReferenceAToZTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+
+        registeredUserArtPage.clickSortByDropdownMenu();
+        //assert the sort by reference 'a to z' option is displayed
+        assertTrue(registeredUserArtPage.isReferenceAToZOptionDisplayed(), "The sort by reference 'a to z' menu option isn't displayed");
+        System.out.println("The sort by reference 'a to z' menu option is displayed" + "\n");
+        registeredUserArtPage.clickReferenceAToZOption();
+        //assertEquals(registeredUserArtPage.getReferenceAToZOptionText(), "Reference,a to z"); // -> assert crashes the test, it doesn't find text
+    }
+
+    protected void sortProductsByReferenceZToATest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+
+        registeredUserArtPage.clickSortByDropdownMenu();
+        //assert the sort by reference 'z to a' option is displayed
+        assertTrue(registeredUserArtPage.isReferenceZToAOptionDisplayed(), "The sort by reference 'z to a' menu option isn't displayed");
+        System.out.println("The sort by reference 'z to a' menu option is displayed" + "\n");
+        registeredUserArtPage.clickReferenceZToAOption();
+        //assertEquals(registeredUserArtPage.getReferenceZToAOptionText(), "Reference,z to a"); // -> assert crashes the test, it doesn't find text
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

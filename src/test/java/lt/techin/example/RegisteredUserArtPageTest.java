@@ -393,6 +393,40 @@ public class RegisteredUserArtPageTest extends TestMethods {
         sortProductsByPriceHighToLowTest();
     }
 
+    //Test 015g -> sort products by relevance (a to z) test
+    @Test
+    void sortProductsByRelevanceAToZTests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        sortProductsByReferenceAToZTest();
+    }
+
+    //Test 015h -> sort products by relevance (z to a) test
+    @Test
+    void sortProductsByRelevanceZToATests() {
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+        createNewMaleUserAccountTest(registerPage);
+
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        sortProductsByReferenceZToATest();
+    }
+
 
 
 

@@ -58,6 +58,9 @@ public class RegisteredUserArtPage extends BasePage{
     @FindBy(css = "li:nth-of-type(3) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink3;
 
+    @FindBy(xpath = "//section[@id='js-active-search-filters']/ul//i[.='\uE5CD']")
+    private WebElement removeFilterIcon;
+
     //slider
 
     @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
@@ -275,6 +278,14 @@ public class RegisteredUserArtPage extends BasePage{
         dimensionLink3.click();
     }
 
+    //remove search filter
+
+    public void clickRemoveSearchFilter(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        wait.until(ExpectedConditions.visibilityOf(removeFilterIcon));
+        removeFilterIcon.click();
+    }
+
     //dropdown menu methods
 
     public void clickSortByDropdownMenu(){
@@ -329,6 +340,20 @@ public class RegisteredUserArtPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(priceHighToLowOption));
         Actions actions = new Actions(driver);
         actions.moveToElement(priceHighToLowOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickReferenceAToZOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(referenceAToZOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(referenceAToZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickReferenceZToAOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(referenceZToAOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(referenceZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
 
