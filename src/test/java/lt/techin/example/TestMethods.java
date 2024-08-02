@@ -1717,7 +1717,7 @@ public class TestMethods extends BaseTest{
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccRuledPaperFilterMessage(), "Paper Type: Ruled"); -> assert crashes the test
         //remove search filter
-        //registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
     }
 
@@ -1728,6 +1728,34 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesRuledPaperLinkDisplayed(), "The stationary accessories 'ruled' link isn't displayed");
         System.out.println("The stationary accessories page 'ruled' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccRuledPaperLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccRuledPaperFilterMessage(), "Paper Type: Ruled"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterProductByPaperType2BoxIconTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesPlainPaperBoxIconDisplayed(), "The stationary accessories 'plain' box icon isn't displayed");
+        System.out.println("The stationary accessories page 'plain' box icon is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccPlainPaperBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccRuledPaperFilterMessage(), "Paper Type: Ruled"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterProductByPaperType2LinkTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert product 'new product' link is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesPlainPaperLinkDisplayed(), "The stationary accessories 'plain' link isn't displayed");
+        System.out.println("The stationary accessories page 'plain' link is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccPlainPaperLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccRuledPaperFilterMessage(), "Paper Type: Ruled"); -> assert crashes the test
         //remove search filter

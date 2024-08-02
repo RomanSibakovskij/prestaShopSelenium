@@ -28,8 +28,14 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement stAccessoriesInStockLink;
     @FindBy(css = "section:nth-of-type(2) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement stAccessoriesNewProductLink;
-    @FindBy(css = "section:nth-of-type(4) > .collapse ._gray-darker.js-search-link.search-link")
+    @FindBy(css = "li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement stAccessoriesRuledPaperLink;
+    @FindBy(css = "li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement stAccessoriesPlainPaperLink;
+    @FindBy(css = "li:nth-of-type(3) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement stAccessoriesSquaredPaperLink;
+    @FindBy(css = "li:nth-of-type(4) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement stAccessoriesDottedPaperLink;
 
     //price slider
     @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
@@ -44,13 +50,13 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement stAccessoriesInStockBoxIcon;
     @FindBy(css = "section:nth-of-type(2) > .collapse .ps-shown-by-js")
     private WebElement stAccessoriesNewProductBoxIcon;
-    @FindBy(css = "section:nth-of-type(4) > .collapse .ps-shown-by-js")
+    @FindBy(css = "li:nth-of-type(1) > .facet-label > .custom-checkbox")
     private WebElement stAccessoriesRuledPaperBoxIcon;
-    @FindBy(css = "section:nth-of-type(5) > .collapse .ps-shown-by-js")
+    @FindBy(css = "li:nth-of-type(2) > .facet-label > .custom-checkbox")
     private WebElement stAccessoriesPlainPaperBoxIcon;
-    @FindBy(css = "section:nth-of-type(6) > .collapse .ps-shown-by-js")
+    @FindBy(css = "li:nth-of-type(3) > .facet-label > .custom-checkbox")
     private WebElement stAccessoriesSquaredPaperBoxIcon;
-    @FindBy(css = "section:nth-of-type(7) > .collapse .ps-shown-by-js")
+    @FindBy(css = "li:nth-of-type(4) > .facet-label > .custom-checkbox")
     private WebElement stAccessoriesDottedPaperBoxIcon;
 
     //filter messages
@@ -62,6 +68,12 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement stAccPriceFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Paper Type: Ruled')]")
     private WebElement stAccRuledPaperFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Plain')]")
+    private WebElement stAccPlainPaperFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Squared')]")
+    private WebElement stAccSquaredPaperFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Dotted')]")
+    private WebElement stAccDottedPaperFilterMessage;
 
 
 
@@ -144,6 +156,22 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         stAccessoriesRuledPaperLink.click();
     }
 
+    public void clickStAccPlainPaperBoxIcon(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesPlainPaperBoxIcon));
+            stAccessoriesPlainPaperBoxIcon.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickStAccPlainPaperLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(stAccessoriesPlainPaperLink));
+        stAccessoriesPlainPaperLink.click();
+    }
+
     //slider price adjustment method
 
     public void setStAccessoriesPriceSliderValue(double price){
@@ -219,6 +247,24 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     }
     public boolean isStAccessoriesRuledPaperLinkDisplayed(){
         return stAccessoriesRuledPaperLink.isDisplayed();
+    }
+    public boolean isStAccessoriesPlainPaperBoxIconDisplayed(){
+        return stAccessoriesPlainPaperBoxIcon.isDisplayed();
+    }
+    public boolean isStAccessoriesPlainPaperLinkDisplayed(){
+        return stAccessoriesPlainPaperLink.isDisplayed();
+    }
+    public boolean isStAccessoriesSquaredPaperBoxIconDisplayed(){
+        return stAccessoriesSquaredPaperBoxIcon.isDisplayed();
+    }
+    public boolean isStAccessoriesSquaredPaperLinkDisplayed(){
+        return stAccessoriesSquaredPaperLink.isDisplayed();
+    }
+    public boolean isStAccessoriesDottedPaperBoxIconDisplayed(){
+        return stAccessoriesDottedPaperBoxIcon.isDisplayed();
+    }
+    public boolean isStAccessoriesDottedPaperLinkDisplayed(){
+        return stAccessoriesDottedPaperBoxIcon.isDisplayed();
     }
 
     //filter text getters
