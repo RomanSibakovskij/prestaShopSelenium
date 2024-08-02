@@ -142,4 +142,22 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToStationaryAccessoriesPageLink1Test();
         filterProductBySelectionsLinkTest();
     }
+
+    //Test 019 -> filter stationary accessories by price slider  (element click intercepted)
+    @Test
+    void filterProductByPriceSliderTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+        filterProductByPriceSliderTest();
+    }
 }

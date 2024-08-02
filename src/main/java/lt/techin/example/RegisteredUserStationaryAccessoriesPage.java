@@ -1,8 +1,10 @@
 package lt.techin.example;
 
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,7 +30,11 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     @FindBy(css = "section:nth-of-type(2) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement stAccessoriesNewProductLink;
 
+    //price slider
+    @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
+    private WebElement stAccessoriesPriceSliderLine;
 
+    //search filter remover
     @FindBy(xpath = "//section[@id='js-active-search-filters']/ul//i[.='\uE5CD']")
     private WebElement removeFilterIcon;
 
@@ -52,6 +58,8 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement stAccAvailabilityFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
     private WebElement stAccSelectionsFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Price: $12.00 - $13.00')]")
+    private WebElement stAccPriceFilterMessage;
 
 
 
@@ -118,6 +126,38 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         stAccessoriesNewProductLink.click();
     }
 
+    //slider price adjustment method
+
+    public void setStAccessoriesPriceSliderValue(double price){
+        // Validate the price value
+        if (price < 12 || price > 13) {
+            throw new IllegalArgumentException("Price must be between 12 and 13 dollars.");
+        }
+
+        // Get the size and location of the slider
+        int sliderWidth = stAccessoriesPriceSliderLine.getSize().getWidth();
+        Point sliderLocation = stAccessoriesPriceSliderLine.getLocation();
+
+        // Price range
+        double minPrice = 12.0;
+        double maxPrice = 13.0;
+        double range = maxPrice - minPrice;
+
+        // target position (percentage of the slider width)
+        double percentage = (price - minPrice) / range;
+        int targetX = sliderLocation.getX() + (int) (sliderWidth * percentage);
+        int targetY = sliderLocation.getY() + (stAccessoriesPriceSliderLine.getSize().getHeight() / 2); // Center vertically
+
+        // Perform the drag and drop action
+        Actions actions = new Actions(driver);
+        actions.clickAndHold(stAccessoriesPriceSliderLine) // Click and hold on the slider
+                .moveByOffset(targetX - sliderLocation.getX(), targetY - sliderLocation.getY()) // Move to the target position
+                .release() // Release the mouse
+                .build()
+                .perform();
+    }
+
+
 
     //remove search filter
 
@@ -153,6 +193,9 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     public boolean isStAccessoriesNewProductLinkDisplayed(){
         return stAccessoriesNewProductLink.isDisplayed();
     }
+    public boolean isStAccessoriesPriceSliderDisplayed(){
+        return stAccessoriesPriceSliderLine.isDisplayed();
+    }
 
     //filter text getters
 
@@ -161,5 +204,8 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     }
     public String getStAccSelectionsFilterMessage(){
         return stAccSelectionsFilterMessage.getText();
+    }
+    public String getStAccPriceFilterMessage(){
+        return stAccPriceFilterMessage.getText();
     }
 }
