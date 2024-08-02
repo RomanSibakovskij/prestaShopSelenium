@@ -96,6 +96,61 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         filterHmAccProductByAvailabilityLinkTest();
     }
 
+    //Test 027 -> filter home accessories products by selections (box icon) test
+    @Test
+    void filterHmAccProductBySelectionsBoxIconTests(){
+        clickOnSignUpTest();
 
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductBySelectionsBoxIconTest();
+    }
+
+    //Test 027a -> filter home accessories products by selections (link) test
+    @Test
+    void filterHmAccProductBySelectionsLinkTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductBySelectionsLinkTest();
+    }
+
+    //Test 028 -> filter home accessories products by price slider value test
+    @Test
+    void filterHmAccProductByPriceValueTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByPriceSliderTest();
+    }
 
 }

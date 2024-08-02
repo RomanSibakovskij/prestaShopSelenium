@@ -1651,6 +1651,8 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickStAccInStockBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterProductByAvailabilityLinkTest(){
@@ -1677,7 +1679,7 @@ public class TestMethods extends BaseTest{
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSelectionsFilterMessage(), "Selections: New product"); -> assert crashes the test
         //remove search filter
-        //registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
     }
 
@@ -1979,10 +1981,50 @@ public class TestMethods extends BaseTest{
         System.out.println("The home accessories page 'in stock' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesInStockBoxIcon();
         //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterHmAccProductBySelectionsLinkTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'in stock' link is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesNewProductLinkDisplayed(), "The home accessories 'new product' link isn't displayed");
+        System.out.println("The home accessories page 'new product' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesNewProductLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccAvailabilityFilterMessage(), "Selections: New product"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterHmAccProductBySelectionsBoxIconTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesNewProductBoxIconDisplayed(), "The home accessories 'new product' link isn't displayed");
+        System.out.println("The home accessories page 'new product' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesNewProductBoxIcon();
+        //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSelectionsFilterMessage(), "Selections: New product"); -> assert crashes the test
         //remove search filter
-        //registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
 
+    }
+
+    protected void filterHmAccProductByPriceSliderTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'new product' link is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesPriceSliderDisplayed(), "The stationary accessories price slider isn't displayed");
+        System.out.println("The stationary accessories page price slider is displayed" + "\n");
+        double targetPrice = 25.0;
+        registeredUserHomeAccessoriesPage.setHmAccessoriesPriceSliderValue(targetPrice);
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccPriceFilterMessage(), "Price: $12.00 - $13.00"); -> assert crashes the test
     }
 
 
