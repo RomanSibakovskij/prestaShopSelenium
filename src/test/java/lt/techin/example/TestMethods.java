@@ -1365,10 +1365,27 @@ public class TestMethods extends BaseTest{
     protected void filterProductsByPriceSliderTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by price slider is displayed
-        assertTrue(registeredUserArtPage.isPricesliderDisplayed(), "The price slider isn't displayed");
+        assertTrue(registeredUserArtPage.isPriceSliderDisplayed(), "The price slider isn't displayed");
         System.out.println("The price slider is displayed");
         double targetPrice = 21.0;
         registeredUserArtPage.setPriceSliderValue(targetPrice);
+    }
+
+    protected void filterProductsByCompositionLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserArtPage.isCompositionLinkPresent(), "The 'Matt paper' link isn't displayed");
+        System.out.println("The 'Mat paper' link is displayed" + "\n");
+        registeredUserArtPage.clickCompositionLink();
+        //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Composition: Matt paper");
+    }
+
+    protected void filterProductsByCompositionBoxIconLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by new product choice is displayed
+        assertTrue(registeredUserArtPage.isCompositionBoxIconLinkDisplayed(), "The 'Matt paper' box icon link isn't displayed");
+        System.out.println("The 'Matt paper' box icon link is displayed" + "\n");
+        registeredUserArtPage.clickCompositionBoxIconLink();
     }
 
 

@@ -21,6 +21,9 @@ public class RegisteredUserArtPage extends BasePage{
     @FindBy(css = "section:nth-of-type(2) > .collapse .ps-shown-by-js")
     private WebElement newProductBoxIconLink;
 
+    @FindBy(css = "section:nth-of-type(4) > .collapse .ps-shown-by-js")
+    private WebElement compositionBoxIconLink;
+
     //links
     @FindBy(css = "li:nth-of-type(3) > .dropdown-item")
     private WebElement artPageLink;
@@ -30,6 +33,9 @@ public class RegisteredUserArtPage extends BasePage{
 
     @FindBy(css = "section:nth-of-type(2) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement newProductLink;
+
+    @FindBy(css = "section:nth-of-type(4) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement compositionLink;
 
     //slider
 
@@ -120,6 +126,22 @@ public class RegisteredUserArtPage extends BasePage{
                 .perform();
     }
 
+    public void clickCompositionBoxIconLink(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(compositionBoxIconLink));
+            compositionBoxIconLink.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickCompositionLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        wait.until(ExpectedConditions.visibilityOf(compositionLink));
+        compositionLink.click();
+    }
+
 
     //assert methods
     public boolean isArtPageLinkPresent(){
@@ -142,8 +164,16 @@ public class RegisteredUserArtPage extends BasePage{
         return newProductLink.isDisplayed();
     }
 
-    public boolean isPricesliderDisplayed(){
+    public boolean isPriceSliderDisplayed(){
         return priceSliderLine.isDisplayed();
+    }
+
+    public boolean isCompositionBoxIconLinkDisplayed(){
+        return compositionBoxIconLink.isDisplayed();
+    }
+
+    public boolean isCompositionLinkPresent(){
+        return compositionBoxIconLink.isDisplayed();
     }
 
     //getter

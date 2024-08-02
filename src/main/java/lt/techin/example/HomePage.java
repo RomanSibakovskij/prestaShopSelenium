@@ -33,13 +33,6 @@ public class HomePage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(signUpLink));
         signUpLink.click();
     }
-    // for chrome browser
-//    public void clickSignOutLink() {
-//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", signOutLink);
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("document.querySelector('a[href=\"http://192.168.8.186/?mylogout=\"]').click();");
-//
-//    }
 
     public void clickSignOutLink() {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
