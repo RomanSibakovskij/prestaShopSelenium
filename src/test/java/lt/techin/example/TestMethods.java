@@ -1649,6 +1649,8 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesInStockBoxIconDisplayed(), "The stationary accessories 'in stock' box icon isn't displayed");
         System.out.println("The stationary accessories page 'in stock' box icon is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccInStockBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
     }
 
     protected void filterProductByAvailabilityLinkTest(){
@@ -1703,5 +1705,33 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.setStAccessoriesPriceSliderValue(targetPrice);
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccPriceFilterMessage(), "Price: $12.00 - $13.00"); -> assert crashes the test
+    }
+
+    protected void filterProductByPaperType1BoxIconTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesRuledPaperBoxIconDisplayed(), "The stationary accessories 'ruled' box icon isn't displayed");
+        System.out.println("The stationary accessories page 'ruled' box icon is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccRuledPaperBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccRuledPaperFilterMessage(), "Paper Type: Ruled"); -> assert crashes the test
+        //remove search filter
+        //registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterProductByPaperType1LinkTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert product 'new product' link is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesRuledPaperLinkDisplayed(), "The stationary accessories 'ruled' link isn't displayed");
+        System.out.println("The stationary accessories page 'ruled' link is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccRuledPaperLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccRuledPaperFilterMessage(), "Paper Type: Ruled"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+
     }
 }

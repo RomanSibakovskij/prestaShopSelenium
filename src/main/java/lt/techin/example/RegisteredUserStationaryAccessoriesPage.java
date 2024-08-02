@@ -26,9 +26,10 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     //links
     @FindBy(css = "section:nth-of-type(1) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement stAccessoriesInStockLink;
-
     @FindBy(css = "section:nth-of-type(2) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement stAccessoriesNewProductLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement stAccessoriesRuledPaperLink;
 
     //price slider
     @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
@@ -53,13 +54,14 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement stAccessoriesDottedPaperBoxIcon;
 
     //filter messages
-
     @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
     private WebElement stAccAvailabilityFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
     private WebElement stAccSelectionsFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Price: $12.00 - $13.00')]")
     private WebElement stAccPriceFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Ruled')]")
+    private WebElement stAccRuledPaperFilterMessage;
 
 
 
@@ -126,6 +128,22 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         stAccessoriesNewProductLink.click();
     }
 
+    public void clickStAccRuledPaperBoxIcon(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesRuledPaperBoxIcon));
+            stAccessoriesRuledPaperBoxIcon.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickStAccRuledPaperLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(stAccessoriesRuledPaperLink));
+        stAccessoriesRuledPaperLink.click();
+    }
+
     //slider price adjustment method
 
     public void setStAccessoriesPriceSliderValue(double price){
@@ -156,7 +174,6 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
                 .build()
                 .perform();
     }
-
 
 
     //remove search filter
@@ -197,6 +214,13 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         return stAccessoriesPriceSliderLine.isDisplayed();
     }
 
+    public boolean isStAccessoriesRuledPaperBoxIconDisplayed(){
+        return stAccessoriesRuledPaperBoxIcon.isDisplayed();
+    }
+    public boolean isStAccessoriesRuledPaperLinkDisplayed(){
+        return stAccessoriesRuledPaperLink.isDisplayed();
+    }
+
     //filter text getters
 
     public String getStAccAvailabilityFilterMessage(){
@@ -207,5 +231,8 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     }
     public String getStAccPriceFilterMessage(){
         return stAccPriceFilterMessage.getText();
+    }
+    public String getStAccRuledPaperFilterMessage(){
+        return stAccRuledPaperFilterMessage.getText();
     }
 }

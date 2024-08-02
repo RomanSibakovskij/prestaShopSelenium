@@ -160,4 +160,40 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToStationaryAccessoriesPageLink1Test();
         filterProductByPriceSliderTest();
     }
+
+    //Test 020 -> filter stationary accessories by selections box icon click  (element click intercepted)
+    @Test
+    void filterByPaperType1BoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+        filterProductByPaperType1BoxIconTest();
+    }
+
+    //Test 020a -> filter stationary accessories by selections link click
+    @Test
+    void filterByPaperType1LinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+        filterProductByPaperType1LinkTest();
+    }
 }
