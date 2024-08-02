@@ -339,7 +339,25 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToAccessoriesPageTest();
         navigateToStationaryAccessoriesPageLink1Test();
 
-        clickStAccessoriesSortByDropdownMenuTest();
         sortStAccessoriesProductsBySalesTest();
+    }
+
+    //Test 024b -> sort stationary accessories by relevance test
+    @Test
+    void clickSortByRelevanceTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+
+        sortStAccessoriesProductsByRelevanceTest();
     }
 }

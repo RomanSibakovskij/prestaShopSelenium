@@ -267,7 +267,6 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     public void clickStSortByDropdownMenu(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesSortByDropdownMenu));
-
         Actions actions = new Actions(driver);
         actions.moveToElement(stAccessoriesSortByDropdownMenu).clickAndHold().pause(Duration.ofSeconds(2)).release().perform();
 
@@ -283,7 +282,7 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     }
 
 
-    public void clickRelevanceOption(){
+    public void clickStAccessoriesRelevanceOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesRelevanceOption));
         Actions actions = new Actions(driver);

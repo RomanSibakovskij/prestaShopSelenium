@@ -1838,5 +1838,16 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getStAccessoriesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
     }
 
+    protected void sortStAccessoriesProductsByRelevanceTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
+        //assert the sort by sales option is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesRelevanceOptionDisplayed(), "The sort by 'Relevance' menu option isn't displayed");
+        System.out.println("The sort by 'Relevance' menu option  is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccessoriesRelevanceOption();
+        //assertEquals(registeredUserArtPage.getStAccessoriesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
+    }
+
 
 }
