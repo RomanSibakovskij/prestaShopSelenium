@@ -1333,6 +1333,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isInStockBoxIconLinkPresent(), "The 'In stock' box icon link isn't displayed");
         System.out.println("The 'In stock' box icon link is displayed" + "\n");
         registeredUserArtPage.clickInStockBoxIconLink();
+        //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
     }
 
     protected void filterProductsByInStockLinkTest(){
@@ -1350,6 +1351,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isNewProductBoxIconLinkPresent(), "The 'New product' box icon link isn't displayed");
         System.out.println("The 'New product' box icon link is displayed" + "\n");
         registeredUserArtPage.clickNewProductBoxIconLink();
+        //assertEquals(registeredUserArtPage.getSelectionsFilterMessage(), "Selections: New product");
     }
 
     protected void filterProductsByNewProductLinkTest(){
@@ -1386,6 +1388,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isCompositionBoxIconLinkDisplayed(), "The 'Matt paper' box icon link isn't displayed");
         System.out.println("The 'Matt paper' box icon link is displayed" + "\n");
         registeredUserArtPage.clickCompositionBoxIconLink();
+        //assertEquals(registeredUserArtPage.getCompositionFilterMessage(), "Composition: Matt paper");
     }
 
     protected void filterProductsByBrandLinkTest(){
@@ -1403,6 +1406,8 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isBrandBoxIconLinkDisplayed(), "The 'Graphic Corner' box icon link isn't displayed");
         System.out.println("The 'Graphic Corner' box icon link is displayed" + "\n");
         registeredUserArtPage.clickCompositionBoxIconLink();
+        //assertEquals(registeredUserArtPage.getBrandFilterMessage(), "Brand: Graphic Corner");
+
     }
 
     protected void filterProductsByDimension1LinkTest(){
@@ -1411,7 +1416,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isDimensionLink1Present(), "The '40x60 cm' link isn't displayed");
         System.out.println("The '40x60 cm' link is displayed" + "\n");
         registeredUserArtPage.clickDimension1Link();
-        //assertEquals(registeredUserArtPage.getBrandFilterMessage(), "Brand: Graphic Corner");
+        //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 40x60cm");
     }
 
     protected void filterProductsByDimension1BoxIconLinkTest(){
@@ -1420,6 +1425,25 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserArtPage.isDimensionBoxIconLink1Present(), "The '40x60 cm' box icon link isn't displayed");
         System.out.println("The '40x60 cm' box icon link is displayed" + "\n");
         registeredUserArtPage.clickDimension1BoxIconLink();
+        //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 40x60cm");
+    }
+
+    protected void filterProductsByDimension2LinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserArtPage.isDimensionLink2Present(), "The '60x90 cm' link isn't displayed");
+        System.out.println("The '60x90 cm' link is displayed" + "\n");
+        registeredUserArtPage.clickDimension2Link();
+        //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 60x90cm");
+    }
+
+    protected void filterProductsByDimension2BoxIconLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert the filter by new product choice is displayed
+        assertTrue(registeredUserArtPage.isDimensionBoxIconLink2Present(), "The '60x90 cm' box icon link isn't displayed");
+        System.out.println("The '60x90 cm' box icon link is displayed" + "\n");
+        registeredUserArtPage.clickDimension2BoxIconLink();
+        //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 60x90cm");
     }
 
 

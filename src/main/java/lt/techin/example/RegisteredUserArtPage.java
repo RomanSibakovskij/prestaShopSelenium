@@ -56,7 +56,7 @@ public class RegisteredUserArtPage extends BasePage{
     @FindBy(css = "section:nth-of-type(6) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink1;
 
-    @FindBy(css = "section:nth-of-type(7) > .collapse ._gray-darker.js-search-link.search-link")
+    @FindBy(css = "li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink2;
 
     @FindBy(css = "section:nth-of-type(8) > .collapse ._gray-darker.js-search-link.search-link")
