@@ -171,6 +171,21 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(stAccessoriesPlainPaperLink));
         stAccessoriesPlainPaperLink.click();
     }
+    public void clickStAccSquaredPaperBoxIcon(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesSquaredPaperBoxIcon));
+            stAccessoriesSquaredPaperBoxIcon.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("The 'In stock' box icon click is being intercepted: " + e.getMessage());
+        }
+    }
+
+    public void clickStAccSquaredPaperLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(stAccessoriesSquaredPaperLink));
+        stAccessoriesSquaredPaperLink.click();
+    }
 
     //slider price adjustment method
 

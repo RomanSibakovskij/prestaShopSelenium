@@ -161,7 +161,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         filterProductByPriceSliderTest();
     }
 
-    //Test 020 -> filter stationary accessories by selections box icon click  (element click intercepted)
+    //Test 020 -> filter stationary accessories by ruled paper type box icon click
     @Test
     void filterByPaperType1BoxIconTest(){
         clickOnSignUpTest();
@@ -179,7 +179,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         filterProductByPaperType1BoxIconTest();
     }
 
-    //Test 020a -> filter stationary accessories by selections link click
+    //Test 020a -> filter stationary accessories by ruled paper type link click
     @Test
     void filterByPaperType1LinkTest(){
         clickOnSignUpTest();
@@ -197,7 +197,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         filterProductByPaperType1LinkTest();
     }
 
-    //Test 021 -> filter stationary accessories by selections box icon click  (element click intercepted)
+    //Test 021 -> filter stationary accessories by plain paper type box icon click
     @Test
     void filterByPaperType2BoxIconTest(){
         clickOnSignUpTest();
@@ -215,7 +215,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         filterProductByPaperType2BoxIconTest();
     }
 
-    //Test 021a -> filter stationary accessories by selections link click
+    //Test 021a -> filter stationary accessories by plain paper type link click
     @Test
     void filterByPaperType2LinkTest(){
         clickOnSignUpTest();
@@ -231,5 +231,41 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
         navigateToAccessoriesPageTest();
         navigateToStationaryAccessoriesPageLink1Test();
         filterProductByPaperType2LinkTest();
+    }
+
+    //Test 022 -> filter stationary accessories by squared paper type box icon click
+    @Test
+    void filterByPaperType3BoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+        filterProductByPaperType3BoxIconTest();
+    }
+
+    //Test 022a -> filter stationary accessories by squared paper type link click
+    @Test
+    void filterByPaperType3LinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+        filterProductByPaperType3LinkTest();
     }
 }

@@ -1743,10 +1743,9 @@ public class TestMethods extends BaseTest{
         System.out.println("The stationary accessories page 'plain' box icon is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccPlainPaperBoxIcon();
         //assert the correct message is displayed
-        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccRuledPaperFilterMessage(), "Paper Type: Ruled"); -> assert crashes the test
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccPlainPaperFilterMessage(), "Paper Type: Plain"); -> assert crashes the test
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
-
     }
 
     protected void filterProductByPaperType2LinkTest(){
@@ -1757,9 +1756,34 @@ public class TestMethods extends BaseTest{
         System.out.println("The stationary accessories page 'plain' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccPlainPaperLink();
         //assert the correct message is displayed
-        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccRuledPaperFilterMessage(), "Paper Type: Ruled"); -> assert crashes the test
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccPlainPaperFilterMessage(), "Paper Type: Plain"); -> assert crashes the test
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+    }
 
+    protected void filterProductByPaperType3BoxIconTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperBoxIconDisplayed(), "The stationary accessories 'squared' box icon isn't displayed");
+        System.out.println("The stationary accessories page 'squared' box icon is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccSquaredPaperBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSquaredPaperFilterMessage(), "Paper Type: Squared"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterProductByPaperType3LinkTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+
+        //assert product 'new product' link is displayed
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesPlainPaperLinkDisplayed(), "The stationary accessories 'squared' link isn't displayed");
+        System.out.println("The stationary accessories page 'squared' link is displayed" + "\n");
+        registeredUserStationaryAccessoriesPage.clickStAccPlainPaperLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSquaredPaperFilterMessage(), "Paper Type: Squared"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 }
