@@ -289,42 +289,42 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         actions.moveToElement(stAccessoriesRelevanceOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
-    public void clickNameAToZOption(){
+    public void clickStAccessoriesNameAToZOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesNameAtoZOption));
         Actions actions = new Actions(driver);
         actions.moveToElement(stAccessoriesNameAtoZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
-    public void clickNameZToAOption(){
+    public void clickStAccessoriesNameZToAOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesNameZToAOption));
         Actions actions = new Actions(driver);
         actions.moveToElement(stAccessoriesNameZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
-    public void clickPriceLowToHighOption(){
+    public void clickStAccessoriesPriceLowToHighOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesPriceLowToHighOption));
         Actions actions = new Actions(driver);
         actions.moveToElement(stAccessoriesPriceLowToHighOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
-    public void clickPriceHighToLowOption(){
+    public void clickStAccessoriesPriceHighToLowOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesPriceHighToLowOption));
         Actions actions = new Actions(driver);
         actions.moveToElement(stAccessoriesPriceHighToLowOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
-    public void clickReferenceAToZOption(){
+    public void clickStAccessoriesReferenceAToZOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesReferenceAToZOption));
         Actions actions = new Actions(driver);
         actions.moveToElement(stAccessoriesReferenceAToZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
-    public void clickReferenceZToAOption(){
+    public void clickStAccessoriesReferenceZToAOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesReferenceZToAOption));
         Actions actions = new Actions(driver);

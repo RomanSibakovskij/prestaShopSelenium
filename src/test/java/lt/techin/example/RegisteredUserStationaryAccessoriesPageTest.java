@@ -360,4 +360,23 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
         sortStAccessoriesProductsByRelevanceTest();
     }
+
+    //Test 024c -> sort stationary accessories by name (A to Z) test
+    @Test
+    void clickSortByNameAToZTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+
+        sortStAccessoriesProductsByNameAToZTest();
+    }
 }
