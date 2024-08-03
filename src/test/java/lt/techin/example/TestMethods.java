@@ -1321,8 +1321,8 @@ public class TestMethods extends BaseTest{
     protected void navigateToArtPageTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
-        assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed");
-        System.out.println("The 'Art' link is displayed" + "\n");
+        assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
+        System.out.println("The 'Art' link is displayed on navbar" + "\n");
         registeredUserArtPage.clickArtLink();
     }
 
@@ -2283,6 +2283,18 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickHmAccessoriesReferenceZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //men clothes page test methods
+
+    protected void navigateToClothesPageTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert 'Clothes' link is displayed on navbar
+        assertTrue(registeredUserMenClothesPage.isClothesPageLinkDisplayed(), "The 'Clothes' link isn't displayed on navbar");
+        System.out.println("The 'Clothes' link is displayed on navbar" + "\n");
+        registeredUserMenClothesPage.clickOnClothesPageLink();
     }
 
 }
