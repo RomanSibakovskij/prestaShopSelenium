@@ -29,6 +29,8 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccessoriesWhiteColorLink;
     @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement hmAccessoriesBlackColorLink;
+    @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement hmAccessoriesCeramicLink;
 
     //icons
     @FindBy(css = "section:nth-of-type(1) > .collapse .custom-checkbox")
@@ -39,6 +41,11 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccessoriesWhiteColorBoxIcon;
     @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
     private WebElement hmAccessoriesBlackColorBoxIcon;
+    @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(1) > .facet-label > .custom-checkbox")
+    private WebElement hmAccessoriesCeramicBoxIcon;
+    @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
+    private WebElement hmAccessoriesPolyesterBoxIcon;
+
 
     //price slider
     @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
@@ -59,6 +66,8 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccWhiteColorFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Color: Black')]")
     private WebElement hmAccBlackColorFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Composition: Ceramic')]")
+    private WebElement hmAccCeramicFilterMessage;
 
     public RegisteredUserHomeAccessoriesPage(WebDriver driver) {
         super(driver);
@@ -132,6 +141,18 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
         wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesBlackColorBoxIcon));
         hmAccessoriesBlackColorBoxIcon.click();
+    }
+
+    public void clickHomeAccessoriesCeramicLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesCeramicLink));
+        hmAccessoriesCeramicLink.click();
+    }
+
+    public void clickHomeAccessoriesCeramicBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesCeramicBoxIcon));
+        hmAccessoriesCeramicBoxIcon.click();
     }
 
     //slider price adjustment method
@@ -210,6 +231,12 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public boolean isHmAccessoriesBlackBoxIconDisplayed(){
         return hmAccessoriesBlackColorBoxIcon.isDisplayed();
     }
+    public boolean isHmAccessoriesCeramicLinkDisplayed(){
+        return hmAccessoriesCeramicLink.isDisplayed();
+    }
+    public boolean isHmAccessoriesCeramicBoxIconDisplayed(){
+        return hmAccessoriesCeramicBoxIcon.isDisplayed();
+    }
 
     //filter message getters
     public String getHmAccAvailabilityFilterMessage(){
@@ -223,6 +250,6 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     }
     public String getHmAccWhiteColorFilterMessage(){ return hmAccWhiteColorFilterMessage.getText();}
     public String getHmAccBlackColorFilterMessage(){ return hmAccBlackColorFilterMessage.getText();}
-
+    public String getHmAccCeramicFilterMessage(){ return hmAccCeramicFilterMessage.getText();}
 }
 

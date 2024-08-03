@@ -210,7 +210,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         filterHmAccProductByBlackColorBoxIconTest();
     }
 
-    //Test 030a -> filter home accessories products by black color (link) test 
+    //Test 030a -> filter home accessories products by black color (link) test
     @Test
     void filterHmAccProductByBlackColorLinkTests(){
         clickOnSignUpTest();
@@ -227,6 +227,44 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         navigateToHomeAccessoriesPageLink1Test();
 
         filterHmAccProductByBlackColorLinkTest();
+    }
+
+    //Test 031 -> filter home accessories products by composition -> ceramic test
+    @Test
+    void filterHmAccProductByCeramicBoxIconTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByCeramicBoxIconTest();
+    }
+
+    //Test 031a -> filter home accessories products by composition -> ceramic (link) test
+    @Test
+    void filterHmAccProductByCeramicLinkTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByCeramicLinkTest();
     }
 
 }

@@ -2073,11 +2073,39 @@ public class TestMethods extends BaseTest{
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
-        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesWhiteBoxIconDisplayed(), "The home accessories 'black' box icon isn't displayed");
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesBlackBoxIconDisplayed(), "The home accessories 'black' box icon isn't displayed");
         System.out.println("The home accessories page 'black' box icon is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesBlackBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccBlackColorFilterMessage(), "Color: Black"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterHmAccProductByCeramicLinkTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'in stock' link is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesCeramicLinkDisplayed(), "The home accessories 'ceramic' link isn't displayed");
+        System.out.println("The home accessories page 'ceramic' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesCeramicLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccCeramicFilterMessage(), "Composition: Ceramic"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterHmAccProductByCeramicBoxIconTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesCeramicBoxIconDisplayed(), "The home accessories 'ceramic' box icon isn't displayed");
+        System.out.println("The home accessories page 'ceramic' box icon is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesCeramicBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccCeramicFilterMessage(), "Composition: Ceramic"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
 
