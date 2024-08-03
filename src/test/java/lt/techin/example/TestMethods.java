@@ -2321,4 +2321,30 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickOnMenClothesPageBoxIcon();
     }
 
+    //men clothes filter by test methods
+
+    protected void filterMenClothesByInStockBoxIconTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesInStockBoxIconDisplayed(), "The 'In stock' box icon link isn't displayed");
+        System.out.println("The 'In stock' box icon link is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesInStockBoxIcon();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getMenClothesAvailabilityFilterMessage()), "Availability: In stock");
+    }
+
+    protected void filterMenClothesByInStockLinkTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesInStockLinkDisplayed(), "The 'In stock' link isn't displayed");
+        System.out.println("The 'In stock' link is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesInStockLink();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getMenClothesAvailabilityFilterMessage(), "Availability: In stock");
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
+    }
+
+
+
 }

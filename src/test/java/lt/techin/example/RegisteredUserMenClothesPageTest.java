@@ -34,7 +34,6 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
 
         navigateToClothesPageTest();
-
         navigateToMenClothesPageLink1Test();
     }
 
@@ -52,7 +51,6 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
 
         navigateToClothesPageTest();
-
         navigateToMenClothesPageLink2Test();
     }
 
@@ -70,8 +68,43 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
 
         navigateToClothesPageTest();
-
         navigateToMenClothesPageBoxIconTest();
+    }
+
+    //Test 037 -> filter clothes by availability (box icon) test
+    @Test
+    void filterMenClothesByAvailabilityBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        filterMenClothesByInStockBoxIconTest();
+    }
+
+    //Test 037a -> filter clothes by availability (link) test
+    @Test
+    void filterMenClothesByAvailabilityLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        filterMenClothesByInStockLinkTest();
     }
 
 

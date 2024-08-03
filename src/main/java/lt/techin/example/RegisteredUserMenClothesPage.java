@@ -20,8 +20,23 @@ public class RegisteredUserMenClothesPage extends BasePage{
     @FindBy(css = "a[title='Men']")
     private WebElement menClothesPageBoxIcon;
 
-    //links
+    //search filter remover
+    @FindBy(xpath = "//section[@id='js-active-search-filters']/ul//i[.='\uE5CD']")
+    private WebElement removeFilterIcon;
 
+    //links
+    @FindBy(css = "section:nth-of-type(1) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement menClothesInStockLink;
+
+
+    //box icons
+    @FindBy(css = "section:nth-of-type(1) > .collapse .custom-checkbox")
+    private WebElement menClothesInStockBoxIcon;
+
+
+    //filter messages
+    @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
+    private WebElement menClothesAvailabilityFilterMessage;
 
     public RegisteredUserMenClothesPage(WebDriver driver) {
         super(driver);
@@ -53,12 +68,44 @@ public class RegisteredUserMenClothesPage extends BasePage{
         menClothesPageBoxIcon.click();
     }
 
+    // links click methods
+
+    public void clickMenClothesInStockLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesInStockLink));
+        menClothesInStockLink.click();
+    }
+
+    public void clickMenClothesInStockBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesInStockBoxIcon));
+        menClothesInStockBoxIcon.click();
+    }
+
+
+    //remove search filter
+
+    public void clickRemoveSearchFilter(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1870));
+        wait.until(ExpectedConditions.visibilityOf(removeFilterIcon));
+        removeFilterIcon.click();
+    }
 
     //assert methods
     public boolean isClothesPageLinkDisplayed() {return clothesPageLink.isDisplayed();}
     public boolean isMenClothesPageLink1Displayed() {return menClothesPageLink1.isDisplayed();}
     public boolean isMenClothesPageLink2Displayed() {return menClothesPageLink2.isDisplayed();}
     public boolean isMenClothesPageBoxIconDisplayed() {return menClothesPageBoxIcon.isDisplayed();}
+    public boolean isMenClothesInStockLinkDisplayed() {return menClothesInStockLink.isDisplayed();}
+    public boolean isMenClothesInStockBoxIconDisplayed() {return menClothesInStockBoxIcon.isDisplayed();}
+
+
+    //filter message getters
+    public String getMenClothesAvailabilityFilterMessage(){
+        return menClothesAvailabilityFilterMessage.getText();
+    }
+
+
 
 
 }
