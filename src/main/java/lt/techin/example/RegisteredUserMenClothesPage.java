@@ -27,16 +27,28 @@ public class RegisteredUserMenClothesPage extends BasePage{
     //links
     @FindBy(css = "section:nth-of-type(1) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement menClothesInStockLink;
+    @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(1) > .facet-label > .custom-checkbox")
+    private WebElement menClothesDiscountedLink;
+    @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
+    private WebElement menClothesNewProductLink;
 
 
     //box icons
     @FindBy(css = "section:nth-of-type(1) > .collapse .custom-checkbox")
     private WebElement menClothesInStockBoxIcon;
+    @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement menClothesDiscountedBoxIcon;
+    @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement menClothesNewProductBoxIcon;
 
 
     //filter messages
     @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
     private WebElement menClothesAvailabilityFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Selections: Discounted')]")
+    private WebElement menClothesDiscountedFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Selections: New Product')]")
+    private WebElement menClothesNewProductFilterMessage;
 
     public RegisteredUserMenClothesPage(WebDriver driver) {
         super(driver);
@@ -82,6 +94,18 @@ public class RegisteredUserMenClothesPage extends BasePage{
         menClothesInStockBoxIcon.click();
     }
 
+    public void clickMenClothesDiscountedLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesDiscountedLink));
+        menClothesDiscountedLink.click();
+    }
+
+    public void clickMenClothesDiscountedBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesDiscountedBoxIcon));
+        menClothesDiscountedBoxIcon.click();
+    }
+
 
     //remove search filter
 
@@ -98,10 +122,15 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public boolean isMenClothesPageBoxIconDisplayed() {return menClothesPageBoxIcon.isDisplayed();}
     public boolean isMenClothesInStockLinkDisplayed() {return menClothesInStockLink.isDisplayed();}
     public boolean isMenClothesInStockBoxIconDisplayed() {return menClothesInStockBoxIcon.isDisplayed();}
+    public boolean isMenClothesDiscountedLinkDisplayed(){return menClothesDiscountedLink.isDisplayed();}
+    public boolean isMenClothesDiscountedBoxIconDisplayed(){return menClothesDiscountedBoxIcon.isDisplayed();}
 
 
     //filter message getters
     public String getMenClothesAvailabilityFilterMessage(){
+        return menClothesAvailabilityFilterMessage.getText();
+    }
+    public String getMenClothesDiscountedFilterMessage(){
         return menClothesAvailabilityFilterMessage.getText();
     }
 

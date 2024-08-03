@@ -2330,7 +2330,9 @@ public class TestMethods extends BaseTest{
         System.out.println("The 'In stock' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesInStockBoxIcon();
         //assert the correct text is displayed in search filter
-        //assertEquals(registeredUserArtPage.getMenClothesAvailabilityFilterMessage()), "Availability: In stock");
+        //assertEquals(registeredUserArtPage.getMenClothesAvailabilityFilterMessage(), "Availability: In stock");
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
     protected void filterMenClothesByInStockLinkTest(){
@@ -2341,6 +2343,30 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickMenClothesInStockLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesAvailabilityFilterMessage(), "Availability: In stock");
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterMenClothesByDiscountedBoxIconTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesDiscountedBoxIconDisplayed(), "The 'Discounted' box icon link isn't displayed");
+        System.out.println("The 'Discounted' box icon link is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesDiscountedBoxIcon();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getMenClothesDiscountedFilterMessage(), "Selections: Discounted");
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterMenClothesByDiscountedLinkTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesDiscountedLinkDisplayed(), "The 'Discounted' link isn't displayed");
+        System.out.println("The 'Discounted' link is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesDiscountedLink();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getMenClothesDiscountedFilterMessage(), "Selections: Discounted");
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
