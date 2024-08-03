@@ -2273,4 +2273,16 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
+    protected void sortHmAccessoriesProductsByReferenceZToATest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
+        //assert the sort by reference 'Z to A' option is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesReferenceZToAOptionDisplayed(), "The sort by reference 'Z to A' menu option isn't displayed");
+        System.out.println("The sort by reference 'Z to A' menu option  is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHmAccessoriesReferenceZToAOption();
+        //assert the correct text is input in option
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
+    }
+
 }
