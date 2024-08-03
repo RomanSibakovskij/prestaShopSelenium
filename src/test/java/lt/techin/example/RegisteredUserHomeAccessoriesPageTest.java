@@ -398,4 +398,23 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         clickHmAccessoriesSortByDropdownMenuTest();
     }
 
+    //Test 035a -> sort home accessories by sales test
+    @Test
+    void clickSortBySalesTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+
+        sortHmAccessoriesProductsBySalesTest();
+    }
+
 }

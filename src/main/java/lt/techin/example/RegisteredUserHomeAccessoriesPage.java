@@ -271,6 +271,65 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
 
     }
 
+    //menu options methods
+
+    public void clickHmAccessoriesSalesOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesSalesOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(hmAccessoriesSalesOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+
+    public void clickHmAccessoriesRelevanceOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesRelevanceOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(hmAccessoriesRelevanceOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickHmAccessoriesNameAToZOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesNameAtoZOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(hmAccessoriesNameAtoZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickHmAccessoriesNameZToAOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesNameZToAOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(hmAccessoriesNameZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickHmAccessoriesPriceLowToHighOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesPriceLowToHighOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(hmAccessoriesPriceLowToHighOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickHmAccessoriesPriceHighToLowOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesPriceHighToLowOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(hmAccessoriesPriceHighToLowOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickHmAccessoriesReferenceAToZOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesReferenceAToZOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(hmAccessoriesReferenceAToZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
+    public void clickHmAccessoriesReferenceZToAOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesReferenceZToAOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(hmAccessoriesReferenceZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
     //remove search filter
 
     public void clickRemoveSearchFilter(){
