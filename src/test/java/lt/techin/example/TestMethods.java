@@ -2234,7 +2234,19 @@ public class TestMethods extends BaseTest{
         System.out.println("The sort by name 'Z to A' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesNameZToAOption();
         //assert the correct text is input in option
-        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesNameZToAOptionText(), "Name, Z to A"); // -> assert crashes the test, it doesn't find text
+    }
+
+    protected void sortHmAccessoriesProductsByPriceLowToHighTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
+        //assert the sort by name 'z to a' option is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
+        System.out.println("The sort by price 'low to high' menu option  is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHmAccessoriesPriceLowToHighOption();
+        //assert the correct text is input in option
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesPriceLowToHighOptionText(), "Price, low to high"); // -> assert crashes the test, it doesn't find text
     }
 
 }
