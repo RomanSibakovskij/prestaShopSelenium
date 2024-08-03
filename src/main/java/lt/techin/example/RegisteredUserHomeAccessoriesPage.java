@@ -1,5 +1,6 @@
 package lt.techin.example;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -63,6 +64,30 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     //search filter remover
     @FindBy(xpath = "//section[@id='js-active-search-filters']/ul//i[.='\uE5CD']")
     private WebElement removeFilterIcon;
+
+    //dropdown menu
+
+    @FindBy(xpath = "//*//div[@id='js-product-list-top']//div[@class='row sort-by-row']/div[1]")
+    private WebElement hmAccessoriesSortByDropdownMenu;
+
+    //menu options
+
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(1)")
+    private WebElement hmAccessoriesSalesOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(2)")
+    private WebElement hmAccessoriesRelevanceOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(3)")
+    private WebElement hmAccessoriesNameAtoZOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(4)")
+    private WebElement hmAccessoriesNameZToAOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(5)")
+    private WebElement hmAccessoriesPriceLowToHighOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(6)")
+    private WebElement hmAccessoriesPriceHighToLowOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(7)")
+    private WebElement hmAccessoriesReferenceAToZOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(8)")
+    private WebElement hmAccessoriesReferenceZToAOption;
 
     //filter messages
     @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
@@ -236,6 +261,16 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
                 .perform();
     }
 
+    //dropdown menu methods
+
+    public void clickHmSortByDropdownMenu(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesSortByDropdownMenu));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(hmAccessoriesSortByDropdownMenu).clickAndHold().pause(Duration.ofSeconds(2)).release().perform();
+
+    }
+
     //remove search filter
 
     public void clickRemoveSearchFilter(){
@@ -305,6 +340,33 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public boolean isHmAccessoriesStudioDesignBoxIconDisplayed(){
         return hmAccessoriesStudioDesignBoxIcon.isDisplayed();
     }
+    public boolean isHmAccessoriesSortByDropdownMenuDisplayed(){
+        return hmAccessoriesSortByDropdownMenu.isDisplayed();
+    }
+    public boolean isHmAccessoriesSalesOptionDisplayed(){
+        return hmAccessoriesSalesOption.isDisplayed();
+    }
+    public boolean isHmAccessoriesRelevanceOptionDisplayed() {
+        return hmAccessoriesRelevanceOption.isDisplayed();
+    }
+    public boolean isHmAccessoriesNameAtoZOptionDisplayed(){
+        return hmAccessoriesNameAtoZOption.isDisplayed();
+    }
+    public boolean isHmAccessoriesNameZToAOptionDisplayed(){
+        return hmAccessoriesNameZToAOption.isDisplayed();
+    }
+    public boolean isHmAccessoriesPriceLowToHighOptionDisplayed(){
+        return hmAccessoriesPriceLowToHighOption.isDisplayed();
+    }
+    public boolean isHmAccessoriesPriceHighToLowOptionDisplayed(){
+        return hmAccessoriesPriceHighToLowOption.isDisplayed();
+    }
+    public boolean isHmAccessoriesReferenceAToZOptionDisplayed(){
+        return hmAccessoriesReferenceAToZOption.isDisplayed();
+    }
+    public boolean isHmAccessoriesReferenceZToAOptionDisplayed(){
+        return hmAccessoriesReferenceZToAOption.isDisplayed();
+    }
 
 
     //filter message getters
@@ -323,5 +385,34 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public String getHmAccPolyesterFilterMessage(){ return hmAccPolyesterFilterMessage.getText();}
     public String getHmAccRemovableCoverFilterMessage(){ return hmAccRemovableCoverFilterMessage.getText();}
     public String getHmAccStudioDesignFilterMessage(){ return hmAccStudioDesignFilterMessage.getText();}
+
+    //dropdown options getters
+
+    public String getHmAccessoriesSalesOptionText(){
+        WebElement hmAccessoriesSalesOption = driver.findElement(By.linkText("Sales, highest to lowest"));
+        return hmAccessoriesSalesOption.getText();
+    }
+    public String getHmAccessoriesRelevanceOptionText(){
+        return hmAccessoriesRelevanceOption.getText();
+    }
+    public String getHmAccessoriesNameAtoZOptionText(){
+        return hmAccessoriesNameAtoZOption.getText();
+    }
+    public String getHmAccessoriesNameZToAOptionText(){
+        return hmAccessoriesNameZToAOption.getText();
+    }
+    public String getHmAccessoriesPriceLowToHighOptionText(){
+        return hmAccessoriesPriceLowToHighOption.getText();
+    }
+    public String getHmAccessoriesPriceHighToLowOptionText(){
+        return hmAccessoriesPriceHighToLowOption.getText();
+    }
+    public String getHmAccessoriesReferenceAToZOptionText(){
+        return hmAccessoriesReferenceAToZOption.getText();
+    }
+    public String getHmAccessoriesReferenceZToAOptionText(){
+        return hmAccessoriesReferenceZToAOption.getText();
+    }
+
 }
 

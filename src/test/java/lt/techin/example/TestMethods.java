@@ -1827,8 +1827,6 @@ public class TestMethods extends BaseTest{
 
     //stationary accessories dropdown menu options test methods
 
-    //menu options test methods
-
     protected void sortStAccessoriesProductsBySalesTest(){
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
@@ -2179,6 +2177,14 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
+    // dropdown menu test method
 
+    protected void clickHmAccessoriesSortByDropdownMenuTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+        //assert the dropdown is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
+        System.out.println("The 'Sort By' dropdown menu is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
+    }
 
 }

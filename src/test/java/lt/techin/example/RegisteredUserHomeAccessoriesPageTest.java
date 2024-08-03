@@ -380,4 +380,22 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         filterHmAccProductByStudioDesignLinkTest();
     }
 
+    //Test 035 -> click on sort by dropdown menu test
+    @Test
+    void clickSortByMenuTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+        clickHmAccessoriesSortByDropdownMenuTest();
+    }
+
 }
