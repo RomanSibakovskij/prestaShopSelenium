@@ -1970,7 +1970,6 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
-
     }
 
     protected void filterHmAccProductByAvailabilityBoxIconTest(){
@@ -1984,7 +1983,6 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
-
     }
 
     protected void filterHmAccProductBySelectionsLinkTest(){
@@ -1998,7 +1996,6 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccAvailabilityFilterMessage(), "Selections: New product"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
-
     }
 
     protected void filterHmAccProductBySelectionsBoxIconTest(){
@@ -2012,7 +2009,6 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSelectionsFilterMessage(), "Selections: New product"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
-
     }
 
     protected void filterHmAccProductByPriceSliderTest(){
@@ -2038,7 +2034,6 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccWhiteColorFilterMessage(), "Color: White"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
-
     }
 
     protected void filterHmAccProductByWhiteColorBoxIconTest(){
@@ -2052,7 +2047,6 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccWhiteColorFilterMessage(), "Color: White"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
-
     }
 
     protected void filterHmAccProductByBlackColorLinkTest(){
@@ -2066,7 +2060,6 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccBlackColorFilterMessage(), "Color: Black"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
-
     }
 
     protected void filterHmAccProductByBlackColorBoxIconTest(){
@@ -2080,7 +2073,6 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccBlackColorFilterMessage(), "Color: Black"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
-
     }
 
     protected void filterHmAccProductByCeramicLinkTest(){
@@ -2094,7 +2086,6 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccCeramicFilterMessage(), "Composition: Ceramic"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
-
     }
 
     protected void filterHmAccProductByCeramicBoxIconTest(){
@@ -2108,8 +2099,86 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccCeramicFilterMessage(), "Composition: Ceramic"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
-
     }
+
+    protected void filterHmAccProductByPolyesterLinkTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'in stock' link is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesPolyesterLinkDisplayed(), "The home accessories 'polyester' link isn't displayed");
+        System.out.println("The home accessories page 'polyester' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesPolyesterLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccPolyesterFilterMessage(), "Composition: Polyester"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterHmAccProductByPolyesterBoxIconTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesPolyesterBoxIconDisplayed(), "The home accessories 'polyester' box icon isn't displayed");
+        System.out.println("The home accessories page 'polyester' box icon is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesPolyesterBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccPolyesterFilterMessage(), "Composition: Polyester"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterHmAccProductByRemovableCoverLinkTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'in stock' link is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesRemovableCoverLinkDisplayed(), "The home accessories 'removable cover' link isn't displayed");
+        System.out.println("The home accessories page 'removable cover' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesRemovableCoverLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccRemovableCoverFilterMessage(), "Property: Removable cover"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterHmAccProductByRemovableCoverBoxIconTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesRemovableCoverBoxIconDisplayed(), "The home accessories 'removable cover' box icon isn't displayed");
+        System.out.println("The home accessories page 'removable cover' box icon is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesRemovableCoverBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccRemovableCoverFilterMessage(), "Property: Removable cover"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterHmAccProductByStudioDesignLinkTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'in stock' link is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesStudioDesignLinkDisplayed(), "The home accessories 'studio design' link isn't displayed");
+        System.out.println("The home accessories page 'studio design' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesStudioDesignLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccStudioDesignFilterMessage(), "Brand: Studio Design"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterHmAccProductByStudioDesignBoxIconTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesStudioDesignBoxIconDisplayed(), "The home accessories 'studio design' box icon isn't displayed");
+        System.out.println("The home accessories page 'studio design' box icon is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesStudioDesignBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccStudioDesignFilterMessage(), "Brand: Studio Design"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+    }
+
 
 
 }

@@ -229,7 +229,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         filterHmAccProductByBlackColorLinkTest();
     }
 
-    //Test 031 -> filter home accessories products by composition -> ceramic test
+    //Test 031 -> filter home accessories products by composition -> ceramic (box icon) test
     @Test
     void filterHmAccProductByCeramicBoxIconTests(){
         clickOnSignUpTest();
@@ -265,6 +265,119 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         navigateToHomeAccessoriesPageLink1Test();
 
         filterHmAccProductByCeramicLinkTest();
+    }
+
+    //Test 032 -> filter home accessories products by composition -> polyester (box icon) test
+    @Test
+    void filterHmAccProductByPolyesterBoxIconTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByPolyesterBoxIconTest();
+    }
+
+    //Test 032a -> filter home accessories products by composition -> polyester (link) test
+    @Test
+    void filterHmAccProductByPolyesterLinkTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByPolyesterLinkTest();
+    }
+
+    //Test 033 -> filter home accessories products by property (box icon) test
+    @Test
+    void filterHmAccProductByPropertyBoxIconTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByRemovableCoverBoxIconTest();
+    }
+
+    //Test 033a -> filter home accessories products by property (link) test
+    @Test
+    void filterHmAccProductByPropertyLinkTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByRemovableCoverLinkTest();
+    }
+    //Test 034 -> filter home accessories products by brand test
+    @Test
+    void filterHmAccProductByBrandBoxIconTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByStudioDesignBoxIconTest();
+    }
+
+    //Test 034a -> filter home accessories products by brand (link) test
+    @Test
+    void filterHmAccProductByBrandLinkTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByStudioDesignLinkTest();
     }
 
 }

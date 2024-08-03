@@ -31,6 +31,12 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccessoriesBlackColorLink;
     @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement hmAccessoriesCeramicLink;
+    @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement hmAccessoriesPolyesterLink;
+    @FindBy(css = "section:nth-of-type(6) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement hmAccessoriesRemovableCoverLink;
+    @FindBy(css = "section:nth-of-type(7) > .collapse ._gray-darker.js-search-link.search-link")
+    private WebElement hmAccessoriesStudioDesignLink;
 
     //icons
     @FindBy(css = "section:nth-of-type(1) > .collapse .custom-checkbox")
@@ -45,7 +51,10 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccessoriesCeramicBoxIcon;
     @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
     private WebElement hmAccessoriesPolyesterBoxIcon;
-
+    @FindBy(css = "section:nth-of-type(6) > .collapse .custom-checkbox")
+    private WebElement hmAccessoriesRemovableCoverBoxIcon;
+    @FindBy(css = "section:nth-of-type(7) > .collapse .custom-checkbox")
+    private WebElement hmAccessoriesStudioDesignBoxIcon;
 
     //price slider
     @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
@@ -68,6 +77,12 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccBlackColorFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Composition: Ceramic')]")
     private WebElement hmAccCeramicFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Composition: Polyester')]")
+    private WebElement hmAccPolyesterFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Property: Removable cover')]")
+    private WebElement hmAccRemovableCoverFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Brand: Studio Design')]")
+    private WebElement hmAccStudioDesignFilterMessage;
 
     public RegisteredUserHomeAccessoriesPage(WebDriver driver) {
         super(driver);
@@ -154,6 +169,41 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesCeramicBoxIcon));
         hmAccessoriesCeramicBoxIcon.click();
     }
+    public void clickHomeAccessoriesPolyesterLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesPolyesterLink));
+        hmAccessoriesPolyesterLink.click();
+    }
+
+    public void clickHomeAccessoriesPolyesterBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesPolyesterBoxIcon));
+        hmAccessoriesPolyesterBoxIcon.click();
+    }
+
+    public void clickHomeAccessoriesRemovableCoverLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesRemovableCoverLink));
+        hmAccessoriesRemovableCoverLink.click();
+    }
+
+    public void clickHomeAccessoriesRemovableCoverBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesRemovableCoverBoxIcon));
+        hmAccessoriesRemovableCoverBoxIcon.click();
+    }
+
+    public void clickHomeAccessoriesStudioDesignLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesStudioDesignLink));
+        hmAccessoriesStudioDesignLink.click();
+    }
+
+    public void clickHomeAccessoriesStudioDesignBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesStudioDesignBoxIcon));
+        hmAccessoriesStudioDesignBoxIcon.click();
+    }
 
     //slider price adjustment method
 
@@ -189,7 +239,7 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     //remove search filter
 
     public void clickRemoveSearchFilter(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1870));
         wait.until(ExpectedConditions.visibilityOf(removeFilterIcon));
         removeFilterIcon.click();
     }
@@ -237,6 +287,25 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public boolean isHmAccessoriesCeramicBoxIconDisplayed(){
         return hmAccessoriesCeramicBoxIcon.isDisplayed();
     }
+    public boolean isHmAccessoriesPolyesterLinkDisplayed(){
+        return hmAccessoriesPolyesterLink.isDisplayed();
+    }
+    public boolean isHmAccessoriesPolyesterBoxIconDisplayed(){
+        return hmAccessoriesPolyesterBoxIcon.isDisplayed();
+    }
+    public boolean isHmAccessoriesRemovableCoverLinkDisplayed(){
+        return hmAccessoriesRemovableCoverLink.isDisplayed();
+    }
+    public boolean isHmAccessoriesRemovableCoverBoxIconDisplayed(){
+        return hmAccessoriesRemovableCoverBoxIcon.isDisplayed();
+    }
+    public boolean isHmAccessoriesStudioDesignLinkDisplayed(){
+        return hmAccessoriesStudioDesignLink.isDisplayed();
+    }
+    public boolean isHmAccessoriesStudioDesignBoxIconDisplayed(){
+        return hmAccessoriesStudioDesignBoxIcon.isDisplayed();
+    }
+
 
     //filter message getters
     public String getHmAccAvailabilityFilterMessage(){
@@ -251,5 +320,8 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public String getHmAccWhiteColorFilterMessage(){ return hmAccWhiteColorFilterMessage.getText();}
     public String getHmAccBlackColorFilterMessage(){ return hmAccBlackColorFilterMessage.getText();}
     public String getHmAccCeramicFilterMessage(){ return hmAccCeramicFilterMessage.getText();}
+    public String getHmAccPolyesterFilterMessage(){ return hmAccPolyesterFilterMessage.getText();}
+    public String getHmAccRemovableCoverFilterMessage(){ return hmAccRemovableCoverFilterMessage.getText();}
+    public String getHmAccStudioDesignFilterMessage(){ return hmAccStudioDesignFilterMessage.getText();}
 }
 
