@@ -436,4 +436,23 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         sortHmAccessoriesProductsByRelevanceTest();
     }
 
+    //Test 035c -> sort home accessories by name (A to Z) test
+    @Test
+    void clickSortByNameAToZTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToStationaryAccessoriesPageLink1Test();
+
+        sortHmAccessoriesProductsByNameAToZTest();
+    }
+
 }

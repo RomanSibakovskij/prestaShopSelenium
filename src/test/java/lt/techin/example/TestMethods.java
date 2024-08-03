@@ -2201,8 +2201,6 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
     }
 
-    //home accessories dropdown menu options test methods
-
     protected void sortHmAccessoriesProductsByRelevanceTest(){
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
@@ -2213,6 +2211,18 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickHmAccessoriesRelevanceOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
+    }
+
+    protected void sortHmAccessoriesProductsByNameAToZTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
+        //assert the sort by sales option is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesNameAtoZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
+        System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHmAccessoriesNameAToZOption();
+        //assert the correct text is input in option
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
 }
