@@ -2205,7 +2205,7 @@ public class TestMethods extends BaseTest{
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
-        //assert the sort by sales option is displayed
+        //assert the sort by relevance option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesRelevanceOptionDisplayed(), "The sort by 'Relevance' menu option isn't displayed");
         System.out.println("The sort by 'Relevance' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesRelevanceOption();
@@ -2217,10 +2217,22 @@ public class TestMethods extends BaseTest{
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
-        //assert the sort by sales option is displayed
+        //assert the sort by name 'a to z' option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesNameAtoZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
         System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesNameAToZOption();
+        //assert the correct text is input in option
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
+    }
+
+    protected void sortHmAccessoriesProductsByNameZToATest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
+        //assert the sort by name 'z to a' option is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesNameZToAOptionDisplayed(), "The sort by name 'Z to A' menu option isn't displayed");
+        System.out.println("The sort by name 'Z to A' menu option  is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHmAccessoriesNameZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
     }
