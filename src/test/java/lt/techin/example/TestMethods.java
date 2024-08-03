@@ -2299,10 +2299,26 @@ public class TestMethods extends BaseTest{
 
     protected void navigateToMenClothesPageLink1Test(){
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
-        //assert 'Clothes' link is displayed on navbar
-        assertTrue(registeredUserMenClothesPage.isMenClothesPageLink1Displayed(), "The 'Men' clothes link isn't displayed on navbar");
-        System.out.println("The 'Men' clothes link is displayed on navbar" + "\n");
+        //assert 'Men' clothes link1 is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesPageLink1Displayed(), "The 'Men' clothes link1 isn't displayed");
+        System.out.println("The 'Men' clothes link1 is displayed" + "\n");
         registeredUserMenClothesPage.clickOnMenClothesPageLink1();
+    }
+
+    protected void navigateToMenClothesPageLink2Test(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert 'Men' clothes link2 is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesPageLink2Displayed(), "The 'Men' clothes link2 isn't displayed");
+        System.out.println("The 'Men' clothes link2 is displayed" + "\n");
+        registeredUserMenClothesPage.clickOnMenClothesPageLink2();
+    }
+
+    protected void navigateToMenClothesPageBoxIconTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert 'Men' clothes box icon is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesPageBoxIconDisplayed(), "The 'Men' clothes box icon isn't displayed");
+        System.out.println("The 'Men' clothes box icon is displayed" + "\n");
+        registeredUserMenClothesPage.clickOnMenClothesPageBoxIcon();
     }
 
 }
