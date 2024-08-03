@@ -57,6 +57,8 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccPriceFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Color: White')]")
     private WebElement hmAccWhiteColorFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Color: Black')]")
+    private WebElement hmAccBlackColorFilterMessage;
 
     public RegisteredUserHomeAccessoriesPage(WebDriver driver) {
         super(driver);
@@ -118,6 +120,18 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
         wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesWhiteColorBoxIcon));
         hmAccessoriesWhiteColorBoxIcon.click();
+    }
+
+    public void clickHomeAccessoriesBlackColorLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesBlackColorLink));
+        hmAccessoriesBlackColorLink.click();
+    }
+
+    public void clickHomeAccessoriesBlackBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesBlackColorBoxIcon));
+        hmAccessoriesBlackColorBoxIcon.click();
     }
 
     //slider price adjustment method
@@ -190,6 +204,12 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public boolean isHmAccessoriesWhiteBoxIconDisplayed(){
         return hmAccessoriesWhiteColorBoxIcon.isDisplayed();
     }
+    public boolean isHmAccessoriesBlackLinkDisplayed(){
+        return hmAccessoriesBlackColorBoxIcon.isDisplayed();
+    }
+    public boolean isHmAccessoriesBlackBoxIconDisplayed(){
+        return hmAccessoriesBlackColorBoxIcon.isDisplayed();
+    }
 
     //filter message getters
     public String getHmAccAvailabilityFilterMessage(){
@@ -202,7 +222,7 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
         return hmAccPriceFilterMessage.getText();
     }
     public String getHmAccWhiteColorFilterMessage(){ return hmAccWhiteColorFilterMessage.getText();}
-
+    public String getHmAccBlackColorFilterMessage(){ return hmAccBlackColorFilterMessage.getText();}
 
 }
 

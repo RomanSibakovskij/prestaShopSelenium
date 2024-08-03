@@ -11,7 +11,9 @@ import java.time.Duration;
 public class RegisteredUserStationaryAccessoriesPage extends BasePage{
 
     //navigation links
-    @FindBy(xpath = "//ul[@id='top-menu']//a[@href='http://192.168.88.247/6-accessories']")
+//    @FindBy(xpath = "//ul[@id='top-menu']//a[@href='http://192.168.88.247/6-accessories']")
+//    private WebElement accessoriesPageLink;
+    @FindBy(css = "#_desktop_top_menu .category:nth-of-type(2) [data-depth='0']")
     private WebElement accessoriesPageLink;
     @FindBy(css = ".category-sub-menu > li:nth-of-type(1) > a")
     private WebElement stationaryAccessoriesPageLink1;

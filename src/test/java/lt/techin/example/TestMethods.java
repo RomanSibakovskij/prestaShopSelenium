@@ -2031,9 +2031,9 @@ public class TestMethods extends BaseTest{
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'in stock' link is displayed
-        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesNewProductLinkDisplayed(), "The home accessories 'new product' link isn't displayed");
-        System.out.println("The home accessories page 'new product' link is displayed" + "\n");
-        registeredUserHomeAccessoriesPage.clickHomeAccessoriesNewProductLink();
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesWhiteColorLinkDisplayed(), "The home accessories 'white' link isn't displayed");
+        System.out.println("The home accessories page 'white' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesWhiteColorLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccWhiteColorFilterMessage(), "Color: White"); -> assert crashes the test
         //remove search filter
@@ -2045,11 +2045,39 @@ public class TestMethods extends BaseTest{
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
-        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesNewProductBoxIconDisplayed(), "The home accessories 'new product' link isn't displayed");
-        System.out.println("The home accessories page 'new product' link is displayed" + "\n");
-        registeredUserHomeAccessoriesPage.clickHomeAccessoriesNewProductBoxIcon();
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesWhiteBoxIconDisplayed(), "The home accessories 'white' box icon isn't displayed");
+        System.out.println("The home accessories page 'white' box icon is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesWhiteBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccWhiteColorFilterMessage(), "Color: White"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterHmAccProductByBlackColorLinkTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'in stock' link is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesBlackLinkDisplayed(), "The home accessories 'black' link isn't displayed");
+        System.out.println("The home accessories page 'black' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesBlackColorLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccBlackColorFilterMessage(), "Color: Black"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterHmAccProductByBlackColorBoxIconTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesWhiteBoxIconDisplayed(), "The home accessories 'black' box icon isn't displayed");
+        System.out.println("The home accessories page 'black' box icon is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesBlackBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccBlackColorFilterMessage(), "Color: Black"); -> assert crashes the test
         //remove search filter
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
 
