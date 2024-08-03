@@ -17,9 +17,25 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         clickSignInRegisteredUserTest();
         logInRegisteredUserTest(registerPage);
 
-        navigateToAccessoriesPageTest();
+        navigateToClothesPageTest();
+    }
+
+    //Test 036a -> navigate to men Clothes page (link 1) test
+    @Test
+    void goToMenClothesPageLink1Test(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
 
         navigateToClothesPageTest();
+
+        navigateToMenClothesPageLink1Test();
     }
 
 

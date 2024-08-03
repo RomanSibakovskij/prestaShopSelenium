@@ -2297,4 +2297,12 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickOnClothesPageLink();
     }
 
+    protected void navigateToMenClothesPageLink1Test(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert 'Clothes' link is displayed on navbar
+        assertTrue(registeredUserMenClothesPage.isMenClothesPageLink1Displayed(), "The 'Men' clothes link isn't displayed on navbar");
+        System.out.println("The 'Men' clothes link is displayed on navbar" + "\n");
+        registeredUserMenClothesPage.clickOnMenClothesPageLink1();
+    }
+
 }
