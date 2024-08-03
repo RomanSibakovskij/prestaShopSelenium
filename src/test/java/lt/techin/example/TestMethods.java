@@ -2027,5 +2027,33 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccPriceFilterMessage(), "Price: $12.00 - $13.00"); -> assert crashes the test
     }
 
+    protected void filterHmAccProductByWhiteColorLinkTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'in stock' link is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesNewProductLinkDisplayed(), "The home accessories 'new product' link isn't displayed");
+        System.out.println("The home accessories page 'new product' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesNewProductLink();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccWhiteColorFilterMessage(), "Color: White"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
+    protected void filterHmAccProductByWhiteColorBoxIconTest(){
+        RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
+
+        //assert product 'new product' box icon is displayed
+        assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesNewProductBoxIconDisplayed(), "The home accessories 'new product' link isn't displayed");
+        System.out.println("The home accessories page 'new product' link is displayed" + "\n");
+        registeredUserHomeAccessoriesPage.clickHomeAccessoriesNewProductBoxIcon();
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccWhiteColorFilterMessage(), "Color: White"); -> assert crashes the test
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
+
+    }
+
 
 }

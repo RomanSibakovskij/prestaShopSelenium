@@ -25,12 +25,20 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccessoriesInStockLink;
     @FindBy(css = "section:nth-of-type(2) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement hmAccessoriesNewProductLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement hmAccessoriesWhiteColorLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement hmAccessoriesBlackColorLink;
 
     //icons
     @FindBy(css = "section:nth-of-type(1) > .collapse .custom-checkbox")
     private WebElement hmAccessoriesInStockBoxIcon;
     @FindBy(css = "section:nth-of-type(2) > .collapse .custom-checkbox")
     private WebElement hmAccessoriesNewProductBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(1) > .facet-label > .custom-checkbox")
+    private WebElement hmAccessoriesWhiteColorBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
+    private WebElement hmAccessoriesBlackColorBoxIcon;
 
     //price slider
     @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
@@ -47,6 +55,8 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccSelectionsFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Price: $12.00 - $13.00')]")
     private WebElement hmAccPriceFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Color: White')]")
+    private WebElement hmAccWhiteColorFilterMessage;
 
     public RegisteredUserHomeAccessoriesPage(WebDriver driver) {
         super(driver);
@@ -96,6 +106,18 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
         wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesNewProductBoxIcon));
         hmAccessoriesNewProductBoxIcon.click();
+    }
+
+    public void clickHomeAccessoriesWhiteColorLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesWhiteColorLink));
+        hmAccessoriesWhiteColorLink.click();
+    }
+
+    public void clickHomeAccessoriesWhiteBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesWhiteColorBoxIcon));
+        hmAccessoriesWhiteColorBoxIcon.click();
     }
 
     //slider price adjustment method
@@ -162,6 +184,12 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public boolean isHmAccessoriesPriceSliderDisplayed(){
         return hmAccessoriesPriceSliderLine.isDisplayed();
     }
+    public boolean isHmAccessoriesWhiteColorLinkDisplayed(){
+        return hmAccessoriesWhiteColorLink.isDisplayed();
+    }
+    public boolean isHmAccessoriesWhiteBoxIconDisplayed(){
+        return hmAccessoriesWhiteColorBoxIcon.isDisplayed();
+    }
 
     //filter message getters
     public String getHmAccAvailabilityFilterMessage(){
@@ -173,6 +201,7 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public String getHmAccPriceSliderFilterMessage(){
         return hmAccPriceFilterMessage.getText();
     }
+    public String getHmAccWhiteColorFilterMessage(){ return hmAccWhiteColorFilterMessage.getText();}
 
 
 }

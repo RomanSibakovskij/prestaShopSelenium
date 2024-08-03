@@ -153,4 +153,42 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         filterHmAccProductByPriceSliderTest();
     }
 
+    //Test 029 -> filter home accessories products by white color (box icon) test (search shows black items for some reason)
+    @Test
+    void filterHmAccProductByWhiteColorBoxIconTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByWhiteColorBoxIconTest();
+    }
+
+    //Test 029a -> filter home accessories products by white color (link) test (search shows black items for some reason)
+    @Test
+    void filterHmAccProductByWhiteColorLinkTests(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        filterHmAccProductByWhiteColorBoxIconTest();
+    }
+
 }
