@@ -2349,7 +2349,7 @@ public class TestMethods extends BaseTest{
 
     protected void filterMenClothesByDiscountedBoxIconTest(){
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
-        //assert the filter by in stock choice is displayed
+        //assert the filter by discounted choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesDiscountedBoxIconDisplayed(), "The 'Discounted' box icon link isn't displayed");
         System.out.println("The 'Discounted' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesDiscountedBoxIcon();
@@ -2361,12 +2361,36 @@ public class TestMethods extends BaseTest{
 
     protected void filterMenClothesByDiscountedLinkTest(){
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
-        //assert the filter by in stock choice is displayed
+        //assert the filter by discounted choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesDiscountedLinkDisplayed(), "The 'Discounted' link isn't displayed");
         System.out.println("The 'Discounted' link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesDiscountedLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesDiscountedFilterMessage(), "Selections: Discounted");
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterMenClothesByNewProductBoxIconTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the filter by new product choice is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesNewProductBoxIconDisplayed(), "The 'New product' box icon link isn't displayed");
+        System.out.println("The 'New Product' box icon link is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesNewProductBoxIcon();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getMenClothesNewProductFilterMessage(), "Selections: New product");
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterMenClothesByNewProductLinkTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the filter by new product choice is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesNewProductLinkDisplayed(), "The 'New product' link isn't displayed");
+        System.out.println("The 'New product' link is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesNewProductLink();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getMenClothesNewProductFilterMessage(), "Selections: New product");
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }

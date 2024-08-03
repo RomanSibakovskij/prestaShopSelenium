@@ -47,7 +47,7 @@ public class RegisteredUserMenClothesPage extends BasePage{
     private WebElement menClothesAvailabilityFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Selections: Discounted')]")
     private WebElement menClothesDiscountedFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Selections: New Product')]")
+    @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
     private WebElement menClothesNewProductFilterMessage;
 
     public RegisteredUserMenClothesPage(WebDriver driver) {
@@ -106,6 +106,18 @@ public class RegisteredUserMenClothesPage extends BasePage{
         menClothesDiscountedBoxIcon.click();
     }
 
+    public void clickMenClothesNewProductLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesNewProductLink));
+        menClothesNewProductLink.click();
+    }
+
+    public void clickMenClothesNewProductBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesNewProductBoxIcon));
+        menClothesNewProductBoxIcon.click();
+    }
+
 
     //remove search filter
 
@@ -124,15 +136,13 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public boolean isMenClothesInStockBoxIconDisplayed() {return menClothesInStockBoxIcon.isDisplayed();}
     public boolean isMenClothesDiscountedLinkDisplayed(){return menClothesDiscountedLink.isDisplayed();}
     public boolean isMenClothesDiscountedBoxIconDisplayed(){return menClothesDiscountedBoxIcon.isDisplayed();}
-
+    public boolean isMenClothesNewProductLinkDisplayed(){return menClothesNewProductLink.isDisplayed();}
+    public boolean isMenClothesNewProductBoxIconDisplayed(){return menClothesNewProductBoxIcon.isDisplayed();}
 
     //filter message getters
-    public String getMenClothesAvailabilityFilterMessage(){
-        return menClothesAvailabilityFilterMessage.getText();
-    }
-    public String getMenClothesDiscountedFilterMessage(){
-        return menClothesAvailabilityFilterMessage.getText();
-    }
+    public String getMenClothesAvailabilityFilterMessage(){return menClothesAvailabilityFilterMessage.getText();}
+    public String getMenClothesDiscountedFilterMessage(){return menClothesAvailabilityFilterMessage.getText();}
+    public String getMenClothesNewProductFilterMessage(){return menClothesNewProductFilterMessage.getText();}
 
 
 
