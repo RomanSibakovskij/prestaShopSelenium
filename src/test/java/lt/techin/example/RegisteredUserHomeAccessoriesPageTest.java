@@ -394,7 +394,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
 
         navigateToAccessoriesPageTest();
-        navigateToStationaryAccessoriesPageLink1Test();
+        navigateToHomeAccessoriesPageLink1Test();
         clickHmAccessoriesSortByDropdownMenuTest();
     }
 
@@ -412,7 +412,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
 
         navigateToAccessoriesPageTest();
-        navigateToStationaryAccessoriesPageLink1Test();
+        navigateToHomeAccessoriesPageLink1Test();
 
         sortHmAccessoriesProductsBySalesTest();
     }
@@ -431,7 +431,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
 
         navigateToAccessoriesPageTest();
-        navigateToStationaryAccessoriesPageLink1Test();
+        navigateToHomeAccessoriesPageLink1Test();
 
         sortHmAccessoriesProductsByRelevanceTest();
     }
@@ -450,7 +450,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
 
         navigateToAccessoriesPageTest();
-        navigateToStationaryAccessoriesPageLink1Test();
+        navigateToHomeAccessoriesPageLink1Test();
 
         sortHmAccessoriesProductsByNameAToZTest();
     }
@@ -469,7 +469,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
 
         navigateToAccessoriesPageTest();
-        navigateToStationaryAccessoriesPageLink1Test();
+        navigateToHomeAccessoriesPageLink1Test();
 
         sortHmAccessoriesProductsByNameZToATest();
     }
@@ -488,9 +488,28 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
 
         navigateToAccessoriesPageTest();
-        navigateToStationaryAccessoriesPageLink1Test();
+        navigateToHomeAccessoriesPageLink1Test();
 
         sortHmAccessoriesProductsByPriceLowToHighTest();
+    }
+
+    //Test 035f -> sort home accessories by price (high to low) test
+    @Test
+    void clickSortByPriceHighToLowTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAccessoriesPageTest();
+        navigateToHomeAccessoriesPageLink1Test();
+
+        sortHmAccessoriesProductsByPriceHighToLowTest();
     }
 
 }
