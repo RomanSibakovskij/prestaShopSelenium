@@ -2669,4 +2669,32 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesReferenceZToAOptionText(), "Reference, Z to A"); // -> assert crashes the test, it doesn't find text
     }
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // women clothes page navigation test methods
+
+    protected void navigateToWomenClothesPageLink1Test(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert 'Women' clothes link1 is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesPageLink1Displayed(), "The 'Women' clothes link1 isn't displayed");
+        System.out.println("The 'Women' clothes link1 is displayed" + "\n");
+        registeredUserWomenClothesPage.clickOnWomenClothesPageLink1();
+    }
+
+    protected void navigateToWomenClothesPageLink2Test(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert 'Women' clothes link2 is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesPageLink2Displayed(), "The 'Women' clothes link2 isn't displayed");
+        System.out.println("The 'Women' clothes link2 is displayed" + "\n");
+        registeredUserWomenClothesPage.clickOnWomenClothesPageLink2();
+    }
+
+    protected void navigateToWomenClothesPageBoxIconTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert 'Women' clothes box icon is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesPageBoxIconDisplayed(), "The 'Women' clothes box icon isn't displayed");
+        System.out.println("The 'Women' clothes box icon is displayed" + "\n");
+        registeredUserWomenClothesPage.clickOnWomenClothesPageBoxIcon();
+    }
+
 }
