@@ -359,6 +359,13 @@ public class RegisteredUserMenClothesPage extends BasePage{
         actions.moveToElement(menClothesReferenceAToZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
+    public void clickMenClothesReferenceZToAOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesReferenceZToAOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(menClothesReferenceZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
 
     //remove search filter
 

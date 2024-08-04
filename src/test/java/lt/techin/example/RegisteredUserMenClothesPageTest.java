@@ -557,5 +557,22 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         sortMenClothesByReferenceAToZTest();
     }
 
+    //Test 046g -> click sort by reference 'Z to A' on men clothes page test
+    @Test
+    void clickMenClothesSortByReferenceZToATest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        sortMenClothesByReferenceZToATest();
+    }
 
 }
