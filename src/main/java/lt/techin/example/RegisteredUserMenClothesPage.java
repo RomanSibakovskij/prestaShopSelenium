@@ -1,5 +1,6 @@
 package lt.techin.example;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -151,20 +152,37 @@ public class RegisteredUserMenClothesPage extends BasePage{
     }
 
     public void clickMenClothesSizeSLink(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesSizeSLink);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
         wait.until(ExpectedConditions.elementToBeClickable(menClothesSizeSLink));
         menClothesSizeSLink.click();
     }
 
     public void clickMenClothesSizeSBoxIcon(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesSizeMFilterMessage);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
         wait.until(ExpectedConditions.elementToBeClickable(menClothesSizeSBoxIcon));
         menClothesSizeSBoxIcon.click();
     }
 
+    public void clickMenClothesSizeMLink(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesSizeMLink);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesSizeMLink));
+        menClothesSizeMLink.click();
+    }
+
+    public void clickMenClothesSizeMBoxIcon(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesSizeMBoxIcon);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesSizeMBoxIcon));
+        menClothesSizeMBoxIcon.click();
+    }
+
     //slider price adjustment method
 
     public void setMenClothesPriceSliderValue(double price){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesPriceSlider);
         // Validate the price value
         if (price < 19 || price > 24) {
             throw new IllegalArgumentException("Price must be between 19 and 24 dollars.");
@@ -216,6 +234,8 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public boolean isMenClothesPriceSliderDisplayed(){return menClothesPriceSlider.isDisplayed();}
     public boolean isMenClothesSizeSLinkDisplayed(){return menClothesSizeSLink.isDisplayed();}
     public boolean isMenClothesSizeSBoxIconDisplayed(){return menClothesSizeSBoxIcon.isDisplayed();}
+    public boolean isMenClothesSizeMLinkDisplayed(){return menClothesSizeMLink.isDisplayed();}
+    public boolean isMenClothesSizeMBoxIconDisplayed(){return menClothesSizeMBoxIcon.isDisplayed();}
 
     //filter message getters
     public String getMenClothesAvailabilityFilterMessage(){return menClothesAvailabilityFilterMessage.getText();}
@@ -223,6 +243,7 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public String getMenClothesNewProductFilterMessage(){return menClothesNewProductFilterMessage.getText();}
     public String getMenClothesPriceFilterMessage(){return menClothesPriceFilterMessage.getText();}
     public String getMenClothesSizeSFilterMessage(){return menClothesSizeSFilterMessage.getText();}
+    public String getMenClothesSizeMFilterMessage(){return menClothesSizeMFilterMessage.getText();}
 
 
 
