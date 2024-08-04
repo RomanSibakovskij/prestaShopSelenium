@@ -46,6 +46,10 @@ public class RegisteredUserMenClothesPage extends BasePage{
     private WebElement menClothesSizeLLink;
     @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(4) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement menClothesSizeXLLink;
+    @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement menClothesWhiteLink;
+    @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement menClothesBlackLink;
 
 
     //box icons
@@ -63,6 +67,10 @@ public class RegisteredUserMenClothesPage extends BasePage{
     private WebElement menClothesSizeLBoxIcon;
     @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(4) > .facet-label > .custom-checkbox")
     private WebElement menClothesSizeXLBoxIcon;
+    @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(1) > .facet-label > .custom-checkbox")
+    private WebElement menClothesWhiteBoxIcon;
+    @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
+    private WebElement menClothesBlackBoxIcon;
 
 
     //filter messages
@@ -82,6 +90,10 @@ public class RegisteredUserMenClothesPage extends BasePage{
     private WebElement menClothesSizeLFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Size: XL')]")
     private WebElement menClothesSizeXLFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Color: White')]")
+    private WebElement menClothesSizeWhiteFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Color: Black')]")
+    private WebElement menClothesSizeBlackFilterMessage;
 
     public RegisteredUserMenClothesPage(WebDriver driver) {
         super(driver);
@@ -207,6 +219,20 @@ public class RegisteredUserMenClothesPage extends BasePage{
         menClothesSizeXLBoxIcon.click();
     }
 
+    public void clickMenClothesSizeWhiteLink(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesWhiteLink);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesWhiteLink));
+        menClothesWhiteLink.click();
+    }
+
+    public void clickMenClothesSizeWhiteBoxIcon(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesWhiteBoxIcon);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesWhiteBoxIcon));
+        menClothesWhiteBoxIcon.click();
+    }
+
     //slider price adjustment method
 
     public void setMenClothesPriceSliderValue(double price){
@@ -268,6 +294,8 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public boolean isMenClothesSizeLBoxIconDisplayed(){return menClothesSizeLBoxIcon.isDisplayed();}
     public boolean isMenClothesSizeXLLinkDisplayed(){return menClothesSizeXLLink.isDisplayed();}
     public boolean isMenClothesSizeXLBoxIconDisplayed(){return menClothesSizeXLBoxIcon.isDisplayed();}
+    public boolean isMenClothesSizeWhiteLinkDisplayed(){return menClothesWhiteLink.isDisplayed();}
+    public boolean isMenClothesSizeWhiteBoxIconDisplayed(){return menClothesWhiteBoxIcon.isDisplayed();}
 
     //filter message getters
     public String getMenClothesAvailabilityFilterMessage(){return menClothesAvailabilityFilterMessage.getText();}
@@ -278,6 +306,7 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public String getMenClothesSizeMFilterMessage(){return menClothesSizeMFilterMessage.getText();}
     public String getMenClothesSizeLFilterMessage(){return menClothesSizeLFilterMessage.getText();}
     public String getMenClothesSizeXLFilterMessage(){return menClothesSizeXLFilterMessage.getText();}
+    public String getMenClothesSizeWhiteFilterMessage(){return menClothesSizeWhiteFilterMessage.getText();}
 
 
 

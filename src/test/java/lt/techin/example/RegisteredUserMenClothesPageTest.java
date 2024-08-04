@@ -341,6 +341,42 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         filterMenClothesBySizeXLLinkTest();
     }
 
+    //Test 044 -> filter men clothes by size XL (box icon) test (displays black items, should display 0 if none are present)
+    @Test
+    void filterMenClothesColorWhiteBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        filterMenClothesByWhiteBoxIconTest();
+    }
+
+    //Test 044a -> filter men clothes by size XL (link) test (displays black items, should display 0 if none are present) 
+    @Test
+    void filterMenClothesColorWhiteLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        filterMenClothesByWhiteLinkTest();
+    }
+
 
 
 
