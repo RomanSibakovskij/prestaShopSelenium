@@ -1,8 +1,10 @@
 package lt.techin.example;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,6 +41,10 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     @FindBy(xpath = "//section[@id='js-active-search-filters']/ul//i[.='\uE5CD']")
     private WebElement removeFilterIcon;
 
+    // price slider
+    @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
+    private WebElement womenClothesPriceSlider;
+
     //filter messages
     @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
     private WebElement womenClothesAvailabilityFilterMessage;
@@ -46,6 +52,8 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     private WebElement womenClothesDiscountedFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
     private WebElement womenClothesNewProductFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Price: $30.00 - $36.00')]")
+    private WebElement womenClothesPriceFilterMessage;
 
     public RegisteredUserWomenClothesPage(WebDriver driver) {
         super(driver);
@@ -113,6 +121,38 @@ public class RegisteredUserWomenClothesPage extends BasePage{
         womenClothesNewClothesBoxIcon.click();
     }
 
+    //slider price adjustment method
+
+    public void setMenClothesPriceSliderValue(double price){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", womenClothesPriceSlider);
+        // Validate the price value
+        if (price < 28 || price > 36) {
+            throw new IllegalArgumentException("Price must be between 28 and 36 dollars.");
+        }
+
+        // Get the size and location of the slider
+        int sliderWidth = womenClothesPriceSlider.getSize().getWidth();
+        Point sliderLocation = womenClothesPriceSlider.getLocation();
+
+        // Price range
+        double minPrice = 28.0;
+        double maxPrice = 36.0;
+        double range = maxPrice - minPrice;
+
+        // target position (percentage of the slider width)
+        double percentage = (price - minPrice) / range;
+        int targetX = sliderLocation.getX() + (int) (sliderWidth * percentage);
+        int targetY = sliderLocation.getY() + (womenClothesPriceSlider.getSize().getHeight() / 2); // Center vertically
+
+        // Perform the drag and drop action
+        Actions actions = new Actions(driver);
+        actions.clickAndHold(womenClothesPriceSlider) // Click and hold on the slider
+                .moveByOffset(targetX - sliderLocation.getX(), targetY - sliderLocation.getY()) // Move to the target position
+                .release() // Release the mouse
+                .build()
+                .perform();
+    }
+
     //remove search filter
 
     public void clickRemoveSearchFilter(){
@@ -131,12 +171,14 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     public boolean isWomenClothesDiscountedBoxIconDisplayed() {return womenClothesDiscountedBoxIcon.isDisplayed();}
     public boolean isWomenClothesNewProductLinkDisplayed() {return womenClothesNewProductLink.isDisplayed();}
     public boolean isWomenClothesNewProductBoxIconDisplayed() {return womenClothesNewClothesBoxIcon.isDisplayed();}
+    public boolean isWomenClothesPriceSliderDisplayed() {return womenClothesPriceSlider.isDisplayed();}
 
 
     //filter message getters
     public String getWomenClothesAvailabilityFilterMessage(){return womenClothesAvailabilityFilterMessage.getText();}
     public String getWomenClothesDiscountedFilterMessage(){return womenClothesDiscountedFilterMessage.getText();}
     public String getWomenClothesNewProductFilterMessage(){return womenClothesNewProductFilterMessage.getText();}
+    public String getWomenClothesPriceFilterMessage(){return womenClothesPriceFilterMessage.getText();}
 
 
 }

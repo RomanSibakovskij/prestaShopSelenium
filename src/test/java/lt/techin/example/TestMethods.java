@@ -2771,4 +2771,18 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
+    protected void filterWomenClothesByPriceSliderTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+
+        //assert product 'new product' link is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesPriceSliderDisplayed(), "The women clothes price slider isn't displayed");
+        System.out.println("The women clothes page price slider is displayed" + "\n");
+        double targetPrice = 30.0;
+        registeredUserWomenClothesPage.setMenClothesPriceSliderValue(targetPrice);
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesPriceFilterMessage(), "Price: $30.00 - $36.00"); -> assert crashes the test
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
 }

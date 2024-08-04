@@ -163,5 +163,23 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         filterWomenClothesByNewProductLinkTest();
     }
 
+    //Test 051 -> filter women clothes by price slider value test
+    @Test
+    void filterWomenClothesPriceValueTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        filterWomenClothesByPriceSliderTest();
+    }
+
 
 }
