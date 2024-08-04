@@ -1,9 +1,6 @@
 package lt.techin.example;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -75,6 +72,24 @@ public class RegisteredUserMenClothesPage extends BasePage{
     //dropdown menu
     @FindBy(xpath = "//*//div[@id='js-product-list-top']//div[@class='row sort-by-row']/div[1]")
     private WebElement menClothesSortByDropdownMenu;
+
+    //menu options
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(1)")
+    private WebElement menClothesSalesOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(2)")
+    private WebElement menClothesRelevanceOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(3)")
+    private WebElement menClothesNameAtoZOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(4)")
+    private WebElement menClothesNameZToAOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(5)")
+    private WebElement menClothesPriceLowToHighOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(6)")
+    private WebElement menClothesPriceHighToLowOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(7)")
+    private WebElement menClothesReferenceAToZOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(8)")
+    private WebElement menClothesReferenceZToAOption;
 
 
     //filter messages
@@ -293,6 +308,15 @@ public class RegisteredUserMenClothesPage extends BasePage{
 
     }
 
+    //menu options methods
+
+    public void clickMenClothesSalesOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesSalesOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(menClothesSalesOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
 
     //remove search filter
 
@@ -328,6 +352,22 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public boolean isMenClothesBlackBoxIconDisplayed(){return menClothesBlackBoxIcon.isDisplayed();}
 
     public boolean isMenClothesSortByDropdownMenuDisplayed(){return menClothesSortByDropdownMenu.isDisplayed();}
+    public boolean isMenClothesSalesOptionDisplayed(){
+        return menClothesSalesOption.isDisplayed();
+    }
+    public boolean isMenClothesRelevanceOptionDisplayed() {
+        return menClothesRelevanceOption.isDisplayed();
+    }
+    public boolean isMenClothesNameAtoZOptionDisplayed(){
+        return menClothesNameAtoZOption.isDisplayed();
+    }
+    public boolean isMenClothesNameZToAOptionDisplayed(){
+        return menClothesNameZToAOption.isDisplayed();
+    }
+    public boolean isMenClothesPriceLowToHighOptionDisplayed(){return menClothesPriceLowToHighOption.isDisplayed();}
+    public boolean isMenClothesPriceHighToLowOptionDisplayed(){return menClothesPriceHighToLowOption.isDisplayed();}
+    public boolean isMenClothesReferenceAToZOptionDisplayed(){return menClothesReferenceAToZOption.isDisplayed();}
+    public boolean isMenClothesReferenceZToAOptionDisplayed(){return menClothesReferenceZToAOption.isDisplayed();}
 
     //filter message getters
     public String getMenClothesAvailabilityFilterMessage(){return menClothesAvailabilityFilterMessage.getText();}
@@ -340,6 +380,35 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public String getMenClothesSizeXLFilterMessage(){return menClothesSizeXLFilterMessage.getText();}
     public String getMenClothesWhiteFilterMessage(){return menClothesWhiteFilterMessage.getText();}
     public String getMenClothesBlackFilterMessage(){return menClothesBlackFilterMessage.getText();}
+
+    //dropdown options getters
+    public String getMenClothesSalesOptionText(){
+        WebElement hmAccessoriesSalesOption = driver.findElement(By.linkText("Sales, highest to lowest"));
+        return hmAccessoriesSalesOption.getText();
+    }
+    public String getMenClothesRelevanceOptionText(){
+        return menClothesRelevanceOption.getText();
+    }
+    public String getMenClothesNameAtoZOptionText(){
+        return menClothesNameAtoZOption.getText();
+    }
+    public String getMenClothesNameZToAOptionText(){
+        return menClothesNameZToAOption.getText();
+    }
+    public String getMenClothesPriceLowToHighOptionText(){
+        return menClothesPriceLowToHighOption.getText();
+    }
+    public String getMenClothesPriceHighToLowOptionText(){
+        return menClothesPriceHighToLowOption.getText();
+    }
+    public String getMenClothesReferenceAToZOptionText(){
+        return menClothesReferenceAToZOption.getText();
+    }
+    public String getMenClothesReferenceZToAOptionText(){
+        return menClothesReferenceZToAOption.getText();
+    }
+
+
 
 
 

@@ -70,7 +70,6 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccessoriesSortByDropdownMenu;
 
     //menu options
-
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(1)")
     private WebElement hmAccessoriesSalesOption;
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(2)")
@@ -356,51 +355,24 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public boolean isHomeAccessoriesNewProductLinkDisplayed(){
         return hmAccessoriesNewProductLink.isDisplayed();
     }
-    public boolean isHomeAccessoriesNewProductBoxIconDisplayed(){
-        return hmAccessoriesNewProductBoxIcon.isDisplayed();
-    }
+    public boolean isHomeAccessoriesNewProductBoxIconDisplayed(){return hmAccessoriesNewProductBoxIcon.isDisplayed();}
     public boolean isHmAccessoriesPriceSliderDisplayed(){
         return hmAccessoriesPriceSliderLine.isDisplayed();
     }
-    public boolean isHmAccessoriesWhiteColorLinkDisplayed(){
-        return hmAccessoriesWhiteColorLink.isDisplayed();
-    }
-    public boolean isHmAccessoriesWhiteBoxIconDisplayed(){
-        return hmAccessoriesWhiteColorBoxIcon.isDisplayed();
-    }
-    public boolean isHmAccessoriesBlackLinkDisplayed(){
-        return hmAccessoriesBlackColorBoxIcon.isDisplayed();
-    }
-    public boolean isHmAccessoriesBlackBoxIconDisplayed(){
-        return hmAccessoriesBlackColorBoxIcon.isDisplayed();
-    }
-    public boolean isHmAccessoriesCeramicLinkDisplayed(){
-        return hmAccessoriesCeramicLink.isDisplayed();
-    }
-    public boolean isHmAccessoriesCeramicBoxIconDisplayed(){
-        return hmAccessoriesCeramicBoxIcon.isDisplayed();
-    }
-    public boolean isHmAccessoriesPolyesterLinkDisplayed(){
-        return hmAccessoriesPolyesterLink.isDisplayed();
-    }
-    public boolean isHmAccessoriesPolyesterBoxIconDisplayed(){
-        return hmAccessoriesPolyesterBoxIcon.isDisplayed();
-    }
-    public boolean isHmAccessoriesRemovableCoverLinkDisplayed(){
-        return hmAccessoriesRemovableCoverLink.isDisplayed();
-    }
-    public boolean isHmAccessoriesRemovableCoverBoxIconDisplayed(){
-        return hmAccessoriesRemovableCoverBoxIcon.isDisplayed();
-    }
-    public boolean isHmAccessoriesStudioDesignLinkDisplayed(){
-        return hmAccessoriesStudioDesignLink.isDisplayed();
-    }
-    public boolean isHmAccessoriesStudioDesignBoxIconDisplayed(){
-        return hmAccessoriesStudioDesignBoxIcon.isDisplayed();
-    }
-    public boolean isHmAccessoriesSortByDropdownMenuDisplayed(){
-        return hmAccessoriesSortByDropdownMenu.isDisplayed();
-    }
+    public boolean isHmAccessoriesWhiteColorLinkDisplayed(){return hmAccessoriesWhiteColorLink.isDisplayed();}
+    public boolean isHmAccessoriesWhiteBoxIconDisplayed(){return hmAccessoriesWhiteColorBoxIcon.isDisplayed();}
+    public boolean isHmAccessoriesBlackLinkDisplayed(){return hmAccessoriesBlackColorBoxIcon.isDisplayed();}
+    public boolean isHmAccessoriesBlackBoxIconDisplayed(){return hmAccessoriesBlackColorBoxIcon.isDisplayed();}
+    public boolean isHmAccessoriesCeramicLinkDisplayed(){return hmAccessoriesCeramicLink.isDisplayed();}
+    public boolean isHmAccessoriesCeramicBoxIconDisplayed(){return hmAccessoriesCeramicBoxIcon.isDisplayed();}
+    public boolean isHmAccessoriesPolyesterLinkDisplayed(){return hmAccessoriesPolyesterLink.isDisplayed();}
+    public boolean isHmAccessoriesPolyesterBoxIconDisplayed(){return hmAccessoriesPolyesterBoxIcon.isDisplayed();}
+    public boolean isHmAccessoriesRemovableCoverLinkDisplayed(){return hmAccessoriesRemovableCoverLink.isDisplayed();}
+    public boolean isHmAccessoriesRemovableCoverBoxIconDisplayed(){return hmAccessoriesRemovableCoverBoxIcon.isDisplayed();}
+    public boolean isHmAccessoriesStudioDesignLinkDisplayed(){return hmAccessoriesStudioDesignLink.isDisplayed();}
+    public boolean isHmAccessoriesStudioDesignBoxIconDisplayed(){return hmAccessoriesStudioDesignBoxIcon.isDisplayed();}
+
+    public boolean isHmAccessoriesSortByDropdownMenuDisplayed(){return hmAccessoriesSortByDropdownMenu.isDisplayed();}
     public boolean isHmAccessoriesSalesOptionDisplayed(){
         return hmAccessoriesSalesOption.isDisplayed();
     }
@@ -413,18 +385,10 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public boolean isHmAccessoriesNameZToAOptionDisplayed(){
         return hmAccessoriesNameZToAOption.isDisplayed();
     }
-    public boolean isHmAccessoriesPriceLowToHighOptionDisplayed(){
-        return hmAccessoriesPriceLowToHighOption.isDisplayed();
-    }
-    public boolean isHmAccessoriesPriceHighToLowOptionDisplayed(){
-        return hmAccessoriesPriceHighToLowOption.isDisplayed();
-    }
-    public boolean isHmAccessoriesReferenceAToZOptionDisplayed(){
-        return hmAccessoriesReferenceAToZOption.isDisplayed();
-    }
-    public boolean isHmAccessoriesReferenceZToAOptionDisplayed(){
-        return hmAccessoriesReferenceZToAOption.isDisplayed();
-    }
+    public boolean isHmAccessoriesPriceLowToHighOptionDisplayed(){return hmAccessoriesPriceLowToHighOption.isDisplayed();}
+    public boolean isHmAccessoriesPriceHighToLowOptionDisplayed(){return hmAccessoriesPriceHighToLowOption.isDisplayed();}
+    public boolean isHmAccessoriesReferenceAToZOptionDisplayed(){return hmAccessoriesReferenceAToZOption.isDisplayed();}
+    public boolean isHmAccessoriesReferenceZToAOptionDisplayed(){return hmAccessoriesReferenceZToAOption.isDisplayed();}
 
 
     //filter message getters
@@ -445,7 +409,6 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public String getHmAccStudioDesignFilterMessage(){ return hmAccStudioDesignFilterMessage.getText();}
 
     //dropdown options getters
-
     public String getHmAccessoriesSalesOptionText(){
         WebElement hmAccessoriesSalesOption = driver.findElement(By.linkText("Sales, highest to lowest"));
         return hmAccessoriesSalesOption.getText();
