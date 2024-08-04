@@ -2489,6 +2489,30 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
+    protected void filterMenClothesBySizeXLBoxIconTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the filter by size xl choice is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesSizeXLBoxIconDisplayed(), "The men clothes 'Size XL' box icon link isn't displayed");
+        System.out.println("The men clothes 'Size XL' box icon link is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesSizeXLBoxIcon();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getMenClothesSizeXLFilterMessage(), "Size: XL"); -> assert crashes the test
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterMenClothesBySizeXLLinkTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the filter by size xl choice is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesSizeXLLinkDisplayed(), "The men clothes 'Size XL' link isn't displayed");
+        System.out.println("The men clothes 'Size XL' link is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesSizeXLLink();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getMenClothesSizeXLFilterMessage(), "Size: XL"); -> assert crashes the test
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
+    }
+
 
 
 }

@@ -269,7 +269,7 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         filterMenClothesBySizeMLinkTest();
     }
 
-    //Test 041 -> filter men clothes by size L (box icon) test
+    //Test 042 -> filter men clothes by size L (box icon) test
     @Test
     void filterMenClothesSizeLBoxIconTest(){
         clickOnSignUpTest();
@@ -287,7 +287,7 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         filterMenClothesBySizeLBoxIconTest();
     }
 
-    //Test 041a -> filter men clothes by size L (link) test
+    //Test 042a -> filter men clothes by size L (link) test
     @Test
     void filterMenClothesSizeLLinkTest(){
         clickOnSignUpTest();
@@ -304,6 +304,44 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         navigateToMenClothesPageLink1Test();
         filterMenClothesBySizeLLinkTest();
     }
+
+    //Test 043 -> filter men clothes by size XL (box icon) test
+    @Test
+    void filterMenClothesSizeXLBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        filterMenClothesBySizeXLBoxIconTest();
+    }
+
+    //Test 043a -> filter men clothes by size XL (link) test
+    @Test
+    void filterMenClothesSizeXLLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        filterMenClothesBySizeXLLinkTest();
+    }
+
+
 
 
 }
