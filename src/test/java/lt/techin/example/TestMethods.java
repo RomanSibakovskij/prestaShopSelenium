@@ -2774,13 +2774,37 @@ public class TestMethods extends BaseTest{
     protected void filterWomenClothesByPriceSliderTest(){
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
-        //assert product 'new product' link is displayed
+        //assert price slider is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPriceSliderDisplayed(), "The women clothes price slider isn't displayed");
         System.out.println("The women clothes page price slider is displayed" + "\n");
         double targetPrice = 30.0;
         registeredUserWomenClothesPage.setMenClothesPriceSliderValue(targetPrice);
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesPriceFilterMessage(), "Price: $30.00 - $36.00"); -> assert crashes the test
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterWomenClothesBySizeSBoxIconTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert the filter by size s choice is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeSBoxIconDisplayed(), "The size 'S' box icon link isn't displayed");
+        System.out.println("The size 'S' box icon link is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesSizeSBoxIcon();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getWomenClothesSizeSFilterMessage(), "Size: S");
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterWomenClothesBySizeSLinkTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert the filter by size s choice is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeSLinkDisplayed(), "The size 'S' link isn't displayed");
+        System.out.println("The selections 'S' link is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesSizeSLink();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getWomenClothesSizeSFilterMessage(), "Size: S");
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }

@@ -28,6 +28,14 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     private WebElement womenClothesDiscountedLink;
     @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement womenClothesNewProductLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement womenClothesSizeSLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement womenClothesSizeMLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(3) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement womenClothesSizeLLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(4) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement womenClothesSizeXLLink;
 
     //box icons
     @FindBy(css = "section:nth-of-type(1) > .collapse .custom-checkbox")
@@ -36,6 +44,14 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     private WebElement womenClothesDiscountedBoxIcon;
     @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
     private WebElement womenClothesNewClothesBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(1) > .facet-label > .custom-checkbox")
+    private WebElement womenClothesSizeSBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
+    private WebElement womenClothesSizeMBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(3) > .facet-label > .custom-checkbox")
+    private WebElement womenClothesSizeLBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(4) > .facet-label > .custom-checkbox")
+    private WebElement womenClothesSizeXLBoxIcon;
 
     //search filter remover
     @FindBy(xpath = "//section[@id='js-active-search-filters']/ul//i[.='\uE5CD']")
@@ -54,6 +70,14 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     private WebElement womenClothesNewProductFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Price: $30.00 - $36.00')]")
     private WebElement womenClothesPriceFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Size: S')]")
+    private WebElement womenClothesSizeSFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Size: M')]")
+    private WebElement womenClothesSizeMFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Size: L')]")
+    private WebElement womenClothesSizeLFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Size: XL')]")
+    private WebElement womenClothesSizeXLFilterMessage;
 
     public RegisteredUserWomenClothesPage(WebDriver driver) {
         super(driver);
@@ -121,6 +145,20 @@ public class RegisteredUserWomenClothesPage extends BasePage{
         womenClothesNewClothesBoxIcon.click();
     }
 
+    public void clickWomenClothesSizeSLink(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", womenClothesSizeSLink);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(womenClothesSizeSLink));
+        womenClothesSizeSLink.click();
+    }
+
+    public void clickWomenClothesSizeSBoxIcon(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", womenClothesSizeSBoxIcon);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(womenClothesSizeSBoxIcon));
+        womenClothesSizeSBoxIcon.click();
+    }
+
     //slider price adjustment method
 
     public void setMenClothesPriceSliderValue(double price){
@@ -172,6 +210,14 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     public boolean isWomenClothesNewProductLinkDisplayed() {return womenClothesNewProductLink.isDisplayed();}
     public boolean isWomenClothesNewProductBoxIconDisplayed() {return womenClothesNewClothesBoxIcon.isDisplayed();}
     public boolean isWomenClothesPriceSliderDisplayed() {return womenClothesPriceSlider.isDisplayed();}
+    public boolean isWomenClothesSizeSLinkDisplayed() {return womenClothesSizeSLink.isDisplayed();}
+    public boolean isWomenClothesSizeSBoxIconDisplayed() {return womenClothesSizeSBoxIcon.isDisplayed();}
+    public boolean isWomenClothesSizeMLinkDisplayed() {return womenClothesSizeMLink.isDisplayed();}
+    public boolean isWomenClothesSizeMBoxIconDisplayed() {return womenClothesSizeMBoxIcon.isDisplayed();}
+    public boolean isWomenClothesSizeLLinkDisplayed() {return womenClothesSizeLLink.isDisplayed();}
+    public boolean isWomenClothesSizeLBoxIconDisplayed() {return womenClothesSizeLBoxIcon.isDisplayed();}
+    public boolean isWomenClothesSizeXLLinkDisplayed() {return womenClothesSizeXLLink.isDisplayed();}
+    public boolean isWomenClothesSizeXLBoxIconDisplayed() {return womenClothesSizeXLBoxIcon.isDisplayed();}
 
 
     //filter message getters
@@ -179,6 +225,10 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     public String getWomenClothesDiscountedFilterMessage(){return womenClothesDiscountedFilterMessage.getText();}
     public String getWomenClothesNewProductFilterMessage(){return womenClothesNewProductFilterMessage.getText();}
     public String getWomenClothesPriceFilterMessage(){return womenClothesPriceFilterMessage.getText();}
+    public String getWomenClothesSizeSFilterMessage(){return womenClothesSizeSFilterMessage.getText();}
+    public String getWomenClothesSizeMFilterMessage(){return womenClothesSizeMFilterMessage.getText();}
+    public String getWomenClothesSizeLFilterMessage(){return womenClothesSizeLFilterMessage.getText();}
+    public String getWomenClothesSizeXLFilterMessage(){return womenClothesSizeXLFilterMessage.getText();}
 
 
 }

@@ -181,5 +181,40 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         filterWomenClothesByPriceSliderTest();
     }
 
+    //Test 052 -> filter women clothes by size s (box icon) test
+    @Test
+    void filterWomenClothesSizeSBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        filterWomenClothesBySizeSBoxIconTest();
+    }
+    //Test 052a -> filter women clothes by size s (link) test
+    @Test
+    void filterWomenClothesSizeSLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        filterWomenClothesBySizeSLinkTest();
+    }
+
 
 }
