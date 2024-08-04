@@ -33,19 +33,35 @@ public class RegisteredUserMenClothesPage extends BasePage{
     //links
     @FindBy(css = "section:nth-of-type(1) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement menClothesInStockLink;
-    @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(1) > .facet-label > .custom-checkbox")
+    @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement menClothesDiscountedLink;
-    @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
+    @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement menClothesNewProductLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement menClothesSizeSLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement menClothesSizeMLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(3) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement menClothesSizeLLink;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(4) > .facet-label > ._gray-darker.js-search-link.search-link")
+    private WebElement menClothesSizeXLLink;
 
 
     //box icons
     @FindBy(css = "section:nth-of-type(1) > .collapse .custom-checkbox")
     private WebElement menClothesInStockBoxIcon;
-    @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
+    @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(1) > .facet-label > .custom-checkbox")
     private WebElement menClothesDiscountedBoxIcon;
     @FindBy(css = "section:nth-of-type(2) > .collapse > li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement menClothesNewProductBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(1) > .facet-label > .custom-checkbox")
+    private WebElement menClothesSizeSBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
+    private WebElement menClothesSizeMBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(3) > .facet-label > .custom-checkbox")
+    private WebElement menClothesSizeLBoxIcon;
+    @FindBy(css = "section:nth-of-type(4) > .collapse > li:nth-of-type(4) > .facet-label > .custom-checkbox")
+    private WebElement menClothesSizeXLBoxIcon;
 
 
     //filter messages
@@ -57,6 +73,14 @@ public class RegisteredUserMenClothesPage extends BasePage{
     private WebElement menClothesNewProductFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Price: $19.00 - $24.00')]")
     private WebElement menClothesPriceFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Size: S')]")
+    private WebElement menClothesSizeSFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Size: M')]")
+    private WebElement menClothesSizeMFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Size: L')]")
+    private WebElement menClothesSizeLFilterMessage;
+    @FindBy(xpath = "//*[contains(text(), 'Size: XL')]")
+    private WebElement menClothesSizeXLFilterMessage;
 
     public RegisteredUserMenClothesPage(WebDriver driver) {
         super(driver);
@@ -126,6 +150,18 @@ public class RegisteredUserMenClothesPage extends BasePage{
         menClothesNewProductBoxIcon.click();
     }
 
+    public void clickMenClothesSizeSLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesSizeSLink));
+        menClothesSizeSLink.click();
+    }
+
+    public void clickMenClothesSizeSBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesSizeSBoxIcon));
+        menClothesSizeSBoxIcon.click();
+    }
+
     //slider price adjustment method
 
     public void setMenClothesPriceSliderValue(double price){
@@ -178,12 +214,15 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public boolean isMenClothesNewProductLinkDisplayed(){return menClothesNewProductLink.isDisplayed();}
     public boolean isMenClothesNewProductBoxIconDisplayed(){return menClothesNewProductBoxIcon.isDisplayed();}
     public boolean isMenClothesPriceSliderDisplayed(){return menClothesPriceSlider.isDisplayed();}
+    public boolean isMenClothesSizeSLinkDisplayed(){return menClothesSizeSLink.isDisplayed();}
+    public boolean isMenClothesSizeSBoxIconDisplayed(){return menClothesSizeSBoxIcon.isDisplayed();}
 
     //filter message getters
     public String getMenClothesAvailabilityFilterMessage(){return menClothesAvailabilityFilterMessage.getText();}
     public String getMenClothesDiscountedFilterMessage(){return menClothesAvailabilityFilterMessage.getText();}
     public String getMenClothesNewProductFilterMessage(){return menClothesNewProductFilterMessage.getText();}
     public String getMenClothesPriceFilterMessage(){return menClothesPriceFilterMessage.getText();}
+    public String getMenClothesSizeSFilterMessage(){return menClothesSizeSFilterMessage.getText();}
 
 
 

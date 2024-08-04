@@ -179,7 +179,7 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         filterMenClothesByNewProductLinkTest();
     }
 
-    //Test 038a -> filter men clothes by price test
+    //Test 039 -> filter men clothes by price test
     @Test
     void filterMenClothesByPriceTest(){
         clickOnSignUpTest();
@@ -195,6 +195,42 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         navigateToClothesPageTest();
         navigateToMenClothesPageLink1Test();
         filterMenClothesByPriceSliderTest();
+    }
+
+    //Test 040 -> filter men clothes by size S (box icon) test
+    @Test
+    void filterMenClothesSizeSBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        filterMenClothesBySizeSBoxIconTest();
+    }
+
+    //Test 040a -> filter men clothes by size S (link) test
+    @Test
+    void filterMenClothesSizeSLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        filterMenClothesBySizeSLinkTest();
     }
 
 
