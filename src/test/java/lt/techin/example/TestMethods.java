@@ -2857,4 +2857,28 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
+    protected void filterWomenClothesBySizeXLBoxIconTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert the filter by size xl choice is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeXLBoxIconDisplayed(), "The size 'XL' box icon link isn't displayed");
+        System.out.println("The size 'XL' box icon link is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesSizeXLBoxIcon();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getWomenClothesSizeXLFilterMessage(), "Size: XL");
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterWomenClothesBySizeXLLinkTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert the filter by size xl choice is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeXLLinkDisplayed(), "The size 'XL' link isn't displayed");
+        System.out.println("The size 'XL' link is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesSizeXLLink();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getWomenClothesSizeXLFilterMessage(), "Size: XL");
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
 }
