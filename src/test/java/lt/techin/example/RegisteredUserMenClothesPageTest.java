@@ -341,7 +341,7 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         filterMenClothesBySizeXLLinkTest();
     }
 
-    //Test 044 -> filter men clothes by size XL (box icon) test (displays black items, should display 0 if none are present)
+    //Test 044 -> filter men clothes by white color (box icon) test (displays black items, should display 0 if none are present)
     @Test
     void filterMenClothesColorWhiteBoxIconTest(){
         clickOnSignUpTest();
@@ -359,7 +359,7 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         filterMenClothesByWhiteBoxIconTest();
     }
 
-    //Test 044a -> filter men clothes by size XL (link) test (displays black items, should display 0 if none are present) 
+    //Test 044a -> filter men clothes by white color (link) test (displays black items, should display 0 if none are present)
     @Test
     void filterMenClothesColorWhiteLinkTest(){
         clickOnSignUpTest();
@@ -375,6 +375,42 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         navigateToClothesPageTest();
         navigateToMenClothesPageLink1Test();
         filterMenClothesByWhiteLinkTest();
+    }
+
+    //Test 045 -> filter men clothes by black color (box icon) test
+    @Test
+    void filterMenClothesColorBlackBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        filterMenClothesByBlackBoxIconTest();
+    }
+
+    //Test 045a -> filter men clothes by black color (link) test
+    @Test
+    void filterMenClothesColorBlackLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        filterMenClothesByBlackLinkTest();
     }
 
 

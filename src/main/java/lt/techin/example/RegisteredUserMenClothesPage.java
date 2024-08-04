@@ -91,9 +91,9 @@ public class RegisteredUserMenClothesPage extends BasePage{
     @FindBy(xpath = "//*[contains(text(), 'Size: XL')]")
     private WebElement menClothesSizeXLFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Color: White')]")
-    private WebElement menClothesSizeWhiteFilterMessage;
+    private WebElement menClothesWhiteFilterMessage;
     @FindBy(xpath = "//*[contains(text(), 'Color: Black')]")
-    private WebElement menClothesSizeBlackFilterMessage;
+    private WebElement menClothesBlackFilterMessage;
 
     public RegisteredUserMenClothesPage(WebDriver driver) {
         super(driver);
@@ -219,18 +219,32 @@ public class RegisteredUserMenClothesPage extends BasePage{
         menClothesSizeXLBoxIcon.click();
     }
 
-    public void clickMenClothesSizeWhiteLink(){
+    public void clickMenClothesWhiteLink(){
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesWhiteLink);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
         wait.until(ExpectedConditions.elementToBeClickable(menClothesWhiteLink));
         menClothesWhiteLink.click();
     }
 
-    public void clickMenClothesSizeWhiteBoxIcon(){
+    public void clickMenClothesWhiteBoxIcon(){
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesWhiteBoxIcon);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
         wait.until(ExpectedConditions.elementToBeClickable(menClothesWhiteBoxIcon));
         menClothesWhiteBoxIcon.click();
+    }
+
+    public void clickMenClothesBlackLink(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesBlackLink);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesBlackLink));
+        menClothesBlackLink.click();
+    }
+
+    public void clickMenClothesBlackBoxIcon(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesBlackBoxIcon);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesBlackBoxIcon));
+        menClothesBlackBoxIcon.click();
     }
 
     //slider price adjustment method
@@ -294,8 +308,10 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public boolean isMenClothesSizeLBoxIconDisplayed(){return menClothesSizeLBoxIcon.isDisplayed();}
     public boolean isMenClothesSizeXLLinkDisplayed(){return menClothesSizeXLLink.isDisplayed();}
     public boolean isMenClothesSizeXLBoxIconDisplayed(){return menClothesSizeXLBoxIcon.isDisplayed();}
-    public boolean isMenClothesSizeWhiteLinkDisplayed(){return menClothesWhiteLink.isDisplayed();}
-    public boolean isMenClothesSizeWhiteBoxIconDisplayed(){return menClothesWhiteBoxIcon.isDisplayed();}
+    public boolean isMenClothesWhiteLinkDisplayed(){return menClothesWhiteLink.isDisplayed();}
+    public boolean isMenClothesWhiteBoxIconDisplayed(){return menClothesWhiteBoxIcon.isDisplayed();}
+    public boolean isMenClothesBlackLinkDisplayed(){return menClothesBlackLink.isDisplayed();}
+    public boolean isMenClothesBlackBoxIconDisplayed(){return menClothesBlackBoxIcon.isDisplayed();}
 
     //filter message getters
     public String getMenClothesAvailabilityFilterMessage(){return menClothesAvailabilityFilterMessage.getText();}
@@ -306,7 +322,8 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public String getMenClothesSizeMFilterMessage(){return menClothesSizeMFilterMessage.getText();}
     public String getMenClothesSizeLFilterMessage(){return menClothesSizeLFilterMessage.getText();}
     public String getMenClothesSizeXLFilterMessage(){return menClothesSizeXLFilterMessage.getText();}
-    public String getMenClothesSizeWhiteFilterMessage(){return menClothesSizeWhiteFilterMessage.getText();}
+    public String getMenClothesWhiteFilterMessage(){return menClothesWhiteFilterMessage.getText();}
+    public String getMenClothesBlackFilterMessage(){return menClothesBlackFilterMessage.getText();}
 
 
 

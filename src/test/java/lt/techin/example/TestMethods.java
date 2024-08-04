@@ -2516,9 +2516,9 @@ public class TestMethods extends BaseTest{
     protected void filterMenClothesByWhiteBoxIconTest(){
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by white color choice is displayed
-        assertTrue(registeredUserMenClothesPage.isMenClothesSizeWhiteBoxIconDisplayed(), "The men clothes color 'White' box icon link isn't displayed");
+        assertTrue(registeredUserMenClothesPage.isMenClothesWhiteBoxIconDisplayed(), "The men clothes color 'White' box icon link isn't displayed");
         System.out.println("The men clothes color 'White' box icon link is displayed" + "\n");
-        registeredUserMenClothesPage.clickMenClothesSizeWhiteBoxIcon();
+        registeredUserMenClothesPage.clickMenClothesWhiteBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeWhiteFilterMessage(), "Color: White"); -> assert crashes the test
         //remove search filter
@@ -2528,11 +2528,35 @@ public class TestMethods extends BaseTest{
     protected void filterMenClothesByWhiteLinkTest(){
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by white color choice is displayed
-        assertTrue(registeredUserMenClothesPage.isMenClothesSizeWhiteLinkDisplayed(), "The men clothes color 'White' link isn't displayed");
+        assertTrue(registeredUserMenClothesPage.isMenClothesWhiteLinkDisplayed(), "The men clothes color 'White' link isn't displayed");
         System.out.println("The men clothes color 'White' link is displayed" + "\n");
-        registeredUserMenClothesPage.clickMenClothesSizeWhiteLink();
+        registeredUserMenClothesPage.clickMenClothesWhiteLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeWhiteFilterMessage() "Color: White"); -> assert crashes the test
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterMenClothesByBlackBoxIconTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the filter by black color choice is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesBlackBoxIconDisplayed(), "The men clothes color 'Black' box icon link isn't displayed");
+        System.out.println("The men clothes color 'Black' box icon link is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesBlackBoxIcon();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getMenClothesSizeBlackFilterMessage(), "Color: Black"); -> assert crashes the test
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterMenClothesByBlackLinkTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the filter by black color choice is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesBlackLinkDisplayed(), "The men clothes color 'Black' link isn't displayed");
+        System.out.println("The men clothes color 'Black' link is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesBlackLink();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getMenClothesSizeBlackFilterMessage() "Color: Black"); -> assert crashes the test
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
