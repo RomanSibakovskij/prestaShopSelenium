@@ -2801,10 +2801,34 @@ public class TestMethods extends BaseTest{
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size s choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeSLinkDisplayed(), "The size 'S' link isn't displayed");
-        System.out.println("The selections 'S' link is displayed" + "\n");
+        System.out.println("The size 'S' link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSizeSLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesSizeSFilterMessage(), "Size: S");
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterWomenClothesBySizeMBoxIconTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert the filter by size m choice is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeMBoxIconDisplayed(), "The size 'M' box icon link isn't displayed");
+        System.out.println("The size 'M' box icon link is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesSizeMBoxIcon();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getWomenClothesSizeMFilterMessage(), "Size: M");
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterWomenClothesBySizeMLinkTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert the filter by size m choice is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeMLinkDisplayed(), "The size 'M' link isn't displayed");
+        System.out.println("The selections 'M' link is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesSizeMLink();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getWomenClothesSizeMFilterMessage(), "Size: M");
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }

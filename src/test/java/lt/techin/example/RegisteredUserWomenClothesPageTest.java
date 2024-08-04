@@ -216,5 +216,40 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         filterWomenClothesBySizeSLinkTest();
     }
 
+    //Test 053 -> filter women clothes by size m (box icon) test
+    @Test
+    void filterWomenClothesSizeMBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        filterWomenClothesBySizeMBoxIconTest();
+    }
+    //Test 053a -> filter women clothes by size m (link) test
+    @Test
+    void filterWomenClothesSizeMLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        filterWomenClothesBySizeMLinkTest();
+    }
+
 
 }
