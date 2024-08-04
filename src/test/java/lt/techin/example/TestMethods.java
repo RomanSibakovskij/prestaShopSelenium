@@ -2601,7 +2601,7 @@ public class TestMethods extends BaseTest{
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
-        //assert the sort by name 'A to Z option is displayed
+        //assert the sort by name 'A to Z' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesNameAToZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
         System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesNameAToZOption();
@@ -2613,7 +2613,7 @@ public class TestMethods extends BaseTest{
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
-        //assert the sort by name 'Z to A option is displayed
+        //assert the sort by name 'Z to A' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesNameZToAOptionDisplayed(), "The sort by name 'Z to A' menu option isn't displayed");
         System.out.println("The sort by name 'Z to A' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesNameZToAOption();
@@ -2625,7 +2625,7 @@ public class TestMethods extends BaseTest{
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
-        //assert the sort by price 'low to high option is displayed
+        //assert the sort by price 'low to high' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
         System.out.println("The sort by price 'low to high' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesPriceLowToHighOption();
@@ -2637,12 +2637,24 @@ public class TestMethods extends BaseTest{
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
-        //assert the sort by price 'low to high option is displayed
+        //assert the sort by price 'high to low' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPriceHighToLowOptionDisplayed(), "The sort by price 'high to low' menu option isn't displayed");
         System.out.println("The sort by price 'low to high' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesPriceHighToLowOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesPriceHighToLowOptionText(), "Price, high to low"); // -> assert crashes the test, it doesn't find text
+    }
+
+    protected void sortMenClothesByReferenceAToZTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+
+        registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
+        //assert the sort by reference 'A to Z' option is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesReferenceAToZOptionDisplayed(), "The sort by reference 'A to Z' menu option isn't displayed");
+        System.out.println("The sort by reference 'A to Z' menu option  is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesReferenceAToZOption();
+        //assert the correct text is input in option
+        //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
 }
