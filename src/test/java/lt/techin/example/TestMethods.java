@@ -2723,4 +2723,28 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
+    protected void filterWomenClothesByDiscountedBoxIconTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesDiscountedBoxIconDisplayed(), "The selections 'Discounted' box icon link isn't displayed");
+        System.out.println("The selections 'Discounted' box icon link is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesDiscountedBoxIcon();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getWomenClothesDiscountedFilterMessage(), "Selections: Discounted");
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterWomenClothesByDiscountedLinkTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesDiscountedLinkDisplayed(), "The selections 'Discounted' link isn't displayed");
+        System.out.println("The selections 'Discounted' link is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesDiscountedLink();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getWomenClothesDiscountedFilterMessage(), "Selections: Discounted");
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
 }
