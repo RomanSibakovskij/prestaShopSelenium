@@ -72,6 +72,10 @@ public class RegisteredUserMenClothesPage extends BasePage{
     @FindBy(css = "section:nth-of-type(5) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
     private WebElement menClothesBlackBoxIcon;
 
+    //dropdown menu
+    @FindBy(xpath = "//*//div[@id='js-product-list-top']//div[@class='row sort-by-row']/div[1]")
+    private WebElement menClothesSortByDropdownMenu;
+
 
     //filter messages
     @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
@@ -279,6 +283,16 @@ public class RegisteredUserMenClothesPage extends BasePage{
                 .perform();
     }
 
+    //dropdown menu methods
+
+    public void clickMenClothesSortByDropdownMenu(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesSortByDropdownMenu));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(menClothesSortByDropdownMenu).clickAndHold().pause(Duration.ofSeconds(2)).release().perform();
+
+    }
+
 
     //remove search filter
 
@@ -312,6 +326,8 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public boolean isMenClothesWhiteBoxIconDisplayed(){return menClothesWhiteBoxIcon.isDisplayed();}
     public boolean isMenClothesBlackLinkDisplayed(){return menClothesBlackLink.isDisplayed();}
     public boolean isMenClothesBlackBoxIconDisplayed(){return menClothesBlackBoxIcon.isDisplayed();}
+
+    public boolean isMenClothesSortByDropdownMenuDisplayed(){return menClothesSortByDropdownMenu.isDisplayed();}
 
     //filter message getters
     public String getMenClothesAvailabilityFilterMessage(){return menClothesAvailabilityFilterMessage.getText();}

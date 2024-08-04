@@ -413,6 +413,24 @@ public class RegisteredUserMenClothesPageTest extends TestMethods{
         filterMenClothesByBlackLinkTest();
     }
 
+    //Test 046 -> click sort by dropdown menu on men clothes page test
+    @Test
+    void clickMenClothesSortByDropdownTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToMenClothesPageLink1Test();
+        clickMenClothesSortByDropdownMenuTest();
+    }
+
 
 
 

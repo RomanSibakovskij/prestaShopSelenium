@@ -66,7 +66,6 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement removeFilterIcon;
 
     //dropdown menu
-
     @FindBy(xpath = "//*//div[@id='js-product-list-top']//div[@class='row sort-by-row']/div[1]")
     private WebElement hmAccessoriesSortByDropdownMenu;
 

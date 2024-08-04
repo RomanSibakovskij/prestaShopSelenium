@@ -2561,6 +2561,14 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
+    // dropdown menu test method
 
+    protected void clickMenClothesSortByDropdownMenuTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //assert the dropdown is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
+        System.out.println("The 'Sort By' dropdown menu is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
+    }
 
 }
