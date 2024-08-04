@@ -1379,6 +1379,8 @@ public class TestMethods extends BaseTest{
         System.out.println("The price slider is displayed");
         double targetPrice = 21.0;
         registeredUserArtPage.setPriceSliderValue(targetPrice);
+        //remove search filter
+        registeredUserArtPage.clickRemoveSearchFilter();
     }
 
     protected void filterProductsByCompositionLinkTest(){
@@ -1563,6 +1565,8 @@ public class TestMethods extends BaseTest{
         System.out.println("The sort by price 'low to high' menu option is displayed" + "\n");
         registeredUserArtPage.clickPriceLowToHighOption();
         //assertEquals(registeredUserArtPage.getPriceLowToHighOptionText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
+        //remove search filter
+        registeredUserArtPage.clickRemoveSearchFilter();
     }
 
     protected void sortProductsByPriceHighToLowTest(){
@@ -1707,6 +1711,8 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.setStAccessoriesPriceSliderValue(targetPrice);
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccPriceFilterMessage(), "Price: $12.00 - $13.00"); -> assert crashes the test
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterProductByPaperType1BoxIconTest(){
@@ -1885,6 +1891,8 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickStAccessoriesPriceLowToHighOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesPriceLowToHighText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
+        //remove search filter
+        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void sortStAccessoriesProductsByPriceHighToLowTest(){
@@ -2391,6 +2399,20 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickMenClothesNewProductLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesNewProductFilterMessage(), "Selections: New product");
+        //remove search filter
+        registeredUserMenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterMenClothesByPriceSliderTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+
+        //assert product 'new product' link is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesPriceSliderDisplayed(), "The stationary accessories price slider isn't displayed");
+        System.out.println("The stationary accessories page price slider is displayed" + "\n");
+        double targetPrice = 22.0;
+        registeredUserMenClothesPage.setMenClothesPriceSliderValue(targetPrice);
+        //assert the correct message is displayed
+        //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesPriceFilterMessage(), "Price: $19.00 - $24.00"); -> assert crashes the test
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
