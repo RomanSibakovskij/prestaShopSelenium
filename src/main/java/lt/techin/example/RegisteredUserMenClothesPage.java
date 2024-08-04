@@ -338,6 +338,13 @@ public class RegisteredUserMenClothesPage extends BasePage{
         actions.moveToElement(menClothesNameZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
+    public void clickMenClothesPriceLowToHighOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesPriceLowToHighOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(menClothesPriceLowToHighOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
 
     //remove search filter
 
