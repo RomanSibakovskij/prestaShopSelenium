@@ -198,6 +198,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         navigateToWomenClothesPageLink1Test();
         filterWomenClothesBySizeSBoxIconTest();
     }
+
     //Test 052a -> filter women clothes by size s (link) test
     @Test
     void filterWomenClothesSizeSLinkTest(){
@@ -233,6 +234,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         navigateToWomenClothesPageLink1Test();
         filterWomenClothesBySizeMBoxIconTest();
     }
+
     //Test 053a -> filter women clothes by size m (link) test
     @Test
     void filterWomenClothesSizeMLinkTest(){
@@ -249,6 +251,42 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         navigateToClothesPageTest();
         navigateToWomenClothesPageLink1Test();
         filterWomenClothesBySizeMLinkTest();
+    }
+
+    //Test 054 -> filter women clothes by size l (box icon) test
+    @Test
+    void filterWomenClothesSizeLBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        filterWomenClothesBySizeLBoxIconTest();
+    }
+    
+    //Test 054a -> filter women clothes by size l (link) test
+    @Test
+    void filterWomenClothesSizeLLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        filterWomenClothesBySizeLLinkTest();
     }
 
 

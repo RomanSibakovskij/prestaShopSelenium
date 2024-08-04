@@ -173,6 +173,20 @@ public class RegisteredUserWomenClothesPage extends BasePage{
         womenClothesSizeMBoxIcon.click();
     }
 
+    public void clickWomenClothesSizeLLink(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", womenClothesSizeLLink);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(womenClothesSizeLLink));
+        womenClothesSizeLLink.click();
+    }
+
+    public void clickWomenClothesSizeLBoxIcon(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", womenClothesSizeLBoxIcon);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(womenClothesSizeLBoxIcon));
+        womenClothesSizeLBoxIcon.click();
+    }
+
     //slider price adjustment method
 
     public void setMenClothesPriceSliderValue(double price){
