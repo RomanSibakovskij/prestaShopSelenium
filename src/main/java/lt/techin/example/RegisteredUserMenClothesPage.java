@@ -179,6 +179,20 @@ public class RegisteredUserMenClothesPage extends BasePage{
         menClothesSizeMBoxIcon.click();
     }
 
+    public void clickMenClothesSizeLLink(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesSizeLLink);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesSizeLLink));
+        menClothesSizeLLink.click();
+    }
+
+    public void clickMenClothesSizeLBoxIcon(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesSizeLBoxIcon);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesSizeLBoxIcon));
+        menClothesSizeLBoxIcon.click();
+    }
+
     //slider price adjustment method
 
     public void setMenClothesPriceSliderValue(double price){
@@ -236,6 +250,8 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public boolean isMenClothesSizeSBoxIconDisplayed(){return menClothesSizeSBoxIcon.isDisplayed();}
     public boolean isMenClothesSizeMLinkDisplayed(){return menClothesSizeMLink.isDisplayed();}
     public boolean isMenClothesSizeMBoxIconDisplayed(){return menClothesSizeMBoxIcon.isDisplayed();}
+    public boolean isMenClothesSizeLLinkDisplayed(){return menClothesSizeLLink.isDisplayed();}
+    public boolean isMenClothesSizeLBoxIconDisplayed(){return menClothesSizeLBoxIcon.isDisplayed();}
 
     //filter message getters
     public String getMenClothesAvailabilityFilterMessage(){return menClothesAvailabilityFilterMessage.getText();}
@@ -244,6 +260,7 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public String getMenClothesPriceFilterMessage(){return menClothesPriceFilterMessage.getText();}
     public String getMenClothesSizeSFilterMessage(){return menClothesSizeSFilterMessage.getText();}
     public String getMenClothesSizeMFilterMessage(){return menClothesSizeMFilterMessage.getText();}
+    public String getMenClothesSizeLFilterMessage(){return menClothesSizeLFilterMessage.getText();}
 
 
 
