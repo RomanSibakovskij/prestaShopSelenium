@@ -75,7 +75,7 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(2)")
     private WebElement hmAccessoriesRelevanceOption;
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(3)")
-    private WebElement hmAccessoriesNameAtoZOption;
+    private WebElement hmAccessoriesNameAToZOption;
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(4)")
     private WebElement hmAccessoriesNameZToAOption;
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(5)")
@@ -288,9 +288,9 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
 
     public void clickHmAccessoriesNameAToZOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesNameAtoZOption));
+        wait.until(ExpectedConditions.elementToBeClickable(hmAccessoriesNameAToZOption));
         Actions actions = new Actions(driver);
-        actions.moveToElement(hmAccessoriesNameAtoZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+        actions.moveToElement(hmAccessoriesNameAToZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
     public void clickHmAccessoriesNameZToAOption(){
@@ -379,8 +379,8 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public boolean isHmAccessoriesRelevanceOptionDisplayed() {
         return hmAccessoriesRelevanceOption.isDisplayed();
     }
-    public boolean isHmAccessoriesNameAtoZOptionDisplayed(){
-        return hmAccessoriesNameAtoZOption.isDisplayed();
+    public boolean isHmAccessoriesNameAToZOptionDisplayed(){
+        return hmAccessoriesNameAToZOption.isDisplayed();
     }
     public boolean isHmAccessoriesNameZToAOptionDisplayed(){
         return hmAccessoriesNameZToAOption.isDisplayed();
@@ -416,8 +416,8 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     public String getHmAccessoriesRelevanceOptionText(){
         return hmAccessoriesRelevanceOption.getText();
     }
-    public String getHmAccessoriesNameAtoZOptionText(){
-        return hmAccessoriesNameAtoZOption.getText();
+    public String getHmAccessoriesNameAToZOptionText(){
+        return hmAccessoriesNameAToZOption.getText();
     }
     public String getHmAccessoriesNameZToAOptionText(){
         return hmAccessoriesNameZToAOption.getText();

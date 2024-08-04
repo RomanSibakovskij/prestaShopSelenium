@@ -79,7 +79,7 @@ public class RegisteredUserMenClothesPage extends BasePage{
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(2)")
     private WebElement menClothesRelevanceOption;
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(3)")
-    private WebElement menClothesNameAtoZOption;
+    private WebElement menClothesNameAToZOption;
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(4)")
     private WebElement menClothesNameZToAOption;
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(5)")
@@ -324,6 +324,13 @@ public class RegisteredUserMenClothesPage extends BasePage{
         actions.moveToElement(menClothesRelevanceOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
+    public void clickMenClothesNameAToZOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(menClothesNameAToZOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(menClothesNameAToZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
 
     //remove search filter
 
@@ -365,8 +372,8 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public boolean isMenClothesRelevanceOptionDisplayed() {
         return menClothesRelevanceOption.isDisplayed();
     }
-    public boolean isMenClothesNameAtoZOptionDisplayed(){
-        return menClothesNameAtoZOption.isDisplayed();
+    public boolean isMenClothesNameAToZOptionDisplayed(){
+        return menClothesNameAToZOption.isDisplayed();
     }
     public boolean isMenClothesNameZToAOptionDisplayed(){
         return menClothesNameZToAOption.isDisplayed();
@@ -396,8 +403,8 @@ public class RegisteredUserMenClothesPage extends BasePage{
     public String getMenClothesRelevanceOptionText(){
         return menClothesRelevanceOption.getText();
     }
-    public String getMenClothesNameAtoZOptionText(){
-        return menClothesNameAtoZOption.getText();
+    public String getMenClothesNameAToZOptionText(){
+        return menClothesNameAToZOption.getText();
     }
     public String getMenClothesNameZToAOptionText(){
         return menClothesNameZToAOption.getText();

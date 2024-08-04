@@ -1862,11 +1862,11 @@ public class TestMethods extends BaseTest{
 
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
-        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesNameAtoZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesNameAToZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
         System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccessoriesNameAToZOption();
         //assert the correct text is input in option
-        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesNameAtoZOptionText(), "Name,A to Z"); // -> assert crashes the test, it doesn't find text
+        //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesNameAToZOptionText(), "Name,A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
     protected void sortStAccessoriesProductsByNameZToATest(){
@@ -2226,7 +2226,7 @@ public class TestMethods extends BaseTest{
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
-        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesNameAtoZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
+        assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesNameAToZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
         System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesNameAToZOption();
         //assert the correct text is input in option
@@ -2595,6 +2595,18 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickMenClothesRelevanceOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
+    }
+
+    protected void sortMenClothesByNameAToZTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+
+        registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
+        //assert the sort by name 'A to Z option is displayed
+        assertTrue(registeredUserMenClothesPage.isMenClothesNameAToZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
+        System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
+        registeredUserMenClothesPage.clickMenClothesRelevanceOption();
+        //assert the correct text is input in option
+        //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
 }

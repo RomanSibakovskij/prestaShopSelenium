@@ -88,7 +88,7 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement stAccessoriesRelevanceOption;
 
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(3)")
-    private WebElement stAccessoriesNameAtoZOption;
+    private WebElement stAccessoriesNameAToZOption;
 
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(4)")
     private WebElement stAccessoriesNameZToAOption;
@@ -293,9 +293,9 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
 
     public void clickStAccessoriesNameAToZOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesNameAtoZOption));
+        wait.until(ExpectedConditions.elementToBeClickable(stAccessoriesNameAToZOption));
         Actions actions = new Actions(driver);
-        actions.moveToElement(stAccessoriesNameAtoZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+        actions.moveToElement(stAccessoriesNameAToZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
     public void clickStAccessoriesNameZToAOption(){
@@ -348,9 +348,7 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     public boolean isStationaryAccessoriesPageLink1Displayed(){
         return stationaryAccessoriesPageLink1.isDisplayed();
     }
-    public boolean isStationaryAccessoriesPageBoxIconDisplayed(){
-        return stationaryAccessoriesPageBoxIcon.isDisplayed();
-    }
+    public boolean isStationaryAccessoriesPageBoxIconDisplayed(){return stationaryAccessoriesPageBoxIcon.isDisplayed();}
     public boolean isStationaryAccessoriesPageLink2Displayed(){
         return stationaryAccessoriesPageLink2.isDisplayed();
     }
@@ -369,7 +367,6 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     public boolean isStAccessoriesPriceSliderDisplayed(){
         return stAccessoriesPriceSliderLine.isDisplayed();
     }
-
     public boolean isStAccessoriesRuledPaperBoxIconDisplayed(){
         return stAccessoriesRuledPaperBoxIcon.isDisplayed();
     }
@@ -382,45 +379,32 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     public boolean isStAccessoriesPlainPaperLinkDisplayed(){
         return stAccessoriesPlainPaperLink.isDisplayed();
     }
-    public boolean isStAccessoriesSquaredPaperBoxIconDisplayed(){
-        return stAccessoriesSquaredPaperBoxIcon.isDisplayed();
-    }
+    public boolean isStAccessoriesSquaredPaperBoxIconDisplayed(){return stAccessoriesSquaredPaperBoxIcon.isDisplayed();}
     public boolean isStAccessoriesSquaredPaperLinkDisplayed(){
         return stAccessoriesSquaredPaperLink.isDisplayed();
     }
-    public boolean isStAccessoriesDottedPaperBoxIconDisplayed(){
-        return stAccessoriesDottedPaperBoxIcon.isDisplayed();
-    }
+    public boolean isStAccessoriesDottedPaperBoxIconDisplayed(){return stAccessoriesDottedPaperBoxIcon.isDisplayed();}
     public boolean isStAccessoriesDottedPaperLinkDisplayed(){
         return stAccessoriesDottedPaperBoxIcon.isDisplayed();
     }
-    public boolean isStAccessoriesSortByDropdownMenuDisplayed(){
-        return stAccessoriesSortByDropdownMenu.isDisplayed();
-    }
+
+    public boolean isStAccessoriesSortByDropdownMenuDisplayed(){return stAccessoriesSortByDropdownMenu.isDisplayed();}
     public boolean isStAccessoriesSalesOptionDisplayed(){
         return stAccessoriesSalesOption.isDisplayed();
     }
     public boolean isStAccessoriesRelevanceOptionDisplayed() {
         return stAccessoriesRelevanceOption.isDisplayed();
     }
-    public boolean isStAccessoriesNameAtoZOptionDisplayed(){
-        return stAccessoriesNameAtoZOption.isDisplayed();
+    public boolean isStAccessoriesNameAToZOptionDisplayed(){
+        return stAccessoriesNameAToZOption.isDisplayed();
     }
     public boolean isStAccessoriesNameZToAOptionDisplayed(){
         return stAccessoriesNameZToAOption.isDisplayed();
     }
-    public boolean isStAccessoriesPriceLowToHighOptionDisplayed(){
-        return stAccessoriesPriceLowToHighOption.isDisplayed();
-    }
-    public boolean isStAccessoriesPriceHighToLowOptionDisplayed(){
-        return stAccessoriesPriceHighToLowOption.isDisplayed();
-    }
-    public boolean isStAccessoriesReferenceAToZOptionDisplayed(){
-        return stAccessoriesReferenceAToZOption.isDisplayed();
-    }
-    public boolean isStAccessoriesReferenceZToAOptionDisplayed(){
-        return stAccessoriesReferenceZToAOption.isDisplayed();
-    }
+    public boolean isStAccessoriesPriceLowToHighOptionDisplayed(){return stAccessoriesPriceLowToHighOption.isDisplayed();}
+    public boolean isStAccessoriesPriceHighToLowOptionDisplayed(){return stAccessoriesPriceHighToLowOption.isDisplayed();}
+    public boolean isStAccessoriesReferenceAToZOptionDisplayed(){return stAccessoriesReferenceAToZOption.isDisplayed();}
+    public boolean isStAccessoriesReferenceZToAOptionDisplayed(){return stAccessoriesReferenceZToAOption.isDisplayed();}
 
     //filter text getters
 
@@ -446,8 +430,8 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     public String getStAccessoriesRelevanceOptionText(){
         return stAccessoriesRelevanceOption.getText();
     }
-    public String getStAccessoriesNameAtoZOptionText(){
-        return stAccessoriesNameAtoZOption.getText();
+    public String getStAccessoriesNameAToZOptionText(){
+        return stAccessoriesNameAToZOption.getText();
     }
     public String getStAccessoriesNameZToAOptionText(){
         return stAccessoriesNameZToAOption.getText();
