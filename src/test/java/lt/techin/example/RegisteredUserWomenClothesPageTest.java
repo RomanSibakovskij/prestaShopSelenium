@@ -54,4 +54,42 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         navigateToClothesPageTest();
         navigateToWomenClothesPageBoxIconTest();
     }
+
+    //Test 048 -> filter women clothes by availability (box icon) test
+    @Test
+    void filterWomenClothesByAvailabilityBoxIconTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        filterWomenClothesByInStockBoxIconTest();
+    }
+
+    //Test 048a -> filter women clothes by availability (link) test
+    @Test
+    void filterWomenClothesByAvailabilityLinkTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        filterWomenClothesByInStockLinkTest();
+    }
+
+
 }

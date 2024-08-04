@@ -2697,4 +2697,30 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickOnWomenClothesPageBoxIcon();
     }
 
+    //men clothes filter by test methods
+
+    protected void filterWomenClothesByInStockBoxIconTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesInStockBoxIconDisplayed(), "The 'In stock' box icon link isn't displayed");
+        System.out.println("The 'In stock' box icon link is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesInStockBoxIcon();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getWomenClothesAvailabilityFilterMessage(), "Availability: In stock");
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
+    protected void filterWomenClothesByInStockLinkTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //assert the filter by in stock choice is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesInStockLinkDisplayed(), "The 'In stock' link isn't displayed");
+        System.out.println("The 'In stock' link is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesInStockLink();
+        //assert the correct text is displayed in search filter
+        //assertEquals(registeredUserArtPage.getWomenClothesAvailabilityFilterMessage(), "Availability: In stock");
+        //remove search filter
+        registeredUserWomenClothesPage.clickRemoveSearchFilter();
+    }
+
 }
