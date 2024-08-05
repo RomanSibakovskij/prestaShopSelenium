@@ -325,5 +325,23 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         filterWomenClothesBySizeXLLinkTest();
     }
 
+    //Test 056 -> click sort by dropdown menu on women clothes page test
+    @Test
+    void clickWomenClothesSortByDropdownTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        clickWomenClothesSortByDropdownMenuTest();
+    }
+
 
 }

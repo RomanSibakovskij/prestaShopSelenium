@@ -61,6 +61,28 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     @FindBy(xpath = "//div[@id='search_filters']/section[3]/ul/li/div")
     private WebElement womenClothesPriceSlider;
 
+    //dropdown menu
+    @FindBy(xpath = "//*//div[@id='js-product-list-top']//div[@class='row sort-by-row']/div[1]")
+    private WebElement womenClothesSortByDropdownMenu;
+
+    //menu options
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(1)")
+    private WebElement womenClothesSalesOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(2)")
+    private WebElement womenClothesRelevanceOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(3)")
+    private WebElement womenClothesNameAToZOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(4)")
+    private WebElement womenClothesNameZToAOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(5)")
+    private WebElement womenClothesPriceLowToHighOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(6)")
+    private WebElement womenClothesPriceHighToLowOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(7)")
+    private WebElement womenClothesReferenceAToZOption;
+    @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(8)")
+    private WebElement womenClothesReferenceZToAOption;
+
     //filter messages
     @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
     private WebElement womenClothesAvailabilityFilterMessage;
@@ -233,6 +255,16 @@ public class RegisteredUserWomenClothesPage extends BasePage{
                 .perform();
     }
 
+    //dropdown menu methods
+
+    public void clickWomenClothesSortByDropdownMenu(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(womenClothesSortByDropdownMenu));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(womenClothesSortByDropdownMenu).clickAndHold().pause(Duration.ofSeconds(2)).release().perform();
+
+    }
+
     //remove search filter
 
     public void clickRemoveSearchFilter(){
@@ -260,6 +292,24 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     public boolean isWomenClothesSizeLBoxIconDisplayed() {return womenClothesSizeLBoxIcon.isDisplayed();}
     public boolean isWomenClothesSizeXLLinkDisplayed() {return womenClothesSizeXLLink.isDisplayed();}
     public boolean isWomenClothesSizeXLBoxIconDisplayed() {return womenClothesSizeXLBoxIcon.isDisplayed();}
+
+    public boolean isWomenClothesSortByDropdownMenuDisplayed(){return womenClothesSortByDropdownMenu.isDisplayed();}
+    public boolean isWomenClothesSalesOptionDisplayed(){
+        return womenClothesSalesOption.isDisplayed();
+    }
+    public boolean isWomenClothesRelevanceOptionDisplayed() {
+        return womenClothesRelevanceOption.isDisplayed();
+    }
+    public boolean isWomenClothesNameAToZOptionDisplayed(){
+        return womenClothesNameAToZOption.isDisplayed();
+    }
+    public boolean isWomenClothesNameZToAOptionDisplayed(){
+        return womenClothesNameZToAOption.isDisplayed();
+    }
+    public boolean isWomenClothesPriceLowToHighOptionDisplayed(){return womenClothesPriceLowToHighOption.isDisplayed();}
+    public boolean isWomenClothesPriceHighToLowOptionDisplayed(){return womenClothesPriceHighToLowOption.isDisplayed();}
+    public boolean isWomenClothesReferenceAToZOptionDisplayed(){return womenClothesReferenceAToZOption.isDisplayed();}
+    public boolean isWomenClothesReferenceZToAOptionDisplayed(){return womenClothesReferenceZToAOption.isDisplayed();}
 
 
     //filter message getters
