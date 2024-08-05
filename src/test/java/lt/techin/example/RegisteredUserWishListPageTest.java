@@ -106,6 +106,40 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addPictureGoodDayWishListButtonTest();
     }
 
+    //Test 058e -> add "Best Yet To Come" mug into wishlist test (My wishlist inner link doesn't click)
+    @Test
+    void addBestYetMugToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addMugBestYetWishListButtonTest();
+    }
+
+    //Test 058f -> add "Adventure Begins" mug into wishlist test (My wishlist inner link doesn't click)
+    @Test
+    void addAdventureBeginsMugToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addMugAdventureBeginsWishListButtonTest();
+    }
+
 
 
 }
