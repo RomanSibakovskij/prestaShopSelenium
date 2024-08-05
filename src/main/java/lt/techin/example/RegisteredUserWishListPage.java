@@ -24,6 +24,8 @@ public class RegisteredUserWishListPage extends BasePage{
     //buttons
     @FindBy(css = "[data-id-product='1'] .wishlist-button-add")
     private WebElement tShirtWishListButton;
+    @FindBy(css = "[data-id-product='2'] .wishlist-button-add")
+    private WebElement sweaterWishListButton;
 
     //success popup
     @FindBy(css = ".success.wishlist-toast")
@@ -32,6 +34,10 @@ public class RegisteredUserWishListPage extends BasePage{
     //product titles elements
     @FindBy(css = "div:nth-of-type(1) > .js-product-miniature.product-miniature.reviews-loaded .h3.product-title > a")
     private WebElement tShirtProductTitle;
+    @FindBy(css = "div:nth-of-type(2) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement sweaterProductTitle;
+
+    //added product title
     @FindBy(css = ".wishlist-product-title")
     private WebElement addedProductName;
 
@@ -47,13 +53,21 @@ public class RegisteredUserWishListPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(allProductsLink));
         allProductsLink.click();
     }
-
+    // t-shirt add to wishlist test method
     public void clickTShirtWishListButton(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.elementToBeClickable(tShirtWishListButton));
         tShirtWishListButton.click();
     }
 
+    // sweater add to wishlist test method
+    public void clickSweaterWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(sweaterWishListButton));
+        sweaterWishListButton.click();
+    }
+
+    // wishlist click methods
     public void clickMyWishListLink(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.elementToBeClickable(myWishListPageLink));
@@ -76,16 +90,28 @@ public class RegisteredUserWishListPage extends BasePage{
 
     //assert methods
     public boolean isAllProductsLinkDisplayed(){return allProductsLink.isDisplayed();}
+
+    //t-shirt assert methods
     public boolean isTShirtWishListButtonDisplayed(){return tShirtWishListButton.isDisplayed();}
     public boolean isTShirtProductTitleDisplayed(){return tShirtProductTitle.isDisplayed();}
+
+    //sweater assert methods
+    public boolean isSweaterWishListButtonDisplayed(){return sweaterWishListButton.isDisplayed();}
+
+    //wishlist link asserts
     public boolean isMyWishListLinkDisplayed(){return myWishListPageLink.isDisplayed();}
     public boolean isWishListPageLinkDisplayed(){return wishListPageLink.isDisplayed();}
     public boolean isWishListInnerLinkDisplayed(){return myWishListInnerLink.isDisplayed();}
+
+
+    // added product assert
     public boolean isAddedProductNameDisplayed(){return addedProductName.isDisplayed();}
 
     //product title getters
-
     public String getTShirtProductTitle(){return tShirtProductTitle.getText();}
+    public String getSweaterProductTitle(){return sweaterProductTitle.getText();}
+
+    //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}
 
     //success popup getter

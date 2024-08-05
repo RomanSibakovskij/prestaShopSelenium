@@ -38,6 +38,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         clickTShirtWishListButtonTest();
     }
 
+    //Test 058a -> add "Hummingbird printed sweater" into wishlist test
+    @Test
+    void addSweaterToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        clickSweaterWishListButtonTest();
+    }
+
 
 
 }
