@@ -259,6 +259,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addVectorHummingBirdWishListButtonTest();
     }
 
+    //Test 058m -> add "Mug and Poster" pack picture into wishlist test
+    @Test
+    void addPackMugAndPosterToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addPackMugAndPosterWishListButtonTest();
+    }
+
 
 
 }

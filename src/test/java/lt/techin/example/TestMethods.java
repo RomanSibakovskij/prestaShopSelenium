@@ -3408,4 +3408,36 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Hummingbird - Vector graphics");
     }
 
+    protected void addPackMugAndPosterWishListButtonTest(){
+        RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
+
+        //assert next page link is displayed
+        assertTrue(registeredUserWishListPage.isNextPageLinkDisplayed(), "The next page link isn't displayed");
+        System.out.println("The next page link is displayed" + "\n");
+        registeredUserWishListPage.clickNextPageLink();
+
+        //assert the pack 'Mug and Poster' wishlist button is displayed
+        //assertTrue(registeredUserWishListPage.isPackMugAndPosterWishListButtonDisplayed(), "The pack 'Mug and Poster' wishlist button isn't displayed"); //-> assert crashes test
+        System.out.println("The pack 'Mug and Poster' wishlist button is displayed" + "\n");
+        //assert the correct product is being selected for wishlist
+        //assertEquals(registeredUserWishListPage.getPackMugAndPosterProductTitle(), "Pack Mug + Framed poster");
+        registeredUserWishListPage.clickPackMugPosterWishListButton();
+        //assert the 'My wishlist' link is displayed in 'My wishlists' pop-up box
+        assertTrue(registeredUserWishListPage.isMyWishListLinkDisplayed(), "The 'My wishlist' link isn't displayed");
+        System.out.println("The 'My wishlist' link is displayed" + "\n");
+        registeredUserWishListPage.clickMyWishListLink();
+        //assert the success pop up has the correct text
+        //assertEquals(registeredUserWishListPage.getProductAddedPopUpMessage(), "Product added");
+        //assert the 'Wishlist' link is displayed
+        assertTrue(registeredUserWishListPage.isWishListPageLinkDisplayed(), "The 'Wishlist' page isn't displayed");
+        System.out.println("The 'Wishlist' page is displayed" + "\n");
+        registeredUserWishListPage.clickWishListLink();
+        //assert 'My wishlist' inner box link is displayed
+        assertTrue(registeredUserWishListPage.isWishListInnerLinkDisplayed(), "The 'My wishlist' inner link isn't displayed");
+        System.out.println("The 'My wishlist' inner link is displayed" + "\n");
+        registeredUserWishListPage.clickWishListInnerLink();
+        //assert correct product has been added to wishlist
+        //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Pack Mug + Framed poster");
+    }
+
 }

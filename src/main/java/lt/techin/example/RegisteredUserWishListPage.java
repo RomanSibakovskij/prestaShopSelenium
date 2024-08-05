@@ -50,6 +50,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement vectorBearWishListButton;
     @FindBy(css = "[data-id-product='14'] .wishlist-button-add")
     private WebElement vectorHummingBirdWishListButton;
+    @FindBy(css = "[data-id-product='15'] .wishlist-button-add")
+    private WebElement packMugPosterWishListButton;
 
 
     //success popup
@@ -89,6 +91,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement vectorBearProductTitle;
     @FindBy(css = "div:nth-of-type(14) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement vectorHummingBirdProductTitle;
+    @FindBy(css = "div:nth-of-type(15) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement vectorPackMugPosterProductTitle;
 
 
     //added product title
@@ -205,6 +209,13 @@ public class RegisteredUserWishListPage extends BasePage{
         vectorHummingBirdWishListButton.click();
     }
 
+    // pack 'Mug and Poster' add to wishlist test method
+    public void clickPackMugPosterWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1500));
+        wait.until(ExpectedConditions.elementToBeClickable(packMugPosterWishListButton));
+        packMugPosterWishListButton.click();
+    }
+
 
 
 
@@ -268,6 +279,8 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isVectorBearWishListButtonDisplayed(){return vectorBearWishListButton.isDisplayed();}
     //vector 'Humming Bird' assert method
     public boolean isVectorHummingBirdWishListButtonDisplayed(){return vectorHummingBirdWishListButton.isDisplayed();}
+    //pack 'Mug and Poster' assert method
+    public boolean isPackMugAndPosterWishListButtonDisplayed(){return packMugPosterWishListButton.isDisplayed();}
 
     // navigation page link assert
     public boolean isNextPageLinkDisplayed(){return nextPageLink.isDisplayed();}
@@ -296,6 +309,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getVectorFoxProductTitle(){return vectorFoxProductTitle.getText();}
     public String getVectorBearProductTitle(){return vectorBearProductTitle.getText();}
     public String getVectorHummingBirdProductTitle(){return vectorHummingBirdProductTitle.getText();}
+    public String getPackMugAndPosterProductTitle(){return vectorHummingBirdProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}
