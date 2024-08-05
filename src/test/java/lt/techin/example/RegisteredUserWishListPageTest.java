@@ -310,6 +310,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addNotebookBearWishListButtonTest();
     }
 
+    //Test 058p -> add "Humming Bird" notebook into wishlist test
+    @Test
+    void addNotebookBirdToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addNotebookBirdWishListButtonTest();
+    }
+
 
 
 }

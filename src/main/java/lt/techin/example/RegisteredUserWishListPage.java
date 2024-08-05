@@ -56,6 +56,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement notebookFoxWishListButton;
     @FindBy(css = "[data-id-product='17'] .wishlist-button-add")
     private WebElement notebookBearWishListButton;
+    @FindBy(css = "[data-id-product='18'] .wishlist-button-add")
+    private WebElement notebookBirdWishListButton;
 
 
     //success popup
@@ -99,8 +101,10 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement vectorPackMugPosterProductTitle;
     @FindBy(css = "div:nth-of-type(16) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement notebookFoxProductTitle;
-    @FindBy(css = "div:nth-of-type(16) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    @FindBy(css = "div:nth-of-type(17) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement notebookBearProductTitle;
+    @FindBy(css = "div:nth-of-type(18) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement notebookBirdProductTitle;
 
 
     //added product title
@@ -238,6 +242,13 @@ public class RegisteredUserWishListPage extends BasePage{
         notebookBearWishListButton.click();
     }
 
+    // notebook 'Brown Bear' add to wishlist test method
+    public void clickNotebookBirdWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(notebookBirdWishListButton));
+        notebookBirdWishListButton.click();
+    }
+
 
 
 
@@ -307,6 +318,8 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isNotebookFoxWishListButtonDisplayed(){return notebookFoxWishListButton.isDisplayed();}
     //notebook 'Brown Bear' assert method
     public boolean isNotebookBearWishListButtonDisplayed(){return notebookBearWishListButton.isDisplayed();}
+    //notebook 'Humming Bird' assert method
+    public boolean isNotebookBirdWishListButtonDisplayed(){return notebookBirdWishListButton.isDisplayed();}
 
     // navigation page link assert
     public boolean isNextPageLinkDisplayed(){return nextPageLink.isDisplayed();}
@@ -338,6 +351,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getPackMugAndPosterProductTitle(){return vectorHummingBirdProductTitle.getText();}
     public String getNotebookFoxProductTitle(){return notebookFoxProductTitle.getText();}
     public String getNotebookBearProductTitle(){return notebookBearProductTitle.getText();}
+    public String getNotebookBirdProductTitle(){return notebookBirdProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}
