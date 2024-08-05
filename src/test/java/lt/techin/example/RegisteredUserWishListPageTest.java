@@ -89,6 +89,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addPictureAdventureBeginsWishListButtonTest();
     }
 
+    //Test 058d -> add "Adventure Begins" picture into wishlist test (My wishlist inner link doesn't click)
+    @Test
+    void addGoodDayPictureToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addPictureGoodDayWishListButtonTest();
+    }
+
 
 
 }
