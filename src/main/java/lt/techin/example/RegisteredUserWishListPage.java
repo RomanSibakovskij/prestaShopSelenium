@@ -44,11 +44,19 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement cushionBrownBearWishListButton;
     @FindBy(css = "[data-id-product='11'] .wishlist-button-add")
     private WebElement cushionHummingBirdWishListButton;
+    @FindBy(css = "[data-id-product='12'] .wishlist-button-add")
+    private WebElement vectorFoxWishListButton;
+    @FindBy(css = "[data-id-product='13'] .wishlist-button-add")
+    private WebElement vectorBearWishListButton;
 
 
     //success popup
     @FindBy(css = ".success.wishlist-toast")
     private WebElement productAddedPopUp;
+
+    //pagination link
+    @FindBy(css = "[class='col-md-6 offset-md-2 pr-0'] li:nth-of-type(2) .js-search-link")
+    private WebElement nextPageLink;
 
     //product titles elements
     @FindBy(css = "div:nth-of-type(1) > .js-product-miniature.product-miniature.reviews-loaded .h3.product-title > a")
@@ -73,6 +81,10 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement cushionBrownBearProductTitle;
     @FindBy(css = "div:nth-of-type(11) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement cushionHummingBirdProductTitle;
+    @FindBy(css = "div:nth-of-type(12) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement vectorFoxProductTitle;
+    @FindBy(css = "div:nth-of-type(13) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement vectorBearProductTitle;
 
 
     //added product title
@@ -168,9 +180,30 @@ public class RegisteredUserWishListPage extends BasePage{
         cushionHummingBirdWishListButton.click();
     }
 
+    // vector 'Mountain Fox' add to wishlist test method
+    public void clickVectorFoxWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(vectorFoxWishListButton));
+        vectorFoxWishListButton.click();
+    }
+
+    // vector 'Brown Bear' add to wishlist test method
+    public void clickVectorBearWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1500));
+        wait.until(ExpectedConditions.elementToBeClickable(vectorBearWishListButton));
+        vectorBearWishListButton.click();
+    }
 
 
 
+
+    // next page click method
+    public void clickNextPageLink(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", nextPageLink);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(nextPageLink));
+        nextPageLink.click();
+    }
 
     // wishlist click methods
     public void clickMyWishListLink(){
@@ -208,12 +241,23 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isPictureGoodDayWishListButtonDisplayed(){return pictureGoodDayWishListButton.isDisplayed();}
     //mug 'Best Yet To Come' assert method
     public boolean isMugBestYetWishListButtonDisplayed(){return mugBestYetWishListButton.isDisplayed();}
+    //mug 'Adventure Begins' assert method
     public boolean isMugAdventureBeginsWishListButtonDisplayed(){return mugAdventureBeginsWishListButton.isDisplayed();}
+    //mug 'Good Day' assert method
     public boolean isMugGoodDayWishListButtonDisplayed(){return mugGoodDayWishListButton.isDisplayed();}
+    //cushion 'Mountain Fox' assert method
     public boolean isCushionMountainFoxWishListButtonDisplayed(){return cushionMountainFoxWishListButton.isDisplayed();}
+    //cushion 'Brown Bear' assert method
     public boolean isCushionBrownBearWishListButtonDisplayed(){return cushionBrownBearWishListButton.isDisplayed();}
+    //cushion 'Humming Bird' assert method
     public boolean isCushionHummingBirdWishListButtonDisplayed(){return cushionHummingBirdWishListButton.isDisplayed();}
+    //vector 'Mountain Fox' assert method
+    public boolean isVectorFoxWishListButtonDisplayed(){return vectorFoxWishListButton.isDisplayed();}
+    //vector 'Brown Bear' assert method
+    public boolean isVectorBearWishListButtonDisplayed(){return vectorBearWishListButton.isDisplayed();}
 
+    // navigation page link assert
+    public boolean isNextPageLinkDisplayed(){return nextPageLink.isDisplayed();}
 
     //wishlist link asserts
     public boolean isMyWishListLinkDisplayed(){return myWishListPageLink.isDisplayed();}
@@ -236,6 +280,8 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getCushionFoxProductTitle(){return cushionMountainFoxProductTitle.getText();}
     public String getCushionBearProductTitle(){return cushionBrownBearProductTitle.getText();}
     public String getCushionHummingBirdProductTitle(){return cushionHummingBirdProductTitle.getText();}
+    public String getVectorFoxProductTitle(){return vectorFoxProductTitle.getText();}
+    public String getVectorBearProductTitle(){return vectorBearProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}

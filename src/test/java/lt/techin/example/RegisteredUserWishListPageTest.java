@@ -208,6 +208,40 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addCushionHummingBearWishListButtonTest();
     }
 
+    //Test 058k -> add "Mountain Bird" vector picture into wishlist test
+    @Test
+    void addVectorFoxToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addVectorFoxWishListButtonTest();
+    }
+
+    //Test 058l -> click onto next page test (Wishlist button cannot be found)
+    @Test
+    void addVectorBrownBearToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addVectorBearWishListButtonTest();
+    }
+
 
 
 }
