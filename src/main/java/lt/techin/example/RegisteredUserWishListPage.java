@@ -52,6 +52,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement vectorHummingBirdWishListButton;
     @FindBy(css = "[data-id-product='15'] .wishlist-button-add")
     private WebElement packMugPosterWishListButton;
+    @FindBy(css = "[data-id-product='16'] .wishlist-button-add")
+    private WebElement notebookFoxWishListButton;
 
 
     //success popup
@@ -93,6 +95,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement vectorHummingBirdProductTitle;
     @FindBy(css = "div:nth-of-type(15) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement vectorPackMugPosterProductTitle;
+    @FindBy(css = "div:nth-of-type(16) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement notebookFoxProductTitle;
 
 
     //added product title
@@ -197,23 +201,30 @@ public class RegisteredUserWishListPage extends BasePage{
 
     // vector 'Brown Bear' add to wishlist test method
     public void clickVectorBearWishListButton(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1500));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.elementToBeClickable(vectorBearWishListButton));
         vectorBearWishListButton.click();
     }
 
     // vector 'Humming Bird' add to wishlist test method
     public void clickVectorBirdWishListButton(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1500));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.elementToBeClickable(vectorHummingBirdWishListButton));
         vectorHummingBirdWishListButton.click();
     }
 
     // pack 'Mug and Poster' add to wishlist test method
     public void clickPackMugPosterWishListButton(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1500));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.elementToBeClickable(packMugPosterWishListButton));
         packMugPosterWishListButton.click();
+    }
+
+    // notebook 'Mountain Fox' add to wishlist test method
+    public void clickNotebookFoxWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(notebookFoxWishListButton));
+        notebookFoxWishListButton.click();
     }
 
 
@@ -281,6 +292,8 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isVectorHummingBirdWishListButtonDisplayed(){return vectorHummingBirdWishListButton.isDisplayed();}
     //pack 'Mug and Poster' assert method
     public boolean isPackMugAndPosterWishListButtonDisplayed(){return packMugPosterWishListButton.isDisplayed();}
+    //notebook 'Mountain Fox' assert method
+    public boolean isNotebookFoxWishListButtonDisplayed(){return notebookFoxWishListButton.isDisplayed();}
 
     // navigation page link assert
     public boolean isNextPageLinkDisplayed(){return nextPageLink.isDisplayed();}
@@ -310,6 +323,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getVectorBearProductTitle(){return vectorBearProductTitle.getText();}
     public String getVectorHummingBirdProductTitle(){return vectorHummingBirdProductTitle.getText();}
     public String getPackMugAndPosterProductTitle(){return vectorHummingBirdProductTitle.getText();}
+    public String getNotebookFoxProductTitle(){return notebookFoxProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}

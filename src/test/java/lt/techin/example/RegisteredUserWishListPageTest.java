@@ -259,7 +259,7 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addVectorHummingBirdWishListButtonTest();
     }
 
-    //Test 058m -> add "Mug and Poster" pack picture into wishlist test
+    //Test 058m -> add "Mug and Poster" pack into wishlist test
     @Test
     void addPackMugAndPosterToWishListTest(){
         clickOnSignUpTest();
@@ -274,6 +274,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         clickAllProductsLinkTest();
 
         addPackMugAndPosterWishListButtonTest();
+    }
+
+    //Test 058n -> add "Mountain Fox" notebook into wishlist test
+    @Test
+    void addNotebookFoxToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addNotebookFoxWishListButtonTest();
     }
 
 
