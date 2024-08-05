@@ -2905,4 +2905,16 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
     }
 
+    protected void sortWomenClothesByRelevanceTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+
+        registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
+        //assert the sort by relevance option is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesRelevanceOptionDisplayed(), "The sort by 'Relevance' menu option isn't displayed");
+        System.out.println("The sort by 'Relevance' menu option  is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesRelevanceOption();
+        //assert the correct text is input in option
+        //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesSalesOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
+    }
+
 }

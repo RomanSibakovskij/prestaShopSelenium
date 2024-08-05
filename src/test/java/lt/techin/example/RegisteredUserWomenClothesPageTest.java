@@ -361,5 +361,23 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         sortWomenClothesBySalesTest();
     }
 
+    //Test 056b -> click sort women clothes by relevance page test
+    @Test
+    void clickWomenClothesSortByRelevanceTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        sortWomenClothesByRelevanceTest();
+    }
+
 
 }
