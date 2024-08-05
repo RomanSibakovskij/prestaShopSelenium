@@ -3567,5 +3567,23 @@ public class TestMethods extends BaseTest{
         //assert correct product has been added to wishlist
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Customizable mug");
     }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    //navigation to user account test methods
+
+    protected void navigateToUserAccountLink1Test(){
+        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        //assert the nav link is displayed
+        assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
+        System.out.println("The nav link is displayed" + "\n");
+        registeredUserAccountPage.clickUserAccountLink1();
+    }
+
+    protected void navigateToUserAccountLink2Test(){
+        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        //assert the footer link is displayed
+        assertTrue(registeredUserAccountPage.isUserAccountLink2Displayed(), "The footer link isn't displayed");
+        System.out.println("The footer link is displayed" + "\n");
+        registeredUserAccountPage.clickUserAccountLink2();
+    }
 }
