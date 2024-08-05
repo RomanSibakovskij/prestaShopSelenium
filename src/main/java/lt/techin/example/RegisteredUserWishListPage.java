@@ -42,6 +42,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement cushionMountainFoxWishListButton;
     @FindBy(css = "[data-id-product='10'] .wishlist-button-add")
     private WebElement cushionBrownBearWishListButton;
+    @FindBy(css = "[data-id-product='11'] .wishlist-button-add")
+    private WebElement cushionHummingBirdWishListButton;
 
 
     //success popup
@@ -69,6 +71,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement cushionMountainFoxProductTitle;
     @FindBy(css = "div:nth-of-type(10) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement cushionBrownBearProductTitle;
+    @FindBy(css = "div:nth-of-type(11) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement cushionHummingBirdProductTitle;
 
 
     //added product title
@@ -157,6 +161,13 @@ public class RegisteredUserWishListPage extends BasePage{
         cushionBrownBearWishListButton.click();
     }
 
+    // cushion 'Humming Bird' add to wishlist test method
+    public void clickCushionHummingBirdWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(cushionHummingBirdWishListButton));
+        cushionHummingBirdWishListButton.click();
+    }
+
 
 
 
@@ -201,6 +212,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isMugGoodDayWishListButtonDisplayed(){return mugGoodDayWishListButton.isDisplayed();}
     public boolean isCushionMountainFoxWishListButtonDisplayed(){return cushionMountainFoxWishListButton.isDisplayed();}
     public boolean isCushionBrownBearWishListButtonDisplayed(){return cushionBrownBearWishListButton.isDisplayed();}
+    public boolean isCushionHummingBirdWishListButtonDisplayed(){return cushionHummingBirdWishListButton.isDisplayed();}
 
 
     //wishlist link asserts
@@ -223,6 +235,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getMugGoodDayProductTitle(){return mugGoodDayProductTitle.getText();}
     public String getCushionFoxProductTitle(){return cushionMountainFoxProductTitle.getText();}
     public String getCushionBearProductTitle(){return cushionBrownBearProductTitle.getText();}
+    public String getCushionHummingBirdProductTitle(){return cushionHummingBirdProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}

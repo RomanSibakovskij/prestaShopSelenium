@@ -106,7 +106,7 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addPictureGoodDayWishListButtonTest();
     }
 
-    //Test 058e -> add "Best Yet To Come" mug into wishlist test (My wishlist inner link doesn't click)
+    //Test 058e -> add "Best Yet To Come" mug into wishlist test
     @Test
     void addBestYetMugToWishListTest(){
         clickOnSignUpTest();
@@ -123,7 +123,7 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addMugBestYetWishListButtonTest();
     }
 
-    //Test 058f -> add "Adventure Begins" mug into wishlist test (My wishlist inner link doesn't click)
+    //Test 058f -> add "Adventure Begins" mug into wishlist test
     @Test
     void addAdventureBeginsMugToWishListTest(){
         clickOnSignUpTest();
@@ -140,7 +140,7 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addMugAdventureBeginsWishListButtonTest();
     }
 
-    //Test 058g -> add "Today Is A Good Day" mug into wishlist test (My wishlist inner link doesn't click)
+    //Test 058g -> add "Today Is A Good Day" mug into wishlist test
     @Test
     void addGoodDayMugToWishListTest(){
         clickOnSignUpTest();
@@ -157,7 +157,7 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addMugGoodDayWishListButtonTest();
     }
 
-    //Test 058h -> add "Mountain fox" cushion into wishlist test (My wishlist inner link doesn't click)
+    //Test 058h -> add "Mountain fox" cushion into wishlist test
     @Test
     void addCushionFoxToWishListTest(){
         clickOnSignUpTest();
@@ -174,7 +174,7 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addCushionFoxWishListButtonTest();
     }
 
-    //Test 058i -> add "Brown Bear" cushion into wishlist test (My wishlist inner link doesn't click)
+    //Test 058i -> add "Brown Bear" cushion into wishlist test
     @Test
     void addCushionBrownBearToWishListTest(){
         clickOnSignUpTest();
@@ -189,6 +189,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         clickAllProductsLinkTest();
 
         addCushionBrownBearWishListButtonTest();
+    }
+
+    //Test 058j -> add "Humming Bird" cushion into wishlist test
+    @Test
+    void addCushionHummingBirdToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addCushionHummingBearWishListButtonTest();
     }
 
 
