@@ -451,5 +451,23 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         sortWomenClothesByPriceHighToLowTest();
     }
 
+    //Test 056g -> click sort women clothes by reference (A to Z) page test
+    @Test
+    void clickWomenClothesSortByReferenceAToZTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        sortWomenClothesByReferenceAToZTest();
+    }
+
 
 }
