@@ -38,6 +38,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement mugAdventureBeginsWishListButton;
     @FindBy(css = "[data-id-product='8'] .wishlist-button-add")
     private WebElement mugGoodDayWishListButton;
+    @FindBy(css = "[data-id-product='9'] .wishlist-button-add")
+    private WebElement cushionMountainFoxWishListButton;
 
 
     //success popup
@@ -61,6 +63,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement mugAdventureBeginsProductTitle;
     @FindBy(css = "div:nth-of-type(5) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement mugGoodDayProductTitle;
+    @FindBy(css = "div:nth-of-type(5) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement cushionMountainFoxProductTitle;
 
 
     //added product title
@@ -135,6 +139,13 @@ public class RegisteredUserWishListPage extends BasePage{
         mugGoodDayWishListButton.click();
     }
 
+    // cushion 'Mountain Fox' add to wishlist test method
+    public void clickCushionFoxWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(cushionMountainFoxWishListButton));
+        cushionMountainFoxWishListButton.click();
+    }
+
 
 
 
@@ -177,6 +188,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isMugBestYetWishListButtonDisplayed(){return mugBestYetWishListButton.isDisplayed();}
     public boolean isMugAdventureBeginsWishListButtonDisplayed(){return mugAdventureBeginsWishListButton.isDisplayed();}
     public boolean isMugGoodDayWishListButtonDisplayed(){return mugGoodDayWishListButton.isDisplayed();}
+    public boolean isCushionMountainFoxWishListButtonDisplayed(){return cushionMountainFoxWishListButton.isDisplayed();}
 
 
     //wishlist link asserts
@@ -197,6 +209,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getMugBestYetProductTitle(){return mugBestYetProductTitle.getText();}
     public String getMugAdventureBeginsProductTitle(){return mugAdventureBeginsProductTitle.getText();}
     public String getMugGoodDayProductTitle(){return mugGoodDayProductTitle.getText();}
+    public String getCushionFoxProductTitle(){return cushionMountainFoxProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}

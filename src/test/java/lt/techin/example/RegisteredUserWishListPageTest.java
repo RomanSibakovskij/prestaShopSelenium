@@ -157,6 +157,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addMugGoodDayWishListButtonTest();
     }
 
+    //Test 058h -> add "Mountain fox" cushion into wishlist test (My wishlist inner link doesn't click)
+    @Test
+    void addCushionFoxToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addCushionFoxWishListButtonTest();
+    }
+
 
 
 }
