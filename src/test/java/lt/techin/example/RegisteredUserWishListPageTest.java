@@ -293,6 +293,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addNotebookFoxWishListButtonTest();
     }
 
+    //Test 058o -> add "Brown Bear" notebook into wishlist test
+    @Test
+    void addNotebookBearToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addNotebookBearWishListButtonTest();
+    }
+
 
 
 }
