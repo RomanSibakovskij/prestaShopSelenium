@@ -3007,7 +3007,7 @@ public class TestMethods extends BaseTest{
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // product wishlist test methods
+    // all products page navigation
 
     protected void clickAllProductsLinkTest(){
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
@@ -3016,6 +3016,36 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserWishListPage.isAllProductsLinkDisplayed(), "The 'All Products' link isn't displayed");
         System.out.println("The 'All Products' link is displayed");
         registeredUserWishListPage.clickAllProductsLink();
+    }
+
+    // product wishlist test methods
+
+    protected void clickTShirtWishListButtonTest(){
+        RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
+
+        //assert the all products link is displayed
+        assertTrue(registeredUserWishListPage.isTShirtWishListButtonDisplayed(), "The t-shirt wishlist button isn't displayed");
+        System.out.println("The t-shirt wishlist button is displayed");
+        //assert the correct product is being selected for wishlist
+        //assertEquals(registeredUserWishListPage.getTShirtProductTitle(), "Hummingbird printed t-shirt");
+        registeredUserWishListPage.clickTShirtWishListButton();
+        //assert the 'My wishlist' link is displayed in 'My wishlists' pop-up box
+        assertTrue(registeredUserWishListPage.isMyWishListLinkDisplayed(), "The 'My wishlist' link isn't displayed");
+        System.out.println("The 'My wishlist' link is displayed");
+        registeredUserWishListPage.clickMyWishListLink();
+        //assert the success pop up has the correct text
+        //assertEquals(registeredUserWishListPage.getProductAddedPopUpMessage(), "Product added");
+        //assert the 'Wishlist' link is displayed
+        assertTrue(registeredUserWishListPage.isWishListPageLinkDisplayed(), "The 'Wishlist' page isn't displayed");
+        System.out.println("The 'Wishlist' page is displayed");
+        registeredUserWishListPage.clickWishListLink();
+        //assert 'My wishlist' inner box link is displayed
+        assertTrue(registeredUserWishListPage.isWishListInnerLinkDisplayed(), "The 'My wishlist' inner link isn't displayed");
+        System.out.println("The 'My wishlist' inner link is displayed");
+        registeredUserWishListPage.clickWishListInnerLink();
+        //assert correct product has been added to wishlist
+        //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Hummingbird printed t-shirt");
+
     }
 
 }

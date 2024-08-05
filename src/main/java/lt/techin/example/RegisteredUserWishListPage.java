@@ -1,5 +1,6 @@
 package lt.techin.example;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,6 +14,26 @@ public class RegisteredUserWishListPage extends BasePage{
     //links
     @FindBy(css = "#content section:nth-child(2) .all-product-link")
     private WebElement allProductsLink;
+    @FindBy(css = ".wishlist-list > .wishlist-list-item")
+    private WebElement myWishListPageLink;
+    @FindBy(css = "a[title='My wishlists']")
+    private WebElement wishListPageLink;
+    @FindBy(css = ".wishlist-list-item-link")
+    private WebElement myWishListInnerLink;
+
+    //buttons
+    @FindBy(css = "[data-id-product='1'] .wishlist-button-add")
+    private WebElement tShirtWishListButton;
+
+    //success popup
+    @FindBy(css = ".success.wishlist-toast")
+    private WebElement productAddedPopUp;
+
+    //product titles elements
+    @FindBy(css = "div:nth-of-type(1) > .js-product-miniature.product-miniature.reviews-loaded .h3.product-title > a")
+    private WebElement tShirtProductTitle;
+    @FindBy(css = ".wishlist-product-title")
+    private WebElement addedProductName;
 
 
     public RegisteredUserWishListPage(WebDriver driver) {
@@ -27,9 +48,48 @@ public class RegisteredUserWishListPage extends BasePage{
         allProductsLink.click();
     }
 
+    public void clickTShirtWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(tShirtWishListButton));
+        tShirtWishListButton.click();
+    }
+
+    public void clickMyWishListLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(myWishListPageLink));
+        myWishListPageLink.click();
+    }
+
+    public void clickWishListLink(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", wishListPageLink);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(wishListPageLink));
+        wishListPageLink.click();
+    }
+
+    public void clickWishListInnerLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(myWishListInnerLink));
+        myWishListInnerLink.click();
+    }
+
 
     //assert methods
     public boolean isAllProductsLinkDisplayed(){return allProductsLink.isDisplayed();}
+    public boolean isTShirtWishListButtonDisplayed(){return tShirtWishListButton.isDisplayed();}
+    public boolean isTShirtProductTitleDisplayed(){return tShirtProductTitle.isDisplayed();}
+    public boolean isMyWishListLinkDisplayed(){return myWishListPageLink.isDisplayed();}
+    public boolean isWishListPageLinkDisplayed(){return wishListPageLink.isDisplayed();}
+    public boolean isWishListInnerLinkDisplayed(){return myWishListInnerLink.isDisplayed();}
+    public boolean isAddedProductNameDisplayed(){return addedProductName.isDisplayed();}
+
+    //product title getters
+
+    public String getTShirtProductTitle(){return tShirtProductTitle.getText();}
+    public String getAddedProductTitle(){return addedProductName.getText();}
+
+    //success popup getter
+    public String getProductAddedPopUpMessage(){return productAddedPopUp.getText();}
 
 
 }
