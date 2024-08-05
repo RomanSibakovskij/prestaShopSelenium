@@ -40,6 +40,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement mugGoodDayWishListButton;
     @FindBy(css = "[data-id-product='9'] .wishlist-button-add")
     private WebElement cushionMountainFoxWishListButton;
+    @FindBy(css = "[data-id-product='10'] .wishlist-button-add")
+    private WebElement cushionBrownBearWishListButton;
 
 
     //success popup
@@ -53,18 +55,20 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement sweaterProductTitle;
     @FindBy(css = "div:nth-of-type(3) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement pictureBestYetToComeProductTitle;
-    @FindBy(css = "div:nth-of-type(3) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
-    private WebElement pictureAdventureBeginsProductTitle;
-    @FindBy(css = "div:nth-of-type(3) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
-    private WebElement pictureGoodDayProductTitle;
     @FindBy(css = "div:nth-of-type(4) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement pictureAdventureBeginsProductTitle;
+    @FindBy(css = "div:nth-of-type(5) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement pictureGoodDayProductTitle;
+    @FindBy(css = "div:nth-of-type(6) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement mugBestYetProductTitle;
-    @FindBy(css = "div:nth-of-type(5) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    @FindBy(css = "div:nth-of-type(7) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement mugAdventureBeginsProductTitle;
-    @FindBy(css = "div:nth-of-type(5) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    @FindBy(css = "div:nth-of-type(8) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement mugGoodDayProductTitle;
-    @FindBy(css = "div:nth-of-type(5) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    @FindBy(css = "div:nth-of-type(9) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement cushionMountainFoxProductTitle;
+    @FindBy(css = "div:nth-of-type(10) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement cushionBrownBearProductTitle;
 
 
     //added product title
@@ -146,6 +150,13 @@ public class RegisteredUserWishListPage extends BasePage{
         cushionMountainFoxWishListButton.click();
     }
 
+    // cushion 'Brown Bear' add to wishlist test method
+    public void clickCushionBearWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(cushionBrownBearWishListButton));
+        cushionBrownBearWishListButton.click();
+    }
+
 
 
 
@@ -189,6 +200,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isMugAdventureBeginsWishListButtonDisplayed(){return mugAdventureBeginsWishListButton.isDisplayed();}
     public boolean isMugGoodDayWishListButtonDisplayed(){return mugGoodDayWishListButton.isDisplayed();}
     public boolean isCushionMountainFoxWishListButtonDisplayed(){return cushionMountainFoxWishListButton.isDisplayed();}
+    public boolean isCushionBrownBearWishListButtonDisplayed(){return cushionBrownBearWishListButton.isDisplayed();}
 
 
     //wishlist link asserts
@@ -210,6 +222,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getMugAdventureBeginsProductTitle(){return mugAdventureBeginsProductTitle.getText();}
     public String getMugGoodDayProductTitle(){return mugGoodDayProductTitle.getText();}
     public String getCushionFoxProductTitle(){return cushionMountainFoxProductTitle.getText();}
+    public String getCushionBearProductTitle(){return cushionBrownBearProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}

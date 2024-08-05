@@ -174,6 +174,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addCushionFoxWishListButtonTest();
     }
 
+    //Test 058i -> add "Brown Bear" cushion into wishlist test (My wishlist inner link doesn't click)
+    @Test
+    void addCushionBrownBearToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addCushionBrownBearWishListButtonTest();
+    }
+
 
 
 }
