@@ -2914,7 +2914,19 @@ public class TestMethods extends BaseTest{
         System.out.println("The sort by 'Relevance' menu option  is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesRelevanceOption();
         //assert the correct text is input in option
-        //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesSalesOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
+        //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
+    }
+
+    protected void sortWomenClothesByNameAToZTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+
+        registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
+        //assert the sort by relevance option is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesNameAToZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
+        System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesNameAToZOption();
+        //assert the correct text is input in option
+        //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
 }

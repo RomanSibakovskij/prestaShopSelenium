@@ -1,9 +1,6 @@
 package lt.techin.example;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -281,6 +278,13 @@ public class RegisteredUserWomenClothesPage extends BasePage{
         actions.moveToElement(womenClothesRelevanceOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
+    public void clickWomenClothesNameAToZOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(womenClothesNameAToZOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(womenClothesNameAToZOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
     //remove search filter
 
     public void clickRemoveSearchFilter(){
@@ -338,5 +342,29 @@ public class RegisteredUserWomenClothesPage extends BasePage{
     public String getWomenClothesSizeLFilterMessage(){return womenClothesSizeLFilterMessage.getText();}
     public String getWomenClothesSizeXLFilterMessage(){return womenClothesSizeXLFilterMessage.getText();}
 
-
+    public String getWomenClothesSalesOptionText(){
+        WebElement womenClothesSalesOption = driver.findElement(By.linkText("Sales, highest to lowest"));
+        return womenClothesSalesOption.getText();
+    }
+    public String getWomenClothesRelevanceOptionText(){
+        return womenClothesRelevanceOption.getText();
+    }
+    public String getWomenClothesNameAToZOptionText(){
+        return womenClothesNameAToZOption.getText();
+    }
+    public String getWomenClothesNameZToAOptionText(){
+        return womenClothesNameZToAOption.getText();
+    }
+    public String getWomenClothesPriceLowToHighOptionText(){
+        return womenClothesPriceLowToHighOption.getText();
+    }
+    public String getWomenClothesPriceHighToLowOptionText(){
+        return womenClothesPriceHighToLowOption.getText();
+    }
+    public String getWomenClothesReferenceAToZOptionText(){
+        return womenClothesReferenceAToZOption.getText();
+    }
+    public String getWomenClothesReferenceZToAOptionText(){
+        return womenClothesReferenceZToAOption.getText();
+    }
 }

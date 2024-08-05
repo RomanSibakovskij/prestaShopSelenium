@@ -432,8 +432,8 @@ public class RegisteredUserMenClothesPage extends BasePage{
 
     //dropdown options getters
     public String getMenClothesSalesOptionText(){
-        WebElement hmAccessoriesSalesOption = driver.findElement(By.linkText("Sales, highest to lowest"));
-        return hmAccessoriesSalesOption.getText();
+        WebElement menClothesSalesOption = driver.findElement(By.linkText("Sales, highest to lowest"));
+        return menClothesSalesOption.getText();
     }
     public String getMenClothesRelevanceOptionText(){
         return menClothesRelevanceOption.getText();
