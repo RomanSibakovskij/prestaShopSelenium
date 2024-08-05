@@ -3005,4 +3005,17 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesReferenceZToAOptionText(), "Reference, Z to A"); // -> assert crashes the test, it doesn't find text
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // product wishlist test methods
+
+    protected void clickAllProductsLinkTest(){
+        RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
+
+        //assert the all products link is displayed
+        assertTrue(registeredUserWishListPage.isAllProductsLinkDisplayed(), "The 'All Products' link isn't displayed");
+        System.out.println("The 'All Products' link is displayed");
+        registeredUserWishListPage.clickAllProductsLink();
+    }
+
 }
