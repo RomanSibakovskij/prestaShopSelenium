@@ -225,7 +225,7 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addVectorFoxWishListButtonTest();
     }
 
-    //Test 058l -> click onto next page test (Wishlist button cannot be found)
+    //Test 058l -> add "Brown Bear" vector picture into wishlist test
     @Test
     void addVectorBrownBearToWishListTest(){
         clickOnSignUpTest();
@@ -240,6 +240,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         clickAllProductsLinkTest();
 
         addVectorBearWishListButtonTest();
+    }
+
+    //Test 058m -> add "Humming Bird" vector picture into wishlist test (My wishlist inner link cannot be found)
+    @Test
+    void addVectorHummingBirdToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addVectorHummingBirdWishListButtonTest();
     }
 
 

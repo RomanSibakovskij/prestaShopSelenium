@@ -48,6 +48,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement vectorFoxWishListButton;
     @FindBy(css = "[data-id-product='13'] .wishlist-button-add")
     private WebElement vectorBearWishListButton;
+    @FindBy(css = "[data-id-product='14'] .wishlist-button-add")
+    private WebElement vectorHummingBirdWishListButton;
 
 
     //success popup
@@ -85,6 +87,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement vectorFoxProductTitle;
     @FindBy(css = "div:nth-of-type(13) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement vectorBearProductTitle;
+    @FindBy(css = "div:nth-of-type(14) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement vectorHummingBirdProductTitle;
 
 
     //added product title
@@ -194,6 +198,13 @@ public class RegisteredUserWishListPage extends BasePage{
         vectorBearWishListButton.click();
     }
 
+    // vector 'Humming Bird' add to wishlist test method
+    public void clickVectorBirdWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1500));
+        wait.until(ExpectedConditions.elementToBeClickable(vectorHummingBirdWishListButton));
+        vectorHummingBirdWishListButton.click();
+    }
+
 
 
 
@@ -255,6 +266,8 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isVectorFoxWishListButtonDisplayed(){return vectorFoxWishListButton.isDisplayed();}
     //vector 'Brown Bear' assert method
     public boolean isVectorBearWishListButtonDisplayed(){return vectorBearWishListButton.isDisplayed();}
+    //vector 'Humming Bird' assert method
+    public boolean isVectorHummingBirdWishListButtonDisplayed(){return vectorHummingBirdWishListButton.isDisplayed();}
 
     // navigation page link assert
     public boolean isNextPageLinkDisplayed(){return nextPageLink.isDisplayed();}
@@ -282,6 +295,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getCushionHummingBirdProductTitle(){return cushionHummingBirdProductTitle.getText();}
     public String getVectorFoxProductTitle(){return vectorFoxProductTitle.getText();}
     public String getVectorBearProductTitle(){return vectorBearProductTitle.getText();}
+    public String getVectorHummingBirdProductTitle(){return vectorHummingBirdProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}
