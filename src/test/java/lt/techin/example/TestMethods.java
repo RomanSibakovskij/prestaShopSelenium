@@ -3104,7 +3104,7 @@ public class TestMethods extends BaseTest{
     protected void addPictureAdventureBeginsWishListButtonTest(){
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
-        //assert the sweater wishlist button is displayed
+        //assert the picture 'Adventure Begins' wishlist button is displayed
         assertTrue(registeredUserWishListPage.isPictureAdventureBeginsWishListButtonDisplayed(), "The picture 'Adventure Begins' wishlist button isn't displayed");
         System.out.println("The picture 'Adventure Begins' wishlist button is displayed");
         //assert the correct product is being selected for wishlist
@@ -3131,7 +3131,7 @@ public class TestMethods extends BaseTest{
     protected void addPictureGoodDayWishListButtonTest(){
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
-        //assert the sweater wishlist button is displayed
+        //assert the picture 'Good Day' wishlist button is displayed
         assertTrue(registeredUserWishListPage.isPictureGoodDayWishListButtonDisplayed(), "The picture 'Good Day' wishlist button isn't displayed");
         System.out.println("The picture 'Good Day' wishlist button is displayed");
         //assert the correct product is being selected for wishlist
@@ -3153,6 +3153,33 @@ public class TestMethods extends BaseTest{
         registeredUserWishListPage.clickWishListInnerLink();
         //assert correct product has been added to wishlist
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Today is a good day Framed poster");
+    }
+
+    protected void addMugBestYetWishListButtonTest(){
+        RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
+
+        //assert the sweater wishlist button is displayed
+        assertTrue(registeredUserWishListPage.isMugBestYetWishListButtonDisplayed(), "The mug 'Best Yet' wishlist button isn't displayed");
+        System.out.println("The mug 'Best Yet' wishlist button is displayed");
+        //assert the correct product is being selected for wishlist
+        //assertEquals(registeredUserWishListPage.getMugBestYetProductTitle(), "Mug The best is yet to come");
+        registeredUserWishListPage.clickMugBestYetWishListButton();
+        //assert the 'My wishlist' link is displayed in 'My wishlists' pop-up box
+        assertTrue(registeredUserWishListPage.isMyWishListLinkDisplayed(), "The 'My wishlist' link isn't displayed");
+        System.out.println("The 'My wishlist' link is displayed");
+        registeredUserWishListPage.clickMyWishListLink();
+        //assert the success pop up has the correct text
+        //assertEquals(registeredUserWishListPage.getProductAddedPopUpMessage(), "Product added");
+        //assert the 'Wishlist' link is displayed
+        assertTrue(registeredUserWishListPage.isWishListPageLinkDisplayed(), "The 'Wishlist' page isn't displayed");
+        System.out.println("The 'Wishlist' page is displayed");
+        registeredUserWishListPage.clickWishListLink();
+        //assert 'My wishlist' inner box link is displayed
+        assertTrue(registeredUserWishListPage.isWishListInnerLinkDisplayed(), "The 'My wishlist' inner link isn't displayed");
+        System.out.println("The 'My wishlist' inner link is displayed");
+        registeredUserWishListPage.clickWishListInnerLink();
+        //assert correct product has been added to wishlist
+        //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Mug The best is yet to come");
     }
 
 }

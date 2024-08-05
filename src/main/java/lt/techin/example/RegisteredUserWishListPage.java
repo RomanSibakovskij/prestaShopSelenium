@@ -32,6 +32,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement pictureAdventureBeginsWishListButton;
     @FindBy(css = "[data-id-product='5'] .wishlist-button-add")
     private WebElement pictureGoodDayWishListButton;
+    @FindBy(css = "[data-id-product='6'] .wishlist-button-add")
+    private WebElement mugBestYetWishListButton;
 
     //success popup
     @FindBy(css = ".success.wishlist-toast")
@@ -48,6 +50,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement pictureAdventureBeginsProductTitle;
     @FindBy(css = "div:nth-of-type(3) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement pictureGoodDayProductTitle;
+    @FindBy(css = "div:nth-of-type(4) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement mugBestYetProductTitle;
 
     //added product title
     @FindBy(css = ".wishlist-product-title")
@@ -100,6 +104,13 @@ public class RegisteredUserWishListPage extends BasePage{
         pictureGoodDayWishListButton.click();
     }
 
+    // mug 'Best Yet To Come' add to wishlist test method
+    public void clickMugBestYetWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(mugBestYetWishListButton));
+        mugBestYetWishListButton.click();
+    }
+
 
 
 
@@ -138,6 +149,8 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isPictureAdventureBeginsWishListButtonDisplayed(){return pictureAdventureBeginsWishListButton.isDisplayed();}
     //picture 'Adventure Begins' assert method
     public boolean isPictureGoodDayWishListButtonDisplayed(){return pictureGoodDayWishListButton.isDisplayed();}
+    //mug 'Best Yet To Come' assert method
+    public boolean isMugBestYetWishListButtonDisplayed(){return mugBestYetWishListButton.isDisplayed();}
 
     //wishlist link asserts
     public boolean isMyWishListLinkDisplayed(){return myWishListPageLink.isDisplayed();}
@@ -154,6 +167,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getPictureBestYetProductTitle(){return pictureBestYetToComeProductTitle.getText();}
     public String getPictureAdventureBeginsProductTitle(){return pictureAdventureBeginsProductTitle.getText();}
     public String getPictureGoodDayProductTitle(){return pictureGoodDayProductTitle.getText();}
+    public String getMugBestYetProductTitle(){return mugBestYetProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}
