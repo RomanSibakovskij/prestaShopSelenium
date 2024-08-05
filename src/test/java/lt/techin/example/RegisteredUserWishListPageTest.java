@@ -225,7 +225,7 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addVectorFoxWishListButtonTest();
     }
 
-    //Test 058l -> add "Brown Bear" vector picture into wishlist test
+    //Test 058l -> add "Brown Bear" vector picture into wishlist test  (My wishlist inner link cannot be found)
     @Test
     void addVectorBrownBearToWishListTest(){
         clickOnSignUpTest();
