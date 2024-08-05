@@ -17,6 +17,12 @@ public class RegisteredUserAccountPage extends BasePage{
     @FindBy(css = ".myaccount-title [rel]")
     private WebElement userAccountLink2;
 
+    //add first address link
+    @FindBy(css = "a#address-link")
+    private WebElement addFirstAddressLink;
+    @FindBy(css = "a#address-link  .material-icons")
+    private WebElement addFirstLinkName;
+
     public RegisteredUserAccountPage(WebDriver driver) {
         super(driver);
     }
@@ -34,9 +40,24 @@ public class RegisteredUserAccountPage extends BasePage{
         userAccountLink2.click();
     }
 
+    //add first address link method
+    public void clickAddFirstAddressLink(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
+        wait.until(ExpectedConditions.elementToBeClickable(addFirstAddressLink));
+        addFirstAddressLink.click();
+    }
+
+
     //navigation links assert methods
     public boolean isUserAccountLink1Displayed(){return userAccountLink1.isDisplayed();}
     public boolean isUserAccountLink2Displayed(){return userAccountLink2.isDisplayed();}
+
+    //assert methods
+    public boolean isAddFirstAddressLinkDisplayed(){return addFirstAddressLink.isDisplayed();}
+
+
+    //add first address link name getter method
+    public String getAddFirstAddressLinkText(){return addFirstLinkName.getText();}
 
 
 }

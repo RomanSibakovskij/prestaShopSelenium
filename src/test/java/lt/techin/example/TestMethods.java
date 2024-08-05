@@ -3569,7 +3569,7 @@ public class TestMethods extends BaseTest{
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //navigation to user account test methods
+    //navigation to user account page test methods
 
     protected void navigateToUserAccountLink1Test(){
         RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
@@ -3586,4 +3586,20 @@ public class TestMethods extends BaseTest{
         System.out.println("The footer link is displayed" + "\n");
         registeredUserAccountPage.clickUserAccountLink2();
     }
+
+    //navigation to add first address page test methods
+    protected void navigateToAddFirstAddressPage(){
+        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        //assert the nav link is displayed
+        assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
+        System.out.println("The nav link is displayed" + "\n");
+        registeredUserAccountPage.clickUserAccountLink1();
+        //assert the 'add first address' link is displayed
+        assertTrue(registeredUserAccountPage.isAddFirstAddressLinkDisplayed(), "The 'add first address' link isn't displayed");
+        System.out.println("The 'add first address' link is displayed" + "\n");
+        //assert the 'add first address' link has the correct name
+        //assertEquals(registeredUserAccountPage.getAddFirstAddressLinkText(), "Add first address");
+        registeredUserAccountPage.clickAddFirstAddressLink();
+    }
+
 }

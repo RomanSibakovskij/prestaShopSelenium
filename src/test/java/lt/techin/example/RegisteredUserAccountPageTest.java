@@ -35,4 +35,20 @@ public class RegisteredUserAccountPageTest extends TestMethods{
 
         navigateToUserAccountLink2Test();
     }
+
+    //Test 060 -> navigate to add first address page
+    @Test
+    void navigateToAddFirstAddressPageTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAddFirstAddressPage();
+    }
 }
