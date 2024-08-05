@@ -35,7 +35,7 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
         clickAllProductsLinkTest();
 
-        clickTShirtWishListButtonTest();
+        addTShirtWishListButtonTest();
     }
 
     //Test 058a -> add "Hummingbird printed sweater" into wishlist test
@@ -52,7 +52,24 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
         clickAllProductsLinkTest();
 
-        clickSweaterWishListButtonTest();
+        addSweaterWishListButtonTest();
+    }
+
+    //Test 058b -> add "Best Is Yet To Come" picture into wishlist test
+    @Test
+    void addBestYetToComePictureToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addPictureBestYetWishListButtonTest();
     }
 
 
