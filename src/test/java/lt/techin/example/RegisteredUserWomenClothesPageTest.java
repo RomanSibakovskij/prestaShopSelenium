@@ -379,7 +379,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         sortWomenClothesByRelevanceTest();
     }
 
-    //Test 056b -> click sort women clothes by relevance page test
+    //Test 056c -> click sort women clothes by name (A to Z) page test
     @Test
     void clickWomenClothesSortByNameAToZTest(){
         clickOnSignUpTest();
@@ -395,6 +395,24 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         navigateToClothesPageTest();
         navigateToWomenClothesPageLink1Test();
         sortWomenClothesByNameAToZTest();
+    }
+
+    //Test 056d -> click sort women clothes by name (Z to A) page test
+    @Test
+    void clickWomenClothesSortByNameZToATest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        sortWomenClothesByNameZToATest();
     }
 
 
