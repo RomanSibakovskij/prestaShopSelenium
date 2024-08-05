@@ -265,6 +265,15 @@ public class RegisteredUserWomenClothesPage extends BasePage{
 
     }
 
+    //menu options methods
+
+    public void clickWomenClothesSalesOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(womenClothesSalesOption));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(womenClothesSalesOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
+    }
+
     //remove search filter
 
     public void clickRemoveSearchFilter(){

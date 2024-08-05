@@ -343,5 +343,23 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
         clickWomenClothesSortByDropdownMenuTest();
     }
 
+    //Test 056a -> click sort women clothes by sales page test
+    @Test
+    void clickWomenClothesSortBySalesTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToClothesPageTest();
+        navigateToWomenClothesPageLink1Test();
+        sortWomenClothesBySalesTest();
+    }
+
 
 }

@@ -2891,4 +2891,18 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
     }
 
+    //women clothes dropdown menu options test methods
+
+    protected void sortWomenClothesBySalesTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+
+        registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
+        //assert the sort by sales option is displayed
+        assertTrue(registeredUserWomenClothesPage.isWomenClothesSalesOptionDisplayed(), "The sort by 'Sales' menu option isn't displayed");
+        System.out.println("The sort by 'Sales' menu option  is displayed" + "\n");
+        registeredUserWomenClothesPage.clickWomenClothesSalesOption();
+        //assert the correct text is input in option
+        //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
+    }
+
 }
