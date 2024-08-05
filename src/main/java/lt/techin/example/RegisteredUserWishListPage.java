@@ -21,13 +21,15 @@ public class RegisteredUserWishListPage extends BasePage{
     @FindBy(css = ".wishlist-list-item-link")
     private WebElement myWishListInnerLink;
 
-    //buttons
+    //product wishlist buttons
     @FindBy(css = "[data-id-product='1'] .wishlist-button-add")
     private WebElement tShirtWishListButton;
     @FindBy(css = "[data-id-product='2'] .wishlist-button-add")
     private WebElement sweaterWishListButton;
     @FindBy(css = "[data-id-product='3'] .wishlist-button-add")
     private WebElement pictureBestYetToComeWishListButton;
+    @FindBy(css = "[data-id-product='4'] .wishlist-button-add")
+    private WebElement pictureAdventureBeginsWishListButton;
 
     //success popup
     @FindBy(css = ".success.wishlist-toast")
@@ -40,6 +42,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement sweaterProductTitle;
     @FindBy(css = "div:nth-of-type(3) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement pictureBestYetToComeProductTitle;
+    @FindBy(css = "div:nth-of-type(3) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement pictureAdventureBeginsProductTitle;
 
     //added product title
     @FindBy(css = ".wishlist-product-title")
@@ -78,6 +82,13 @@ public class RegisteredUserWishListPage extends BasePage{
         pictureBestYetToComeWishListButton.click();
     }
 
+    // picture 'Adventure Begins' add to wishlist test method
+    public void clickPictureAdventureBeginsWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(pictureAdventureBeginsWishListButton));
+        pictureAdventureBeginsWishListButton.click();
+    }
+
 
 
 
@@ -111,7 +122,9 @@ public class RegisteredUserWishListPage extends BasePage{
     //sweater assert method
     public boolean isSweaterWishListButtonDisplayed(){return sweaterWishListButton.isDisplayed();}
     //picture 'Best Yet To Come' assert method
-    public boolean isPictureBestYetWishListButtonDisplayed(){return sweaterWishListButton.isDisplayed();}
+    public boolean isPictureBestYetWishListButtonDisplayed(){return pictureBestYetToComeWishListButton.isDisplayed();}
+    //picture 'Adventure Begins' assert method
+    public boolean isPictureAdventureBeginsWishListButtonDisplayed(){return pictureAdventureBeginsWishListButton.isDisplayed();}
 
     //wishlist link asserts
     public boolean isMyWishListLinkDisplayed(){return myWishListPageLink.isDisplayed();}
@@ -126,6 +139,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getTShirtProductTitle(){return tShirtProductTitle.getText();}
     public String getSweaterProductTitle(){return sweaterProductTitle.getText();}
     public String getPictureBestYetProductTitle(){return pictureBestYetToComeProductTitle.getText();}
+    public String getPictureAdventureBeginsProductTitle(){return pictureAdventureBeginsProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}

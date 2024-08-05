@@ -72,6 +72,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addPictureBestYetWishListButtonTest();
     }
 
+    //Test 058c -> add "Adventure Begins" picture into wishlist test
+    @Test
+    void addAdventureBeginsPictureToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addPictureAdventureBeginsWishListButtonTest();
+    }
+
 
 
 }
