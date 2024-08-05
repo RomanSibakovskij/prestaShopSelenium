@@ -34,9 +34,10 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement pictureGoodDayWishListButton;
     @FindBy(css = "[data-id-product='6'] .wishlist-button-add")
     private WebElement mugBestYetWishListButton;
-
     @FindBy(css = "[data-id-product='7'] .wishlist-button-add")
     private WebElement mugAdventureBeginsWishListButton;
+    @FindBy(css = "[data-id-product='8'] .wishlist-button-add")
+    private WebElement mugGoodDayWishListButton;
 
 
     //success popup
@@ -58,6 +59,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement mugBestYetProductTitle;
     @FindBy(css = "div:nth-of-type(5) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement mugAdventureBeginsProductTitle;
+    @FindBy(css = "div:nth-of-type(5) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement mugGoodDayProductTitle;
 
 
     //added product title
@@ -125,6 +128,13 @@ public class RegisteredUserWishListPage extends BasePage{
         mugAdventureBeginsWishListButton.click();
     }
 
+    // mug 'Good Day' add to wishlist test method
+    public void clickMugGoodDayWishListButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(mugGoodDayWishListButton));
+        mugGoodDayWishListButton.click();
+    }
+
 
 
 
@@ -165,8 +175,8 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isPictureGoodDayWishListButtonDisplayed(){return pictureGoodDayWishListButton.isDisplayed();}
     //mug 'Best Yet To Come' assert method
     public boolean isMugBestYetWishListButtonDisplayed(){return mugBestYetWishListButton.isDisplayed();}
-
     public boolean isMugAdventureBeginsWishListButtonDisplayed(){return mugAdventureBeginsWishListButton.isDisplayed();}
+    public boolean isMugGoodDayWishListButtonDisplayed(){return mugGoodDayWishListButton.isDisplayed();}
 
 
     //wishlist link asserts
@@ -186,6 +196,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getPictureGoodDayProductTitle(){return pictureGoodDayProductTitle.getText();}
     public String getMugBestYetProductTitle(){return mugBestYetProductTitle.getText();}
     public String getMugAdventureBeginsProductTitle(){return mugAdventureBeginsProductTitle.getText();}
+    public String getMugGoodDayProductTitle(){return mugGoodDayProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}

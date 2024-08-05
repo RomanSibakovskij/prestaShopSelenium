@@ -140,6 +140,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addMugAdventureBeginsWishListButtonTest();
     }
 
+    //Test 058g -> add "Today Is A Good Day" mug into wishlist test (My wishlist inner link doesn't click)
+    @Test
+    void addGoodDayMugToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addMugGoodDayWishListButtonTest();
+    }
+
 
 
 }
