@@ -34,8 +34,10 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement pictureGoodDayWishListButton;
     @FindBy(css = "[data-id-product='6'] .wishlist-button-add")
     private WebElement mugBestYetWishListButton;
+
     @FindBy(css = "[data-id-product='7'] .wishlist-button-add")
     private WebElement mugAdventureBeginsWishListButton;
+
 
     //success popup
     @FindBy(css = ".success.wishlist-toast")
@@ -56,6 +58,7 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement mugBestYetProductTitle;
     @FindBy(css = "div:nth-of-type(5) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement mugAdventureBeginsProductTitle;
+
 
     //added product title
     @FindBy(css = ".wishlist-product-title")
@@ -162,7 +165,9 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isPictureGoodDayWishListButtonDisplayed(){return pictureGoodDayWishListButton.isDisplayed();}
     //mug 'Best Yet To Come' assert method
     public boolean isMugBestYetWishListButtonDisplayed(){return mugBestYetWishListButton.isDisplayed();}
+
     public boolean isMugAdventureBeginsWishListButtonDisplayed(){return mugAdventureBeginsWishListButton.isDisplayed();}
+
 
     //wishlist link asserts
     public boolean isMyWishListLinkDisplayed(){return myWishListPageLink.isDisplayed();}
