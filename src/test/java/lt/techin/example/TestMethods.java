@@ -3598,7 +3598,7 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserAccountPage.isAddFirstAddressLinkDisplayed(), "The 'add first address' link isn't displayed");
         System.out.println("The 'add first address' link is displayed" + "\n");
         //assert the 'add first address' link has the correct name
-        //assertEquals(registeredUserAccountPage.getAddFirstAddressLinkText(), "Add first address");
+        //assertEquals(registeredUserAccountPage.getAddFirstAddressLinkText(), "Add first address"); // -> assert crashes the test
         registeredUserAccountPage.clickAddFirstAddressLink();
     }
 

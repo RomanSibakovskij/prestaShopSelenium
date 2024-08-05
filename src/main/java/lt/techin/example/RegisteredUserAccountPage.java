@@ -23,6 +23,26 @@ public class RegisteredUserAccountPage extends BasePage{
     @FindBy(css = "a#address-link  .material-icons")
     private WebElement addFirstLinkName;
 
+    //add first address page elements
+    @FindBy(css = "input#field-firstname")
+    private WebElement firstNameInputField;
+    @FindBy(css = "input#field-lastname")
+    private WebElement lastNameInputField;
+    @FindBy(css = "input[name='address1']")
+    private WebElement addressInputField;
+    @FindBy(css = "input#field-city")
+    private WebElement cityInputField;
+    @FindBy(css = "select#field-id_state")
+    private WebElement stateDropdownMenu;
+    @FindBy(css = "input#field-postcode")
+    private WebElement postalCodeInputField;
+    @FindBy(css = "select#field-id_country")
+    private WebElement countryDropdownMenu;
+    @FindBy(css = ".btn.btn-primary.float-xs-right.form-control-submit")
+    private WebElement saveButton;
+
+
+
     public RegisteredUserAccountPage(WebDriver driver) {
         super(driver);
     }
