@@ -190,7 +190,7 @@ public class RegisteredUserMenClothesPage extends BasePage{
     }
 
     public void clickMenClothesSizeSBoxIcon(){
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesSizeMFilterMessage);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", menClothesSizeSBoxIcon);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(850));
         wait.until(ExpectedConditions.elementToBeClickable(menClothesSizeSBoxIcon));
         menClothesSizeSBoxIcon.click();
