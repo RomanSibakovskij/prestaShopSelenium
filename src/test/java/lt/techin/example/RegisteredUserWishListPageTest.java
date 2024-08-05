@@ -327,6 +327,23 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addNotebookBirdWishListButtonTest();
     }
 
+    //Test 058q -> add "Custom Text" mug into wishlist test
+    @Test
+    void addMugCustomTextToWishListTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+        clickAllProductsLinkTest();
+
+        addMugCustomWishListButtonTest();
+    }
+
 
 
 }

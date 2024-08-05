@@ -58,6 +58,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement notebookBearWishListButton;
     @FindBy(css = "[data-id-product='18'] .wishlist-button-add")
     private WebElement notebookBirdWishListButton;
+    @FindBy(css = "[data-id-product='19'] .wishlist-button-add")
+    private WebElement mugCustomTextWishListButton;
 
 
     //success popup
@@ -105,6 +107,8 @@ public class RegisteredUserWishListPage extends BasePage{
     private WebElement notebookBearProductTitle;
     @FindBy(css = "div:nth-of-type(18) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement notebookBirdProductTitle;
+    @FindBy(css = "div:nth-of-type(19) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
+    private WebElement mugCustomProductTitle;
 
 
     //added product title
@@ -242,14 +246,20 @@ public class RegisteredUserWishListPage extends BasePage{
         notebookBearWishListButton.click();
     }
 
-    // notebook 'Brown Bear' add to wishlist test method
+    // notebook 'Humming Bird' add to wishlist test method
     public void clickNotebookBirdWishListButton(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.elementToBeClickable(notebookBirdWishListButton));
         notebookBirdWishListButton.click();
     }
 
-
+    // mug 'Custom text' add to wishlist test method
+    public void clickMugCustomTextWishListButton(){
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mugCustomTextWishListButton);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.elementToBeClickable(mugCustomTextWishListButton));
+        mugCustomTextWishListButton.click();
+    }
 
 
     // next page click method
@@ -320,6 +330,9 @@ public class RegisteredUserWishListPage extends BasePage{
     public boolean isNotebookBearWishListButtonDisplayed(){return notebookBearWishListButton.isDisplayed();}
     //notebook 'Humming Bird' assert method
     public boolean isNotebookBirdWishListButtonDisplayed(){return notebookBirdWishListButton.isDisplayed();}
+    //mug 'Custom Text' assert method
+    public boolean isMugCustomWishListButtonDisplayed(){return mugCustomTextWishListButton.isDisplayed();}
+
 
     // navigation page link assert
     public boolean isNextPageLinkDisplayed(){return nextPageLink.isDisplayed();}
@@ -352,6 +365,7 @@ public class RegisteredUserWishListPage extends BasePage{
     public String getNotebookFoxProductTitle(){return notebookFoxProductTitle.getText();}
     public String getNotebookBearProductTitle(){return notebookBearProductTitle.getText();}
     public String getNotebookBirdProductTitle(){return notebookBirdProductTitle.getText();}
+    public String getMugCustomProductTitle(){return mugCustomProductTitle.getText();}
 
     //assert the correct product is added into wishlist
     public String getAddedProductTitle(){return addedProductName.getText();}
