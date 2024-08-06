@@ -154,5 +154,22 @@ public class RegisteredUserAccountPageTest extends TestMethods{
         editRegisteredUserDataNoStateTest();
     }
 
+    //Test 061f -> change registered user data without postal code
+    @Test
+    void changeRegisteredUserDataNoPostalCodeTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAddFirstAddressPage();
+        editRegisteredUserDataNoPostalCodeTest();
+    }
+
 
 }

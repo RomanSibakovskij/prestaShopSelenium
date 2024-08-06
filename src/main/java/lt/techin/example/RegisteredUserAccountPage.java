@@ -136,6 +136,20 @@ public class RegisteredUserAccountPage extends BasePage{
         System.out.println("Added postal code: " + postalCode);
     }
 
+    public void inputEditedUserDetailsNoPostalCode(){
+        changedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        changedLastName = TestDataGenerator.generateRandomLastname(10);
+        address = TestDataGenerator.generateRandomAddress(6);
+        city = TestDataGenerator.getRandomCity();
+
+        System.out.println("Generated Data:\n");
+        System.out.println("Edited first name: " + changedFirstName);
+        System.out.println("Edited last name: " + changedLastName);
+        System.out.println("Edited address: " + address);
+        System.out.println("Edited city: " + city);
+        System.out.println("Expected postal code: " + "");
+    }
+
 
     //user account link click methods
     public void clickUserAccountLink1(){
@@ -276,6 +290,12 @@ public class RegisteredUserAccountPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
         wait.until(ExpectedConditions.visibilityOf(cityInputField));
         cityInputField.sendKeys("");
+    }
+    //attempt to edit user with empty postal code input field
+    public void addNoUserPostalCode(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(postalCodeInputField));
+        postalCodeInputField.clear();
     }
 
     //navigation links assert methods
