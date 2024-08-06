@@ -3572,7 +3572,7 @@ public class TestMethods extends BaseTest{
     //navigation to user account page test methods
 
     protected void navigateToUserAccountLink1Test(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
         System.out.println("The nav link is displayed" + "\n");
@@ -3580,7 +3580,7 @@ public class TestMethods extends BaseTest{
     }
 
     protected void navigateToUserAccountLink2Test(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the footer link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink2Displayed(), "The footer link isn't displayed");
         System.out.println("The footer link is displayed" + "\n");
@@ -3589,7 +3589,7 @@ public class TestMethods extends BaseTest{
 
     //navigation to add first address page test methods
     protected void navigateToAddFirstAddressPage(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
         System.out.println("The nav link is displayed" + "\n");
@@ -3604,7 +3604,7 @@ public class TestMethods extends BaseTest{
 
     //edit registered user with valid input data (United States)
     protected void editRegisteredUserDataValidInputTest(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
         System.out.println("The nav link is displayed" + "\n");
@@ -3667,7 +3667,7 @@ public class TestMethods extends BaseTest{
 
     //edit registered user with valid input data (France)
     protected void editRegisteredUserDataValidInputFranceTest(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
         System.out.println("The nav link is displayed" + "\n");
@@ -3720,7 +3720,7 @@ public class TestMethods extends BaseTest{
 
     //edit registered user without first name
     protected void editRegisteredUserDataNoFirstNameTest(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
         System.out.println("The nav link is displayed" + "\n");
@@ -3781,7 +3781,7 @@ public class TestMethods extends BaseTest{
 
     //edit registered user without last name
     protected void editRegisteredUserDataNoLastNameTest(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
         System.out.println("The nav link is displayed" + "\n");
@@ -3842,7 +3842,7 @@ public class TestMethods extends BaseTest{
 
     //edit registered user without address
     protected void editRegisteredUserDataNoAddressTest(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
         System.out.println("The nav link is displayed" + "\n");
@@ -3903,7 +3903,7 @@ public class TestMethods extends BaseTest{
 
     //edit registered user without city
     protected void editRegisteredUserDataNoCityTest(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
         System.out.println("The nav link is displayed" + "\n");
@@ -3964,7 +3964,7 @@ public class TestMethods extends BaseTest{
 
     //edit registered user without state
     protected void editRegisteredUserDataNoStateTest(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
         System.out.println("The nav link is displayed" + "\n");
@@ -4015,7 +4015,7 @@ public class TestMethods extends BaseTest{
 
     //edit registered user without state
     protected void editRegisteredUserDataNoPostalCodeTest(){
-        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
         System.out.println("The nav link is displayed" + "\n");

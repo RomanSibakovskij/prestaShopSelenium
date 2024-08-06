@@ -2,7 +2,7 @@ package lt.techin.example;
 
 import org.junit.jupiter.api.Test;
 
-public class RegisteredUserAccountPageTest extends TestMethods{
+public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 059 -> navigate to user account page (upper navbar link)
     @Test

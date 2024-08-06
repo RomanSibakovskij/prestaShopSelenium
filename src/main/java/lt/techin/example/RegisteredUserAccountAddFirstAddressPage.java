@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class RegisteredUserAccountPage extends BasePage{
+public class RegisteredUserAccountAddFirstAddressPage extends BasePage{
 
     //user account links
     @FindBy(css = "a[title='View my customer account']")
@@ -64,7 +64,7 @@ public class RegisteredUserAccountPage extends BasePage{
     private int frenchPostalCode;
 
 
-    public RegisteredUserAccountPage(WebDriver driver) {
+    public RegisteredUserAccountAddFirstAddressPage(WebDriver driver) {
         super(driver);
     }
     //valid user data input
