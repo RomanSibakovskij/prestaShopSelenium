@@ -1670,6 +1670,37 @@ public class TestMethods extends BaseTest{
         assertTrue(productCheckoutPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
         System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
         productCheckoutPage.clickProceedToCheckoutButton();
+
+        ProductOrderPage productOrderPage = new ProductOrderPage(driver);
+        //assert the address input field is displayed
+        assertTrue(productOrderPage.isAddressInputFieldDisplayed(), "The address input field isn't displayed");
+        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
+        productOrderPage.inputCheckoutDetails();
+        productOrderPage.inputAddressIntoInputField();
+        //assert the city input field is displayed
+        assertTrue(productOrderPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
+        System.out.println("The city input field is displayed" + "\n");
+        productOrderPage.inputCityIntoInputField();
+        //assert the state dropdown menu is displayed
+        assertTrue(productOrderPage.isStateDropdownMenuDisplayed(), "The state dropdown menu isn't displayed");
+        System.out.println("The state dropdown menu is displayed" + "\n");
+        productOrderPage.clickStateDropdownMenu();
+        //assert the valid state option is displayed
+        assertTrue(productOrderPage.isIllinoisStateDisplayed(), "The Illinois option isn't displayed");
+        System.out.println("The Illinois option is displayed" + "\n");
+        productOrderPage.clickIllinoisStateOption();
+        //assert the postal code input field is displayed
+        assertTrue(productOrderPage.isPostalCodeInputFieldDisplayed(), "The postal code input field isn't displayed");
+        System.out.println("The postal code input field is displayed" + "\n");
+        productOrderPage.inputPostalCodeIntoInputField();
+        //assert the country dropdown menu is displayed
+        assertTrue(productOrderPage.isCountryDropdownMenuDisplayed(), "The country dropdown menu isn't displayed");
+        System.out.println("The postal code input field is displayed" + "\n");
+        productOrderPage.clickCountryDropdownMenu();
+        //assert the right country is displayed
+        assertTrue(productOrderPage.isUSCountryDisplayed(), "The US option isn't displayed");
+        System.out.println("The US option is displayed" + "\n");
+        productOrderPage.clickUSOption();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -345,7 +345,7 @@ public class RegisteredUserAccountAddFirstAddressPage extends BasePage{
     public boolean isLastNameInputFieldDisplayed(){return lastNameInputField.isDisplayed();}
     public boolean isAddressInputFieldDisplayed(){return addressInputField.isDisplayed();}
     public boolean isCityInputFieldDisplayed(){return cityInputField.isDisplayed();}
-    public boolean isPostalCodeInputFieldDisplayed(){return firstNameInputField.isDisplayed();}
+    public boolean isPostalCodeInputFieldDisplayed(){return postalCodeInputField.isDisplayed();}
 
     //dropdown menu assert methods
     public boolean isStateDropdownMenuDisplayed(){return stateDropdownMenu.isDisplayed();}
