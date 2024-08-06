@@ -1,7 +1,6 @@
 package lt.techin.example;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -40,6 +39,22 @@ public class ProductOrderPage extends BasePage{
     //shipping method continue button
     @FindBy(css = "form#js-delivery > button[name='confirmDeliveryOption']")
     private WebElement shippingContinueButton;
+
+    //payment method radio elements
+    @FindBy(css = "div:nth-of-type(1) > .payment-option > .custom-radio.float-xs-left")
+    private WebElement bankWireOption;
+    @FindBy(css = "div:nth-of-type(4) > .payment-option > .custom-radio.float-xs-left")
+    private WebElement checkOption;
+    @FindBy(css = "div:nth-of-type(7) > .payment-option > .custom-radio.float-xs-left")
+    private WebElement cashOnDeliveryOption;
+
+    //terms of service checkbox element
+    @FindBy(xpath = "//form[@id='conditions-to-approve']/ul//span[@class='custom-checkbox']") //(css= ".custom-checkbox")
+    private WebElement termsOfServiceCheckbox;
+
+    //place order button element
+    @FindBy(css = ".btn.btn-primary.center-block")
+    private WebElement placeOrderButton;
 
     //input data
     private String address;
@@ -130,6 +145,45 @@ public class ProductOrderPage extends BasePage{
         shippingContinueButton.click();
     }
 
+    //payment method radio click method
+    public void selectBankWireOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
+        wait.until(ExpectedConditions.elementToBeClickable(bankWireOption));
+        bankWireOption.click();
+    }
+
+    //terms of service checkbox click method
+    public void checkTermsOfServiceCheckbox(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
+        wait.until(ExpectedConditions.elementToBeClickable(termsOfServiceCheckbox));
+        try {
+            JavascriptExecutor jsscroll = (JavascriptExecutor) driver;
+            jsscroll.executeScript("arguments[0].scrollIntoView(true);", termsOfServiceCheckbox);
+
+            Actions actions = new Actions(driver);
+            actions.moveToElement(termsOfServiceCheckbox).click().perform();
+
+            boolean isSelected = termsOfServiceCheckbox.isSelected();
+            System.out.println("Checkbox selected state after clicking: " + isSelected);
+
+            if (!isSelected) {
+                throw new RuntimeException("Failed to click the Terms of Service checkbox.");
+            }
+            wait.until(ExpectedConditions.visibilityOf(placeOrderButton));
+            System.out.println("Place order is now visible.");
+        } catch (Exception e) {
+            System.out.println("Element is not interactable. Error: " + e.getMessage());
+            throw new RuntimeException("Element is not interactable. Halting test.");
+        }
+    }
+
+    //place order click method
+    public void clickPlaceOrderButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
+        wait.until(ExpectedConditions.elementToBeClickable(placeOrderButton));
+        placeOrderButton.click();
+    }
+
     //input fields assert methods
     public boolean isAddressInputFieldDisplayed(){return addressInputField.isDisplayed();}
     public boolean isCityInputFieldDisplayed(){return cityInputField.isDisplayed();}
@@ -149,6 +203,17 @@ public class ProductOrderPage extends BasePage{
 
     //order delivery comment input field assert method
     public boolean isOrderDeliveryCommentFieldDisplayed(){return orderDeliveryCommentInputField.isDisplayed();}
+
+    //payment radio elements assert methods
+    public boolean isBankWireButtonDisplayed(){return bankWireOption.isDisplayed();}
+    public boolean isCheckButtonDisplayed(){return checkOption.isDisplayed();}
+    public boolean isCashOnDeliveryButtonDisplayed(){return cashOnDeliveryOption.isDisplayed();}
+
+    //terms of service assert method
+    public boolean isTermsOfServiceCheckboxDisplayed(){return termsOfServiceCheckbox.isDisplayed();}
+
+    //place order button assert method
+    public boolean isPlaceOrderButtonDisplayed(){return placeOrderButton.isDisplayed();}
 
     //edit input data getters
     public String getAddress() {return addressInputField.getText();}

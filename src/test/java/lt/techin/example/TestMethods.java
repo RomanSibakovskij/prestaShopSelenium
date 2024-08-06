@@ -1713,6 +1713,18 @@ public class TestMethods extends BaseTest{
         assertTrue(productOrderPage.isShippingContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
         System.out.println("The 'Continue' button is displayed" + "\n");
         productOrderPage.clickShippingContinueButton();
+        //assert chosen payment button option is displayed
+        assertTrue(productOrderPage.isBankWireButtonDisplayed(), "The 'Bank wire' button isn't displayed");
+        System.out.println("The 'Bank wire' button is displayed" + "\n");
+        productOrderPage.selectBankWireOption();
+        //assert terms of service checkbox is displayed
+        assertTrue(productOrderPage.isTermsOfServiceCheckboxDisplayed(), "The 'Terms of service' checkbox isn't displayed");
+        System.out.println("The 'Terms of service' checkbox is displayed" + "\n");
+        productOrderPage.checkTermsOfServiceCheckbox();
+        //assert 'Place Order' button is displayed
+        assertTrue(productOrderPage.isPlaceOrderButtonDisplayed(), "The 'Place Order' button isn't displayed");
+        System.out.println("The 'Place Order' button is displayed" + "\n");
+        productOrderPage.clickPlaceOrderButton();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
