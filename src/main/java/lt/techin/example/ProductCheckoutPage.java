@@ -34,7 +34,6 @@ public class ProductCheckoutPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(qtyAdjuster));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].value = '';", qtyAdjuster);
-//        qtyAdjuster.clear();
         qtyAdjuster.sendKeys("4");
     }
 
