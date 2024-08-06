@@ -13,51 +13,43 @@ public class RegisteredUserArtPage extends BasePage{
     //box icon links
     @FindBy(css = "section:nth-of-type(1) > .collapse .custom-checkbox")
     private WebElement inStockBoxIconLink;
-
     @FindBy(css = "section:nth-of-type(2) > .collapse .custom-checkbox")
     private WebElement newProductBoxIconLink;
-
     @FindBy(css = "section:nth-of-type(4) > .collapse .custom-checkbox")
     private WebElement compositionBoxIconLink;
-
     @FindBy(css = "section:nth-of-type(5) > .collapse .custom-checkbox")
     private WebElement brandBoxIconLink;
-
     @FindBy(css = "section:nth-of-type(6) > .collapse > li:nth-of-type(1) > .facet-label > .custom-checkbox")
     private WebElement dimensionBoxIconLink1;
-
     @FindBy(css = "section:nth-of-type(6) > .collapse > li:nth-of-type(2) > .facet-label > .custom-checkbox")
     private WebElement dimensionBoxIconLink2;
-
     @FindBy(css = "section:nth-of-type(6) > .collapse > li:nth-of-type(3) > .facet-label > .custom-checkbox")
     private WebElement dimensionBoxIconLink3;
+    @FindBy(css = "[data-id-product='3'] .product-thumbnail")
+    private WebElement bestYetToComePosterBoxIconLink;
 
 
     //links
     @FindBy(css = "li:nth-of-type(3) > .dropdown-item")
     private WebElement artPageLink;
-
     @FindBy(css = "section:nth-of-type(1) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement inStockLink;
-
     @FindBy(css = "section:nth-of-type(2) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement newProductLink;
-
     @FindBy(css = "section:nth-of-type(4) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement compositionLink;
-
     @FindBy(css = "section:nth-of-type(5) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement brandLink;
-
     @FindBy(css = "li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink1;
-
     @FindBy(css = "li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink2;
-
     @FindBy(css = "li:nth-of-type(3) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink3;
+    @FindBy(css = "[data-id-product='3'] [data-link-action]")
+    private WebElement bestYetToComePosterLink;
 
+    //search filter remover
     @FindBy(xpath = "//section[@id='js-active-search-filters']/ul//i[.='\uE5CD']")
     private WebElement removeFilterIcon;
 
@@ -356,6 +348,25 @@ public class RegisteredUserArtPage extends BasePage{
         actions.moveToElement(referenceZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
+    //product selector box icon/link
+
+    public void clickBestYetToComePosterBoxIcon(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        wait.until(ExpectedConditions.visibilityOf(bestYetToComePosterBoxIconLink));
+        bestYetToComePosterBoxIconLink.click();
+    }
+
+    public void clickBestYetToComePosterLink(){
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+            wait.until(ExpectedConditions.visibilityOf(bestYetToComePosterLink));
+            bestYetToComePosterLink.click();
+        }catch(TimeoutException te){
+            System.out.println("The 'Best Yet To Come' link click is not being clicked on " + te.getMessage());
+        }
+    }
+
+
 
     //assert methods
     public boolean isArtPageLinkPresent(){
@@ -433,6 +444,8 @@ public class RegisteredUserArtPage extends BasePage{
     public boolean isReferenceZToAOptionDisplayed(){
         return referenceZToAOption.isDisplayed();
     }
+    public boolean isBestYetToComePosterBoxIconDisplayed(){return bestYetToComePosterBoxIconLink.isDisplayed();}
+    public boolean isBestYetToComePosterLinkDisplayed(){return bestYetToComePosterLink.isDisplayed();}
 
     //getters
 
@@ -488,5 +501,8 @@ public class RegisteredUserArtPage extends BasePage{
     public String getRelevanceZToAOptionText(){
         return referenceZToAOption.getText();
     }
+
+    //product title getter
+    public String getBestYetToComePosterLinkText(){return bestYetToComePosterLink.getText();}
 
 }

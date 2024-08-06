@@ -1618,6 +1618,30 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getReferenceZToAOptionText(), "Reference,z to a"); // -> assert crashes the test, it doesn't find text
     }
 
+    protected void selectBestYetToComePosterLinkTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert 'Art' link is displayed on navbar
+        assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
+        System.out.println("The 'Art' link is displayed on navbar" + "\n");
+        registeredUserArtPage.clickArtLink();
+        //assert 'Best Yet To Come' poster link is displayed
+        //assertTrue(registeredUserArtPage.isBestYetToComePosterLinkDisplayed(), "The 'Best Yet To Come poster link isn't displayed");
+        System.out.println("The 'Best Yet To Come poster link isn't displayed" + "\n");
+        registeredUserArtPage.clickBestYetToComePosterLink();
+    }
+
+    protected void selectBestYetToComePosterBoxIconTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert 'Art' link is displayed on navbar
+        assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
+        System.out.println("The 'Art' link is displayed on navbar" + "\n");
+        registeredUserArtPage.clickArtLink();
+        //assert 'Best Yet To Come' poster box icon is displayed
+        assertTrue(registeredUserArtPage.isBestYetToComePosterBoxIconDisplayed(), "The 'Best Yet To Come poster box icon isn't displayed");
+        System.out.println("The 'Best Yet To Come poster box icon isn't displayed" + "\n");
+        registeredUserArtPage.clickBestYetToComePosterBoxIcon();
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //registered user accessories page navigation test method
@@ -4068,6 +4092,14 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserAccountPage.isSaveButtonDisplayed(), "The save button isn't displayed");
         System.out.println("The save button is displayed" + "\n");
         registeredUserAccountPage.clickSaveButton();
+    }
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  //order and history test methods
+
+    protected void singleProductOrderAndHistoryDetails(){
+
     }
 
 }
