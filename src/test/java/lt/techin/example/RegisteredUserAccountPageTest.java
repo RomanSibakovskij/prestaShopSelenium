@@ -103,7 +103,7 @@ public class RegisteredUserAccountPageTest extends TestMethods{
         editRegisteredUserDataNoLastNameTest();
     }
 
-    //Test 061c -> change registered user data without last name
+    //Test 061c -> change registered user data without address
     @Test
     void changeRegisteredUserDataNoAddressTest(){
         clickOnSignUpTest();
@@ -118,6 +118,40 @@ public class RegisteredUserAccountPageTest extends TestMethods{
 
         navigateToAddFirstAddressPage();
         editRegisteredUserDataNoAddressTest();
+    }
+
+    //Test 061d -> change registered user data without city
+    @Test
+    void changeRegisteredUserDataNoCityTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAddFirstAddressPage();
+        editRegisteredUserDataNoCityTest();
+    }
+
+    //Test 061e -> change registered user data without state
+    @Test
+    void changeRegisteredUserDataNoStateTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAddFirstAddressPage();
+        editRegisteredUserDataNoStateTest();
     }
 
 

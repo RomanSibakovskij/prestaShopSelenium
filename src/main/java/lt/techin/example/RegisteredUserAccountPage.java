@@ -122,6 +122,20 @@ public class RegisteredUserAccountPage extends BasePage{
         System.out.println("Added postal code: " + postalCode);
     }
 
+    public void inputEditedUserDetailsNoCity(){
+        changedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        changedLastName = TestDataGenerator.generateRandomLastname(10);
+        address = TestDataGenerator.generateRandomAddress(6);
+        postalCode = TestDataGenerator.getRandomPostalCode();
+
+        System.out.println("Generated Data:\n");
+        System.out.println("Edited first name: " + changedFirstName);
+        System.out.println("Edited last name: " + changedLastName);
+        System.out.println("Edited address: " + address);
+        System.out.println("Expected city: " + "");
+        System.out.println("Added postal code: " + postalCode);
+    }
+
 
     //user account link click methods
     public void clickUserAccountLink1(){
@@ -249,6 +263,7 @@ public class RegisteredUserAccountPage extends BasePage{
             lastNameInputField.sendKeys("");
         }
     }
+
     //attempt to edit user with empty address input field
     public void addUserWithNoAddress(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
@@ -256,6 +271,12 @@ public class RegisteredUserAccountPage extends BasePage{
         addressInputField.sendKeys("");
     }
 
+    //attempt to edit user with empty city input field
+    public void addUserWithNoCity(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(cityInputField));
+        cityInputField.sendKeys("");
+    }
 
     //navigation links assert methods
     public boolean isUserAccountLink1Displayed(){return userAccountLink1.isDisplayed();}
