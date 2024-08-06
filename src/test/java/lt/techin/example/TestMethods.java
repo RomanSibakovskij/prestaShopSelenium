@@ -1316,16 +1316,56 @@ public class TestMethods extends BaseTest{
 
     //search catalog test methods
 
-    protected void searchForProductInSearchCatalogTest(){
+    protected void searchForMugBestInSearchCatalogTest(){
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
         assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
         System.out.println("The search bar is displayed");
-        registeredUserSearchCatalogPage.inputSearchQueryIntoSearchBar();
+        registeredUserSearchCatalogPage.inputSearchQueryMug1IntoSearchBar();
         //assert search query result is displayed
-        assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
-        registeredUserSearchCatalogPage.clickSearchQueryResultPopUp();
+        //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
+        boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getMugTheBestQuery());
+        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getMugTheBestQuery() + " isn't present in search result");
+    }
+
+    protected void searchForMugAdventureInSearchCatalogTest(){
+        RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
+
+        //assert search bar is present
+        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
+        System.out.println("The search bar is displayed");
+        registeredUserSearchCatalogPage.inputSearchQueryMug2IntoSearchBar();
+        //assert search query result is displayed
+        //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
+        boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getMugAdventureQuery());
+        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getMugAdventureQuery() + " isn't present in search result");
+    }
+
+    protected void searchForMugGoodDayInSearchCatalogTest(){
+        RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
+
+        //assert search bar is present
+        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
+        System.out.println("The search bar is displayed");
+        registeredUserSearchCatalogPage.inputSearchQueryMug3IntoSearchBar();
+        //assert search query result is displayed
+        //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
+        boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getMugGoodDayQuery());
+        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getMugGoodDayQuery() + " isn't present in search result");
+    }
+
+    protected void searchForMugCustomTextInSearchCatalogTest(){
+        RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
+
+        //assert search bar is present
+        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
+        System.out.println("The search bar is displayed");
+        registeredUserSearchCatalogPage.inputSearchQueryMug4IntoSearchBar();
+        //assert search query result is displayed
+        //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
+        boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getMugCustomTextQuery());
+        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getMugCustomTextQuery() + " isn't present in search result");
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
