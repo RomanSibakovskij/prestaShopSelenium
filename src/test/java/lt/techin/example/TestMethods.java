@@ -1637,9 +1637,29 @@ public class TestMethods extends BaseTest{
         System.out.println("The 'Art' link is displayed on navbar" + "\n");
         registeredUserArtPage.clickArtLink();
         //assert 'Best Yet To Come' poster box icon is displayed
-        assertTrue(registeredUserArtPage.isBestYetToComePosterBoxIconDisplayed(), "The 'Best Yet To Come poster box icon isn't displayed");
-        System.out.println("The 'Best Yet To Come poster box icon isn't displayed" + "\n");
+        assertTrue(registeredUserArtPage.isBestYetToComePosterBoxIconDisplayed(), "The 'Best Yet To Come' poster box icon isn't displayed");
+        System.out.println("The 'Best Yet To Come' poster box icon isn't displayed" + "\n");
         registeredUserArtPage.clickBestYetToComePosterBoxIcon();
+
+        BestYetToComePosterPage bestYetToComePosterPage = new BestYetToComePosterPage(driver);
+        //assert product name is correct
+        assertEquals(bestYetToComePosterPage.getProductName(), "THE BEST IS YET TO COME' FRAMED POSTER");
+        //assert 'Add to Cart' button is displayed
+        assertTrue(bestYetToComePosterPage.isAddToCartButtonDisplayed(), "The 'Add to Cart' button isn't displayed");
+        System.out.println("The 'Add To Cart' button is displayed" + "\n");
+        bestYetToComePosterPage.clickAddToCartButton();
+
+        //assert the product was added to cart
+        assertEquals(bestYetToComePosterPage.getSuccessMessage(), "\uE876Product successfully added to your shopping cart");
+        //assert the product added bears the correct name
+        assertEquals(bestYetToComePosterPage.getAddedProductName(), "The best is yet to come' Framed poster");
+        //assert the correct amount was added to cart
+        assertEquals(bestYetToComePosterPage.getCartItemCount(), "There is 1 item in your cart.");
+
+        //assert 'Proceed to Checkout button is displayed
+        assertTrue(bestYetToComePosterPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
+        System.out.println("The 'Add To Cart' button is displayed" + "\n");
+        bestYetToComePosterPage.clickProceedToCheckoutButton();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
