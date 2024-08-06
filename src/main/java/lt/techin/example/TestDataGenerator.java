@@ -83,12 +83,6 @@ public class TestDataGenerator extends BasePage {
         String emailAddress = generateRandomString(UPPER + LOWER, length);
         return emailAddress + "@example.com";
     }
-
-//    public static String generateRandomAddress(int length) {
-//        String address = generateRandomString(UPPER + LOWER, length);
-//        return "3rd" + address + "St.";
-//    }
-
     // generate a random address with a given length for the street name
     public static String generateRandomAddress(int length) {
         int streetNumber = RANDOM.nextInt(9999) + 1; // street number between 1 and 9999

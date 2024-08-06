@@ -3,6 +3,7 @@ package lt.techin.example;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -40,6 +41,12 @@ public class RegisteredUserAccountPage extends BasePage{
     private WebElement countryDropdownMenu;
     @FindBy(css = ".btn.btn-primary.float-xs-right.form-control-submit")
     private WebElement saveButton;
+
+    //selected state/country elements
+    @FindBy(css = "select#field-id_state > option[value='16']")
+    private WebElement illinoisStateOption;
+    @FindBy(css = "select#field-id_country > option[value='21']")
+    private WebElement usChoiceOption;
 
     //input data
     private String changedFirstName;
@@ -126,6 +133,37 @@ public class RegisteredUserAccountPage extends BasePage{
         cityInputField.sendKeys(city);
     }
 
+    //dropdown menu methods
+
+    public void clickStateDropdownMenu(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wait.until(ExpectedConditions.elementToBeClickable(stateDropdownMenu));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(stateDropdownMenu).clickAndHold().pause(Duration.ofSeconds(2)).release().perform();
+
+    }
+
+    public void clickCountryDropdownMenu(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        wait.until(ExpectedConditions.elementToBeClickable(countryDropdownMenu));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(countryDropdownMenu).clickAndHold().pause(Duration.ofSeconds(2)).release().perform();
+
+    }
+
+    //selected state/country method
+    public void clickIllinoisStateOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(illinoisStateOption));
+        illinoisStateOption.click();
+    }
+
+    public void clickUSOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(usChoiceOption));
+        usChoiceOption.click();
+    }
+
     public void addUserPostalCode(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
         wait.until(ExpectedConditions.visibilityOf(postalCodeInputField));
@@ -150,6 +188,9 @@ public class RegisteredUserAccountPage extends BasePage{
     public boolean isStateDropdownMenuDisplayed(){return stateDropdownMenu.isDisplayed();}
     public boolean isCountryDropdownMenuDisplayed(){return countryDropdownMenu.isDisplayed();}
 
+    //select dropdown option assert methods
+    public boolean isIllinoisStateDisplayed(){return illinoisStateOption.isDisplayed();}
+    public boolean isUSCountryDisplayed(){return usChoiceOption.isDisplayed();}
 
 
 
@@ -163,6 +204,10 @@ public class RegisteredUserAccountPage extends BasePage{
     public String getAddress() {return addressInputField.getText();}
     public String getCity() {return cityInputField.getText();}
     public String getPostalCode() {return postalCodeInputField.getText();}
+
+    //dropdown menu option getters
+    public String getChosenStateOption(){return illinoisStateOption.getText();}
+    public String getUSCountryText(){return usChoiceOption.getText();}
 
 
 }

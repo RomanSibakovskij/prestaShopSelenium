@@ -3633,10 +3633,32 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserAccountPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
         System.out.println("The city input field is displayed" + "\n");
         registeredUserAccountPage.addUserCity();
+        //assert state dropdown menu is displayed
+        assertTrue(registeredUserAccountPage.isStateDropdownMenuDisplayed(), "The state dropdown menu isn't displayed");
+        System.out.println("The state dropdown menu is displayed" + "\n");
+        registeredUserAccountPage.clickStateDropdownMenu();
+        //assert chosen state is displayed
+        assertTrue(registeredUserAccountPage.isIllinoisStateDisplayed(), "The Illinois state isn't displayed");
+        System.out.println("The Illinois state is displayed" + "\n");
+        registeredUserAccountPage.clickIllinoisStateOption();
+        //assert the correct state is selected
+        assertEquals(registeredUserAccountPage.getChosenStateOption(), "Illinois");
         //assert postal code input field is displayed
         assertTrue(registeredUserAccountPage.isPostalCodeInputFieldDisplayed(), "The postal code input field isn't displayed");
         System.out.println("The postal code input field is displayed" + "\n");
         registeredUserAccountPage.addUserPostalCode();
+        //assert country dropdown menu is displayed
+        assertTrue(registeredUserAccountPage.isCountryDropdownMenuDisplayed(), "The country dropdown menu isn't displayed");
+        System.out.println("The country dropdown menu isn't displayed" + "\n");
+        registeredUserAccountPage.clickCountryDropdownMenu();
+        //assert chosen country option is displayed
+        assertTrue(registeredUserAccountPage.isUSCountryDisplayed(), "The US option isn't displayed");
+        System.out.println("The US option is displayed" + "\n");
+        registeredUserAccountPage.clickUSOption();
+        //assert the correct country is selected
+        assertEquals(registeredUserAccountPage.getUSCountryText(), "United States");
+
+
 
     }
 
