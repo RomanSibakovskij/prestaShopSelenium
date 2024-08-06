@@ -33,6 +33,14 @@ public class ProductOrderPage extends BasePage{
     @FindBy(css = "button[name='confirm-addresses']")
     private WebElement continueButton;
 
+    //delivery message element
+    @FindBy(css = "textarea#delivery_message")
+    private WebElement orderDeliveryCommentInputField;
+
+    //shipping method continue button
+    @FindBy(css = "form#js-delivery > button[name='confirmDeliveryOption']")
+    private WebElement shippingContinueButton;
+
     //input data
     private String address;
     private String city;
@@ -103,11 +111,23 @@ public class ProductOrderPage extends BasePage{
         usChoiceOption.click();
     }
 
-    //continue button click method
+    //delivery comment input method
+    public void inputDeliveryComment(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(orderDeliveryCommentInputField));
+        orderDeliveryCommentInputField.sendKeys("Test comment");
+    }
+
+    //continue button click methods
     public void clickContinueButton(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
         wait.until(ExpectedConditions.elementToBeClickable(continueButton));
         continueButton.click();
+    }
+    public void clickShippingContinueButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
+        wait.until(ExpectedConditions.elementToBeClickable(shippingContinueButton));
+        shippingContinueButton.click();
     }
 
     //input fields assert methods
@@ -123,8 +143,12 @@ public class ProductOrderPage extends BasePage{
     public boolean isIllinoisStateDisplayed(){return illinoisStateOption.isDisplayed();}
     public boolean isUSCountryDisplayed(){return usChoiceOption.isDisplayed();}
 
-    //continue button assert method
+    //continue button assert methods
     public boolean isContinueButtonDisplayed(){return continueButton.isDisplayed();}
+    public boolean isShippingContinueButtonDisplayed(){return shippingContinueButton.isDisplayed();}
+
+    //order delivery comment input field assert method
+    public boolean isOrderDeliveryCommentFieldDisplayed(){return orderDeliveryCommentInputField.isDisplayed();}
 
     //edit input data getters
     public String getAddress() {return addressInputField.getText();}
@@ -134,6 +158,8 @@ public class ProductOrderPage extends BasePage{
     //dropdown menu option getters
     public String getChosenStateOption(){return illinoisStateOption.getText();}
     public String getUSCountryText(){return usChoiceOption.getText();}
+
+
 
 
 

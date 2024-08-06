@@ -1705,6 +1705,14 @@ public class TestMethods extends BaseTest{
         assertTrue(productOrderPage.isContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
         System.out.println("The 'Continue' button is displayed" + "\n");
         productOrderPage.clickContinueButton();
+        //assert shipping order comment input field is displayed
+        assertTrue(productOrderPage.isOrderDeliveryCommentFieldDisplayed(), "The comment input field isn't displayed");
+        System.out.println("The comment input field is displayed" + "\n");
+        productOrderPage.inputDeliveryComment();
+        //assert 'Continue' button is displayed
+        assertTrue(productOrderPage.isShippingContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
+        System.out.println("The 'Continue' button is displayed" + "\n");
+        productOrderPage.clickShippingContinueButton();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
