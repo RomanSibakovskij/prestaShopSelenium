@@ -30,6 +30,8 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     private String cushion1Query = "Mountain fox cushion";
     private String cushion2Query = "Brown bear cushion";
     private String cushion3Query = "Hummingbird cushion";
+    private String tShirtQuery = "Hummingbird printed t-shirt";
+    private String sweaterQuery = "Hummingbird printed sweater";
 
 
     public RegisteredUserSearchCatalogPage(WebDriver driver) {
@@ -102,6 +104,22 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
     }
 
+    //t-shirt input method
+    public void inputSearchQueryTShirtIntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(tShirtQuery);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+
+    //sweater input method
+    public void inputSearchQuerySweaterIntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(sweaterQuery);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+
     public List<WebElement> getSearchResults() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
@@ -136,5 +154,7 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     public String getCushionFoxQuery(){return cushion1Query;}
     public String getCushionBearQuery(){return cushion2Query;}
     public String getCushionBirdQuery(){return cushion3Query;}
+    public String getTShirtQuery(){return tShirtQuery;}
+    public String getSweaterQuery(){return sweaterQuery;}
 
 }
