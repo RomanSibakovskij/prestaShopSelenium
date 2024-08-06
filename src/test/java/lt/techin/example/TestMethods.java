@@ -1656,10 +1656,20 @@ public class TestMethods extends BaseTest{
         //assert the correct amount was added to cart
         assertEquals(bestYetToComePosterPage.getCartItemCount(), "There is 1 item in your cart.");
 
-        //assert 'Proceed to Checkout button is displayed
+        //assert 'Proceed to Checkout' button in pop-up is displayed
         assertTrue(bestYetToComePosterPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
-        System.out.println("The 'Add To Cart' button is displayed" + "\n");
+        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
         bestYetToComePosterPage.clickProceedToCheckoutButton();
+
+        ProductCheckoutPage productCheckoutPage = new ProductCheckoutPage(driver);
+        //assert quantity field is displayed in checkout page
+        assertTrue(productCheckoutPage.isQtyAdjusterDisplayed(), "The quantity adjuster isn't present");
+        System.out.println("The quantity adjuster is present" + "\n");
+        productCheckoutPage.inputProductQuantity();
+        //assert 'Proceed to checkout' button is displayed
+        assertTrue(productCheckoutPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
+        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
+        productCheckoutPage.clickProceedToCheckoutButton();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
