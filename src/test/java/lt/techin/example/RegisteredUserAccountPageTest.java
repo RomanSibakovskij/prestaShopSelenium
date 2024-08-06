@@ -51,4 +51,23 @@ public class RegisteredUserAccountPageTest extends TestMethods{
 
         navigateToAddFirstAddressPage();
     }
+
+    //Test 061 -> change registered user data with valid data
+    @Test
+    void changeRegisteredUserDataValidInputTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAddFirstAddressPage();
+        editRegisteredUserDataValidInputTest();
+    }
+
+
 }

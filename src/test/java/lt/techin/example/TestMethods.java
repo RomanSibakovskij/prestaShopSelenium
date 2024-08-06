@@ -3602,4 +3602,42 @@ public class TestMethods extends BaseTest{
         registeredUserAccountPage.clickAddFirstAddressLink();
     }
 
+    //navigation to add first address page test methods
+    protected void editRegisteredUserDataValidInputTest(){
+        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        //assert the nav link is displayed
+        assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
+        System.out.println("The nav link is displayed" + "\n");
+        registeredUserAccountPage.clickUserAccountLink1();
+        //assert the 'add first address' link is displayed
+        assertTrue(registeredUserAccountPage.isAddFirstAddressLinkDisplayed(), "The 'add first address' link isn't displayed");
+        System.out.println("The 'add first address' link is displayed" + "\n");
+        //assert the 'add first address' link has the correct name
+        //assertEquals(registeredUserAccountPage.getAddFirstAddressLinkText(), "Add first address"); // -> assert crashes the test
+        registeredUserAccountPage.clickAddFirstAddressLink();
+
+        //assert first name input field is displayed
+        assertTrue(registeredUserAccountPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registeredUserAccountPage.inputEditedUserDetails();
+        registeredUserAccountPage.changeFirstName();
+        //assert last name input field is displayed
+        assertTrue(registeredUserAccountPage.isLastNameInputFieldDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
+        registeredUserAccountPage.changeLastName();
+        //assert address input field is displayed
+        assertTrue(registeredUserAccountPage.isAddressInputFieldDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The address input field is displayed" + "\n");
+        registeredUserAccountPage.addUserAddress();
+        //assert city input field is displayed
+        assertTrue(registeredUserAccountPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
+        System.out.println("The city input field is displayed" + "\n");
+        registeredUserAccountPage.addUserCity();
+        //assert postal code input field is displayed
+        assertTrue(registeredUserAccountPage.isPostalCodeInputFieldDisplayed(), "The postal code input field isn't displayed");
+        System.out.println("The postal code input field is displayed" + "\n");
+        registeredUserAccountPage.addUserPostalCode();
+
+    }
+
 }

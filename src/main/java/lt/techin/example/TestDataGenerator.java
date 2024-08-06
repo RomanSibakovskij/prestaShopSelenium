@@ -27,6 +27,9 @@ public class TestDataGenerator extends BasePage {
     private static String firstName;
     private static String lastName;
     private static String emailAddress;
+    private static String address;
+    private static String city;
+    private static int postalCode;
     private static String password;
 
     //invalid inputs
@@ -36,6 +39,10 @@ public class TestDataGenerator extends BasePage {
     private String longPassword;
     private String shortPassword;
     private static String invalidEmailAddress;
+
+    // Street types commonly used in addresses
+    private static final String[] STREET_TYPES = {"St.", "Ave.", "Blvd.", "Rd.", "Ln.", "Dr.", "Ct.", "Pl."};
+
 
     // Generate random string methods
     private static String generateRandomString(String characters, int length) {
@@ -75,6 +82,19 @@ public class TestDataGenerator extends BasePage {
     public static String generateRandomEmailAddress(int length) {
         String emailAddress = generateRandomString(UPPER + LOWER, length);
         return emailAddress + "@example.com";
+    }
+
+//    public static String generateRandomAddress(int length) {
+//        String address = generateRandomString(UPPER + LOWER, length);
+//        return "3rd" + address + "St.";
+//    }
+
+    // generate a random address with a given length for the street name
+    public static String generateRandomAddress(int length) {
+        int streetNumber = RANDOM.nextInt(9999) + 1; // street number between 1 and 9999
+        String streetName = generateRandomString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", length);
+        String streetType = STREET_TYPES[RANDOM.nextInt(STREET_TYPES.length)];
+        return streetNumber + " " + streetName + " " + streetType;
     }
 
     public static String generateRandomPassword() {
@@ -144,6 +164,40 @@ public class TestDataGenerator extends BasePage {
         return password.toString();
     }
 
+    // array of Illinois state cities
+    private static final String[] ILLINOIS_CITIES = {
+            "Chicago", "Aurora", "Naperville", "Joliet", "Rockford", "Springfield",
+            "Elgin", "Peoria", "Champaign", "Waukegan", "Cicero", "Bloomington",
+            "Arlington Heights", "Evanston", "Decatur", "Schaumburg", "Bolingbrook",
+            "Palatine", "Skokie", "Des Plaines", "Orland Park", "Tinley Park",
+            "Oak Lawn", "Berwyn", "Mount Prospect", "Normal", "Wheaton", "Hoffman Estates",
+            "Oak Park", "Downers Grove", "Elmhurst", "Glenview", "DeKalb", "Lombard",
+            "Moline", "Buffalo Grove", "Bartlett", "Urbana", "Crystal Lake", "Quincy",
+            "Streamwood", "Carol Stream", "Romeoville", "Plainfield", "Hanover Park",
+            "Carpentersville", "Wheeling", "Park Ridge", "Addison", "Calumet City"
+    };
+
+    // rnd instance
+    private static final Random rndIllinoisCities = new Random();
+
+    // Method to get a random city from the array
+    public static String getRandomCity() {
+        int index = rndIllinoisCities.nextInt(ILLINOIS_CITIES.length);
+        return ILLINOIS_CITIES[index];
+    }
+
+    // generate random postal code for Illinois
+    public static int getRandomPostalCode() {
+        return 60000 + RANDOM.nextInt(30000);
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        for (int i = 0; i < 10; i++) {
+            System.out.println(getRandomCity());
+        }
+    }
+
     //getters for names / email / password
 
     public static String getFirstName(){
@@ -155,6 +209,9 @@ public class TestDataGenerator extends BasePage {
     public static String getEmailAddress() {
         return emailAddress;
     }
+    public static String getAddress(){return address;}
+    public static String getCity(){return city;}
+    public static int getPostalCode(){return postalCode;}
     public static String getPassword() {
         return password;
     }

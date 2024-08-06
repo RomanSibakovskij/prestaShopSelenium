@@ -41,11 +41,34 @@ public class RegisteredUserAccountPage extends BasePage{
     @FindBy(css = ".btn.btn-primary.float-xs-right.form-control-submit")
     private WebElement saveButton;
 
+    //input data
+    private String changedFirstName;
+    private String changedLastName;
+    private String address;
+    private String city;
+    private int postalCode;
+
 
 
     public RegisteredUserAccountPage(WebDriver driver) {
         super(driver);
     }
+
+    public void inputEditedUserDetails(){
+        changedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        changedLastName = TestDataGenerator.generateRandomLastname(10);
+        address = TestDataGenerator.generateRandomAddress(6);
+        city = TestDataGenerator.getRandomCity();
+        postalCode = TestDataGenerator.getRandomPostalCode();
+
+        System.out.println("Generated Data:\n");
+        System.out.println("Edited first name: " + changedFirstName);
+        System.out.println("Edited last name: " + changedLastName);
+        System.out.println("Added address: " + address);
+        System.out.println("Added city: " + city);
+        System.out.println("Added postal code: " + postalCode);
+    }
+
 
     //user account link click methods
     public void clickUserAccountLink1(){
@@ -67,17 +90,79 @@ public class RegisteredUserAccountPage extends BasePage{
         addFirstAddressLink.click();
     }
 
+    ///edit input methods
+    public void changeFirstName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
+
+        // store the old name
+        String oldFirstName = firstNameInputField.getAttribute("value");
+
+        if (!oldFirstName.isEmpty()) {
+            firstNameInputField.clear();
+            firstNameInputField.sendKeys(changedFirstName);
+        }
+    }
+    public void changeLastName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
+
+        // store the old name
+        String oldFirstName = lastNameInputField.getAttribute("value");
+
+        if (!oldFirstName.isEmpty()) {
+            lastNameInputField.clear();
+            lastNameInputField.sendKeys(changedLastName);
+        }
+    }
+    public void addUserAddress(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(addressInputField));
+        addressInputField.sendKeys(address);
+    }
+    public void addUserCity(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(cityInputField));
+        cityInputField.sendKeys(city);
+    }
+
+    public void addUserPostalCode(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(postalCodeInputField));
+        postalCodeInputField.sendKeys(String.valueOf(postalCode));
+    }
+
+
 
     //navigation links assert methods
     public boolean isUserAccountLink1Displayed(){return userAccountLink1.isDisplayed();}
     public boolean isUserAccountLink2Displayed(){return userAccountLink2.isDisplayed();}
-
-    //assert methods
     public boolean isAddFirstAddressLinkDisplayed(){return addFirstAddressLink.isDisplayed();}
+
+    //input fields assert methods
+    public boolean isFirstNameInputFieldDisplayed(){return firstNameInputField.isDisplayed();}
+    public boolean isLastNameInputFieldDisplayed(){return lastNameInputField.isDisplayed();}
+    public boolean isAddressInputFieldDisplayed(){return addressInputField.isDisplayed();}
+    public boolean isCityInputFieldDisplayed(){return cityInputField.isDisplayed();}
+    public boolean isPostalCodeInputFieldDisplayed(){return firstNameInputField.isDisplayed();}
+
+    //dropdown menu assert methods
+    public boolean isStateDropdownMenuDisplayed(){return stateDropdownMenu.isDisplayed();}
+    public boolean isCountryDropdownMenuDisplayed(){return countryDropdownMenu.isDisplayed();}
+
+
+
 
 
     //add first address link name getter method
     public String getAddFirstAddressLinkText(){return addFirstLinkName.getText();}
+
+    //edit input data getters
+    public String getChangedFirstName() {return firstNameInputField.getText();}
+    public String getChangedLastName() {return lastNameInputField.getText();}
+    public String getAddress() {return addressInputField.getText();}
+    public String getCity() {return cityInputField.getText();}
+    public String getPostalCode() {return postalCodeInputField.getText();}
 
 
 }
