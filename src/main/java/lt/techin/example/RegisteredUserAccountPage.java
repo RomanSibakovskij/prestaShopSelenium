@@ -59,7 +59,7 @@ public class RegisteredUserAccountPage extends BasePage{
     private String city;
     private int postalCode;
 
-    
+
     public RegisteredUserAccountPage(WebDriver driver) {
         super(driver);
     }
@@ -79,6 +79,7 @@ public class RegisteredUserAccountPage extends BasePage{
         System.out.println("Added postal code: " + postalCode);
     }
 
+    // invalid user data input
     public void inputEditedUserDetailsNoFirstName(){
         changedLastName = TestDataGenerator.generateRandomLastname(10);
         address = TestDataGenerator.generateRandomAddress(6);
@@ -86,8 +87,22 @@ public class RegisteredUserAccountPage extends BasePage{
         postalCode = TestDataGenerator.getRandomPostalCode();
 
         System.out.println("Generated Data:\n");
-        System.out.println("Expected first name: " + noFirstName);
+        System.out.println("Expected first name: " + "");
         System.out.println("Edited last name: " + changedLastName);
+        System.out.println("Added address: " + address);
+        System.out.println("Added city: " + city);
+        System.out.println("Added postal code: " + postalCode);
+    }
+
+    public void inputEditedUserDetailsNoLastName(){
+        changedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        address = TestDataGenerator.generateRandomAddress(6);
+        city = TestDataGenerator.getRandomCity();
+        postalCode = TestDataGenerator.getRandomPostalCode();
+
+        System.out.println("Generated Data:\n");
+        System.out.println("Edited first name: " + changedFirstName);
+        System.out.println("Expected last name: " + "");
         System.out.println("Added address: " + address);
         System.out.println("Added city: " + city);
         System.out.println("Added postal code: " + postalCode);
@@ -193,7 +208,7 @@ public class RegisteredUserAccountPage extends BasePage{
         saveButton.click();
     }
 
-    //attempt to edit user with empty first name input field
+    //attempt to edit user with empty first name input field method
     public void changeFirstNameAsEmptyString(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
         wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
@@ -204,6 +219,20 @@ public class RegisteredUserAccountPage extends BasePage{
         if (!oldFirstName.isEmpty()) {
             firstNameInputField.clear();
             firstNameInputField.sendKeys("");
+        }
+    }
+
+    //attempt to edit user with empty last name input field
+    public void changeLastNameAsEmptyString(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
+
+        // store the old name
+        String oldFirstName = lastNameInputField.getAttribute("value");
+
+        if (!oldFirstName.isEmpty()) {
+            lastNameInputField.clear();
+            lastNameInputField.sendKeys("");
         }
     }
 
