@@ -27,7 +27,9 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     private String poster1Query = "The best is yet to come' Framed Poster";
     private String poster2Query = "The Adventure Begins Framed Poster";
     private String poster3Query = "Today is a Good Day Framed Poster";
-
+    private String cushion1Query = "Mountain fox cushion";
+    private String cushion2Query = "Brown bear cushion";
+    private String cushion3Query = "Hummingbird cushion";
 
 
     public RegisteredUserSearchCatalogPage(WebDriver driver) {
@@ -41,32 +43,23 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
         searchBar.sendKeys(mug1Query);
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
     }
-
-    public void inputSearchQueryMug2IntoSearchBar(){
+    public void inputSearchQueryMug2IntoSearchBar() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.visibilityOf(searchBar));
         searchBar.sendKeys(mug2Query);
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
     }
-
     public void inputSearchQueryMug3IntoSearchBar(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.visibilityOf(searchBar));
         searchBar.sendKeys(mug3Query);
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
     }
-
     public void inputSearchQueryMug4IntoSearchBar(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.visibilityOf(searchBar));
         searchBar.sendKeys(mug4Query);
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
-    }
-
-    public List<WebElement> getSearchResults() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
-        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
-        return searchResultsDropdown.findElements(By.cssSelector("li.ui-menu-item a"));
     }
 
     //posters input methods
@@ -76,14 +69,12 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
         searchBar.sendKeys(poster1Query);
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
     }
-
     public void inputSearchQueryPoster2IntoSearchBar(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.visibilityOf(searchBar));
         searchBar.sendKeys(poster2Query);
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
     }
-
     public void inputSearchQueryPoster3IntoSearchBar(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.visibilityOf(searchBar));
@@ -91,6 +82,31 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
     }
 
+    //cushions input methods
+    public void inputSearchQueryCushion1IntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(cushion1Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+    public void inputSearchQueryCushion2IntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(cushion2Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+    public void inputSearchQueryCushion3IntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(cushion3Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+
+    public List<WebElement> getSearchResults() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+        return searchResultsDropdown.findElements(By.cssSelector("li.ui-menu-item a"));
+    }
 
     public boolean isProductPresent(String query) {
         List<WebElement> results = getSearchResults();
@@ -117,5 +133,8 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     public String getPosterTheBestQuery(){return poster1Query;}
     public String getPosterAdventureQuery(){return poster2Query;}
     public String getPosterGoodDayQuery(){return poster3Query;}
+    public String getCushionFoxQuery(){return cushion1Query;}
+    public String getCushionBearQuery(){return cushion2Query;}
+    public String getCushionBirdQuery(){return cushion3Query;}
 
 }

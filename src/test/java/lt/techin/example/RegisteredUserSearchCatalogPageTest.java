@@ -118,5 +118,53 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
         searchForPosterGoodDayInSearchCatalogTest();
     }
 
+    //Test 005g -> search for "Mountain fox" cushion as a registered user
+    @Test
+    void searchCatalogCushionFoxTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForCushionFoxInSearchCatalogTest();
+    }
+
+    //Test 005h -> search for "Brown Bear" cushion as a registered user
+    @Test
+    void searchCatalogCushionBearTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForCushionBearInSearchCatalogTest();
+    }
+
+    //Test 005h -> search for "Humming Bird" cushion as a registered user
+    @Test
+    void searchCatalogCushionBirdTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForCushionBirdInSearchCatalogTest();
+    }
+
 
 }
