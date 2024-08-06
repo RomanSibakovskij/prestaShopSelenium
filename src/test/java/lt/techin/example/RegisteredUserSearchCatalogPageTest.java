@@ -70,5 +70,53 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
         searchForMugCustomTextInSearchCatalogTest();
     }
 
+    //Test 005d -> search for "The Best is Yet To Come" framed poster as a registered user
+    @Test
+    void searchCatalogPosterBestTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForPosterBestInSearchCatalogTest();
+    }
+
+    //Test 005e -> search for "The adventure begins" framed poster as a registered user
+    @Test
+    void searchCatalogPosterAdventureTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForPosterAdventureInSearchCatalogTest();
+    }
+
+    //Test 005f -> search for "The adventure begins" framed poster as a registered user
+    @Test
+    void searchCatalogPosterGoodDayTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForPosterGoodDayInSearchCatalogTest();
+    }
+
 
 }

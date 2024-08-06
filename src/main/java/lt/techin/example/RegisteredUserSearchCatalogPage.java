@@ -24,14 +24,17 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     private String mug2Query = "Mug The adventure begins";
     private String mug3Query = "Mug Today is a good day";
     private String mug4Query = "Customizable mug";
+    private String poster1Query = "The best is yet to come' Framed Poster";
+    private String poster2Query = "The Adventure Begins Framed Poster";
+    private String poster3Query = "Today is a Good Day Framed Poster";
+
 
 
     public RegisteredUserSearchCatalogPage(WebDriver driver) {
         super(driver);
     }
 
-    //input methods
-
+    //mugs input methods
     public void inputSearchQueryMug1IntoSearchBar(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.visibilityOf(searchBar));
@@ -66,6 +69,28 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
         return searchResultsDropdown.findElements(By.cssSelector("li.ui-menu-item a"));
     }
 
+    //posters input methods
+    public void inputSearchQueryPoster1IntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(poster1Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+
+    public void inputSearchQueryPoster2IntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(poster2Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+
+    public void inputSearchQueryPoster3IntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(poster3Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+
 
     public boolean isProductPresent(String query) {
         List<WebElement> results = getSearchResults();
@@ -89,5 +114,8 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     public String getMugAdventureQuery(){return mug2Query;}
     public String getMugGoodDayQuery(){return mug3Query;}
     public String getMugCustomTextQuery(){return mug4Query;}
+    public String getPosterTheBestQuery(){return poster1Query;}
+    public String getPosterAdventureQuery(){return poster2Query;}
+    public String getPosterGoodDayQuery(){return poster3Query;}
 
 }

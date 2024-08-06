@@ -1316,6 +1316,7 @@ public class TestMethods extends BaseTest{
 
     //search catalog test methods
 
+    // mugs test methods
     protected void searchForMugBestInSearchCatalogTest(){
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
@@ -1366,6 +1367,47 @@ public class TestMethods extends BaseTest{
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getMugCustomTextQuery());
         assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getMugCustomTextQuery() + " isn't present in search result");
+    }
+
+    //posters test methods
+
+    protected void searchForPosterBestInSearchCatalogTest(){
+        RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
+
+        //assert search bar is present
+        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
+        System.out.println("The search bar is displayed");
+        registeredUserSearchCatalogPage.inputSearchQueryPoster1IntoSearchBar();
+        //assert search query result is displayed
+        //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
+        boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getPosterTheBestQuery());
+        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getPosterTheBestQuery() + " isn't present in search result");
+    }
+
+    protected void searchForPosterAdventureInSearchCatalogTest(){
+        RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
+
+        //assert search bar is present
+        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
+        System.out.println("The search bar is displayed");
+        registeredUserSearchCatalogPage.inputSearchQueryPoster2IntoSearchBar();
+        //assert search query result is displayed
+        //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
+        boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getPosterAdventureQuery());
+        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getPosterAdventureQuery() + " isn't present in search result");
+    }
+
+    protected void searchForPosterGoodDayInSearchCatalogTest(){
+        RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
+
+        //assert search bar is present
+        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
+        System.out.println("The search bar is displayed");
+        registeredUserSearchCatalogPage.inputSearchQueryPoster3IntoSearchBar();
+        //assert search query result is displayed
+        //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
+        boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getPosterGoodDayQuery());
+        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getPosterGoodDayQuery() + " isn't present in search result");
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
