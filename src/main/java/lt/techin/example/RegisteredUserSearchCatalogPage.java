@@ -32,6 +32,9 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     private String cushion3Query = "Hummingbird cushion";
     private String tShirtQuery = "Hummingbird printed t-shirt";
     private String sweaterQuery = "Hummingbird printed sweater";
+    private String graphics1Query = "Mountain fox - Vector graphics";
+    private String graphics2Query = "Brown bear - Vector graphics";
+    private String graphics3Query = "Hummingbird - Vector graphics";
 
 
     public RegisteredUserSearchCatalogPage(WebDriver driver) {
@@ -120,6 +123,26 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
     }
 
+    //graphics input methods
+    public void inputSearchQueryGraphicsFoxIntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(graphics1Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+    public void inputSearchQueryGraphicsBearIntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(graphics2Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+    public void inputSearchQueryGraphicsBirdIntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(graphics3Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+
     public List<WebElement> getSearchResults() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
@@ -156,5 +179,8 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     public String getCushionBirdQuery(){return cushion3Query;}
     public String getTShirtQuery(){return tShirtQuery;}
     public String getSweaterQuery(){return sweaterQuery;}
+    public String getGraphicsFoxQuery(){return graphics1Query;}
+    public String getGraphicsBearQuery(){return graphics2Query;}
+    public String getGraphicsBirdQuery(){return graphics3Query;}
 
 }

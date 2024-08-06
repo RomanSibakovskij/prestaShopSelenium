@@ -195,7 +195,55 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
         clickSignInRegisteredUserTest();
         logInRegisteredUserTest(registerPage);
 
-        searchForSweaterInSearchCatalogTest();
+        searchForSweaterBirdInSearchCatalogTest();
+    }
+
+    //Test 005k -> search for "Mountain Fox" graphics as a registered user
+    @Test
+    void searchCatalogGraphicsFoxTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForGraphicsFoxInSearchCatalogTest();
+    }
+
+    //Test 005l -> search for "Brown Bear" graphics as a registered user
+    @Test
+    void searchCatalogGraphicsBearTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForGraphicsBearInSearchCatalogTest();
+    }
+
+    //Test 005m -> search for "Humming Bird" graphics as a registered user
+    @Test
+    void searchCatalogGraphicsBirdTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForGraphicsBirdInSearchCatalogTest();
     }
 
 
