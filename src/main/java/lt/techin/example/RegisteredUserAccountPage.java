@@ -47,6 +47,8 @@ public class RegisteredUserAccountPage extends BasePage{
     private WebElement illinoisStateOption;
     @FindBy(css = "select#field-id_country > option[value='21']")
     private WebElement usChoiceOption;
+    @FindBy(css = "select#field-id_country > option[value='8']")
+    private WebElement franceCountryOption;
 
     //success message element
     @FindBy(css = "aside#notifications ul")
@@ -58,6 +60,8 @@ public class RegisteredUserAccountPage extends BasePage{
     private String address;
     private String city;
     private int postalCode;
+    private String frenchCity;
+    private int frenchPostalCode;
 
 
     public RegisteredUserAccountPage(WebDriver driver) {
@@ -70,6 +74,21 @@ public class RegisteredUserAccountPage extends BasePage{
         address = TestDataGenerator.generateRandomAddress(6);
         city = TestDataGenerator.getRandomCity();
         postalCode = TestDataGenerator.getRandomPostalCode();
+
+        System.out.println("Generated Data:\n");
+        System.out.println("Edited first name: " + changedFirstName);
+        System.out.println("Edited last name: " + changedLastName);
+        System.out.println("Added address: " + address);
+        System.out.println("Added city: " + city);
+        System.out.println("Added postal code: " + postalCode);
+    }
+
+    public void inputEditedUserFrenchDetails(){
+        changedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        changedLastName = TestDataGenerator.generateRandomLastname(10);
+        address = TestDataGenerator.generateRandomAddress(6);
+        frenchCity = TestDataGenerator.getRandomFrenchCity();
+        frenchPostalCode = TestDataGenerator.getLyonsRandomPostalCode();
 
         System.out.println("Generated Data:\n");
         System.out.println("Edited first name: " + changedFirstName);
@@ -206,6 +225,11 @@ public class RegisteredUserAccountPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(cityInputField));
         cityInputField.sendKeys(city);
     }
+    public void addUserFrenchCity(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(cityInputField));
+        cityInputField.sendKeys(frenchCity);
+    }
 
     //dropdown menu methods
 
@@ -225,11 +249,17 @@ public class RegisteredUserAccountPage extends BasePage{
 
     }
 
-    //selected state/country method
+    //selected state/country methods
     public void clickIllinoisStateOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.elementToBeClickable(illinoisStateOption));
         illinoisStateOption.click();
+    }
+
+    public void clickFranceOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(franceCountryOption));
+        franceCountryOption.click();
     }
 
     public void clickUSOption(){
@@ -244,7 +274,14 @@ public class RegisteredUserAccountPage extends BasePage{
         postalCodeInputField.sendKeys(String.valueOf(postalCode));
     }
 
+    public void addUserFrenchPostalCode(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(postalCodeInputField));
+        postalCodeInputField.sendKeys(String.valueOf(frenchPostalCode));
+    }
+
     public void clickSaveButton(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", saveButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
         wait.until(ExpectedConditions.visibilityOf(saveButton));
         saveButton.click();
@@ -317,6 +354,7 @@ public class RegisteredUserAccountPage extends BasePage{
     //select dropdown option assert methods
     public boolean isIllinoisStateDisplayed(){return illinoisStateOption.isDisplayed();}
     public boolean isUSCountryDisplayed(){return usChoiceOption.isDisplayed();}
+    public boolean isFranceCountryDisplayed(){return franceCountryOption.isDisplayed();}
 
     //save button assert method
     public boolean isSaveButtonDisplayed(){return saveButton.isDisplayed();}
@@ -337,6 +375,7 @@ public class RegisteredUserAccountPage extends BasePage{
     //dropdown menu option getters
     public String getChosenStateOption(){return illinoisStateOption.getText();}
     public String getUSCountryText(){return usChoiceOption.getText();}
+    public String getFranceCountryText(){return franceCountryOption.getText();}
 
     //success message getter
     public String getSuccessMessageText(){return successMessage.getText();}

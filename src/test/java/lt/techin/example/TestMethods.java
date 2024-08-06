@@ -3665,6 +3665,59 @@ public class TestMethods extends BaseTest{
         assertEquals(registeredUserAccountPage.getSuccessMessageText(), "Address successfully added.");
     }
 
+    //edit registered user with valid input data (France)
+    protected void editRegisteredUserDataValidInputFranceTest(){
+        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        //assert the nav link is displayed
+        assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
+        System.out.println("The nav link is displayed" + "\n");
+        registeredUserAccountPage.clickUserAccountLink1();
+        //assert the 'add first address' link is displayed
+        assertTrue(registeredUserAccountPage.isAddFirstAddressLinkDisplayed(), "The 'add first address' link isn't displayed");
+        System.out.println("The 'add first address' link is displayed" + "\n");
+        //assert the 'add first address' link has the correct name
+        //assertEquals(registeredUserAccountPage.getAddFirstAddressLinkText(), "Add first address"); // -> assert crashes the test
+        registeredUserAccountPage.clickAddFirstAddressLink();
+
+        //assert first name input field is displayed
+        assertTrue(registeredUserAccountPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registeredUserAccountPage.inputEditedUserFrenchDetails();
+        registeredUserAccountPage.changeFirstName();
+        //assert last name input field is displayed
+        assertTrue(registeredUserAccountPage.isLastNameInputFieldDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
+        registeredUserAccountPage.changeLastName();
+        //assert address input field is displayed
+        assertTrue(registeredUserAccountPage.isAddressInputFieldDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The address input field is displayed" + "\n");
+        registeredUserAccountPage.addUserAddress();
+        //assert city input field is displayed
+        assertTrue(registeredUserAccountPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
+        System.out.println("The city input field is displayed" + "\n");
+        registeredUserAccountPage.addUserFrenchCity();
+        //assert postal code input field is displayed
+        assertTrue(registeredUserAccountPage.isPostalCodeInputFieldDisplayed(), "The postal code input field isn't displayed");
+        System.out.println("The postal code input field is displayed" + "\n");
+        registeredUserAccountPage.addUserFrenchPostalCode();
+        //assert country dropdown menu is displayed
+        assertTrue(registeredUserAccountPage.isCountryDropdownMenuDisplayed(), "The country dropdown menu isn't displayed");
+        System.out.println("The country dropdown menu isn't displayed" + "\n");
+        registeredUserAccountPage.clickCountryDropdownMenu();
+        //assert chosen country option is displayed
+        assertTrue(registeredUserAccountPage.isFranceCountryDisplayed(), "The France option isn't displayed");
+        System.out.println("The France option is displayed" + "\n");
+        registeredUserAccountPage.clickFranceOption();
+        //assert the correct country is selected
+        assertEquals(registeredUserAccountPage.getFranceCountryText(), "France");
+        //assert save button is displayed
+        assertTrue(registeredUserAccountPage.isSaveButtonDisplayed(), "The save button isn't displayed");
+        System.out.println("The save button is displayed" + "\n");
+        registeredUserAccountPage.clickSaveButton();
+        //assert success message is displayed
+        assertEquals(registeredUserAccountPage.getSuccessMessageText(), "Address successfully added.");
+    }
+
     //edit registered user without first name
     protected void editRegisteredUserDataNoFirstNameTest(){
         RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);

@@ -43,6 +43,8 @@ public class TestDataGenerator extends BasePage {
     // Street types commonly used in addresses
     private static final String[] STREET_TYPES = {"St.", "Ave.", "Blvd.", "Rd.", "Ln.", "Dr.", "Ct.", "Pl."};
 
+    // Street types commonly used in French
+    private static final String[] FRENCH_STREET_TYPES = {"Rue", "Avenue", "Boulevard", "Chemin", "Place", "Allée"};
 
     // Generate random string methods
     private static String generateRandomString(String characters, int length) {
@@ -89,6 +91,14 @@ public class TestDataGenerator extends BasePage {
         String streetName = generateRandomString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", length);
         String streetType = STREET_TYPES[RANDOM.nextInt(STREET_TYPES.length)];
         return streetNumber + " " + streetName + " " + streetType;
+    }
+
+    // Method to generate a random address with a given length for the street name
+    public static String generateRandomFrenchAddress(int length) {
+        int frenchStreetNumber = RANDOM.nextInt(9999) + 1; // Random street number between 1 and 9999
+        String frenchStreetName = generateRandomString("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", length);
+        String frenchStreetType = FRENCH_STREET_TYPES[RANDOM.nextInt(FRENCH_STREET_TYPES.length)];
+        return frenchStreetNumber + " " + frenchStreetName + " " + frenchStreetType;
     }
 
     public static String generateRandomPassword() {
@@ -171,14 +181,34 @@ public class TestDataGenerator extends BasePage {
             "Carpentersville", "Wheeling", "Park Ridge", "Addison", "Calumet City"
     };
 
-    // rnd instance
+    // List of cities in the Lyons area
+    private static final List<String> LYON_CITIES = Arrays.asList(
+            "Lyon", "Villeurbanne", "Vénissieux", "Saint-Priest", "Caluire-et-Cuire",
+            "Bron", "Oullins", "Vaulx-en-Velin", "Meyzieu", "Ecully", "Rillieux-la-Pape",
+            "Décines-Charpieu", "La Mulatière", "Tassin-la-Demi-Lune", "L'Arbresle", "Givors"
+    );
+
+    // cities rnd instances
     private static final Random rndIllinoisCities = new Random();
+    private static final Random rndLyonsAreaCities = new Random();
 
     // Method to get a random city from the array
     public static String getRandomCity() {
         int index = rndIllinoisCities.nextInt(ILLINOIS_CITIES.length);
         return ILLINOIS_CITIES[index];
     }
+
+    // Method to get a random city from the Lyons area
+    public static String getRandomFrenchCity() {
+        int index = rndLyonsAreaCities.nextInt(LYON_CITIES.size());
+        return LYON_CITIES.get(index);
+    }
+
+    // Method to get a random postal code for the Lyons area
+    public static int getLyonsRandomPostalCode() {
+        return 69000 + RANDOM.nextInt(1000);
+    }
+
 
     // generate random postal code for Illinois
     public static int getRandomPostalCode() {

@@ -171,5 +171,22 @@ public class RegisteredUserAccountPageTest extends TestMethods{
         editRegisteredUserDataNoPostalCodeTest();
     }
 
+    //Test 061g -> change registered user data with valid data (France)
+    @Test
+    void changeRegisteredUserDataValidInputFranceTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAddFirstAddressPage();
+        editRegisteredUserDataValidInputFranceTest();
+    }
+
 
 }
