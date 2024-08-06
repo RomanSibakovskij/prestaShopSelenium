@@ -3720,6 +3720,10 @@ public class TestMethods extends BaseTest{
         registeredUserAccountPage.clickUSOption();
         //assert the correct country is selected
         assertEquals(registeredUserAccountPage.getUSCountryText(), "United States");
+        //assert save button is displayed
+        assertTrue(registeredUserAccountPage.isSaveButtonDisplayed(), "The save button isn't displayed");
+        System.out.println("The save button is displayed" + "\n");
+        registeredUserAccountPage.clickSaveButton();
     }
 
 }

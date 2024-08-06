@@ -59,11 +59,7 @@ public class RegisteredUserAccountPage extends BasePage{
     private String city;
     private int postalCode;
 
-    //invalid input data
-    private String noFirstName;
-
-
-
+    
     public RegisteredUserAccountPage(WebDriver driver) {
         super(driver);
     }
@@ -84,7 +80,6 @@ public class RegisteredUserAccountPage extends BasePage{
     }
 
     public void inputEditedUserDetailsNoFirstName(){
-        noFirstName = "";
         changedLastName = TestDataGenerator.generateRandomLastname(10);
         address = TestDataGenerator.generateRandomAddress(6);
         city = TestDataGenerator.getRandomCity();
@@ -208,7 +203,7 @@ public class RegisteredUserAccountPage extends BasePage{
 
         if (!oldFirstName.isEmpty()) {
             firstNameInputField.clear();
-            firstNameInputField.sendKeys(noFirstName);
+            firstNameInputField.sendKeys("");
         }
     }
 
