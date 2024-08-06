@@ -48,6 +48,10 @@ public class RegisteredUserAccountPage extends BasePage{
     @FindBy(css = "select#field-id_country > option[value='21']")
     private WebElement usChoiceOption;
 
+    //success message element
+    @FindBy(css = "aside#notifications ul")
+    private WebElement successMessage;
+
     //input data
     private String changedFirstName;
     private String changedLastName;
@@ -55,12 +59,15 @@ public class RegisteredUserAccountPage extends BasePage{
     private String city;
     private int postalCode;
 
+    //invalid input data
+    private String noFirstName;
+
 
 
     public RegisteredUserAccountPage(WebDriver driver) {
         super(driver);
     }
-
+    //valid user data input
     public void inputEditedUserDetails(){
         changedFirstName = TestDataGenerator.generateRandomFirstname(8);
         changedLastName = TestDataGenerator.generateRandomLastname(10);
@@ -70,6 +77,21 @@ public class RegisteredUserAccountPage extends BasePage{
 
         System.out.println("Generated Data:\n");
         System.out.println("Edited first name: " + changedFirstName);
+        System.out.println("Edited last name: " + changedLastName);
+        System.out.println("Added address: " + address);
+        System.out.println("Added city: " + city);
+        System.out.println("Added postal code: " + postalCode);
+    }
+
+    public void inputEditedUserDetailsNoFirstName(){
+        noFirstName = "";
+        changedLastName = TestDataGenerator.generateRandomLastname(10);
+        address = TestDataGenerator.generateRandomAddress(6);
+        city = TestDataGenerator.getRandomCity();
+        postalCode = TestDataGenerator.getRandomPostalCode();
+
+        System.out.println("Generated Data:\n");
+        System.out.println("Expected first name: " + noFirstName);
         System.out.println("Edited last name: " + changedLastName);
         System.out.println("Added address: " + address);
         System.out.println("Added city: " + city);
@@ -97,7 +119,7 @@ public class RegisteredUserAccountPage extends BasePage{
         addFirstAddressLink.click();
     }
 
-    ///edit input methods
+    ///edit input methods (valid data)
     public void changeFirstName(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
         wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
@@ -170,6 +192,25 @@ public class RegisteredUserAccountPage extends BasePage{
         postalCodeInputField.sendKeys(String.valueOf(postalCode));
     }
 
+    public void clickSaveButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(saveButton));
+        saveButton.click();
+    }
+
+    //attempt to edit user with empty first name input field
+    public void changeFirstNameAsEmptyString(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
+
+        // store the old name
+        String oldFirstName = firstNameInputField.getAttribute("value");
+
+        if (!oldFirstName.isEmpty()) {
+            firstNameInputField.clear();
+            firstNameInputField.sendKeys(noFirstName);
+        }
+    }
 
 
     //navigation links assert methods
@@ -192,6 +233,9 @@ public class RegisteredUserAccountPage extends BasePage{
     public boolean isIllinoisStateDisplayed(){return illinoisStateOption.isDisplayed();}
     public boolean isUSCountryDisplayed(){return usChoiceOption.isDisplayed();}
 
+    //save button assert method
+    public boolean isSaveButtonDisplayed(){return saveButton.isDisplayed();}
+
 
 
 
@@ -208,6 +252,9 @@ public class RegisteredUserAccountPage extends BasePage{
     //dropdown menu option getters
     public String getChosenStateOption(){return illinoisStateOption.getText();}
     public String getUSCountryText(){return usChoiceOption.getText();}
+
+    //success message getter
+    public String getSuccessMessageText(){return successMessage.getText();}
 
 
 }

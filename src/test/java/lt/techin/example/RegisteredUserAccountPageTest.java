@@ -69,5 +69,22 @@ public class RegisteredUserAccountPageTest extends TestMethods{
         editRegisteredUserDataValidInputTest();
     }
 
+    //Test 061a -> change registered user data without first name
+    @Test
+    void changeRegisteredUserDataNoFirstNameTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToAddFirstAddressPage();
+        editRegisteredUserDataNoFirstNameTest();
+    }
+
 
 }
