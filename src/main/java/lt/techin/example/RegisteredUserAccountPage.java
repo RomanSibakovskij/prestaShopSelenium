@@ -108,6 +108,20 @@ public class RegisteredUserAccountPage extends BasePage{
         System.out.println("Added postal code: " + postalCode);
     }
 
+    public void inputEditedUserDetailsNoAddress(){
+        changedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        changedLastName = TestDataGenerator.generateRandomLastname(10);
+        city = TestDataGenerator.getRandomCity();
+        postalCode = TestDataGenerator.getRandomPostalCode();
+
+        System.out.println("Generated Data:\n");
+        System.out.println("Edited first name: " + changedFirstName);
+        System.out.println("Edited last name: " + changedLastName);
+        System.out.println("Expected address: " + "");
+        System.out.println("Added city: " + city);
+        System.out.println("Added postal code: " + postalCode);
+    }
+
 
     //user account link click methods
     public void clickUserAccountLink1(){
@@ -234,6 +248,12 @@ public class RegisteredUserAccountPage extends BasePage{
             lastNameInputField.clear();
             lastNameInputField.sendKeys("");
         }
+    }
+    //attempt to edit user with empty address input field
+    public void addUserWithNoAddress(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1100));
+        wait.until(ExpectedConditions.visibilityOf(addressInputField));
+        addressInputField.sendKeys("");
     }
 
 

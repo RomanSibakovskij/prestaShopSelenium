@@ -3744,7 +3744,68 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserAccountPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
         System.out.println("The first name input field is displayed" + "\n");
         registeredUserAccountPage.inputEditedUserDetailsNoLastName();
+        registeredUserAccountPage.changeFirstName();
+        //assert last name input field is displayed
+        assertTrue(registeredUserAccountPage.isLastNameInputFieldDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
         registeredUserAccountPage.changeLastNameAsEmptyString();
+        //assert address input field is displayed
+        assertTrue(registeredUserAccountPage.isAddressInputFieldDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The address input field is displayed" + "\n");
+        registeredUserAccountPage.addUserAddress();
+        //assert city input field is displayed
+        assertTrue(registeredUserAccountPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
+        System.out.println("The city input field is displayed" + "\n");
+        registeredUserAccountPage.addUserCity();
+        //assert state dropdown menu is displayed
+        assertTrue(registeredUserAccountPage.isStateDropdownMenuDisplayed(), "The state dropdown menu isn't displayed");
+        System.out.println("The state dropdown menu is displayed" + "\n");
+        registeredUserAccountPage.clickStateDropdownMenu();
+        //assert chosen state is displayed
+        assertTrue(registeredUserAccountPage.isIllinoisStateDisplayed(), "The Illinois state isn't displayed");
+        System.out.println("The Illinois state is displayed" + "\n");
+        registeredUserAccountPage.clickIllinoisStateOption();
+        //assert the correct state is selected
+        assertEquals(registeredUserAccountPage.getChosenStateOption(), "Illinois");
+        //assert postal code input field is displayed
+        assertTrue(registeredUserAccountPage.isPostalCodeInputFieldDisplayed(), "The postal code input field isn't displayed");
+        System.out.println("The postal code input field is displayed" + "\n");
+        registeredUserAccountPage.addUserPostalCode();
+        //assert country dropdown menu is displayed
+        assertTrue(registeredUserAccountPage.isCountryDropdownMenuDisplayed(), "The country dropdown menu isn't displayed");
+        System.out.println("The country dropdown menu isn't displayed" + "\n");
+        registeredUserAccountPage.clickCountryDropdownMenu();
+        //assert chosen country option is displayed
+        assertTrue(registeredUserAccountPage.isUSCountryDisplayed(), "The US option isn't displayed");
+        System.out.println("The US option is displayed" + "\n");
+        registeredUserAccountPage.clickUSOption();
+        //assert the correct country is selected
+        assertEquals(registeredUserAccountPage.getUSCountryText(), "United States");
+        //assert save button is displayed
+        assertTrue(registeredUserAccountPage.isSaveButtonDisplayed(), "The save button isn't displayed");
+        System.out.println("The save button is displayed" + "\n");
+        registeredUserAccountPage.clickSaveButton();
+    }
+
+    //edit registered user without address
+    protected void editRegisteredUserDataNoAddressTest(){
+        RegisteredUserAccountPage registeredUserAccountPage = new RegisteredUserAccountPage(driver);
+        //assert the nav link is displayed
+        assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
+        System.out.println("The nav link is displayed" + "\n");
+        registeredUserAccountPage.clickUserAccountLink1();
+        //assert the 'add first address' link is displayed
+        assertTrue(registeredUserAccountPage.isAddFirstAddressLinkDisplayed(), "The 'add first address' link isn't displayed");
+        System.out.println("The 'add first address' link is displayed" + "\n");
+        //assert the 'add first address' link has the correct name
+        //assertEquals(registeredUserAccountPage.getAddFirstAddressLinkText(), "Add first address"); // -> assert crashes the test
+        registeredUserAccountPage.clickAddFirstAddressLink();
+
+        //assert first name input field is displayed
+        assertTrue(registeredUserAccountPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registeredUserAccountPage.inputEditedUserDetailsNoAddress();
+        registeredUserAccountPage.changeFirstName();
         //assert last name input field is displayed
         assertTrue(registeredUserAccountPage.isLastNameInputFieldDisplayed(), "The last name input field isn't displayed");
         System.out.println("The last name input field is displayed" + "\n");
@@ -3752,7 +3813,7 @@ public class TestMethods extends BaseTest{
         //assert address input field is displayed
         assertTrue(registeredUserAccountPage.isAddressInputFieldDisplayed(), "The last name input field isn't displayed");
         System.out.println("The address input field is displayed" + "\n");
-        registeredUserAccountPage.addUserAddress();
+        registeredUserAccountPage.addUserWithNoAddress();
         //assert city input field is displayed
         assertTrue(registeredUserAccountPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
         System.out.println("The city input field is displayed" + "\n");
