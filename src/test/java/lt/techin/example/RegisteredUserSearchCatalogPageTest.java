@@ -182,5 +182,21 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
         searchForTShirtInSearchCatalogTest();
     }
 
+    //Test 005j -> search for "Humming Bird" sweater as a registered user
+    @Test
+    void searchCatalogSweaterBirdTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForSweaterInSearchCatalogTest();
+    }
+
 
 }

@@ -1450,7 +1450,7 @@ public class TestMethods extends BaseTest{
         assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getCushionBirdQuery() + " isn't present in search result");
     }
 
-    //t-shirt test methods
+    //t-shirt test method
     protected void searchForTShirtInSearchCatalogTest(){
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
@@ -1464,6 +1464,19 @@ public class TestMethods extends BaseTest{
         assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getTShirtQuery() + " isn't present in search result");
     }
 
+    //sweater test methods
+    protected void searchForSweaterInSearchCatalogTest(){
+        RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
+
+        //assert search bar is present
+        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
+        System.out.println("The search bar is displayed");
+        registeredUserSearchCatalogPage.inputSearchQuerySweaterIntoSearchBar();
+        //assert search query result is displayed
+        //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
+        boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getSweaterQuery());
+        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getSweaterQuery() + " isn't present in search result");
+    }
 
 
 
