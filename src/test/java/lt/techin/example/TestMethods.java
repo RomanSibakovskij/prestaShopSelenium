@@ -1701,6 +1701,10 @@ public class TestMethods extends BaseTest{
         assertTrue(productOrderPage.isUSCountryDisplayed(), "The US option isn't displayed");
         System.out.println("The US option is displayed" + "\n");
         productOrderPage.clickUSOption();
+        //assert 'Continue' button is displayed
+        assertTrue(productOrderPage.isContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
+        System.out.println("The 'Continue' button is displayed" + "\n");
+        productOrderPage.clickContinueButton();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

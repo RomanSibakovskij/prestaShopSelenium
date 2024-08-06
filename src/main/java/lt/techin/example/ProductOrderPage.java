@@ -31,7 +31,7 @@ public class ProductOrderPage extends BasePage{
 
     //save button
     @FindBy(css = "button[name='confirm-addresses']")
-    private WebElement saveButton;
+    private WebElement continueButton;
 
     //input data
     private String address;
@@ -103,6 +103,13 @@ public class ProductOrderPage extends BasePage{
         usChoiceOption.click();
     }
 
+    //continue button click method
+    public void clickContinueButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
+        wait.until(ExpectedConditions.elementToBeClickable(continueButton));
+        continueButton.click();
+    }
+
     //input fields assert methods
     public boolean isAddressInputFieldDisplayed(){return addressInputField.isDisplayed();}
     public boolean isCityInputFieldDisplayed(){return cityInputField.isDisplayed();}
@@ -115,6 +122,9 @@ public class ProductOrderPage extends BasePage{
     //select dropdown option assert methods
     public boolean isIllinoisStateDisplayed(){return illinoisStateOption.isDisplayed();}
     public boolean isUSCountryDisplayed(){return usChoiceOption.isDisplayed();}
+
+    //continue button assert method
+    public boolean isContinueButtonDisplayed(){return continueButton.isDisplayed();}
 
     //edit input data getters
     public String getAddress() {return addressInputField.getText();}
