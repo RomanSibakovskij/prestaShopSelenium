@@ -35,6 +35,9 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     private String graphics1Query = "Mountain fox - Vector graphics";
     private String graphics2Query = "Brown bear - Vector graphics";
     private String graphics3Query = "Hummingbird - Vector graphics";
+    private String notebook1Query = "Mountain fox notebook";
+    private String notebook2Query = "Brown bear notebook";
+    private String notebook3Query = "Hummingbird notebook";
 
 
     public RegisteredUserSearchCatalogPage(WebDriver driver) {
@@ -149,6 +152,26 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
         return searchResultsDropdown.findElements(By.cssSelector("li.ui-menu-item a"));
     }
 
+    //notebooks input methods
+    public void inputSearchQueryNotebookFoxIntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(notebook1Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+    public void inputSearchQueryNotebookBearIntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(notebook2Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+    public void inputSearchQueryNotebookBirdIntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(notebook3Query);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+
     public boolean isProductPresent(String query) {
         List<WebElement> results = getSearchResults();
         for (WebElement result : results) {
@@ -182,5 +205,8 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     public String getGraphicsFoxQuery(){return graphics1Query;}
     public String getGraphicsBearQuery(){return graphics2Query;}
     public String getGraphicsBirdQuery(){return graphics3Query;}
+    public String getNotebookFoxQuery(){return notebook1Query;}
+    public String getNotebookBearQuery(){return notebook2Query;}
+    public String getNotebookBirdQuery(){return notebook3Query;}
 
 }

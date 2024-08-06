@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 
 public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
+    //Important note : the part title search is bugged, sometimes it shows the results it's not supposed to show. Even full title search results
+    //are not quite appropriate. But in overall, search feature works, even if not without bugs
+
 
     //Test 005 -> search for "The Best is Yet To Come" mug as a registered user
     @Test
@@ -244,6 +247,54 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
         logInRegisteredUserTest(registerPage);
 
         searchForGraphicsBirdInSearchCatalogTest();
+    }
+
+    //Test 005n -> search for "Mountain Fox" notebook as a registered user
+    @Test
+    void searchCatalogNotebookFoxTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForNotebookFoxInSearchCatalogTest();
+    }
+
+    //Test 005o -> search for "Brown Bear" notebook as a registered user
+    @Test
+    void searchCatalogNotebookBearTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForNotebookBearInSearchCatalogTest();
+    }
+
+    //Test 005p -> search for "Humming Bird" notebook as a registered user
+    @Test
+    void searchCatalogNotebookBirdTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForNotebookBearInSearchCatalogTest();
     }
 
 
