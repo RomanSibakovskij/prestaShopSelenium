@@ -4471,6 +4471,24 @@ public class TestMethods extends BaseTest{
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  //information edit test methods
+
+  protected void navigateToInformationPage(){
+        RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
+
+        //assert the information link is displayed in the white frame
+      assertTrue(registeredUserInformationPage.isInformationLinkDisplayed(), "The information link isn't displayed");
+      System.out.println("The information link is displayed" + "\n");
+      registeredUserInformationPage.clickInformationLink();
+
+
+  }
+
+
+
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
   //order and history test methods
 
     protected void singleProductOrderAndHistoryDetails(){
