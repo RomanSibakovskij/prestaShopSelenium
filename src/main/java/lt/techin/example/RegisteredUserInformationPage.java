@@ -54,8 +54,9 @@ public class RegisteredUserInformationPage extends BasePage{
     @FindBy(css = ".btn.btn-primary.float-xs-right.form-control-submit")
     private WebElement saveButton;
 
-    //user data repository
-   // private UserDataRepository userDataRepository;
+    //edit success message element
+    @FindBy(css = "article[role='alert']")
+    private WebElement successEditMessage;
 
     //former input data
     private String firstName;
@@ -165,6 +166,26 @@ public class RegisteredUserInformationPage extends BasePage{
         wait.until(ExpectedConditions.elementToBeClickable(dataPrivacyCheckbox));
         dataPrivacyCheckbox.click();
     }
+    //password 'Show' button click method
+    public void clickShowPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(passwordShowButton));
+        passwordShowButton.click();
+    }
+
+    //new password 'Show' button click method
+    public void clickShowNewPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(passwordNewShowButton));
+        passwordNewShowButton.click();
+    }
+
+    //save button click method
+    public void clickSaveButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(saveButton));
+        saveButton.click();
+    }
 
 
     //information link assert method
@@ -202,5 +223,8 @@ public class RegisteredUserInformationPage extends BasePage{
     public String getEditedEmailAddress(){return editedEmailAddress;}
     public String getNewPassword(){return newPassword;}
     public String getEditedBirthDate(){return editedBirthDate;}
+
+    //success message getter
+    public String getSuccessEditMessage(){return successEditMessage.getText();}
 
 }

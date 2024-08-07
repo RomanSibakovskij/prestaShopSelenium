@@ -4519,11 +4519,19 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserInformationPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
         System.out.println("The password input field is displayed" + "\n");
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
+        //assert 'Show' button is displayed
+        assertTrue(registeredUserInformationPage.isPasswordShowButtonDisplayed(), "The password 'Show' button isn't displayed");
+        System.out.println("The password 'Show' button is displayed");
+        registeredUserInformationPage.clickShowPassword();
 
         //assert new password input field is displayed
         assertTrue(registeredUserInformationPage.isNewPasswordInputFieldDisplayed(), "The new password input field isn't displayed");
         System.out.println("The new password input field is displayed" + "\n");
         registeredUserInformationPage.inputNewPassword();
+        //assert 'Show' button is displayed (new password)
+        assertTrue(registeredUserInformationPage.isNewPasswordShowButtonDisplayed(), "The new password 'Show' button isn't displayed");
+        System.out.println("The new password 'Show' button is displayed");
+        registeredUserInformationPage.clickShowNewPassword();
         //assert the passwords were indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
         System.out.println("Old password: " + registeredUserInformationPage.getPassword() + "\n");
@@ -4555,6 +4563,14 @@ public class TestMethods extends BaseTest{
         System.out.println("The 'Data Privacy' checkbox is displayed");
         registeredUserInformationPage.clickDataPrivacyCheckbox();
 
+        //assert 'Save' button is displayed
+        assertTrue(registeredUserInformationPage.isSaveButtonDisplayed(), "The 'Save' button isn't displayed");
+        System.out.println("The 'Save' button is displayed");
+        registeredUserInformationPage.clickSaveButton();
+
+        //assert the success message is displayed
+        assertEquals(registeredUserInformationPage.getSuccessEditMessage(), "Information successfully updated.");
+        System.out.println("The success message is: " + registeredUserInformationPage.getSuccessEditMessage());
     }
 
 
