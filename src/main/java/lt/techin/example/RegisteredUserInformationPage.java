@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class RegisteredUserInformationPage extends BasePage{
 
-    //link
+    //navigation link
     @FindBy(css = "a#identity-link")
     private WebElement informationLink;
 
@@ -18,7 +18,7 @@ public class RegisteredUserInformationPage extends BasePage{
     @FindBy(css = "label:nth-of-type(1) > .custom-radio")
     private WebElement maleGenderSelector;
     @FindBy(css = "label:nth-of-type(2) > .custom-radio")
-    private WebElement femaleGenderInputField;
+    private WebElement femaleGenderSelector;
 
     //input field elements
     @FindBy(css = "input#field-firstname")
@@ -58,6 +58,14 @@ public class RegisteredUserInformationPage extends BasePage{
     @FindBy(css = "article[role='alert']")
     private WebElement successEditMessage;
 
+    //return back to account page link element
+    @FindBy(css = "footer > a:nth-of-type(1)")
+    private WebElement returnToAccountLink;
+
+    //user account link element
+    @FindBy(css = "a[title='View my customer account']")
+    private WebElement editedUserAccountLink;
+
     //former input data
     private String firstName;
     private String lastName;
@@ -85,6 +93,18 @@ public class RegisteredUserInformationPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
         wait.until(ExpectedConditions.elementToBeClickable(informationLink));
         informationLink.click();
+    }
+
+    //click gender selector methods
+    public void clickMaleGenderSelector(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(maleGenderSelector));
+        maleGenderSelector.click();
+    }
+    public void clickFemaleGenderSelector(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(femaleGenderSelector));
+        femaleGenderSelector.click();
     }
 
     public void inputEditedInformationDetails(RegisterPage registerPage){
@@ -187,9 +207,20 @@ public class RegisteredUserInformationPage extends BasePage{
         saveButton.click();
     }
 
+    //return back to account link click method
+    public void clickBackToAccount(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(returnToAccountLink));
+        returnToAccountLink.click();
+    }
+
 
     //information link assert method
     public boolean isInformationLinkDisplayed(){return informationLink.isDisplayed();}
+
+    //gender selectors assert methods
+    public boolean isMaleGenderSelectorDisplayed(){return maleGenderSelector.isDisplayed();}
+    public boolean isFemaleGenderSelectorDisplayed(){return femaleGenderSelector.isDisplayed();}
 
     //input fields assert methods
     public boolean isFirstNameInputFieldDisplayed(){return firstNameInputField.isDisplayed();}
@@ -209,6 +240,7 @@ public class RegisteredUserInformationPage extends BasePage{
     public boolean isPasswordShowButtonDisplayed(){return passwordShowButton.isDisplayed();}
     public boolean isNewPasswordShowButtonDisplayed(){return passwordNewShowButton.isDisplayed();}
     public boolean isSaveButtonDisplayed(){return saveButton.isDisplayed();}
+    public boolean isReturnBackLinkDisplayed(){return returnToAccountLink.isDisplayed();}
 
     //former data getters
     public String getFirstName(){return firstName;}
@@ -226,5 +258,8 @@ public class RegisteredUserInformationPage extends BasePage{
 
     //success message getter
     public String getSuccessEditMessage(){return successEditMessage.getText();}
+
+    //edited user account name getter
+    public String getEditedUserAccountName(){return editedUserAccountLink.getText();}
 
 }

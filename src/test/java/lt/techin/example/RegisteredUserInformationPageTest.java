@@ -21,9 +21,9 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         navigateToInformationPage();
     }
 
-    //Test 060 -> navigate to information page test
+    //Test 060 -> edit registered user information (male user) test
     @Test
-    void editRegisteredUserInformationTest(){
+    void editRegisteredUserInformationMaleTest(){
         clickOnSignUpTest();
 
         RegisterPage registerPage = new RegisterPage(driver);
@@ -37,7 +37,26 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         navigateToUserAccountLink1Test();
         navigateToInformationPage();
 
-        editUserDataWithValidDataTest(registerPage);
+        editMaleUserDataWithValidDataTest(registerPage);
+    }
+
+    //Test 061 -> edit registered user information (female user) test
+    @Test
+    void editRegisteredUserInformationFemaleTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editFemaleUserDataWithValidDataTest(registerPage);
     }
 
 
