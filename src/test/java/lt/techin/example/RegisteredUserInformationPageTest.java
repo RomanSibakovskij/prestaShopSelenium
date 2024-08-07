@@ -37,7 +37,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         navigateToUserAccountLink1Test();
         navigateToInformationPage();
 
-        editUserDataWithValidDataTest();
+        editUserDataWithValidDataTest(registerPage);
     }
 
 

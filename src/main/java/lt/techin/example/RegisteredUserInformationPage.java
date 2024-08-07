@@ -54,6 +54,9 @@ public class RegisteredUserInformationPage extends BasePage{
     @FindBy(css = ".btn.btn-primary.float-xs-right.form-control-submit")
     private WebElement saveButton;
 
+    //user data repository
+   // private UserDataRepository userDataRepository;
+
     //former input data
     private String firstName;
     private String lastName;
@@ -83,14 +86,14 @@ public class RegisteredUserInformationPage extends BasePage{
         editedFirstName = TestDataGenerator.generateRandomFirstname(8);
         editedLastName = TestDataGenerator.generateRandomLastname(10);
         editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
-        newPassword = TestDataGenerator.generateRandomPassword();
+        password =
+        newPassword = TestDataGenerator.generateNewRandomPassword();
         editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
 
         System.out.println("Generated Data:" + "\n");
         System.out.println("Edited first name: " + editedFirstName);
         System.out.println("Edited last name: " + editedLastName);
         System.out.println("Edited email: " + editedEmailAddress);
-        System.out.println("Password: " + password);
         System.out.println("New password: " + newPassword);
         System.out.println("Edited birthdate: " + editedBirthDate);
     }
@@ -118,10 +121,10 @@ public class RegisteredUserInformationPage extends BasePage{
         emailAddressInputField.clear();
         emailAddressInputField.sendKeys(editedEmailAddress);
     }
-    public void inputOldPassword(){
+    public void inputOldPassword(String password){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
-        passwordInputField.sendKeys(password);
+        passwordInputField.sendKeys(this.password);
     }
     public void inputNewPassword(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));

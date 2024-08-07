@@ -4484,7 +4484,7 @@ public class TestMethods extends BaseTest{
 
   //information edit test methods
 
-    protected void editUserDataWithValidDataTest(){
+    protected void editUserDataWithValidDataTest(RegisterPage registerPage){
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert first name input field is displayed
@@ -4500,8 +4500,8 @@ public class TestMethods extends BaseTest{
         System.out.println("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
 
         //assert last name input field is displayed
-        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
-        System.out.println("The first name input field is displayed" + "\n");
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The lastst name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         String lastName = registeredUserInformationPage.getLastName();
@@ -4511,8 +4511,8 @@ public class TestMethods extends BaseTest{
         System.out.println("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
 
         //assert email address input field is displayed
-        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
-        System.out.println("The first name input field is displayed" + "\n");
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The email address input field isn't displayed");
+        System.out.println("The email address input field is displayed" + "\n");
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         String emailAddress = registeredUserInformationPage.getEmailAddress();
@@ -4520,6 +4520,22 @@ public class TestMethods extends BaseTest{
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
         System.out.println("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
         System.out.println("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+
+        //assert password input field is displayed
+        assertTrue(registeredUserInformationPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
+        System.out.println("The password input field is displayed" + "\n");
+        registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
+
+        //assert new password input field is displayed
+        assertTrue(registeredUserInformationPage.isNewPasswordInputFieldDisplayed(), "The new password input field isn't displayed");
+        System.out.println("The new password input field is displayed" + "\n");
+        registeredUserInformationPage.inputNewPassword();
+        //assert the email addresses were indeed changed
+        String password = registeredUserInformationPage.getPassword();
+        String newPassword = registeredUserInformationPage.getNewPassword();
+        assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
+        System.out.println("Old password: " + registeredUserInformationPage.getPassword() + "\n");
+        System.out.println("New password: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
 
     }
 
