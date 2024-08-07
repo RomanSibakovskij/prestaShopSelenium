@@ -37,4 +37,21 @@ public class OrderHistoryAndDetailsPageTest extends TestMethods{
         navigateToArtPageTest();
         selectBestYetToComePosterBoxIconTest();
     }
+
+    //Test 063 -> add product into shopping cart and remove it test (the icon needs to be clicked repeatedly if more than one product (quantity of the same) is present)
+    @Test
+    void addAndRemoveProductFromCartTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        addAndRemoveBestYetToComePosterFromCartBoxIconTest();
+    }
 }

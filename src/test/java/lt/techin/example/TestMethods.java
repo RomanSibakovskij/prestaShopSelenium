@@ -1973,6 +1973,50 @@ public class TestMethods extends BaseTest{
         productOrderPage.clickPlaceOrderButton();
     }
 
+    protected void addAndRemoveBestYetToComePosterFromCartBoxIconTest() {
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert 'Art' link is displayed on navbar
+        assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
+        System.out.println("The 'Art' link is displayed on navbar" + "\n");
+        registeredUserArtPage.clickArtLink();
+        //assert 'Best Yet To Come' poster box icon is displayed
+        assertTrue(registeredUserArtPage.isBestYetToComePosterBoxIconDisplayed(), "The 'Best Yet To Come' poster box icon isn't displayed");
+        System.out.println("The 'Best Yet To Come' poster box icon isn't displayed" + "\n");
+        registeredUserArtPage.clickBestYetToComePosterBoxIcon();
+
+        BestYetToComePosterPage bestYetToComePosterPage = new BestYetToComePosterPage(driver);
+        //assert product name is correct
+        assertEquals(bestYetToComePosterPage.getProductName(), "THE BEST IS YET TO COME' FRAMED POSTER");
+        //assert 'Add to Cart' button is displayed
+        assertTrue(bestYetToComePosterPage.isAddToCartButtonDisplayed(), "The 'Add to Cart' button isn't displayed");
+        System.out.println("The 'Add To Cart' button is displayed" + "\n");
+        bestYetToComePosterPage.clickAddToCartButton();
+
+        //assert the product was added to cart
+        assertEquals(bestYetToComePosterPage.getSuccessMessage(), "\uE876Product successfully added to your shopping cart");
+        //assert the product added bears the correct name
+        assertEquals(bestYetToComePosterPage.getAddedProductName(), "The best is yet to come' Framed poster");
+        //assert the correct amount was added to cart
+        assertEquals(bestYetToComePosterPage.getCartItemCount(), "There is 1 item in your cart.");
+
+        //assert 'Proceed to Checkout' button in pop-up is displayed
+        assertTrue(bestYetToComePosterPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
+        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
+        bestYetToComePosterPage.clickProceedToCheckoutButton();
+
+        ProductCheckoutPage productCheckoutPage = new ProductCheckoutPage(driver);
+//        //assert quantity field is displayed in checkout page
+//        assertTrue(productCheckoutPage.isQtyAdjusterDisplayed(), "The quantity adjuster isn't present");
+//        System.out.println("The quantity adjuster is present" + "\n");
+//        productCheckoutPage.inputProductQuantity();
+        //assert product delete icon is displayed
+        assertTrue(productCheckoutPage.isDeleteProductIconDisplayed(), "The delete icon isn't displayed");
+        System.out.println("The delete icon is present" + "\n");
+        productCheckoutPage.clickRemoveProductIcon();
+        //assert delete confirmation message is as expected
+        assertEquals(productCheckoutPage.getDeleteMessageConfirmation(), "There are no more items in your cart");
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //registered user accessories page navigation test method
