@@ -59,6 +59,25 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         editMaleUserDataWithNoFirstNameTest(registerPage);
     }
 
+    //Test 060b -> edit registered user information (male user) with invalid first name test
+    @Test
+    void editUserInformationMaleInvalidFirstNameTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithInvalidFirstNameTest(registerPage);
+    }
+
 
 
     //Test 061 -> edit registered user information (female user) test
