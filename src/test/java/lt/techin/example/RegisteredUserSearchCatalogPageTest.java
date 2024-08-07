@@ -297,5 +297,21 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
         searchForNotebookBearInSearchCatalogTest();
     }
 
+    //Test 005q -> search for "Pack Mug and Poster" as a registered user
+    @Test
+    void searchCatalogPackMugPosterTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        searchForPackQueryInSearchCatalogTest();
+    }
+
 
 }

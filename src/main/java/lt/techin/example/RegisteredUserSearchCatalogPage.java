@@ -38,6 +38,7 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     private String notebook1Query = "Mountain fox notebook";
     private String notebook2Query = "Brown bear notebook";
     private String notebook3Query = "Hummingbird notebook";
+    private String packQuery = "Pack Mug + Framed poster";
 
 
     public RegisteredUserSearchCatalogPage(WebDriver driver) {
@@ -172,6 +173,14 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
         wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
     }
 
+    //pack search results
+    public void inputSearchQueryPackMugPosterIntoSearchBar(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
+        wait.until(ExpectedConditions.visibilityOf(searchBar));
+        searchBar.sendKeys(packQuery);
+        wait.until(ExpectedConditions.visibilityOf(searchResultsDropdown));
+    }
+
     public boolean isProductPresent(String query) {
         List<WebElement> results = getSearchResults();
         for (WebElement result : results) {
@@ -208,5 +217,6 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     public String getNotebookFoxQuery(){return notebook1Query;}
     public String getNotebookBearQuery(){return notebook2Query;}
     public String getNotebookBirdQuery(){return notebook3Query;}
+    public String getPackSearchQuery(){return packQuery;}
 
 }

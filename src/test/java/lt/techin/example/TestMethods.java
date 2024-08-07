@@ -1558,6 +1558,19 @@ public class TestMethods extends BaseTest{
         assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getNotebookBirdQuery() + " isn't present in search result");
     }
 
+    protected void searchForPackQueryInSearchCatalogTest(){
+        RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
+
+        //assert search bar is present
+        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
+        System.out.println("The search bar is displayed");
+        registeredUserSearchCatalogPage.inputSearchQueryPackMugPosterIntoSearchBar();
+        //assert search query result is displayed
+        //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
+        boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getPackSearchQuery());
+        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getPackSearchQuery() + " isn't present in search result");
+    }
+
 
 
 
