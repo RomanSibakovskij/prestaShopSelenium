@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
-    //Test 059 -> navigate to user account page (upper navbar link)
+    //Test 062 -> navigate to user account page (upper navbar link)
     @Test
     void navigateToUserAccountLink1Tests(){
         clickOnSignUpTest();
@@ -20,7 +20,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         navigateToUserAccountLink1Test();
     }
 
-    //Test 059a -> navigate to user account page (footer link)
+    //Test 063 -> navigate to user account page (footer link)
     @Test
     void navigateToUserAccountLink2Tests(){
         clickOnSignUpTest();
@@ -36,7 +36,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         navigateToUserAccountLink2Test();
     }
 
-    //Test 060 -> navigate to add first address page
+    //Test 064 -> navigate to add first address page
     @Test
     void navigateToAddFirstAddressPageTest(){
         clickOnSignUpTest();
@@ -52,7 +52,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         navigateToAddFirstAddressPage();
     }
 
-    //Test 061 -> change registered user data with valid data
+    //Test 065 -> change registered user data with valid data
     @Test
     void changeRegisteredUserDataValidInputTest(){
         clickOnSignUpTest();
@@ -69,7 +69,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         editRegisteredUserDataValidInputTest();
     }
 
-    //Test 061a -> change registered user data without first name
+    //Test 065a -> change registered user data without first name
     @Test
     void changeRegisteredUserDataNoFirstNameTest(){
         clickOnSignUpTest();
@@ -86,7 +86,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         editRegisteredUserDataNoFirstNameTest();
     }
 
-    //Test 061b -> change registered user data without last name
+    //Test 065b -> change registered user data without last name
     @Test
     void changeRegisteredUserDataNoLastNameTest(){
         clickOnSignUpTest();
@@ -103,7 +103,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         editRegisteredUserDataNoLastNameTest();
     }
 
-    //Test 061c -> change registered user data without address
+    //Test 065c -> change registered user data without address
     @Test
     void changeRegisteredUserDataNoAddressTest(){
         clickOnSignUpTest();
@@ -120,7 +120,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         editRegisteredUserDataNoAddressTest();
     }
 
-    //Test 061d -> change registered user data without city
+    //Test 065d -> change registered user data without city
     @Test
     void changeRegisteredUserDataNoCityTest(){
         clickOnSignUpTest();
@@ -137,7 +137,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         editRegisteredUserDataNoCityTest();
     }
 
-    //Test 061e -> change registered user data without state
+    //Test 065e -> change registered user data without state
     @Test
     void changeRegisteredUserDataNoStateTest(){
         clickOnSignUpTest();
@@ -154,7 +154,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         editRegisteredUserDataNoStateTest();
     }
 
-    //Test 061f -> change registered user data without postal code
+    //Test 065f -> change registered user data without postal code
     @Test
     void changeRegisteredUserDataNoPostalCodeTest(){
         clickOnSignUpTest();
@@ -171,7 +171,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         editRegisteredUserDataNoPostalCodeTest();
     }
 
-    //Test 061g -> change registered user data with valid data (France)
+    //Test 065g -> change registered user data with valid data (France)
     @Test
     void changeRegisteredUserDataValidInputFranceTest(){
         clickOnSignUpTest();

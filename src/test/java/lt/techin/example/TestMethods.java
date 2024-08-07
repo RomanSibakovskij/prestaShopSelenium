@@ -4471,7 +4471,7 @@ public class TestMethods extends BaseTest{
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  //information edit test methods
+  //information page navigation test method
 
   protected void navigateToInformationPage(){
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
@@ -4480,19 +4480,52 @@ public class TestMethods extends BaseTest{
       assertTrue(registeredUserInformationPage.isInformationLinkDisplayed(), "The information link isn't displayed");
       System.out.println("The information link is displayed" + "\n");
       registeredUserInformationPage.clickInformationLink();
-
-
   }
 
+  //information edit test methods
+
+    protected void editUserDataWithValidDataTest(){
+        RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
+
+        //assert first name input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registeredUserInformationPage.inputEditedUserDetails();
+        registeredUserInformationPage.editFirstName();
+        //assert the first names were indeed changed
+        String firstName = registeredUserInformationPage.getFirstName();
+        String editedFirstName = registeredUserInformationPage.getEditedFirstName();
+        assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
+        System.out.println("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
+        System.out.println("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+
+        //assert last name input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registeredUserInformationPage.editLastName();
+        //assert the last names were indeed changed
+        String lastName = registeredUserInformationPage.getLastName();
+        String editedLastName = registeredUserInformationPage.getEditedLastName();
+        assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
+        System.out.println("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
+        System.out.println("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+
+        //assert email address input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registeredUserInformationPage.editEmailAddress();
+        //assert the email addresses were indeed changed
+        String emailAddress = registeredUserInformationPage.getEmailAddress();
+        String editedEmailAddress = registeredUserInformationPage.getEditedEmailAddress();
+        assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
+        System.out.println("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
+        System.out.println("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+
+    }
 
 
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  //order and history test methods
-
-    protected void singleProductOrderAndHistoryDetails(){
-
-    }
 
 }
