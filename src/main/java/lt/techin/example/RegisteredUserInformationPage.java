@@ -80,6 +80,11 @@ public class RegisteredUserInformationPage extends BasePage{
     private String newPassword;
     private String editedBirthDate;
 
+    //negative test input data
+    private String noFirstName;
+    private String invalidFirstName; // symbols
+    private String tooLongFirstName;
+
     public RegisteredUserInformationPage(WebDriver driver) {
         super(driver);
     }
@@ -212,6 +217,38 @@ public class RegisteredUserInformationPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
         wait.until(ExpectedConditions.elementToBeClickable(returnToAccountLink));
         returnToAccountLink.click();
+    }
+
+
+    //negative test data methods
+    public void inputEditedInformationDetailsNoFirstName(RegisterPage registerPage){
+        noFirstName = "";
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Expected first name: " + noFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editFirstNameAsNone(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
+        firstName = firstNameInputField.getAttribute("value");
+        firstNameInputField.clear();
+        try {
+            firstNameInputField.sendKeys(noFirstName);
+        }catch(IllegalArgumentException i){
+            System.out.println("Keys to send should be a not null CharSequence");
+            i.printStackTrace(System.out);
+        }
     }
 
 
