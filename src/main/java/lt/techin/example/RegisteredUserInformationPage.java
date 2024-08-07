@@ -35,13 +35,13 @@ public class RegisteredUserInformationPage extends BasePage{
     private WebElement birthDateInputField;
 
     //checkboxes elements
-    @FindBy(css = "input[name='optin']")
+    @FindBy(css = "div:nth-of-type(8)  .custom-checkbox")
     private WebElement receiveOffersCheckbox;
-    @FindBy(css = "input[name='psgdpr']")
+    @FindBy(css = "div:nth-of-type(9)  .custom-checkbox")
     private WebElement agreeToTermsCheckbox;
-    @FindBy(css = "input[name='newsletter']")
+    @FindBy(css = "div:nth-of-type(10)  .custom-checkbox")
     private WebElement signUpNewsletterCheckbox;
-    @FindBy(css = "input[name='customer_privacy']")
+    @FindBy(css = "div:nth-of-type(11)  .custom-checkbox")
     private WebElement dataPrivacyCheckbox;
 
     //password 'Show' button elements
@@ -74,6 +74,7 @@ public class RegisteredUserInformationPage extends BasePage{
     public RegisteredUserInformationPage(WebDriver driver) {
         super(driver);
     }
+    //old password setter (from registration phase)
     public void setPassword(String password) {
         this.password = password;
     }
@@ -143,6 +144,27 @@ public class RegisteredUserInformationPage extends BasePage{
         birthDateInputField.sendKeys(editedBirthDate);
     }
 
+    //checkbox click methods
+    public void clickReceiveOffersCheckbox(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(receiveOffersCheckbox));
+        receiveOffersCheckbox.click();
+    }
+    public void clickAgreeToTermsCheckbox(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(agreeToTermsCheckbox));
+        agreeToTermsCheckbox.click();
+    }
+    public void clickSignUpNewsletterCheckbox(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(signUpNewsletterCheckbox));
+        signUpNewsletterCheckbox.click();
+    }
+    public void clickDataPrivacyCheckbox(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.elementToBeClickable(dataPrivacyCheckbox));
+        dataPrivacyCheckbox.click();
+    }
 
 
     //information link assert method

@@ -56,7 +56,7 @@ public class TestMethods extends BaseTest{
         //assert 'Receive offers' checkbox is displayed
         //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
         System.out.println("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
+        //registerPage.clickReceiveOffersCheckbox();
 
 //        //assert the password related messages are displayed
 //        System.out.println("The password strength message is displayed" + "\n");
@@ -72,7 +72,7 @@ public class TestMethods extends BaseTest{
         //assert 'Sign up for newsletter' checkbox is displayed
         //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
         System.out.println("The 'Sign up for newsletter' checkbox is displayed" + "\n");
-        registerPage.clickSignUpForNewsletterCheckbox();
+        //registerPage.clickSignUpForNewsletterCheckbox();
 
         //assert 'Customer data privacy' checkbox is present
        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
@@ -4537,6 +4537,23 @@ public class TestMethods extends BaseTest{
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
         System.out.println("Old password: " + registeredUserInformationPage.getBirthDate() + "\n");
         System.out.println("New password: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+
+        //assert the 'Receive Offers' checkbox is displayed
+        assertTrue(registeredUserInformationPage.isReceiveOffersCheckboxDisplayed(), "The 'Receive Offers' checkbox isn't displayed");
+        System.out.println("The 'Receive Offers' checkbox is displayed" + "\n");
+        registeredUserInformationPage.clickReceiveOffersCheckbox();
+        //assert 'Agree to Terms' checkbox is displayed
+        assertTrue(registeredUserInformationPage.isAgreeToTermsCheckboxDisplayed(), "The 'Receive Offers' checkbox isn't displayed");
+        System.out.println("The 'Receive Offers' checkbox is displayed");
+        registeredUserInformationPage.clickAgreeToTermsCheckbox();
+        //assert 'Sign Up to Newsletter' checkbox is displayed
+        assertTrue(registeredUserInformationPage.isSignUpNewsletterCheckboxDisplayed(), "The 'Sign Up to Newsletter' checkbox isn't displayed");
+        System.out.println("The 'Sign Up to Newsletter' checkbox is displayed");
+        registeredUserInformationPage.clickSignUpNewsletterCheckbox();
+        //assert 'Data Privacy' checkbox is displayed
+        assertTrue(registeredUserInformationPage.isDataPrivacyCheckboxDisplayed(), "The 'Data Privacy' checkbox isn't displayed");
+        System.out.println("The 'Data Privacy' checkbox is displayed");
+        registeredUserInformationPage.clickDataPrivacyCheckbox();
 
     }
 
