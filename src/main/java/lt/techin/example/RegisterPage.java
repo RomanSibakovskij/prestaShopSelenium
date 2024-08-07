@@ -81,6 +81,8 @@ public class RegisterPage extends BasePage{
     @FindBy(css = "input[name='customer_privacy']")
     private WebElement customerDataPrivacyCheckbox;
 
+    //user data repository import
+    private UserDataRepository userDataRepository;
 
     //input data
     private String firstName;
@@ -142,6 +144,7 @@ public class RegisterPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
         passwordInputField.sendKeys(password);
+        userDataRepository.setPassword(password);
     }
 
     public void inputNewUserBirthDate(){
