@@ -140,8 +140,7 @@ public class RegisterPage extends BasePage{
     public void inputNewUserPassword(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.visibilityOf(passwordInputField));
-        passwordInputField.sendKeys(password);
-//        userDataRepository.setPassword(password);
+        passwordInputField.sendKeys(this.password);
     }
 
     public void inputNewUserBirthDate(){
@@ -411,7 +410,7 @@ public class RegisterPage extends BasePage{
     }
 
     public String getPassword(){
-        return password;
+        return this.password;
     }
 
     //getters for first / last name error messages

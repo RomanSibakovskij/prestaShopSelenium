@@ -74,6 +74,9 @@ public class RegisteredUserInformationPage extends BasePage{
     public RegisteredUserInformationPage(WebDriver driver) {
         super(driver);
     }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     //information page navigation method
     public void clickInformationLink(){
@@ -82,11 +85,11 @@ public class RegisteredUserInformationPage extends BasePage{
         informationLink.click();
     }
 
-    public void inputEditedUserDetails(){
+    public void inputEditedInformationDetails(RegisterPage registerPage){
         editedFirstName = TestDataGenerator.generateRandomFirstname(8);
         editedLastName = TestDataGenerator.generateRandomLastname(10);
         editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
-        password =
+        password = registerPage.getPassword();
         newPassword = TestDataGenerator.generateNewRandomPassword();
         editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
 
@@ -94,6 +97,7 @@ public class RegisteredUserInformationPage extends BasePage{
         System.out.println("Edited first name: " + editedFirstName);
         System.out.println("Edited last name: " + editedLastName);
         System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + password);
         System.out.println("New password: " + newPassword);
         System.out.println("Edited birthdate: " + editedBirthDate);
     }
@@ -176,4 +180,5 @@ public class RegisteredUserInformationPage extends BasePage{
     public String getEditedEmailAddress(){return editedEmailAddress;}
     public String getNewPassword(){return newPassword;}
     public String getEditedBirthDate(){return editedBirthDate;}
+
 }

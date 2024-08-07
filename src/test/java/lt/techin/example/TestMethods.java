@@ -4490,11 +4490,9 @@ public class TestMethods extends BaseTest{
         //assert first name input field is displayed
         assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
         System.out.println("The first name input field is displayed" + "\n");
-        registeredUserInformationPage.inputEditedUserDetails();
+        registeredUserInformationPage.inputEditedInformationDetails(registerPage);
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
-        String firstName = registeredUserInformationPage.getFirstName();
-        String editedFirstName = registeredUserInformationPage.getEditedFirstName();
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
         System.out.println("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
         System.out.println("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
@@ -4504,8 +4502,6 @@ public class TestMethods extends BaseTest{
         System.out.println("The last name input field is displayed" + "\n");
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
-        String lastName = registeredUserInformationPage.getLastName();
-        String editedLastName = registeredUserInformationPage.getEditedLastName();
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
         System.out.println("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
         System.out.println("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
@@ -4515,8 +4511,6 @@ public class TestMethods extends BaseTest{
         System.out.println("The email address input field is displayed" + "\n");
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
-        String emailAddress = registeredUserInformationPage.getEmailAddress();
-        String editedEmailAddress = registeredUserInformationPage.getEditedEmailAddress();
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
         System.out.println("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
         System.out.println("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
@@ -4530,12 +4524,19 @@ public class TestMethods extends BaseTest{
         assertTrue(registeredUserInformationPage.isNewPasswordInputFieldDisplayed(), "The new password input field isn't displayed");
         System.out.println("The new password input field is displayed" + "\n");
         registeredUserInformationPage.inputNewPassword();
-        //assert the email addresses were indeed changed
-        String password = registeredUserInformationPage.getPassword();
-        String newPassword = registeredUserInformationPage.getNewPassword();
+        //assert the passwords were indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
         System.out.println("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        System.out.println("New password: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        System.out.println("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+
+        //assert birthdate input field is displayed
+        assertTrue(registeredUserInformationPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
+        System.out.println("The birthdate input field is displayed" + "\n");
+        registeredUserInformationPage.editBirthdate();
+        //assert the birthdate was indeed changed
+        assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
+        System.out.println("Old password: " + registeredUserInformationPage.getBirthDate() + "\n");
+        System.out.println("New password: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
 
     }
 

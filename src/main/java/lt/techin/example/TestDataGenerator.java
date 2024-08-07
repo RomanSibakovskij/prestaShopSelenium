@@ -131,7 +131,7 @@ public class TestDataGenerator extends BasePage {
 //        String special = "!@#$%^&*()_+-=[]{}|;:,.<>?";
 
         // fixed password part
-        String stokerPart = "Stoker";
+        String stokerPart = "StokerG";
 
         // random numeric sequence
         StringBuilder numericPart = new StringBuilder();
