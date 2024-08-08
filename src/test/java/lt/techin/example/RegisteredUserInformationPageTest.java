@@ -78,8 +78,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         editMaleUserDataWithInvalidFirstNameTest(registerPage);
     }
 
-<<<<<<< HEAD
-=======
+
     //Test 060c -> edit registered user information (male user) with invalid first name test
     @Test
     void editUserInformationMaleTooLongFirstNameTest(){
@@ -156,8 +155,62 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         editMaleUserDataWithTooLongLastNameTest(registerPage);
     }
 
->>>>>>> 9fdddf9b5945a7b9bad0ff40c4546fd2a4ed0a82
+    //Test 060g -> edit registered user information (male user) with no email test
+    @Test
+    void editUserInformationMaleNoEmailTest(){
+        clickOnSignUpTest();
 
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithNoEmailTest(registerPage);
+    }
+
+    //Test 060i -> edit registered user information (male user) with invalid email test
+    @Test
+    void editUserInformationMaleInvalidEmailTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithInvalidEmailTest(registerPage);
+    }
+
+    //Test 060i -> edit registered user information (male user) with too long email test
+    @Test
+    void editUserInformationMaleTooLongEmailTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithTooLongEmailTest(registerPage);
+    }
 
     //Test 061 -> edit registered user information (female user) test
     @Test

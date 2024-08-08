@@ -98,6 +98,9 @@ public class RegisteredUserInformationPage extends BasePage{
     private String noLastName;
     private String invalidLastName;
     private String tooLongLastName;
+    private String noEmail;
+    private String invalidEmail;
+    private String tooLongEmail;
 
     public RegisteredUserInformationPage(WebDriver driver) {
         super(driver);
@@ -392,6 +395,85 @@ public class RegisteredUserInformationPage extends BasePage{
         lastNameInputField.sendKeys(tooLongLastName);
     }
 
+    //no email
+    public void inputEditedInformationDetailsNoEmail(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        noEmail = "";
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Expected email: " + noEmail);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editNoEmail(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(emailAddressInputField));
+        emailAddress = emailAddressInputField.getAttribute("value");
+        emailAddressInputField.clear();
+        emailAddressInputField.sendKeys(noEmail);
+    }
+
+    //invalid email
+    public void inputEditedInformationDetailsInvalidEmail(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        invalidEmail = "m3@com";
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Expected email: " + invalidEmail);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editInvalidEmail(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(emailAddressInputField));
+        emailAddress = emailAddressInputField.getAttribute("value");
+        emailAddressInputField.clear();
+        emailAddressInputField.sendKeys(invalidEmail);
+    }
+
+    //too long email
+    public void inputEditedInformationDetailsTooLongEmail(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        tooLongEmail = TestDataGenerator.generateRandomInvalidEmailAddress(256);
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Expected email: " + tooLongEmail);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editTooLongEmail(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(emailAddressInputField));
+        emailAddress = emailAddressInputField.getAttribute("value");
+        emailAddressInputField.clear();
+        emailAddressInputField.sendKeys(tooLongEmail);
+    }
+
+
 
     //information link assert method
     public boolean isInformationLinkDisplayed(){return informationLink.isDisplayed();}
@@ -447,7 +529,7 @@ public class RegisteredUserInformationPage extends BasePage{
 
     //error message getters
     public String getDataErrorMessage(){return dataErrorMessage.getText();}
-    public String getNameFormatErrorMessage(){return invalidFormatMessage.getText();}
+    public String getFormatErrorMessage(){return invalidFormatMessage.getText();}
 
 
 }

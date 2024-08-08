@@ -165,7 +165,7 @@ public class TestDataGenerator extends BasePage {
 
     public static String generateRandomInvalidEmailAddress(int length) {
         String invalidEmailAddress = generateRandomString(UPPER + LOWER, length);
-        return invalidEmailAddress + "@com";
+        return invalidEmailAddress + "@example.com";
     }
 
     public static String generateRandomInvalidPassword() {
