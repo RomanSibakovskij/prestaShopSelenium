@@ -66,6 +66,12 @@ public class RegisteredUserInformationPage extends BasePage{
     @FindBy(css = "a[title='View my customer account']")
     private WebElement editedUserAccountLink;
 
+    //warning error message elements
+    @FindBy(css = "article[role='alert']")
+    private WebElement dataErrorMessage;
+    @FindBy(css = "ul > .alert.alert-danger")
+    private WebElement invalidFirstNameFormatMessage;
+
     //former input data
     private String firstName;
     private String lastName;
@@ -251,6 +257,56 @@ public class RegisteredUserInformationPage extends BasePage{
         }
     }
 
+    public void inputEditedInformationDetailsInvalidFirstName(RegisterPage registerPage){
+        invalidFirstName = "%$#";
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Expected first name: " + invalidFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editFirstNameInvalidFormat(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
+        firstName = firstNameInputField.getAttribute("value");
+        firstNameInputField.clear();
+        firstNameInputField.sendKeys(invalidFirstName);
+    }
+
+    public void inputEditedInformationDetailsTooLongFirstName(RegisterPage registerPage){
+        tooLongFirstName = TestDataGenerator.generateRandomFirstname(256);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Expected first name: " + tooLongFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editTooLongFirstName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
+        firstName = firstNameInputField.getAttribute("value");
+        firstNameInputField.clear();
+        firstNameInputField.sendKeys(tooLongFirstName);
+    }
+
 
     //information link assert method
     public boolean isInformationLinkDisplayed(){return informationLink.isDisplayed();}
@@ -298,5 +354,9 @@ public class RegisteredUserInformationPage extends BasePage{
 
     //edited user account name getter
     public String getEditedUserAccountName(){return editedUserAccountLink.getText();}
+
+    //error message getters
+    public String getDataErrorMessage(){return dataErrorMessage.getText();}
+    public String getFirstNameFormatErrorMessage(){return invalidFirstNameFormatMessage.getText();}
 
 }
