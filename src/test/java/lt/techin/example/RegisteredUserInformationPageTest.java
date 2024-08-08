@@ -97,6 +97,62 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         editMaleUserDataWithTooLongFirstNameTest(registerPage);
     }
 
+    //Test 060d -> edit registered user information (male user) with no last name test
+    @Test
+    void editUserInformationMaleNoLastNameTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithNoLastNameTest(registerPage);
+    }
+
+    //Test 060e -> edit registered user information (male user) with invalid last name test
+    @Test
+    void editUserInformationMaleInvalidLastNameTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithInvalidLastNameTest(registerPage);
+    }
+
+    //Test 060f -> edit registered user information (male user) with too long last name test
+    @Test
+    void editUserInformationMaleTooLongLastNameTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithTooLongLastNameTest(registerPage);
+    }
 
 
 

@@ -4710,7 +4710,7 @@ public class TestMethods extends BaseTest{
         registeredUserInformationPage.editFirstNameAsNone();
 
         //assert last name input field is displayed
-        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The lastst name input field isn't displayed");
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The last name input field isn't displayed");
         System.out.println("The last name input field is displayed" + "\n");
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
@@ -4791,7 +4791,7 @@ public class TestMethods extends BaseTest{
         registeredUserInformationPage.editFirstNameInvalidFormat();
 
         //assert last name input field is displayed
-        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The lastst name input field isn't displayed");
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The last name input field isn't displayed");
         System.out.println("The last name input field is displayed" + "\n");
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
@@ -4855,10 +4855,10 @@ public class TestMethods extends BaseTest{
 
         //assert the error messages are as expected
         assertEquals(registeredUserInformationPage.getDataErrorMessage(), "Could not update your information, please check your data.");
-        assertEquals(registeredUserInformationPage.getFirstNameFormatErrorMessage(), "Invalid format.");
+        assertEquals(registeredUserInformationPage.getNameFormatErrorMessage(), "Invalid format.");
     }
 
-    //information edit test methods (male user) -> invalid first name
+    //information edit test methods (male user) -> too long first name
     protected void editMaleUserDataWithTooLongFirstNameTest(RegisterPage registerPage){
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
@@ -4874,7 +4874,7 @@ public class TestMethods extends BaseTest{
         registeredUserInformationPage.editTooLongFirstName();
 
         //assert last name input field is displayed
-        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The lastst name input field isn't displayed");
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The last name input field isn't displayed");
         System.out.println("The last name input field is displayed" + "\n");
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
@@ -4938,7 +4938,252 @@ public class TestMethods extends BaseTest{
 
         //assert the error messages are as expected
         assertEquals(registeredUserInformationPage.getDataErrorMessage(), "Could not update your information, please check your data.");
-        assertEquals(registeredUserInformationPage.getFirstNameFormatErrorMessage(), "The first name field is too long (255 chars max).");
+        assertEquals(registeredUserInformationPage.getNameFormatErrorMessage(), "The first name field is too long (255 chars max).");
+    }
+
+    //information edit test methods (male user) -> no last name
+    protected void editMaleUserDataWithNoLastNameTest(RegisterPage registerPage){
+        RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
+
+        //assert the male gender selector is displayed
+        assertTrue(registeredUserInformationPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed");
+        System.out.println("The male gender selector is displayed" + "\n");
+        registeredUserInformationPage.clickMaleGenderSelector();
+
+        //assert first name input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registeredUserInformationPage.inputEditedInformationDetailsNoLastName(registerPage);
+        registeredUserInformationPage.editFirstName();
+        //assert the first names were indeed changed
+        assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
+        System.out.println("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
+        System.out.println("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+
+        //assert last name input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
+        registeredUserInformationPage.editNoLastName();
+
+        //assert email address input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The email address input field isn't displayed");
+        System.out.println("The email address input field is displayed" + "\n");
+        registeredUserInformationPage.editEmailAddress();
+        //assert the email addresses were indeed changed
+        assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
+        System.out.println("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
+        System.out.println("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+
+        //assert password input field is displayed
+        assertTrue(registeredUserInformationPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
+        System.out.println("The password input field is displayed" + "\n");
+        registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
+        //assert 'Show' button is displayed
+        assertTrue(registeredUserInformationPage.isPasswordShowButtonDisplayed(), "The password 'Show' button isn't displayed");
+        System.out.println("The password 'Show' button is displayed");
+        registeredUserInformationPage.clickShowPassword();
+
+        //assert new password input field is displayed
+        assertTrue(registeredUserInformationPage.isNewPasswordInputFieldDisplayed(), "The new password input field isn't displayed");
+        System.out.println("The new password input field is displayed" + "\n");
+        registeredUserInformationPage.inputNewPassword();
+        //assert 'Show' button is displayed (new password)
+        assertTrue(registeredUserInformationPage.isNewPasswordShowButtonDisplayed(), "The new password 'Show' button isn't displayed");
+        System.out.println("The new password 'Show' button is displayed");
+        registeredUserInformationPage.clickShowNewPassword();
+        //assert the passwords were indeed changed
+        assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
+        System.out.println("Old password: " + registeredUserInformationPage.getPassword() + "\n");
+        System.out.println("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+
+        //assert birthdate input field is displayed
+        assertTrue(registeredUserInformationPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
+        System.out.println("The birthdate input field is displayed" + "\n");
+        registeredUserInformationPage.editBirthdate();
+        //assert the birthdate was indeed changed
+        assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
+        System.out.println("Old password: " + registeredUserInformationPage.getBirthDate() + "\n");
+        System.out.println("New password: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+
+        //assert 'Agree to Terms' checkbox is displayed
+        assertTrue(registeredUserInformationPage.isAgreeToTermsCheckboxDisplayed(), "The 'Receive Offers' checkbox isn't displayed");
+        System.out.println("The 'Receive Offers' checkbox is displayed" + "\n");
+        registeredUserInformationPage.clickAgreeToTermsCheckbox();
+        //assert 'Data Privacy' checkbox is displayed
+        assertTrue(registeredUserInformationPage.isDataPrivacyCheckboxDisplayed(), "The 'Data Privacy' checkbox isn't displayed");
+        System.out.println("The 'Data Privacy' checkbox is displayed" + "\n");
+        registeredUserInformationPage.clickDataPrivacyCheckbox();
+
+        //assert 'Save' button is displayed
+        assertTrue(registeredUserInformationPage.isSaveButtonDisplayed(), "The 'Save' button isn't displayed");
+        System.out.println("The 'Save' button is displayed" + "\n");
+        registeredUserInformationPage.clickSaveButton();
+    }
+
+    //information edit test methods (male user) -> invalid last name
+    protected void editMaleUserDataWithInvalidLastNameTest(RegisterPage registerPage){
+        RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
+
+        //assert the male gender selector is displayed
+        assertTrue(registeredUserInformationPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed");
+        System.out.println("The male gender selector is displayed" + "\n");
+        registeredUserInformationPage.clickMaleGenderSelector();
+
+        //assert first name input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registeredUserInformationPage.inputEditedInformationDetailsInvalidLastName(registerPage);
+        registeredUserInformationPage.editFirstName();
+        //assert the first names were indeed changed
+        assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
+        System.out.println("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
+        System.out.println("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+
+        //assert last name input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
+        registeredUserInformationPage.editInvalidLastName();
+
+        //assert email address input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The email address input field isn't displayed");
+        System.out.println("The email address input field is displayed" + "\n");
+        registeredUserInformationPage.editEmailAddress();
+        //assert the email addresses were indeed changed
+        assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
+        System.out.println("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
+        System.out.println("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+
+        //assert password input field is displayed
+        assertTrue(registeredUserInformationPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
+        System.out.println("The password input field is displayed" + "\n");
+        registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
+        //assert 'Show' button is displayed
+        assertTrue(registeredUserInformationPage.isPasswordShowButtonDisplayed(), "The password 'Show' button isn't displayed");
+        System.out.println("The password 'Show' button is displayed");
+        registeredUserInformationPage.clickShowPassword();
+
+        //assert new password input field is displayed
+        assertTrue(registeredUserInformationPage.isNewPasswordInputFieldDisplayed(), "The new password input field isn't displayed");
+        System.out.println("The new password input field is displayed" + "\n");
+        registeredUserInformationPage.inputNewPassword();
+        //assert 'Show' button is displayed (new password)
+        assertTrue(registeredUserInformationPage.isNewPasswordShowButtonDisplayed(), "The new password 'Show' button isn't displayed");
+        System.out.println("The new password 'Show' button is displayed");
+        registeredUserInformationPage.clickShowNewPassword();
+        //assert the passwords were indeed changed
+        assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
+        System.out.println("Old password: " + registeredUserInformationPage.getPassword() + "\n");
+        System.out.println("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+
+        //assert birthdate input field is displayed
+        assertTrue(registeredUserInformationPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
+        System.out.println("The birthdate input field is displayed" + "\n");
+        registeredUserInformationPage.editBirthdate();
+        //assert the birthdate was indeed changed
+        assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
+        System.out.println("Old password: " + registeredUserInformationPage.getBirthDate() + "\n");
+        System.out.println("New password: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+
+        //assert 'Agree to Terms' checkbox is displayed
+        assertTrue(registeredUserInformationPage.isAgreeToTermsCheckboxDisplayed(), "The 'Receive Offers' checkbox isn't displayed");
+        System.out.println("The 'Receive Offers' checkbox is displayed" + "\n");
+        registeredUserInformationPage.clickAgreeToTermsCheckbox();
+        //assert 'Data Privacy' checkbox is displayed
+        assertTrue(registeredUserInformationPage.isDataPrivacyCheckboxDisplayed(), "The 'Data Privacy' checkbox isn't displayed");
+        System.out.println("The 'Data Privacy' checkbox is displayed" + "\n");
+        registeredUserInformationPage.clickDataPrivacyCheckbox();
+
+        //assert 'Save' button is displayed
+        assertTrue(registeredUserInformationPage.isSaveButtonDisplayed(), "The 'Save' button isn't displayed");
+        System.out.println("The 'Save' button is displayed" + "\n");
+        registeredUserInformationPage.clickSaveButton();
+
+        //assert the error messages are as expected
+        assertEquals(registeredUserInformationPage.getDataErrorMessage(), "Could not update your information, please check your data.");
+        assertEquals(registeredUserInformationPage.getNameFormatErrorMessage(), "Invalid format.");
+    }
+
+    //information edit test methods (male user) -> invalid last name
+    protected void editMaleUserDataWithTooLongLastNameTest(RegisterPage registerPage){
+        RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
+
+        //assert the male gender selector is displayed
+        assertTrue(registeredUserInformationPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed");
+        System.out.println("The male gender selector is displayed" + "\n");
+        registeredUserInformationPage.clickMaleGenderSelector();
+
+        //assert first name input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
+        System.out.println("The first name input field is displayed" + "\n");
+        registeredUserInformationPage.inputEditedInformationDetailsTooLongLastName(registerPage);
+        registeredUserInformationPage.editFirstName();
+        //assert the first names were indeed changed
+        assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
+        System.out.println("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
+        System.out.println("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+
+        //assert last name input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The last name input field isn't displayed");
+        System.out.println("The last name input field is displayed" + "\n");
+        registeredUserInformationPage.editTooLongLastName();
+
+        //assert email address input field is displayed
+        assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The email address input field isn't displayed");
+        System.out.println("The email address input field is displayed" + "\n");
+        registeredUserInformationPage.editEmailAddress();
+        //assert the email addresses were indeed changed
+        assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
+        System.out.println("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
+        System.out.println("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+
+        //assert password input field is displayed
+        assertTrue(registeredUserInformationPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
+        System.out.println("The password input field is displayed" + "\n");
+        registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
+        //assert 'Show' button is displayed
+        assertTrue(registeredUserInformationPage.isPasswordShowButtonDisplayed(), "The password 'Show' button isn't displayed");
+        System.out.println("The password 'Show' button is displayed");
+        registeredUserInformationPage.clickShowPassword();
+
+        //assert new password input field is displayed
+        assertTrue(registeredUserInformationPage.isNewPasswordInputFieldDisplayed(), "The new password input field isn't displayed");
+        System.out.println("The new password input field is displayed" + "\n");
+        registeredUserInformationPage.inputNewPassword();
+        //assert 'Show' button is displayed (new password)
+        assertTrue(registeredUserInformationPage.isNewPasswordShowButtonDisplayed(), "The new password 'Show' button isn't displayed");
+        System.out.println("The new password 'Show' button is displayed");
+        registeredUserInformationPage.clickShowNewPassword();
+        //assert the passwords were indeed changed
+        assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
+        System.out.println("Old password: " + registeredUserInformationPage.getPassword() + "\n");
+        System.out.println("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+
+        //assert birthdate input field is displayed
+        assertTrue(registeredUserInformationPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
+        System.out.println("The birthdate input field is displayed" + "\n");
+        registeredUserInformationPage.editBirthdate();
+        //assert the birthdate was indeed changed
+        assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
+        System.out.println("Old password: " + registeredUserInformationPage.getBirthDate() + "\n");
+        System.out.println("New password: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+
+        //assert 'Agree to Terms' checkbox is displayed
+        assertTrue(registeredUserInformationPage.isAgreeToTermsCheckboxDisplayed(), "The 'Receive Offers' checkbox isn't displayed");
+        System.out.println("The 'Receive Offers' checkbox is displayed" + "\n");
+        registeredUserInformationPage.clickAgreeToTermsCheckbox();
+        //assert 'Data Privacy' checkbox is displayed
+        assertTrue(registeredUserInformationPage.isDataPrivacyCheckboxDisplayed(), "The 'Data Privacy' checkbox isn't displayed");
+        System.out.println("The 'Data Privacy' checkbox is displayed" + "\n");
+        registeredUserInformationPage.clickDataPrivacyCheckbox();
+
+        //assert 'Save' button is displayed
+        assertTrue(registeredUserInformationPage.isSaveButtonDisplayed(), "The 'Save' button isn't displayed");
+        System.out.println("The 'Save' button is displayed" + "\n");
+        registeredUserInformationPage.clickSaveButton();
+
+        //assert the error messages are as expected
+        assertEquals(registeredUserInformationPage.getDataErrorMessage(), "Could not update your information, please check your data.");
+        assertEquals(registeredUserInformationPage.getNameFormatErrorMessage(), "The last name field is too long (255 chars max).");
     }
 
 
