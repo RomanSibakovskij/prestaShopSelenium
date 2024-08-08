@@ -613,6 +613,32 @@ public class RegisteredUserInformationPage extends BasePage{
         newPasswordInputField.sendKeys(tooLongNewPassword);
     }
 
+    //invalid matching new password test methods
+    public void inputEditedInformationDetailsMatchingNewPassword(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        matchingNewPassword = registerPage.getPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + invalidPassword);
+        System.out.println("Matching new password: " + matchingNewPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editMatchingNewPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(newPasswordInputField));
+        password = newPasswordInputField.getAttribute("value");
+        newPasswordInputField.clear();
+        newPasswordInputField.sendKeys(matchingNewPassword);
+    }
+
 
 
     //information link assert method

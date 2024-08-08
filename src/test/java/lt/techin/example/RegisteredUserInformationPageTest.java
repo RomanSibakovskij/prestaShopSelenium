@@ -288,6 +288,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         editMaleUserDataWithInvalidNewPasswordTest(registerPage);
     }
 
+    //Test 060m -> edit registered user information (male user) with too long new password test
     @Test
     void editUserInformationMaleTooLongNewPasswordTest(){
         clickOnSignUpTest();
@@ -304,6 +305,25 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         navigateToInformationPage();
 
         editMaleUserDataWithTooLongNewPasswordTest(registerPage);
+    }
+
+    //Test 060n -> edit registered user information (male user) with matching new password test (info gets updated)
+    @Test
+    void editUserInformationMaleMatchingNewPasswordTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithMatchingNewPasswordTest(registerPage);
     }
 
     //Test 061 -> edit registered user information (female user) test
