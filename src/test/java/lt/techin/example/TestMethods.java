@@ -1827,8 +1827,7 @@ public class TestMethods extends BaseTest{
         System.out.println("The sort by price 'low to high' menu option is displayed" + "\n");
         registeredUserArtPage.clickPriceLowToHighOption();
         //assertEquals(registeredUserArtPage.getPriceLowToHighOptionText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
-        //remove search filter
-        registeredUserArtPage.clickRemoveSearchFilter();
+
     }
 
     protected void sortProductsByPriceHighToLowTest(){

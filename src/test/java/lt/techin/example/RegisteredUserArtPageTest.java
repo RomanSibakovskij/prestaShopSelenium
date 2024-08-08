@@ -1,11 +1,12 @@
 package lt.techin.example;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 006 -> navigate to Art page test
     @Test
+    @Tag("Navigation_To_Art_Page")
     void goToArtPageTest(){
         clickOnSignUpTest();
 
@@ -21,6 +22,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 007 -> filter product display by availability in stock (box icon)
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterByInStockBoxIconTest(){
         clickOnSignUpTest();
 
@@ -38,6 +40,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 007a -> filter product display by availability in stock (link)
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterByInStockLinkTest(){
         clickOnSignUpTest();
 
@@ -55,6 +58,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 008 -> filter product display by availability in stock (box icon)
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterByNewProductBoxIconTest(){
         clickOnSignUpTest();
 
@@ -72,6 +76,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 008a -> filter product display by availability in stock (link)
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterByNewProductLinkTest(){
         clickOnSignUpTest();
 
@@ -89,6 +94,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 009 -> filter product by price test
     @Test
+    @Tag("Filter_Products_By_Price_Slider")
     void filterProductsByPriceSliderTests() {
         clickOnSignUpTest();
 
@@ -106,6 +112,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 010 -> filter product by product composition test (box icon)
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterProductsByCompositionBoxIconTest() {
         clickOnSignUpTest();
 
@@ -123,6 +130,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 010a -> filter product by product composition test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterProductsByCompositionLinkTests() {
         clickOnSignUpTest();
 
@@ -140,6 +148,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 011 -> filter product by product composition test (box icon) (element click intercepted)
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterProductsByBrandBoxIconTest() {
         clickOnSignUpTest();
 
@@ -157,6 +166,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 011a -> filter product by product composition test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterProductsByBrandLinkTests() {
         clickOnSignUpTest();
 
@@ -174,6 +184,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 012 -> filter product by product composition test (box icon)
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterProductsByDimension1BoxIconTest() {
         clickOnSignUpTest();
 
@@ -191,6 +202,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 012a -> filter product by product composition test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterProductsByDimension1LinkTests() {
         clickOnSignUpTest();
 
@@ -208,6 +220,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 013 -> filter product by product composition test (box icon)
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterProductsByDimension2BoxIconTest() {
         clickOnSignUpTest();
 
@@ -225,6 +238,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 013a -> filter product by product composition test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterProductsByDimension2LinkTests() {
         clickOnSignUpTest();
 
@@ -242,6 +256,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 014 -> filter product by product composition test (box icon)
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterProductsByDimension3BoxIconTest() {
         clickOnSignUpTest();
 
@@ -259,6 +274,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 014a -> filter product by product composition test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterProductsByDimension3LinkTests() {
         clickOnSignUpTest();
 
@@ -276,6 +292,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 015 -> click on sort by dropdown menu test
     @Test
+    @Tag("Sort_By_Menu_Click_Test")
     void clickSortByMenuTest() {
         clickOnSignUpTest();
 
@@ -293,6 +310,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 015a -> sort products by sales test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void sortProductsBySalesTests() {
         clickOnSignUpTest();
 
@@ -310,6 +328,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 015b -> sort products by relevance test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void sortProductsByRelevanceTests() {
         clickOnSignUpTest();
 
@@ -327,6 +346,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 015c -> sort products by name (A to Z) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void sortProductsByNameAToZTests() {
         clickOnSignUpTest();
 
@@ -344,6 +364,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 015d -> sort products by name (Z to A) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void sortProductsByNameZToATests() {
         clickOnSignUpTest();
 
@@ -361,6 +382,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 015e -> sort products by price (low to high) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void sortProductsByPriceLowToHighTests() {
         clickOnSignUpTest();
 
@@ -378,6 +400,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 015f -> sort products by price (high to low) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void sortProductsByPriceHighToLowTests() {
         clickOnSignUpTest();
 
@@ -395,6 +418,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 015g -> sort products by relevance (a to z) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void sortProductsByRelevanceAToZTests() {
         clickOnSignUpTest();
 
@@ -412,6 +436,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
 
     //Test 015h -> sort products by relevance (z to a) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void sortProductsByRelevanceZToATests() {
         clickOnSignUpTest();
 
