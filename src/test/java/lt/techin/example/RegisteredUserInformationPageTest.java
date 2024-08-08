@@ -326,6 +326,44 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         editMaleUserDataWithMatchingNewPasswordTest(registerPage);
     }
 
+    //Test 060o -> edit registered user information (male user) with no birthdate test (info gets updated)
+    @Test
+    void editUserInformationMaleNoBirthDateTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithNoBirthDateTest(registerPage);
+    }
+
+    //Test 060p -> edit registered user information (male user) with invalid birthdate format test (info gets updated)
+    @Test
+    void editUserInformationMaleInvalidBirthDateTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithInvalidBirthDateTest(registerPage);
+    }
+
     //Test 061 -> edit registered user information (female user) test
     @Test
     void editRegisteredUserInformationFemaleTest(){

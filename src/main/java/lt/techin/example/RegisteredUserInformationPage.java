@@ -111,6 +111,8 @@ public class RegisteredUserInformationPage extends BasePage{
     private String invalidNewPassword;
     private String matchingNewPassword;
     private String tooLongNewPassword;
+    private String noBirthDate;
+    private String invalidBirthDate;
 
     public RegisteredUserInformationPage(WebDriver driver) {
         super(driver);
@@ -626,7 +628,7 @@ public class RegisteredUserInformationPage extends BasePage{
         System.out.println("Edited first name: " + editedFirstName);
         System.out.println("Edited last name: " + editedLastName);
         System.out.println("Edited email: " + editedEmailAddress);
-        System.out.println("Old password: " + invalidPassword);
+        System.out.println("Old password: " + password);
         System.out.println("Matching new password: " + matchingNewPassword);
         System.out.println("Edited birthdate: " + editedBirthDate);
     }
@@ -637,6 +639,58 @@ public class RegisteredUserInformationPage extends BasePage{
         password = newPasswordInputField.getAttribute("value");
         newPasswordInputField.clear();
         newPasswordInputField.sendKeys(matchingNewPassword);
+    }
+
+    //no birthdate test methods
+    public void inputEditedInformationDetailsNoBirthDate(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        noBirthDate = "";
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("No birthdate: " + editedBirthDate);
+    }
+
+    public void editNoBirthDate(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(birthDateInputField));
+        birthDate = birthDateInputField.getAttribute("value");
+        birthDateInputField.clear();
+        birthDateInputField.sendKeys(noBirthDate);
+    }
+
+    //no birthdate test methods
+    public void inputEditedInformationDetailsInvalidBirthDate(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        invalidBirthDate = "1000-01-01";
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Invalid birthdate: " + invalidBirthDate);
+    }
+
+    public void editInvalidBirthDate(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(birthDateInputField));
+        password = birthDateInputField.getAttribute("value");
+        birthDateInputField.clear();
+        birthDateInputField.sendKeys(invalidBirthDate);
     }
 
 
