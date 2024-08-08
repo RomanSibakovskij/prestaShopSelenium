@@ -174,7 +174,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         editMaleUserDataWithNoEmailTest(registerPage);
     }
 
-    //Test 060i -> edit registered user information (male user) with invalid email test
+    //Test 060h -> edit registered user information (male user) with invalid email test
     @Test
     void editUserInformationMaleInvalidEmailTest(){
         clickOnSignUpTest();
@@ -210,6 +210,44 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         navigateToInformationPage();
 
         editMaleUserDataWithTooLongEmailTest(registerPage);
+    }
+
+    //Test 060j -> edit registered user information (male user) with no password test
+    @Test
+    void editUserInformationMaleNoPasswordTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithNoPasswordTest(registerPage);
+    }
+
+    //Test 060k -> edit registered user information (male user) with invalid password test
+    @Test
+    void editUserInformationMaleInvalidPasswordTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithInvalidPasswordTest(registerPage);
     }
 
     //Test 061 -> edit registered user information (female user) test

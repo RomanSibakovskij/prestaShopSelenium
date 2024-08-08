@@ -101,6 +101,9 @@ public class RegisteredUserInformationPage extends BasePage{
     private String noEmail;
     private String invalidEmail;
     private String tooLongEmail;
+    private String noPassword;
+    private String invalidPassword;
+    private String tooLongPassword;
 
     public RegisteredUserInformationPage(WebDriver driver) {
         super(driver);
@@ -267,7 +270,7 @@ public class RegisteredUserInformationPage extends BasePage{
             i.printStackTrace(System.out);
         }
     }
-    //invalid first name format
+    //invalid first name format test methods
     public void inputEditedInformationDetailsInvalidFirstName(RegisterPage registerPage){
         invalidFirstName = "%$#";
         editedLastName = TestDataGenerator.generateRandomLastname(10);
@@ -292,7 +295,7 @@ public class RegisteredUserInformationPage extends BasePage{
         firstNameInputField.clear();
         firstNameInputField.sendKeys(invalidFirstName);
     }
-    //too long first name
+    //too long first name test methods
     public void inputEditedInformationDetailsTooLongFirstName(RegisterPage registerPage){
         tooLongFirstName = TestDataGenerator.generateRandomFirstname(256);
         editedLastName = TestDataGenerator.generateRandomLastname(10);
@@ -317,7 +320,7 @@ public class RegisteredUserInformationPage extends BasePage{
         firstNameInputField.clear();
         firstNameInputField.sendKeys(tooLongFirstName);
     }
-    //no last name
+    //no last name test methods
     public void inputEditedInformationDetailsNoLastName(RegisterPage registerPage){
         editedFirstName = TestDataGenerator.generateRandomFirstname(8);
         noLastName = "";
@@ -343,7 +346,7 @@ public class RegisteredUserInformationPage extends BasePage{
         lastNameInputField.sendKeys(noLastName);
     }
 
-    //invalid last name format
+    //invalid last name format test methods
     public void inputEditedInformationDetailsInvalidLastName(RegisterPage registerPage){
         editedFirstName = TestDataGenerator.generateRandomFirstname(8);
         invalidLastName = "@#$";
@@ -369,7 +372,7 @@ public class RegisteredUserInformationPage extends BasePage{
         lastNameInputField.sendKeys(invalidLastName);
     }
 
-    //too long last name
+    //too long last name test methods
     public void inputEditedInformationDetailsTooLongLastName(RegisterPage registerPage){
         editedFirstName = TestDataGenerator.generateRandomFirstname(8);
         tooLongLastName = TestDataGenerator.generateRandomLastname(256);
@@ -395,7 +398,7 @@ public class RegisteredUserInformationPage extends BasePage{
         lastNameInputField.sendKeys(tooLongLastName);
     }
 
-    //no email
+    //no email test methods
     public void inputEditedInformationDetailsNoEmail(RegisterPage registerPage){
         editedFirstName = TestDataGenerator.generateRandomFirstname(8);
         editedLastName = TestDataGenerator.generateRandomLastname(10);
@@ -421,7 +424,7 @@ public class RegisteredUserInformationPage extends BasePage{
         emailAddressInputField.sendKeys(noEmail);
     }
 
-    //invalid email
+    //invalid email test methods
     public void inputEditedInformationDetailsInvalidEmail(RegisterPage registerPage){
         editedFirstName = TestDataGenerator.generateRandomFirstname(8);
         editedLastName = TestDataGenerator.generateRandomLastname(10);
@@ -447,7 +450,7 @@ public class RegisteredUserInformationPage extends BasePage{
         emailAddressInputField.sendKeys(invalidEmail);
     }
 
-    //too long email
+    //too long email test methods
     public void inputEditedInformationDetailsTooLongEmail(RegisterPage registerPage){
         editedFirstName = TestDataGenerator.generateRandomFirstname(8);
         editedLastName = TestDataGenerator.generateRandomLastname(10);
@@ -471,6 +474,58 @@ public class RegisteredUserInformationPage extends BasePage{
         emailAddress = emailAddressInputField.getAttribute("value");
         emailAddressInputField.clear();
         emailAddressInputField.sendKeys(tooLongEmail);
+    }
+
+    //no password test methods
+    public void inputEditedInformationDetailsNoPassword(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        noPassword = "";
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("No password: " + noPassword);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editNoPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        password = passwordInputField.getAttribute("value");
+        passwordInputField.clear();
+        passwordInputField.sendKeys(noPassword);
+    }
+
+    //no password test methods
+    public void inputEditedInformationDetailsInvalidPassword(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        invalidPassword = "FDFSDF2323_";
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Invalid password: " + invalidPassword);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editInvalidPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(passwordInputField));
+        password = passwordInputField.getAttribute("value");
+        passwordInputField.clear();
+        passwordInputField.sendKeys(invalidPassword);
     }
 
 
