@@ -364,6 +364,25 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         editMaleUserDataWithInvalidBirthDateTest(registerPage);
     }
 
+    //Test 060q -> edit registered user information (female user) without clicking required checkboxes
+    @Test
+    void editUserInformationFemaleNoRequiredCheckboxesTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editFemaleUserDataWithValidDataNoCheckboxesTest(registerPage);
+    }
+
     //Test 061 -> edit registered user information (female user) test
     @Test
     void editRegisteredUserInformationFemaleTest(){
