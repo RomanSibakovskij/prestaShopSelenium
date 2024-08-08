@@ -2,7 +2,7 @@ package lt.techin.example;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestMethods extends BaseTest{
+public class TestMethods extends BaseTest {
 
 
     //sign up test methods
@@ -16,7 +16,7 @@ public class TestMethods extends BaseTest{
         homePage.clickSignUpLink();
     }
 
-    protected void createNewMaleUserAccountTest(RegisterPage registerPage){
+    protected void createNewMaleUserAccountTest(RegisterPage registerPage) {
 
 //        //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -75,7 +75,7 @@ public class TestMethods extends BaseTest{
         //registerPage.clickSignUpForNewsletterCheckbox();
 
         //assert 'Customer data privacy' checkbox is present
-       // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
+        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
         System.out.println("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
 
@@ -86,11 +86,11 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void createNewFemaleUserAccountTest(RegisterPage registerPage){
+    protected void createNewFemaleUserAccountTest(RegisterPage registerPage) {
 
 //        //assert first name input field is present
-       // assertTrue(registerPage.isFemaleGenderSelectorDisplayed(), "The female gender selector isn't displayed"); // -> assert cause the click to fail
-       // System.out.println("The female gender selector is displayed" + "\n");
+        // assertTrue(registerPage.isFemaleGenderSelectorDisplayed(), "The female gender selector isn't displayed"); // -> assert cause the click to fail
+        // System.out.println("The female gender selector is displayed" + "\n");
         registerPage.selectFemaleGender();
 
         //assert first name input field is displayed
@@ -125,8 +125,8 @@ public class TestMethods extends BaseTest{
 //        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
 
         //assert 'Agree to terms' checkbox is displayed
-       // assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed"); // -> assert cause the click to fail
-       // System.out.println("The 'Agree to terms' checkbox is displayed" + "\n");
+        // assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed"); // -> assert cause the click to fail
+        // System.out.println("The 'Agree to terms' checkbox is displayed" + "\n");
         registerPage.clickAgreeToTermsCheckbox();
 
         //assert 'Customer data privacy' checkbox is present
@@ -141,7 +141,7 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void logoutFromUserAccountTest(){
+    protected void logoutFromUserAccountTest() {
         HomePage homePage = new HomePage(driver);
         //assert 'Sign out' link is present
         assertTrue(homePage.isSignOutLinkDisplayed(), "The sign out link isn't displayed");
@@ -149,7 +149,7 @@ public class TestMethods extends BaseTest{
         homePage.clickSignOutLink();
     }
 
-    protected void clickSignInRegisteredUserTest(){
+    protected void clickSignInRegisteredUserTest() {
         HomePage homePage = new HomePage(driver);
         //assert sign in link is displayed
         assertTrue(homePage.isSignInLinkDisplayed(), "The 'Sign In' link isn't displayed");
@@ -157,7 +157,7 @@ public class TestMethods extends BaseTest{
         homePage.clickSignInLink();
     }
 
-    protected void logInRegisteredUserTest(RegisterPage registerPage){
+    protected void logInRegisteredUserTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
         //assert email input field is displayed
@@ -182,7 +182,7 @@ public class TestMethods extends BaseTest{
     }
 
     // negative test methods for user registration -> no input at the singular field
-    protected void createNewUserAccountNoGenderTest(RegisterPage registerPage){
+    protected void createNewUserAccountNoGenderTest(RegisterPage registerPage) {
 
         //assert first name input field is displayed
         assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
@@ -242,7 +242,7 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void createNewUserAccountNoFirstNameTest(RegisterPage registerPage){
+    protected void createNewUserAccountNoFirstNameTest(RegisterPage registerPage) {
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -301,7 +301,7 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void createNewUserAccountNoLastNameTest(RegisterPage registerPage){
+    protected void createNewUserAccountNoLastNameTest(RegisterPage registerPage) {
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -360,7 +360,7 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void createNewUserAccountNoEmailTest(RegisterPage registerPage){
+    protected void createNewUserAccountNoEmailTest(RegisterPage registerPage) {
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -419,7 +419,7 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void createNewUserAccountNoPasswordTest(RegisterPage registerPage){
+    protected void createNewUserAccountNoPasswordTest(RegisterPage registerPage) {
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -478,7 +478,7 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void createNewUserAccountNoReceiveOffersCheckboxTest(RegisterPage registerPage){
+    protected void createNewUserAccountNoReceiveOffersCheckboxTest(RegisterPage registerPage) {
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -537,7 +537,7 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void createNewUserAccountNoAgreeToTermsCheckboxTest(RegisterPage registerPage){
+    protected void createNewUserAccountNoAgreeToTermsCheckboxTest(RegisterPage registerPage) {
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -596,7 +596,7 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void createNewUserAccountNoNewsletterSignUpCheckboxTest(RegisterPage registerPage){
+    protected void createNewUserAccountNoNewsletterSignUpCheckboxTest(RegisterPage registerPage) {
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -655,7 +655,7 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void createNewUserAccountNoCustomerDataCheckboxTest(RegisterPage registerPage){
+    protected void createNewUserAccountNoCustomerDataCheckboxTest(RegisterPage registerPage) {
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -714,7 +714,7 @@ public class TestMethods extends BaseTest{
         registerPage.clickSaveButton();
     }
 
-    protected void createNewUserAccountWithTooLongFirNameTest(RegisterPage registerPage){
+    protected void createNewUserAccountWithTooLongFirNameTest(RegisterPage registerPage) {
 
 //        //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -788,7 +788,7 @@ public class TestMethods extends BaseTest{
         assertEquals(registerPage.getTooLongFirstNameMessage(), "The first name field is too long (255 chars max).");
     }
 
-    protected void createNewUserAccountWithTooLongLastNameTest(RegisterPage registerPage){
+    protected void createNewUserAccountWithTooLongLastNameTest(RegisterPage registerPage) {
 
 //        //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -862,7 +862,7 @@ public class TestMethods extends BaseTest{
         assertEquals(registerPage.getTooLongLastNameMessage(), "The last name field is too long (255 chars max).");
     }
 
-    protected void createNewUserAccountWithTooLongEmailTest(RegisterPage registerPage){
+    protected void createNewUserAccountWithTooLongEmailTest(RegisterPage registerPage) {
 
 //        //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -936,7 +936,7 @@ public class TestMethods extends BaseTest{
         assertEquals(registerPage.getTooLongEmailAddressMessage(), "The email field is too long (255 chars max).");
     }
 
-    protected void createNewUserAccountWithInvalidEmailTest(RegisterPage registerPage){
+    protected void createNewUserAccountWithInvalidEmailTest(RegisterPage registerPage) {
 
 //        //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -1010,7 +1010,7 @@ public class TestMethods extends BaseTest{
         assertEquals(registerPage.getInvalidEmailMessage(), "Invalid format.");
     }
 
-    protected void createNewUserAccountWithTooShortPasswordTest(RegisterPage registerPage){
+    protected void createNewUserAccountWithTooShortPasswordTest(RegisterPage registerPage) {
 
 //        //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -1079,7 +1079,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registerPage.getInvalidLengthPasswordMessage(), "Password must be between 8 and 72 characters long");
     }
 
-    protected void createNewUserAccountWithTooLongPasswordTest(RegisterPage registerPage){
+    protected void createNewUserAccountWithTooLongPasswordTest(RegisterPage registerPage) {
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -1148,7 +1148,7 @@ public class TestMethods extends BaseTest{
         assertEquals(registerPage.getInvalidLengthPasswordMessage(), "Password must be between 8 and 72 characters long");
     }
 
-    protected void createNewUserAccountWithInvalidBirthdateTest(RegisterPage registerPage){
+    protected void createNewUserAccountWithInvalidBirthdateTest(RegisterPage registerPage) {
 
 //        //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -1218,7 +1218,7 @@ public class TestMethods extends BaseTest{
     }
 
     // negative registered user login test methods -> invalid / no input
-    protected void logInRegisteredUserWithInvalidEmailTest(RegisterPage registerPage){
+    protected void logInRegisteredUserWithInvalidEmailTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
         //assert email input field is displayed
@@ -1236,7 +1236,8 @@ public class TestMethods extends BaseTest{
         System.out.println("The 'Sign in ' button is present" + "\n");
         loginPage.clickSignInButton();
     }
-    protected void logInRegisteredUserWithExistingEmailTest(RegisterPage registerPage){
+
+    protected void logInRegisteredUserWithExistingEmailTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
         //assert email input field is displayed
@@ -1255,7 +1256,7 @@ public class TestMethods extends BaseTest{
         loginPage.clickSignInButton();
     }
 
-    protected void logInRegisteredUserWithNoEmailTest(RegisterPage registerPage){
+    protected void logInRegisteredUserWithNoEmailTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
         //assert email input field is displayed
@@ -1274,7 +1275,7 @@ public class TestMethods extends BaseTest{
         loginPage.clickSignInButton();
     }
 
-    protected void logInRegisteredUserInvalidPasswordTest(RegisterPage registerPage){
+    protected void logInRegisteredUserInvalidPasswordTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
         //assert email input field is displayed
@@ -1293,7 +1294,7 @@ public class TestMethods extends BaseTest{
         loginPage.clickSignInButton();
     }
 
-    protected void logInRegisteredUserNoPasswordTest(RegisterPage registerPage){
+    protected void logInRegisteredUserNoPasswordTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
         //assert email input field is displayed
@@ -1317,7 +1318,7 @@ public class TestMethods extends BaseTest{
     //search catalog test methods
 
     // mugs test methods
-    protected void searchForMugBestInSearchCatalogTest(){
+    protected void searchForMugBestInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1327,10 +1328,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getMugTheBestQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getMugTheBestQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getMugTheBestQuery() + " isn't present in search result");
     }
 
-    protected void searchForMugAdventureInSearchCatalogTest(){
+    protected void searchForMugAdventureInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1340,10 +1341,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getMugAdventureQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getMugAdventureQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getMugAdventureQuery() + " isn't present in search result");
     }
 
-    protected void searchForMugGoodDayInSearchCatalogTest(){
+    protected void searchForMugGoodDayInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1353,10 +1354,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getMugGoodDayQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getMugGoodDayQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getMugGoodDayQuery() + " isn't present in search result");
     }
 
-    protected void searchForMugCustomTextInSearchCatalogTest(){
+    protected void searchForMugCustomTextInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1366,12 +1367,12 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getMugCustomTextQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getMugCustomTextQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getMugCustomTextQuery() + " isn't present in search result");
     }
 
     //posters test methods
 
-    protected void searchForPosterBestInSearchCatalogTest(){
+    protected void searchForPosterBestInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1381,10 +1382,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getPosterTheBestQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getPosterTheBestQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getPosterTheBestQuery() + " isn't present in search result");
     }
 
-    protected void searchForPosterAdventureInSearchCatalogTest(){
+    protected void searchForPosterAdventureInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1394,10 +1395,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getPosterAdventureQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getPosterAdventureQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getPosterAdventureQuery() + " isn't present in search result");
     }
 
-    protected void searchForPosterGoodDayInSearchCatalogTest(){
+    protected void searchForPosterGoodDayInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1407,11 +1408,11 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getPosterGoodDayQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getPosterGoodDayQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getPosterGoodDayQuery() + " isn't present in search result");
     }
 
     //cushion test methods
-    protected void searchForCushionFoxInSearchCatalogTest(){
+    protected void searchForCushionFoxInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1421,10 +1422,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getCushionFoxQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getCushionFoxQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getCushionFoxQuery() + " isn't present in search result");
     }
 
-    protected void searchForCushionBearInSearchCatalogTest(){
+    protected void searchForCushionBearInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1434,10 +1435,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getCushionBearQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getCushionBearQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getCushionBearQuery() + " isn't present in search result");
     }
 
-    protected void searchForCushionBirdInSearchCatalogTest(){
+    protected void searchForCushionBirdInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1447,11 +1448,11 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getCushionBirdQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getCushionBirdQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getCushionBirdQuery() + " isn't present in search result");
     }
 
     //t-shirt test method
-    protected void searchForTShirtInSearchCatalogTest(){
+    protected void searchForTShirtInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1461,11 +1462,11 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getTShirtQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getTShirtQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getTShirtQuery() + " isn't present in search result");
     }
 
     //sweater test method
-    protected void searchForSweaterBirdInSearchCatalogTest(){
+    protected void searchForSweaterBirdInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1475,11 +1476,11 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getSweaterQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getSweaterQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getSweaterQuery() + " isn't present in search result");
     }
 
     //graphics test methods
-    protected void searchForGraphicsFoxInSearchCatalogTest(){
+    protected void searchForGraphicsFoxInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1489,10 +1490,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getGraphicsFoxQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getGraphicsFoxQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getGraphicsFoxQuery() + " isn't present in search result");
     }
 
-    protected void searchForGraphicsBearInSearchCatalogTest(){
+    protected void searchForGraphicsBearInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1502,10 +1503,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getGraphicsBearQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getGraphicsBearQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getGraphicsBearQuery() + " isn't present in search result");
     }
 
-    protected void searchForGraphicsBirdInSearchCatalogTest(){
+    protected void searchForGraphicsBirdInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1515,11 +1516,11 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getGraphicsBirdQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getGraphicsBirdQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getGraphicsBirdQuery() + " isn't present in search result");
     }
 
     //notebooks test methods
-    protected void searchForNotebookFoxInSearchCatalogTest(){
+    protected void searchForNotebookFoxInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1529,10 +1530,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getNotebookFoxQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getNotebookFoxQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getNotebookFoxQuery() + " isn't present in search result");
     }
 
-    protected void searchForNotebookBearInSearchCatalogTest(){
+    protected void searchForNotebookBearInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1542,10 +1543,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getNotebookBearQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getNotebookBearQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getNotebookBearQuery() + " isn't present in search result");
     }
 
-    protected void searchForNotebookBirdInSearchCatalogTest(){
+    protected void searchForNotebookBirdInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1555,10 +1556,10 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getNotebookBirdQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getNotebookBirdQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getNotebookBirdQuery() + " isn't present in search result");
     }
 
-    protected void searchForPackQueryInSearchCatalogTest(){
+    protected void searchForPackQueryInSearchCatalogTest() {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
@@ -1568,19 +1569,16 @@ public class TestMethods extends BaseTest{
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getPackSearchQuery());
-        assertTrue(isProductFound, "The product with the name " +  registeredUserSearchCatalogPage.getPackSearchQuery() + " isn't present in search result");
+        assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getPackSearchQuery() + " isn't present in search result");
     }
-
-
 
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
     // art page test methods
 
-    protected void navigateToArtPageTest(){
+    protected void navigateToArtPageTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
         assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
@@ -1589,7 +1587,7 @@ public class TestMethods extends BaseTest{
     }
 
     // filter products by test methods
-    protected void filterProductsByInStockBoxIconLinkTest(){
+    protected void filterProductsByInStockBoxIconLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserArtPage.isInStockBoxIconLinkPresent(), "The 'In stock' box icon link isn't displayed");
@@ -1599,7 +1597,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
     }
 
-    protected void filterProductsByInStockLinkTest(){
+    protected void filterProductsByInStockLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserArtPage.isInStockLinkPresent(), "The 'In stock' link isn't displayed");
@@ -1611,7 +1609,7 @@ public class TestMethods extends BaseTest{
         registeredUserArtPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductsByNewProductBoxIconLinkTest(){
+    protected void filterProductsByNewProductBoxIconLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserArtPage.isNewProductBoxIconLinkPresent(), "The 'New product' box icon link isn't displayed");
@@ -1621,7 +1619,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getSelectionsFilterMessage(), "Selections: New product");
     }
 
-    protected void filterProductsByNewProductLinkTest(){
+    protected void filterProductsByNewProductLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserArtPage.isNewProductLinkPresent(), "The 'New product' link isn't displayed");
@@ -1634,7 +1632,7 @@ public class TestMethods extends BaseTest{
     }
 
     //filter products by price slider
-    protected void filterProductsByPriceSliderTest(){
+    protected void filterProductsByPriceSliderTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by price slider is displayed
         assertTrue(registeredUserArtPage.isPriceSliderDisplayed(), "The price slider isn't displayed");
@@ -1645,7 +1643,7 @@ public class TestMethods extends BaseTest{
         registeredUserArtPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductsByCompositionLinkTest(){
+    protected void filterProductsByCompositionLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by matt paper choice is displayed
         assertTrue(registeredUserArtPage.isCompositionLinkPresent(), "The 'Matt paper' link isn't displayed");
@@ -1657,7 +1655,7 @@ public class TestMethods extends BaseTest{
         registeredUserArtPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductsByCompositionBoxIconLinkTest(){
+    protected void filterProductsByCompositionBoxIconLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by matt paper choice is displayed
         assertTrue(registeredUserArtPage.isCompositionBoxIconLinkDisplayed(), "The 'Matt paper' box icon link isn't displayed");
@@ -1667,7 +1665,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getCompositionFilterMessage(), "Composition: Matt paper");
     }
 
-    protected void filterProductsByBrandLinkTest(){
+    protected void filterProductsByBrandLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by graphic corner choice is displayed
         assertTrue(registeredUserArtPage.isBrandLinkPresent(), "The 'Graphic Corner' link isn't displayed");
@@ -1679,7 +1677,7 @@ public class TestMethods extends BaseTest{
         registeredUserArtPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductsByBrandBoxIconLinkTest(){
+    protected void filterProductsByBrandBoxIconLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by graphic corner choice is displayed
         assertTrue(registeredUserArtPage.isBrandBoxIconLinkDisplayed(), "The 'Graphic Corner' box icon link isn't displayed");
@@ -1690,7 +1688,7 @@ public class TestMethods extends BaseTest{
 
     }
 
-    protected void filterProductsByDimension1LinkTest(){
+    protected void filterProductsByDimension1LinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '40x60 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionLink1Present(), "The '40x60 cm' link isn't displayed");
@@ -1702,7 +1700,7 @@ public class TestMethods extends BaseTest{
         registeredUserArtPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductsByDimension1BoxIconLinkTest(){
+    protected void filterProductsByDimension1BoxIconLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '40x60 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionBoxIconLink1Present(), "The '40x60 cm' box icon link isn't displayed");
@@ -1714,7 +1712,7 @@ public class TestMethods extends BaseTest{
         registeredUserArtPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductsByDimension2LinkTest(){
+    protected void filterProductsByDimension2LinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '60x90 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionLink2Present(), "The '60x90 cm' link isn't displayed");
@@ -1726,7 +1724,7 @@ public class TestMethods extends BaseTest{
         registeredUserArtPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductsByDimension2BoxIconLinkTest(){
+    protected void filterProductsByDimension2BoxIconLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '60x90 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionBoxIconLink2Present(), "The '60x90 cm' box icon link isn't displayed");
@@ -1738,7 +1736,7 @@ public class TestMethods extends BaseTest{
         registeredUserArtPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductsByDimension3LinkTest(){
+    protected void filterProductsByDimension3LinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '80x120 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionLink3Present(), "The '80x120 cm' link isn't displayed");
@@ -1750,7 +1748,7 @@ public class TestMethods extends BaseTest{
         registeredUserArtPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductsByDimension3BoxIconLinkTest(){
+    protected void filterProductsByDimension3BoxIconLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '80x120 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionBoxIconLink3Present(), "The '80x120 cm' box icon link isn't displayed");
@@ -1764,7 +1762,7 @@ public class TestMethods extends BaseTest{
 
     // dropdown menu test methods
 
-    protected void clickSortByDropdownMenuTest(){
+    protected void clickSortByDropdownMenuTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the dropdown is displayed
         assertTrue(registeredUserArtPage.isSortByDropDownMenuPresent(), "The 'Sort By' dropdown menu isn't displayed");
@@ -1774,7 +1772,7 @@ public class TestMethods extends BaseTest{
 
     //menu options test methods
 
-    protected void sortProductsBySalesTest(){
+    protected void sortProductsBySalesTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
@@ -1785,7 +1783,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortProductsByRelevanceTest(){
+    protected void sortProductsByRelevanceTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
@@ -1796,7 +1794,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortProductsByNameAToZTest(){
+    protected void sortProductsByNameAToZTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
@@ -1807,7 +1805,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getNameAToZOptionText(), "Name,A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortProductsByNameZToATest(){
+    protected void sortProductsByNameZToATest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
@@ -1818,7 +1816,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getNameAToZOptionText(), "Name,Z to A"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortProductsByPriceLowToHighTest(){
+    protected void sortProductsByPriceLowToHighTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
@@ -1830,7 +1828,7 @@ public class TestMethods extends BaseTest{
 
     }
 
-    protected void sortProductsByPriceHighToLowTest(){
+    protected void sortProductsByPriceHighToLowTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
@@ -1841,7 +1839,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getPriceHighToLowOptionText(), "Price,high to low"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortProductsByReferenceAToZTest(){
+    protected void sortProductsByReferenceAToZTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
@@ -1852,7 +1850,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getReferenceAToZOptionText(), "Reference,a to z"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortProductsByReferenceZToATest(){
+    protected void sortProductsByReferenceZToATest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
@@ -1863,7 +1861,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserArtPage.getReferenceZToAOptionText(), "Reference,z to a"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void selectBestYetToComePosterLinkTest(){
+    protected void selectBestYetToComePosterLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
         assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
@@ -1960,7 +1958,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(productOrderPage.getOrderConfirmationMessage(), "\uE876"); // -? element cannot be found for some reason
     }
 
-    protected void selectBestYetToComePosterBoxIconTest(){
+    protected void selectBestYetToComePosterBoxIconTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
         assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
@@ -2056,7 +2054,8 @@ public class TestMethods extends BaseTest{
         //assert the order confirmation message is displayed as expected
         //assertEquals(productOrderPage.getOrderConfirmationMessage(), "\uE876"); // -? element cannot be found for some reason
     }
-    protected void selectBestYetToComePayByCashTest(){
+
+    protected void selectBestYetToComePayByCashTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
         assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
@@ -2201,7 +2200,7 @@ public class TestMethods extends BaseTest{
 
     //registered user accessories page navigation test method
 
-    protected void navigateToAccessoriesPageTest(){
+    protected void navigateToAccessoriesPageTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert accessories link is displayed on navbar
@@ -2212,7 +2211,7 @@ public class TestMethods extends BaseTest{
 
     //registered user stationary accessories page navigation test methods
 
-    protected void navigateToStationaryAccessoriesPageLink1Test(){
+    protected void navigateToStationaryAccessoriesPageLink1Test() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert accessories link is displayed on navbar
@@ -2221,7 +2220,7 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickStationaryAccessoriesPageLink1();
     }
 
-    protected void navigateToStationaryAccessoriesPageLink2Test(){
+    protected void navigateToStationaryAccessoriesPageLink2Test() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert accessories link is displayed on navbar
@@ -2230,7 +2229,7 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickStationaryAccessoriesPageLink2();
     }
 
-    protected void navigateToStationaryAccessoriesPageBoxIconTest(){
+    protected void navigateToStationaryAccessoriesPageBoxIconTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert accessories link is displayed on navbar
@@ -2241,7 +2240,7 @@ public class TestMethods extends BaseTest{
 
     // stationary accessories product filter by test methods
 
-    protected void filterProductByAvailabilityBoxIconTest(){
+    protected void filterProductByAvailabilityBoxIconTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'in stock' box icon is displayed
@@ -2254,7 +2253,7 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductByAvailabilityLinkTest(){
+    protected void filterProductByAvailabilityLinkTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'in stock' link is displayed
@@ -2268,7 +2267,7 @@ public class TestMethods extends BaseTest{
 
     }
 
-    protected void filterProductBySelectionsBoxIconTest(){
+    protected void filterProductBySelectionsBoxIconTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2282,7 +2281,7 @@ public class TestMethods extends BaseTest{
 
     }
 
-    protected void filterProductBySelectionsLinkTest(){
+    protected void filterProductBySelectionsLinkTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' link is displayed
@@ -2296,7 +2295,7 @@ public class TestMethods extends BaseTest{
 
     }
 
-    protected void filterProductByPriceSliderTest(){
+    protected void filterProductByPriceSliderTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' link is displayed
@@ -2310,7 +2309,7 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductByPaperType1BoxIconTest(){
+    protected void filterProductByPaperType1BoxIconTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2324,7 +2323,7 @@ public class TestMethods extends BaseTest{
 
     }
 
-    protected void filterProductByPaperType1LinkTest(){
+    protected void filterProductByPaperType1LinkTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' link is displayed
@@ -2338,7 +2337,7 @@ public class TestMethods extends BaseTest{
 
     }
 
-    protected void filterProductByPaperType2BoxIconTest(){
+    protected void filterProductByPaperType2BoxIconTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2351,7 +2350,7 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductByPaperType2LinkTest(){
+    protected void filterProductByPaperType2LinkTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' link is displayed
@@ -2364,7 +2363,7 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductByPaperType3BoxIconTest(){
+    protected void filterProductByPaperType3BoxIconTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2377,7 +2376,7 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductByPaperType3LinkTest(){
+    protected void filterProductByPaperType3LinkTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' link is displayed
@@ -2390,7 +2389,7 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductByPaperType4BoxIconTest(){
+    protected void filterProductByPaperType4BoxIconTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2403,7 +2402,7 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterProductByPaperType4LinkTest(){
+    protected void filterProductByPaperType4LinkTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' link is displayed
@@ -2418,7 +2417,7 @@ public class TestMethods extends BaseTest{
 
     // dropdown menu test method
 
-    protected void clickStAccessoriesSortByDropdownMenuTest(){
+    protected void clickStAccessoriesSortByDropdownMenuTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
         //assert the dropdown is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
@@ -2428,7 +2427,7 @@ public class TestMethods extends BaseTest{
 
     //stationary accessories dropdown menu options test methods
 
-    protected void sortStAccessoriesProductsBySalesTest(){
+    protected void sortStAccessoriesProductsBySalesTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
@@ -2440,7 +2439,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortStAccessoriesProductsByRelevanceTest(){
+    protected void sortStAccessoriesProductsByRelevanceTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
@@ -2452,7 +2451,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortStAccessoriesProductsByNameAToZTest(){
+    protected void sortStAccessoriesProductsByNameAToZTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
@@ -2464,7 +2463,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesNameAToZOptionText(), "Name,A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortStAccessoriesProductsByNameZToATest(){
+    protected void sortStAccessoriesProductsByNameZToATest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
@@ -2476,7 +2475,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesNameZtoAOptionText(), "Name,Z to A"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortStAccessoriesProductsByPriceLowToHighTest(){
+    protected void sortStAccessoriesProductsByPriceLowToHighTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
@@ -2488,7 +2487,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesPriceLowToHighText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortStAccessoriesProductsByPriceHighToLowTest(){
+    protected void sortStAccessoriesProductsByPriceHighToLowTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
@@ -2500,7 +2499,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesPriceHighToLowText(), "Price,high to low"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortStAccessoriesProductsByReferenceAToZTest(){
+    protected void sortStAccessoriesProductsByReferenceAToZTest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
@@ -2512,7 +2511,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesReferenceAToZText(), "Reference,A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortStAccessoriesProductsByReferenceZToATest(){
+    protected void sortStAccessoriesProductsByReferenceZToATest() {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
@@ -2528,7 +2527,7 @@ public class TestMethods extends BaseTest{
 
     //registered user home accessories page navigation test methods
 
-    protected void navigateToHomeAccessoriesPageLink1Test(){
+    protected void navigateToHomeAccessoriesPageLink1Test() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert accessories link is displayed on navbar
@@ -2537,7 +2536,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesPageLink1();
     }
 
-    protected void navigateToHomeAccessoriesPageLink2Test(){
+    protected void navigateToHomeAccessoriesPageLink2Test() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert accessories link is displayed on navbar
@@ -2546,7 +2545,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesPageLink2();
     }
 
-    protected void navigateToHomeAccessoriesPageBoxIconTest(){
+    protected void navigateToHomeAccessoriesPageBoxIconTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert accessories link is displayed on navbar
@@ -2558,7 +2557,7 @@ public class TestMethods extends BaseTest{
 
     //registered user home accessories test methods
 
-    protected void filterHmAccProductByAvailabilityLinkTest(){
+    protected void filterHmAccProductByAvailabilityLinkTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'in stock' link is displayed
@@ -2571,7 +2570,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByAvailabilityBoxIconTest(){
+    protected void filterHmAccProductByAvailabilityBoxIconTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2584,7 +2583,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductBySelectionsLinkTest(){
+    protected void filterHmAccProductBySelectionsLinkTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'in stock' link is displayed
@@ -2597,7 +2596,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductBySelectionsBoxIconTest(){
+    protected void filterHmAccProductBySelectionsBoxIconTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2610,7 +2609,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByPriceSliderTest(){
+    protected void filterHmAccProductByPriceSliderTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' link is displayed
@@ -2624,7 +2623,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByWhiteColorLinkTest(){
+    protected void filterHmAccProductByWhiteColorLinkTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'in stock' link is displayed
@@ -2637,7 +2636,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByWhiteColorBoxIconTest(){
+    protected void filterHmAccProductByWhiteColorBoxIconTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2650,7 +2649,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByBlackColorLinkTest(){
+    protected void filterHmAccProductByBlackColorLinkTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'in stock' link is displayed
@@ -2663,7 +2662,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByBlackColorBoxIconTest(){
+    protected void filterHmAccProductByBlackColorBoxIconTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2676,7 +2675,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByCeramicLinkTest(){
+    protected void filterHmAccProductByCeramicLinkTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'in stock' link is displayed
@@ -2689,7 +2688,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByCeramicBoxIconTest(){
+    protected void filterHmAccProductByCeramicBoxIconTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2702,7 +2701,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByPolyesterLinkTest(){
+    protected void filterHmAccProductByPolyesterLinkTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'in stock' link is displayed
@@ -2715,7 +2714,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByPolyesterBoxIconTest(){
+    protected void filterHmAccProductByPolyesterBoxIconTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2728,7 +2727,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByRemovableCoverLinkTest(){
+    protected void filterHmAccProductByRemovableCoverLinkTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'in stock' link is displayed
@@ -2741,7 +2740,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByRemovableCoverBoxIconTest(){
+    protected void filterHmAccProductByRemovableCoverBoxIconTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2754,7 +2753,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByStudioDesignLinkTest(){
+    protected void filterHmAccProductByStudioDesignLinkTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'in stock' link is displayed
@@ -2767,7 +2766,7 @@ public class TestMethods extends BaseTest{
         registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterHmAccProductByStudioDesignBoxIconTest(){
+    protected void filterHmAccProductByStudioDesignBoxIconTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
@@ -2782,7 +2781,7 @@ public class TestMethods extends BaseTest{
 
     // dropdown menu test method
 
-    protected void clickHmAccessoriesSortByDropdownMenuTest(){
+    protected void clickHmAccessoriesSortByDropdownMenuTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
         //assert the dropdown is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
@@ -2792,7 +2791,7 @@ public class TestMethods extends BaseTest{
 
     //home accessories dropdown menu options test methods
 
-    protected void sortHmAccessoriesProductsBySalesTest(){
+    protected void sortHmAccessoriesProductsBySalesTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
@@ -2804,7 +2803,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortHmAccessoriesProductsByRelevanceTest(){
+    protected void sortHmAccessoriesProductsByRelevanceTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
@@ -2816,7 +2815,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortHmAccessoriesProductsByNameAToZTest(){
+    protected void sortHmAccessoriesProductsByNameAToZTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
@@ -2828,7 +2827,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortHmAccessoriesProductsByNameZToATest(){
+    protected void sortHmAccessoriesProductsByNameZToATest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
@@ -2840,7 +2839,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesNameZToAOptionText(), "Name, Z to A"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortHmAccessoriesProductsByPriceLowToHighTest(){
+    protected void sortHmAccessoriesProductsByPriceLowToHighTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
@@ -2852,7 +2851,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesPriceLowToHighOptionText(), "Price, low to high"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortHmAccessoriesProductsByPriceHighToLowTest(){
+    protected void sortHmAccessoriesProductsByPriceHighToLowTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
@@ -2864,7 +2863,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesPriceHighToLowOptionText(), "Price, high to low"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortHmAccessoriesProductsByReferenceAToZTest(){
+    protected void sortHmAccessoriesProductsByReferenceAToZTest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
@@ -2876,7 +2875,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortHmAccessoriesProductsByReferenceZToATest(){
+    protected void sortHmAccessoriesProductsByReferenceZToATest() {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
@@ -2892,7 +2891,7 @@ public class TestMethods extends BaseTest{
 
     //men clothes page test methods
 
-    protected void navigateToClothesPageTest(){
+    protected void navigateToClothesPageTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert 'Clothes' link is displayed on navbar
         assertTrue(registeredUserMenClothesPage.isClothesPageLinkDisplayed(), "The 'Clothes' link isn't displayed on navbar");
@@ -2900,7 +2899,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickOnClothesPageLink();
     }
 
-    protected void navigateToMenClothesPageLink1Test(){
+    protected void navigateToMenClothesPageLink1Test() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert 'Men' clothes link1 is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPageLink1Displayed(), "The 'Men' clothes link1 isn't displayed");
@@ -2908,7 +2907,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickOnMenClothesPageLink1();
     }
 
-    protected void navigateToMenClothesPageLink2Test(){
+    protected void navigateToMenClothesPageLink2Test() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert 'Men' clothes link2 is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPageLink2Displayed(), "The 'Men' clothes link2 isn't displayed");
@@ -2916,7 +2915,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickOnMenClothesPageLink2();
     }
 
-    protected void navigateToMenClothesPageBoxIconTest(){
+    protected void navigateToMenClothesPageBoxIconTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert 'Men' clothes box icon is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPageBoxIconDisplayed(), "The 'Men' clothes box icon isn't displayed");
@@ -2926,7 +2925,7 @@ public class TestMethods extends BaseTest{
 
     //men clothes filter by test methods
 
-    protected void filterMenClothesByInStockBoxIconTest(){
+    protected void filterMenClothesByInStockBoxIconTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesInStockBoxIconDisplayed(), "The 'In stock' box icon link isn't displayed");
@@ -2938,7 +2937,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesByInStockLinkTest(){
+    protected void filterMenClothesByInStockLinkTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesInStockLinkDisplayed(), "The 'In stock' link isn't displayed");
@@ -2950,7 +2949,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesByDiscountedBoxIconTest(){
+    protected void filterMenClothesByDiscountedBoxIconTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by discounted choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesDiscountedBoxIconDisplayed(), "The 'Discounted' box icon link isn't displayed");
@@ -2962,7 +2961,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesByDiscountedLinkTest(){
+    protected void filterMenClothesByDiscountedLinkTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by discounted choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesDiscountedLinkDisplayed(), "The 'Discounted' link isn't displayed");
@@ -2974,7 +2973,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesByNewProductBoxIconTest(){
+    protected void filterMenClothesByNewProductBoxIconTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesNewProductBoxIconDisplayed(), "The 'New product' box icon link isn't displayed");
@@ -2986,7 +2985,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesByNewProductLinkTest(){
+    protected void filterMenClothesByNewProductLinkTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesNewProductLinkDisplayed(), "The 'New product' link isn't displayed");
@@ -2998,7 +2997,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesByPriceSliderTest(){
+    protected void filterMenClothesByPriceSliderTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         //assert product 'new product' link is displayed
@@ -3012,7 +3011,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesBySizeSBoxIconTest(){
+    protected void filterMenClothesBySizeSBoxIconTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size s choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeSBoxIconDisplayed(), "The men clothes 'Size S' box icon link isn't displayed");
@@ -3024,7 +3023,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesBySizeSLinkTest(){
+    protected void filterMenClothesBySizeSLinkTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size s choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeSLinkDisplayed(), "The men clothes 'Size S' link isn't displayed");
@@ -3036,7 +3035,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesBySizeMBoxIconTest(){
+    protected void filterMenClothesBySizeMBoxIconTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size m choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeMBoxIconDisplayed(), "The men clothes 'Size M' box icon link isn't displayed");
@@ -3048,7 +3047,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesBySizeMLinkTest(){
+    protected void filterMenClothesBySizeMLinkTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size m choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeMLinkDisplayed(), "The men clothes 'Size M' link isn't displayed");
@@ -3060,7 +3059,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesBySizeLBoxIconTest(){
+    protected void filterMenClothesBySizeLBoxIconTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size l choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeLBoxIconDisplayed(), "The men clothes 'Size L' box icon link isn't displayed");
@@ -3072,7 +3071,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesBySizeLLinkTest(){
+    protected void filterMenClothesBySizeLLinkTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size l choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeLLinkDisplayed(), "The men clothes 'Size L' link isn't displayed");
@@ -3084,7 +3083,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesBySizeXLBoxIconTest(){
+    protected void filterMenClothesBySizeXLBoxIconTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size xl choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeXLBoxIconDisplayed(), "The men clothes 'Size XL' box icon link isn't displayed");
@@ -3096,7 +3095,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesBySizeXLLinkTest(){
+    protected void filterMenClothesBySizeXLLinkTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size xl choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeXLLinkDisplayed(), "The men clothes 'Size XL' link isn't displayed");
@@ -3108,7 +3107,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesByWhiteBoxIconTest(){
+    protected void filterMenClothesByWhiteBoxIconTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by white color choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesWhiteBoxIconDisplayed(), "The men clothes color 'White' box icon link isn't displayed");
@@ -3120,7 +3119,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesByWhiteLinkTest(){
+    protected void filterMenClothesByWhiteLinkTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by white color choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesWhiteLinkDisplayed(), "The men clothes color 'White' link isn't displayed");
@@ -3132,7 +3131,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesByBlackBoxIconTest(){
+    protected void filterMenClothesByBlackBoxIconTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by black color choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesBlackBoxIconDisplayed(), "The men clothes color 'Black' box icon link isn't displayed");
@@ -3144,7 +3143,7 @@ public class TestMethods extends BaseTest{
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterMenClothesByBlackLinkTest(){
+    protected void filterMenClothesByBlackLinkTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by black color choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesBlackLinkDisplayed(), "The men clothes color 'Black' link isn't displayed");
@@ -3158,7 +3157,7 @@ public class TestMethods extends BaseTest{
 
     // dropdown menu test method
 
-    protected void clickMenClothesSortByDropdownMenuTest(){
+    protected void clickMenClothesSortByDropdownMenuTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the dropdown is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
@@ -3168,7 +3167,7 @@ public class TestMethods extends BaseTest{
 
     //home accessories dropdown menu options test methods
 
-    protected void sortMenClothesBySalesTest(){
+    protected void sortMenClothesBySalesTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
@@ -3180,7 +3179,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortMenClothesByRelevanceTest(){
+    protected void sortMenClothesByRelevanceTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
@@ -3192,7 +3191,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortMenClothesByNameAToZTest(){
+    protected void sortMenClothesByNameAToZTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
@@ -3204,7 +3203,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortMenClothesByNameZToATest(){
+    protected void sortMenClothesByNameZToATest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
@@ -3216,7 +3215,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesNameZToAOptionText(), "Name, Z to A"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortMenClothesByPriceLowToHighTest(){
+    protected void sortMenClothesByPriceLowToHighTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
@@ -3228,7 +3227,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesPriceLowToHighOptionText(), "Price, low to high"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortMenClothesByPriceHighToLowTest(){
+    protected void sortMenClothesByPriceHighToLowTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
@@ -3240,7 +3239,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesPriceHighToLowOptionText(), "Price, high to low"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortMenClothesByReferenceAToZTest(){
+    protected void sortMenClothesByReferenceAToZTest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
@@ -3252,7 +3251,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortMenClothesByReferenceZToATest(){
+    protected void sortMenClothesByReferenceZToATest() {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
@@ -3268,7 +3267,7 @@ public class TestMethods extends BaseTest{
 
     // women clothes page navigation test methods
 
-    protected void navigateToWomenClothesPageLink1Test(){
+    protected void navigateToWomenClothesPageLink1Test() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert 'Women' clothes link1 is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPageLink1Displayed(), "The 'Women' clothes link1 isn't displayed");
@@ -3276,7 +3275,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickOnWomenClothesPageLink1();
     }
 
-    protected void navigateToWomenClothesPageLink2Test(){
+    protected void navigateToWomenClothesPageLink2Test() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert 'Women' clothes link2 is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPageLink2Displayed(), "The 'Women' clothes link2 isn't displayed");
@@ -3284,7 +3283,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickOnWomenClothesPageLink2();
     }
 
-    protected void navigateToWomenClothesPageBoxIconTest(){
+    protected void navigateToWomenClothesPageBoxIconTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert 'Women' clothes box icon is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPageBoxIconDisplayed(), "The 'Women' clothes box icon isn't displayed");
@@ -3294,7 +3293,7 @@ public class TestMethods extends BaseTest{
 
     //men clothes filter by test methods
 
-    protected void filterWomenClothesByInStockBoxIconTest(){
+    protected void filterWomenClothesByInStockBoxIconTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesInStockBoxIconDisplayed(), "The 'In stock' box icon link isn't displayed");
@@ -3306,7 +3305,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesByInStockLinkTest(){
+    protected void filterWomenClothesByInStockLinkTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesInStockLinkDisplayed(), "The 'In stock' link isn't displayed");
@@ -3318,7 +3317,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesByDiscountedBoxIconTest(){
+    protected void filterWomenClothesByDiscountedBoxIconTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by discounted choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesDiscountedBoxIconDisplayed(), "The selections 'Discounted' box icon link isn't displayed");
@@ -3330,7 +3329,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesByDiscountedLinkTest(){
+    protected void filterWomenClothesByDiscountedLinkTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by discounted choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesDiscountedLinkDisplayed(), "The selections 'Discounted' link isn't displayed");
@@ -3342,7 +3341,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesByNewProductBoxIconTest(){
+    protected void filterWomenClothesByNewProductBoxIconTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesNewProductBoxIconDisplayed(), "The selections 'New product' box icon link isn't displayed");
@@ -3354,7 +3353,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesByNewProductLinkTest(){
+    protected void filterWomenClothesByNewProductLinkTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesNewProductLinkDisplayed(), "The selections 'New product' link isn't displayed");
@@ -3366,7 +3365,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesByPriceSliderTest(){
+    protected void filterWomenClothesByPriceSliderTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
         //assert price slider is displayed
@@ -3380,7 +3379,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesBySizeSBoxIconTest(){
+    protected void filterWomenClothesBySizeSBoxIconTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size s choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeSBoxIconDisplayed(), "The size 'S' box icon link isn't displayed");
@@ -3392,7 +3391,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesBySizeSLinkTest(){
+    protected void filterWomenClothesBySizeSLinkTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size s choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeSLinkDisplayed(), "The size 'S' link isn't displayed");
@@ -3404,7 +3403,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesBySizeMBoxIconTest(){
+    protected void filterWomenClothesBySizeMBoxIconTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size m choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeMBoxIconDisplayed(), "The size 'M' box icon link isn't displayed");
@@ -3416,7 +3415,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesBySizeMLinkTest(){
+    protected void filterWomenClothesBySizeMLinkTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size m choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeMLinkDisplayed(), "The size 'M' link isn't displayed");
@@ -3428,7 +3427,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesBySizeLBoxIconTest(){
+    protected void filterWomenClothesBySizeLBoxIconTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size l choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeLBoxIconDisplayed(), "The size 'L' box icon link isn't displayed");
@@ -3440,7 +3439,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesBySizeLLinkTest(){
+    protected void filterWomenClothesBySizeLLinkTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size l choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeLLinkDisplayed(), "The size 'L' link isn't displayed");
@@ -3452,7 +3451,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesBySizeXLBoxIconTest(){
+    protected void filterWomenClothesBySizeXLBoxIconTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size xl choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeXLBoxIconDisplayed(), "The size 'XL' box icon link isn't displayed");
@@ -3464,7 +3463,7 @@ public class TestMethods extends BaseTest{
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
 
-    protected void filterWomenClothesBySizeXLLinkTest(){
+    protected void filterWomenClothesBySizeXLLinkTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size xl choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeXLLinkDisplayed(), "The size 'XL' link isn't displayed");
@@ -3478,7 +3477,7 @@ public class TestMethods extends BaseTest{
 
     // dropdown menu test method
 
-    protected void clickWomenClothesSortByDropdownMenuTest(){
+    protected void clickWomenClothesSortByDropdownMenuTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the dropdown is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
@@ -3488,7 +3487,7 @@ public class TestMethods extends BaseTest{
 
     //women clothes dropdown menu options test methods
 
-    protected void sortWomenClothesBySalesTest(){
+    protected void sortWomenClothesBySalesTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
@@ -3500,7 +3499,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortWomenClothesByRelevanceTest(){
+    protected void sortWomenClothesByRelevanceTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
@@ -3512,7 +3511,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortWomenClothesByNameAToZTest(){
+    protected void sortWomenClothesByNameAToZTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
@@ -3524,7 +3523,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortWomenClothesByNameZToATest(){
+    protected void sortWomenClothesByNameZToATest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
@@ -3536,7 +3535,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesNameZToAOptionText(), "Name, Z to A"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortWomenClothesByPriceLowToHighTest(){
+    protected void sortWomenClothesByPriceLowToHighTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
@@ -3548,7 +3547,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesPriceLowToHighOptionText(), "Price, low to high"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortWomenClothesByPriceHighToLowTest(){
+    protected void sortWomenClothesByPriceHighToLowTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
@@ -3560,7 +3559,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesPriceHighToLowOptionText(), "Price, high to low"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortWomenClothesByReferenceAToZTest(){
+    protected void sortWomenClothesByReferenceAToZTest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
@@ -3572,7 +3571,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
     }
 
-    protected void sortWomenClothesByReferenceZToATest(){
+    protected void sortWomenClothesByReferenceZToATest() {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
@@ -3588,7 +3587,7 @@ public class TestMethods extends BaseTest{
 
     // all products page navigation
 
-    protected void clickAllProductsLinkTest(){
+    protected void clickAllProductsLinkTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the all products link is displayed
@@ -3599,7 +3598,7 @@ public class TestMethods extends BaseTest{
 
     // product wishlist test methods
 
-    protected void addTShirtWishListButtonTest(){
+    protected void addTShirtWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the t-shirt wishlist button is displayed
@@ -3626,7 +3625,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Hummingbird printed t-shirt");
     }
 
-    protected void addSweaterWishListButtonTest(){
+    protected void addSweaterWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the sweater wishlist button is displayed
@@ -3653,7 +3652,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Hummingbird printed sweater");
     }
 
-    protected void addPictureBestYetWishListButtonTest(){
+    protected void addPictureBestYetWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the sweater wishlist button is displayed
@@ -3673,14 +3672,14 @@ public class TestMethods extends BaseTest{
         System.out.println("The 'Wishlist' page is displayed" + "\n");
         registeredUserWishListPage.clickWishListLink();
         //assert 'My wishlist' inner box link is displayed
-       // assertTrue(registeredUserWishListPage.isWishListInnerLinkDisplayed(), "The 'My wishlist' inner link isn't displayed");
+        // assertTrue(registeredUserWishListPage.isWishListInnerLinkDisplayed(), "The 'My wishlist' inner link isn't displayed");
         System.out.println("The 'My wishlist' inner link is displayed" + "\n");
         registeredUserWishListPage.clickWishListInnerLink();
         //assert correct product has been added to wishlist
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "The best is yet to come' Framed poster");
     }
 
-    protected void addPictureAdventureBeginsWishListButtonTest(){
+    protected void addPictureAdventureBeginsWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the picture 'Adventure Begins' wishlist button is displayed
@@ -3707,7 +3706,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "The adventure begins Framed poster");
     }
 
-    protected void addPictureGoodDayWishListButtonTest(){
+    protected void addPictureGoodDayWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the picture 'Good Day' wishlist button is displayed
@@ -3734,7 +3733,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Today is a good day Framed poster");
     }
 
-    protected void addMugBestYetWishListButtonTest(){
+    protected void addMugBestYetWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the mug 'Best Yet' wishlist button is displayed
@@ -3761,7 +3760,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Mug The best is yet to come");
     }
 
-    protected void addMugAdventureBeginsWishListButtonTest(){
+    protected void addMugAdventureBeginsWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the mug 'Adventure Begins' wishlist button is displayed
@@ -3788,7 +3787,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Mug The adventure begins");
     }
 
-    protected void addMugGoodDayWishListButtonTest(){
+    protected void addMugGoodDayWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the mug 'Good Day' wishlist button is displayed
@@ -3815,7 +3814,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Mug Today is a good day");
     }
 
-    protected void addCushionFoxWishListButtonTest(){
+    protected void addCushionFoxWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the cushion 'Mountain Fox' wishlist button is displayed
@@ -3842,7 +3841,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Mountain fox cushion");
     }
 
-    protected void addCushionBrownBearWishListButtonTest(){
+    protected void addCushionBrownBearWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the cushion 'Brown Bear' wishlist button is displayed
@@ -3869,7 +3868,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Brown bear cushion");
     }
 
-    protected void addCushionHummingBearWishListButtonTest(){
+    protected void addCushionHummingBearWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the cushion 'Humming Bird' wishlist button is displayed
@@ -3896,7 +3895,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Hummingbird cushion");
     }
 
-    protected void addVectorFoxWishListButtonTest(){
+    protected void addVectorFoxWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert the vector 'Mountain Fox' wishlist button is displayed
@@ -3923,7 +3922,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Mountain fox - Vector graphics");
     }
 
-    protected void addVectorBearWishListButtonTest(){
+    protected void addVectorBearWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert next page link is displayed
@@ -3955,7 +3954,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Brown bear - Vector graphics");
     }
 
-    protected void addVectorHummingBirdWishListButtonTest(){
+    protected void addVectorHummingBirdWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert next page link is displayed
@@ -3987,7 +3986,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Hummingbird - Vector graphics");
     }
 
-    protected void addPackMugAndPosterWishListButtonTest(){
+    protected void addPackMugAndPosterWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert next page link is displayed
@@ -4019,7 +4018,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Pack Mug + Framed poster");
     }
 
-    protected void addNotebookFoxWishListButtonTest(){
+    protected void addNotebookFoxWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert next page link is displayed
@@ -4051,7 +4050,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Mountain fox notebook");
     }
 
-    protected void addNotebookBearWishListButtonTest(){
+    protected void addNotebookBearWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert next page link is displayed
@@ -4083,7 +4082,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Brown bear notebook");
     }
 
-    protected void addNotebookBirdWishListButtonTest(){
+    protected void addNotebookBirdWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert next page link is displayed
@@ -4115,7 +4114,7 @@ public class TestMethods extends BaseTest{
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Hummingbird notebook");
     }
 
-    protected void addMugCustomWishListButtonTest(){
+    protected void addMugCustomWishListButtonTest() {
         RegisteredUserWishListPage registeredUserWishListPage = new RegisteredUserWishListPage(driver);
 
         //assert next page link is displayed
@@ -4150,7 +4149,7 @@ public class TestMethods extends BaseTest{
 
     //navigation to user account page test methods
 
-    protected void navigateToUserAccountLink1Test(){
+    protected void navigateToUserAccountLink1Test() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
@@ -4158,7 +4157,7 @@ public class TestMethods extends BaseTest{
         registeredUserAccountPage.clickUserAccountLink1();
     }
 
-    protected void navigateToUserAccountLink2Test(){
+    protected void navigateToUserAccountLink2Test() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the footer link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink2Displayed(), "The footer link isn't displayed");
@@ -4167,7 +4166,7 @@ public class TestMethods extends BaseTest{
     }
 
     //navigation to add first address page test methods
-    protected void navigateToAddFirstAddressPage(){
+    protected void navigateToAddFirstAddressPage() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
@@ -4182,7 +4181,7 @@ public class TestMethods extends BaseTest{
     }
 
     //edit registered user with valid input data (United States)
-    protected void editRegisteredUserDataValidInputTest(){
+    protected void editRegisteredUserDataValidInputTest() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
@@ -4245,7 +4244,7 @@ public class TestMethods extends BaseTest{
     }
 
     //edit registered user with valid input data (France)
-    protected void editRegisteredUserDataValidInputFranceTest(){
+    protected void editRegisteredUserDataValidInputFranceTest() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
@@ -4298,7 +4297,7 @@ public class TestMethods extends BaseTest{
     }
 
     //edit registered user without first name
-    protected void editRegisteredUserDataNoFirstNameTest(){
+    protected void editRegisteredUserDataNoFirstNameTest() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
@@ -4359,7 +4358,7 @@ public class TestMethods extends BaseTest{
     }
 
     //edit registered user without last name
-    protected void editRegisteredUserDataNoLastNameTest(){
+    protected void editRegisteredUserDataNoLastNameTest() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
@@ -4420,7 +4419,7 @@ public class TestMethods extends BaseTest{
     }
 
     //edit registered user without address
-    protected void editRegisteredUserDataNoAddressTest(){
+    protected void editRegisteredUserDataNoAddressTest() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
@@ -4481,7 +4480,7 @@ public class TestMethods extends BaseTest{
     }
 
     //edit registered user without city
-    protected void editRegisteredUserDataNoCityTest(){
+    protected void editRegisteredUserDataNoCityTest() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
@@ -4542,7 +4541,7 @@ public class TestMethods extends BaseTest{
     }
 
     //edit registered user without state
-    protected void editRegisteredUserDataNoStateTest(){
+    protected void editRegisteredUserDataNoStateTest() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
@@ -4593,7 +4592,7 @@ public class TestMethods extends BaseTest{
     }
 
     //edit registered user without state
-    protected void editRegisteredUserDataNoPostalCodeTest(){
+    protected void editRegisteredUserDataNoPostalCodeTest() {
         RegisteredUserAccountAddFirstAddressPage registeredUserAccountPage = new RegisteredUserAccountAddFirstAddressPage(driver);
         //assert the nav link is displayed
         assertTrue(registeredUserAccountPage.isUserAccountLink1Displayed(), "The nav link isn't displayed");
@@ -4649,22 +4648,22 @@ public class TestMethods extends BaseTest{
         registeredUserAccountPage.clickSaveButton();
     }
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  //information page navigation test method
+    //information page navigation test method
 
-  protected void navigateToInformationPage(){
+    protected void navigateToInformationPage() {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the information link is displayed in the white frame
-      assertTrue(registeredUserInformationPage.isInformationLinkDisplayed(), "The information link isn't displayed");
-      System.out.println("The information link is displayed" + "\n");
-      registeredUserInformationPage.clickInformationLink();
-  }
+        assertTrue(registeredUserInformationPage.isInformationLinkDisplayed(), "The information link isn't displayed");
+        System.out.println("The information link is displayed" + "\n");
+        registeredUserInformationPage.clickInformationLink();
+    }
 
-  //information edit test methods (male user)
+    //information edit test methods (male user)
 
-    protected void editMaleUserDataWithValidDataTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithValidDataTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -4769,7 +4768,7 @@ public class TestMethods extends BaseTest{
 
     //information edit test methods (female user)
 
-    protected void editFemaleUserDataWithValidDataTest(RegisterPage registerPage){
+    protected void editFemaleUserDataWithValidDataTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -4876,7 +4875,7 @@ public class TestMethods extends BaseTest{
 
     //information edit test methods (male user) -> no first name
 
-    protected void editMaleUserDataWithNoFirstNameTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithNoFirstNameTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -4949,7 +4948,7 @@ public class TestMethods extends BaseTest{
 
     //information edit test methods (male user) -> invalid first name
 
-    protected void editMaleUserDataWithInvalidFirstNameTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithInvalidFirstNameTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5038,7 +5037,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> too long first name
-    protected void editMaleUserDataWithTooLongFirstNameTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithTooLongFirstNameTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5114,7 +5113,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> no last name
-    protected void editMaleUserDataWithNoLastNameTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithNoLastNameTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5186,7 +5185,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> invalid last name
-    protected void editMaleUserDataWithInvalidLastNameTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithInvalidLastNameTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5262,7 +5261,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> invalid last name
-    protected void editMaleUserDataWithTooLongLastNameTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithTooLongLastNameTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5337,7 +5336,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> no email
-    protected void editMaleUserDataWithNoEmailTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithNoEmailTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5408,7 +5407,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> invalid email
-    protected void editMaleUserDataWithInvalidEmailTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithInvalidEmailTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5483,7 +5482,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> too long email
-    protected void editMaleUserDataWithTooLongEmailTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithTooLongEmailTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5558,7 +5557,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> no password test
-    protected void editMaleUserDataWithNoPasswordTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithNoPasswordTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5633,7 +5632,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> invalid password test
-    protected void editMaleUserDataWithInvalidPasswordTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithInvalidPasswordTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5712,7 +5711,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> no new password test
-    protected void editMaleUserDataWithNoNewPasswordTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithNoNewPasswordTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5791,7 +5790,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> invalid new password test
-    protected void editMaleUserDataWithInvalidNewPasswordTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithInvalidNewPasswordTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5871,7 +5870,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> invalid new password test
-    protected void editMaleUserDataWithTooLongNewPasswordTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithTooLongNewPasswordTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -5950,7 +5949,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> invalid new password test
-    protected void editMaleUserDataWithMatchingNewPasswordTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithMatchingNewPasswordTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -6029,7 +6028,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> no birthdate test
-    protected void editMaleUserDataWithNoBirthDateTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithNoBirthDateTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -6100,7 +6099,7 @@ public class TestMethods extends BaseTest{
     }
 
     //information edit test methods (male user) -> invalid birthdate test
-    protected void editMaleUserDataWithInvalidBirthDateTest(RegisterPage registerPage){
+    protected void editMaleUserDataWithInvalidBirthDateTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -6176,7 +6175,7 @@ public class TestMethods extends BaseTest{
 
     //information edit test methods (female user) -> with none of required (2: agree to terms and data privacy) checkboxes clicked
 
-    protected void editFemaleUserDataWithValidDataNoCheckboxesTest(RegisterPage registerPage){
+    protected void editFemaleUserDataWithValidDataNoCheckboxesTest(RegisterPage registerPage) {
         RegisteredUserInformationPage registeredUserInformationPage = new RegisteredUserInformationPage(driver);
 
         //assert the male gender selector is displayed
@@ -6251,8 +6250,111 @@ public class TestMethods extends BaseTest{
     }
 
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // orders and history test methods
 
+    protected void viewOrderAndHistoryAfterConfirmation() {
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert 'Art' link is displayed on navbar
+        assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
+        System.out.println("The 'Art' link is displayed on navbar" + "\n");
+        registeredUserArtPage.clickArtLink();
+        //assert 'Best Yet To Come' poster link is displayed
+        assertTrue(registeredUserArtPage.isBestYetToComePosterLinkDisplayed(), "The 'Best Yet To Come poster link isn't displayed");
+        System.out.println("The 'Best Yet To Come poster link isn't displayed" + "\n");
+        registeredUserArtPage.clickBestYetToComePosterLink();
 
+        BestYetToComePosterPage bestYetToComePosterPage = new BestYetToComePosterPage(driver);
+        //assert product name is correct
+        assertEquals(bestYetToComePosterPage.getProductName(), "THE BEST IS YET TO COME' FRAMED POSTER");
+        //assert 'Add to Cart' button is displayed
+        assertTrue(bestYetToComePosterPage.isAddToCartButtonDisplayed(), "The 'Add to Cart' button isn't displayed");
+        System.out.println("The 'Add To Cart' button is displayed" + "\n");
+        bestYetToComePosterPage.clickAddToCartButton();
+
+        //assert the product was added to cart
+        assertEquals(bestYetToComePosterPage.getSuccessMessage(), "\uE876Product successfully added to your shopping cart");
+        //assert the product added bears the correct name
+        assertEquals(bestYetToComePosterPage.getAddedProductName(), "The best is yet to come' Framed poster");
+        //assert the correct amount was added to cart
+        assertEquals(bestYetToComePosterPage.getCartItemCount(), "There is 1 item in your cart.");
+
+        //assert 'Proceed to Checkout' button in pop-up is displayed
+        assertTrue(bestYetToComePosterPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
+        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
+        bestYetToComePosterPage.clickProceedToCheckoutButton();
+
+        ProductCheckoutPage productCheckoutPage = new ProductCheckoutPage(driver);
+        //assert quantity field is displayed in checkout page
+        assertTrue(productCheckoutPage.isQtyAdjusterDisplayed(), "The quantity adjuster isn't present");
+        System.out.println("The quantity adjuster is present" + "\n");
+        productCheckoutPage.inputProductQuantity();
+        //assert 'Proceed to checkout' button is displayed
+        assertTrue(productCheckoutPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
+        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
+        productCheckoutPage.clickProceedToCheckoutButton();
+
+        ProductOrderPage productOrderPage = new ProductOrderPage(driver);
+        //assert the address input field is displayed
+        assertTrue(productOrderPage.isAddressInputFieldDisplayed(), "The address input field isn't displayed");
+        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
+        productOrderPage.inputCheckoutDetails();
+        productOrderPage.inputAddressIntoInputField();
+        //assert the city input field is displayed
+        assertTrue(productOrderPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
+        System.out.println("The city input field is displayed" + "\n");
+        productOrderPage.inputCityIntoInputField();
+        //assert the state dropdown menu is displayed
+        assertTrue(productOrderPage.isStateDropdownMenuDisplayed(), "The state dropdown menu isn't displayed");
+        System.out.println("The state dropdown menu is displayed" + "\n");
+        productOrderPage.clickStateDropdownMenu();
+        //assert the valid state option is displayed
+        assertTrue(productOrderPage.isIllinoisStateDisplayed(), "The Illinois option isn't displayed");
+        System.out.println("The Illinois option is displayed" + "\n");
+        productOrderPage.clickIllinoisStateOption();
+        //assert the postal code input field is displayed
+        assertTrue(productOrderPage.isPostalCodeInputFieldDisplayed(), "The postal code input field isn't displayed");
+        System.out.println("The postal code input field is displayed" + "\n");
+        productOrderPage.inputPostalCodeIntoInputField();
+        //assert the country dropdown menu is displayed
+        assertTrue(productOrderPage.isCountryDropdownMenuDisplayed(), "The country dropdown menu isn't displayed");
+        System.out.println("The postal code input field is displayed" + "\n");
+        productOrderPage.clickCountryDropdownMenu();
+        //assert the right country is displayed
+        assertTrue(productOrderPage.isUSCountryDisplayed(), "The US option isn't displayed");
+        System.out.println("The US option is displayed" + "\n");
+        productOrderPage.clickUSOption();
+        //assert 'Continue' button is displayed
+        assertTrue(productOrderPage.isContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
+        System.out.println("The 'Continue' button is displayed" + "\n");
+        productOrderPage.clickContinueButton();
+        //assert shipping order comment input field is displayed
+        assertTrue(productOrderPage.isOrderDeliveryCommentFieldDisplayed(), "The comment input field isn't displayed");
+        System.out.println("The comment input field is displayed" + "\n");
+        productOrderPage.inputDeliveryComment();
+        //assert 'Continue' button is displayed
+        assertTrue(productOrderPage.isShippingContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
+        System.out.println("The 'Continue' button is displayed" + "\n");
+        productOrderPage.clickShippingContinueButton();
+        //assert 'Pay By Check' option is displayed
+        assertTrue(productOrderPage.isCheckButtonDisplayed(), "The 'Pay By Check' button isn't displayed");
+        System.out.println("The 'Continue' button is displayed" + "\n");
+        productOrderPage.selectPayByCheckOption();
+        System.out.println("The 'Terms of service' checkbox is displayed" + "\n");
+        productOrderPage.checkTermsOfServiceCheckbox();
+        //assert 'Place Order' button is displayed
+        assertTrue(productOrderPage.isPlaceOrderButtonDisplayed(), "The 'Place Order' button isn't displayed");
+        System.out.println("The 'Place Order' button is displayed" + "\n");
+        productOrderPage.clickPlaceOrderButton();
+        //assert the order confirmation message is displayed as expected
+        //assertEquals(productOrderPage.getOrderConfirmationMessage(), "\uE876"); // -? element cannot be found for some reason
+
+        OrderHistoryAndDetailsPage orderHistoryAndDetailsPage = new OrderHistoryAndDetailsPage(driver);
+        //assert the 'Orders' link is displayed
+        assertTrue(orderHistoryAndDetailsPage.isOrdersPageLinkDisplayed(), "The 'Orders' link isn't displayed");
+        System.out.println("The 'Orders' link is displayed" + "\n");
+        orderHistoryAndDetailsPage.clickOnOrdersLink();
+
+    }
 }

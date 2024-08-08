@@ -169,8 +169,6 @@ public class ProductOrderPage extends BasePage{
 
     //terms of service checkbox click method
     public void checkTermsOfServiceCheckbox(){
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
-        //wait.until(ExpectedConditions.elementToBeClickable(termsOfServiceCheckbox)); // -> this line causes the crash tests
         termsOfServiceCheckbox.click();
     }
 
@@ -207,7 +205,7 @@ public class ProductOrderPage extends BasePage{
     public boolean isCashOnDeliveryButtonDisplayed(){return cashOnDeliveryOption.isDisplayed();}
 
     //terms of service assert method
-    public boolean isTermsOfServiceCheckboxDisplayed(){return termsOfServiceCheckbox.isDisplayed();}
+    //public boolean isTermsOfServiceCheckboxDisplayed(){return termsOfServiceCheckbox.isDisplayed();}
 
     //place order button assert method
     public boolean isPlaceOrderButtonDisplayed(){return placeOrderButton.isDisplayed();}
