@@ -1,11 +1,13 @@
 package lt.techin.example;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class LoginPageTest extends TestMethods {
 
     //Test 004 -> login as a registered user with valid data
     @Test
+    @Tag("Valid_Sign-In")
     void signInAsRegisteredUserTests(){
         clickOnSignUpTest();
 
@@ -20,6 +22,7 @@ public class LoginPageTest extends TestMethods {
 
     //Test 004a -> login as a registered user attempt with invalid email address (login fails)
     @Test
+    @Tag("Invalid_Sign-In")
     void signInAsRegisteredUserInvalidEmailTests(){
         clickOnSignUpTest();
 
@@ -34,6 +37,7 @@ public class LoginPageTest extends TestMethods {
 
     //Test 004b -> login as a registered user attempt with existing email address (login fails)
     @Test
+    @Tag("Invalid_Sign-In")
     void signInAsRegisteredUserExistingEmailTests(){
         clickOnSignUpTest();
 
@@ -48,6 +52,7 @@ public class LoginPageTest extends TestMethods {
 
     //Test 004c -> login as a registered user attempt with no email address (login fails)
     @Test
+    @Tag("Invalid_Sign-In")
     void signInAsRegisteredUserNoEmailTests(){
         clickOnSignUpTest();
 
@@ -62,6 +67,7 @@ public class LoginPageTest extends TestMethods {
 
     //Test 004d -> login as a registered user attempt with invalid password (login fails)
     @Test
+    @Tag("Invalid_Sign-In")
     void signInAsRegisteredUserInvalidPasswordTests(){
         clickOnSignUpTest();
 
@@ -76,6 +82,7 @@ public class LoginPageTest extends TestMethods {
 
     //Test 004e -> login as a registered user attempt with invalid password (login fails)
     @Test
+    @Tag("Invalid_Sign-In")
     void signInAsRegisteredUserNoPasswordTests(){
         clickOnSignUpTest();
 

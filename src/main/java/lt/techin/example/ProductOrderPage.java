@@ -49,8 +49,11 @@ public class ProductOrderPage extends BasePage{
     private WebElement cashOnDeliveryOption;
 
     //terms of service checkbox element
-    @FindBy(xpath = "//form[@id='conditions-to-approve']/ul//span[@class='custom-checkbox']") //(css= ".custom-checkbox")
+    @FindBy(css= ".custom-checkbox")
     private WebElement termsOfServiceCheckbox;
+
+//    @FindBy(css= "input#conditions_to_approve\\[terms-and-conditions\\]")
+//    private WebElement termsOfServiceCheckbox;
 
     //place order button element
     @FindBy(css = ".btn.btn-primary.center-block")
@@ -160,8 +163,11 @@ public class ProductOrderPage extends BasePage{
             JavascriptExecutor jsscroll = (JavascriptExecutor) driver;
             jsscroll.executeScript("arguments[0].scrollIntoView(true);", termsOfServiceCheckbox);
 
-            Actions actions = new Actions(driver);
-            actions.moveToElement(termsOfServiceCheckbox).click().perform();
+            JavascriptExecutor jsclick = (JavascriptExecutor) driver;
+            jsclick.executeScript("arguments[0].click();", termsOfServiceCheckbox);
+
+//            Actions actions = new Actions(driver);
+//            actions.moveToElement(termsOfServiceCheckbox).click().perform(); // -> not interactable
 
             boolean isSelected = termsOfServiceCheckbox.isSelected();
             System.out.println("Checkbox selected state after clicking: " + isSelected);

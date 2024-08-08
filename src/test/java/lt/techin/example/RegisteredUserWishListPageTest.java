@@ -344,6 +344,4 @@ public class RegisteredUserWishListPageTest extends TestMethods{
         addMugCustomWishListButtonTest();
     }
 
-
-
 }
