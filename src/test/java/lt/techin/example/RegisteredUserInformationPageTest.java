@@ -250,6 +250,62 @@ public class RegisteredUserInformationPageTest extends TestMethods{
         editMaleUserDataWithInvalidPasswordTest(registerPage);
     }
 
+    //Test 060l -> edit registered user information (male user) with no new password test (info gets updated)
+    @Test
+    void editUserInformationMaleNoNewPasswordTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithNoNewPasswordTest(registerPage);
+    }
+
+    //Test 060l -> edit registered user information (male user) with invalid new password test
+    @Test
+    void editUserInformationMaleInvalidNewPasswordTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithInvalidNewPasswordTest(registerPage);
+    }
+
+    @Test
+    void editUserInformationMaleTooLongNewPasswordTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToUserAccountLink1Test();
+        navigateToInformationPage();
+
+        editMaleUserDataWithTooLongNewPasswordTest(registerPage);
+    }
+
     //Test 061 -> edit registered user information (female user) test
     @Test
     void editRegisteredUserInformationFemaleTest(){

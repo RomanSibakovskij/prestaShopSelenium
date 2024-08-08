@@ -76,6 +76,10 @@ public class RegisteredUserInformationPage extends BasePage{
     private WebElement dataErrorMessage;
     @FindBy(css = "ul > .alert.alert-danger")
     private WebElement invalidFormatMessage;
+    @FindBy(css = "div:nth-of-type(6) ul > li:nth-of-type(1)")
+    private WebElement newPasswordAlertBlock1;
+    @FindBy(css = "div:nth-of-type(6) ul > li:nth-of-type(2)")
+    private WebElement newPasswordAlertBlock2;
 
     //former input data
     private String firstName;
@@ -103,7 +107,10 @@ public class RegisteredUserInformationPage extends BasePage{
     private String tooLongEmail;
     private String noPassword;
     private String invalidPassword;
-    private String tooLongPassword;
+    private String noNewPassword;
+    private String invalidNewPassword;
+    private String matchingNewPassword;
+    private String tooLongNewPassword;
 
     public RegisteredUserInformationPage(WebDriver driver) {
         super(driver);
@@ -502,7 +509,7 @@ public class RegisteredUserInformationPage extends BasePage{
         passwordInputField.sendKeys(noPassword);
     }
 
-    //no password test methods
+    //invalid password test methods
     public void inputEditedInformationDetailsInvalidPassword(RegisterPage registerPage){
         editedFirstName = TestDataGenerator.generateRandomFirstname(8);
         editedLastName = TestDataGenerator.generateRandomLastname(10);
@@ -526,6 +533,84 @@ public class RegisteredUserInformationPage extends BasePage{
         password = passwordInputField.getAttribute("value");
         passwordInputField.clear();
         passwordInputField.sendKeys(invalidPassword);
+    }
+
+    //no new password test methods
+    public void inputEditedInformationDetailsNoNewPassword(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        noNewPassword = "";
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + invalidPassword);
+        System.out.println("No new password: " + noNewPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editNoNewPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(newPasswordInputField));
+        password = newPasswordInputField.getAttribute("value");
+        newPasswordInputField.clear();
+        newPasswordInputField.sendKeys(noNewPassword);
+    }
+
+    //invalid new password test methods
+    public void inputEditedInformationDetailsInvalidNewPassword(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        invalidNewPassword = "kithg";
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + invalidPassword);
+        System.out.println("Invalid new password: " + invalidNewPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editInvalidNewPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(newPasswordInputField));
+        password = newPasswordInputField.getAttribute("value");
+        newPasswordInputField.clear();
+        newPasswordInputField.sendKeys(invalidNewPassword);
+    }
+
+    //invalid new password test methods
+    public void inputEditedInformationDetailsTooLongNewPassword(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        tooLongNewPassword = TestDataGenerator.generateRandomInvalidPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + invalidPassword);
+        System.out.println("Too long new password: " + tooLongNewPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editTooLongNewPassword(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(newPasswordInputField));
+        password = newPasswordInputField.getAttribute("value");
+        newPasswordInputField.clear();
+        newPasswordInputField.sendKeys(tooLongNewPassword);
     }
 
 
@@ -585,6 +670,8 @@ public class RegisteredUserInformationPage extends BasePage{
     //error message getters
     public String getDataErrorMessage(){return dataErrorMessage.getText();}
     public String getFormatErrorMessage(){return invalidFormatMessage.getText();}
+    public String getNewPasswordLengthErrorMessage(){return newPasswordAlertBlock1.getText();}
+    public String getNewPasswordStrengthErrorMessage(){return newPasswordAlertBlock2.getText();}
 
 
 }
