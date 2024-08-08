@@ -12,7 +12,7 @@ import java.time.Duration;
 public class OrderHistoryAndDetailsPage extends BasePage{
 
     //orders webpage footer link element
-    @FindBy(css = "a[title='Orders']")
+    @FindBy(css = "[title='Orders']")
     private WebElement ordersPageLink;
 
     public OrderHistoryAndDetailsPage(WebDriver driver) {
@@ -29,7 +29,9 @@ public class OrderHistoryAndDetailsPage extends BasePage{
 
 
     //navigation link assert method
-    public boolean isOrdersPageLinkDisplayed(){return ordersPageLink.isDisplayed();}
+    public boolean isOrdersPageLinkDisplayed(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", ordersPageLink);
+        return ordersPageLink.isDisplayed();}
 
 
 }
