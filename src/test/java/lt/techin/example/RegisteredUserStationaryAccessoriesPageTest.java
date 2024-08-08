@@ -1,11 +1,12 @@
 package lt.techin.example;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 016 -> navigate to Accessories page test
     @Test
+    @Tag("Navigate_To_Accessories_Page")
     void goToAccessoriesPageTest(){
         clickOnSignUpTest();
 
@@ -22,6 +23,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 016a -> navigate to Stationary Accessories page (link 1) test
     @Test
+    @Tag("Navigate_To_Category_Page_By_Aside_Link")
     void goToStationaryAccessoriesPageLink1Test(){
         clickOnSignUpTest();
 
@@ -39,6 +41,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 016b -> navigate to Stationary Accessories page (link 2) test
     @Test
+    @Tag("Navigate_To_Category_Page_By_Icon_Link")
     void goToStationaryAccessoriesPageLink2Test(){
         clickOnSignUpTest();
 
@@ -56,6 +59,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 016c -> navigate to Stationary Accessories page (box icon) test
     @Test
+    @Tag("Navigate_To_Category_Page_By_Box_Icon")
     void goToStationaryAccessoriesPageBoxIconTest(){
         clickOnSignUpTest();
 
@@ -73,6 +77,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 017 -> filter stationary accessories by availability box icon click
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterByInStockBoxIconTest(){
         clickOnSignUpTest();
 
@@ -91,6 +96,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 017a -> filter stationary accessories by availability link click
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterByInStockLinkTest(){
         clickOnSignUpTest();
 
@@ -109,6 +115,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 018 -> filter stationary accessories by selections box icon click
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterByNewProductBoxIconTest(){
         clickOnSignUpTest();
 
@@ -127,6 +134,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 018a -> filter stationary accessories by selections link click
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterByNewProductLinkTest(){
         clickOnSignUpTest();
 
@@ -145,6 +153,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 019 -> filter stationary accessories by price slider  (element click intercepted)
     @Test
+    @Tag("Filter_Products_By_Price_Slider")
     void filterProductByPriceSliderTests(){
         clickOnSignUpTest();
 
@@ -163,6 +172,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 020 -> filter stationary accessories by ruled paper type box icon click
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterByPaperType1BoxIconTest(){
         clickOnSignUpTest();
 
@@ -181,6 +191,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 020a -> filter stationary accessories by ruled paper type link click
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterByPaperType1LinkTest(){
         clickOnSignUpTest();
 
@@ -199,6 +210,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 021 -> filter stationary accessories by plain paper type box icon click
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterByPaperType2BoxIconTest(){
         clickOnSignUpTest();
 
@@ -217,6 +229,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 021a -> filter stationary accessories by plain paper type link click
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterByPaperType2LinkTest(){
         clickOnSignUpTest();
 
@@ -235,6 +248,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 022 -> filter stationary accessories by squared paper type box icon click
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterByPaperType3BoxIconTest(){
         clickOnSignUpTest();
 
@@ -253,6 +267,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 022a -> filter stationary accessories by squared paper type link click
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterByPaperType3LinkTest(){
         clickOnSignUpTest();
 
@@ -271,6 +286,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 023 -> filter stationary accessories by dotted paper type box icon click
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterByPaperType4BoxIconTest(){
         clickOnSignUpTest();
 
@@ -289,6 +305,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 023a -> filter stationary accessories by dotted paper type link click
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterByPaperType4LinkTest(){
         clickOnSignUpTest();
 
@@ -307,6 +324,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 024 -> click on sort by dropdown menu test
     @Test
+    @Tag("Sort_By_Menu_Click_Test")
     void clickSortByMenuTest(){
         clickOnSignUpTest();
 
@@ -325,6 +343,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 024a -> sort stationary accessories by sales test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortBySalesTest(){
         clickOnSignUpTest();
 
@@ -344,6 +363,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 024b -> sort stationary accessories by relevance test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByRelevanceTest(){
         clickOnSignUpTest();
 
@@ -363,6 +383,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 024c -> sort stationary accessories by name (A to Z) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByNameAToZTest(){
         clickOnSignUpTest();
 
@@ -382,6 +403,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 024d -> sort stationary accessories by name (Z to A) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByNameZToATest(){
         clickOnSignUpTest();
 
@@ -401,6 +423,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 024e -> sort stationary accessories by price (low to high) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByPriceLowToHighTest(){
         clickOnSignUpTest();
 
@@ -420,6 +443,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 024f -> sort stationary accessories by price (high to low) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByPriceHighToLowTest(){
         clickOnSignUpTest();
 
@@ -439,6 +463,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 024g -> sort stationary accessories by reference (A to Z) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByReferenceAToZTest(){
         clickOnSignUpTest();
 
@@ -458,6 +483,7 @@ public class RegisteredUserStationaryAccessoriesPageTest extends TestMethods{
 
     //Test 024h -> sort stationary accessories by reference (Z to A) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByReferenceZToATest(){
         clickOnSignUpTest();
 

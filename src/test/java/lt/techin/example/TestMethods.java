@@ -2305,8 +2305,6 @@ public class TestMethods extends BaseTest{
         registeredUserStationaryAccessoriesPage.clickStAccessoriesPriceLowToHighOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesPriceLowToHighText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
-        //remove search filter
-        registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void sortStAccessoriesProductsByPriceHighToLowTest(){
