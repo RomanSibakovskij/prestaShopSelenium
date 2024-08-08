@@ -49,15 +49,16 @@ public class ProductOrderPage extends BasePage{
     private WebElement cashOnDeliveryOption;
 
     //terms of service checkbox element
-    @FindBy(css= ".custom-checkbox")
+    @FindBy(css= "input#conditions_to_approve\\[terms-and-conditions\\]")
     private WebElement termsOfServiceCheckbox;
-
-//    @FindBy(css= "input#conditions_to_approve\\[terms-and-conditions\\]")
-//    private WebElement termsOfServiceCheckbox;
 
     //place order button element
     @FindBy(css = ".btn.btn-primary.center-block")
     private WebElement placeOrderButton;
+
+    //order confirmation message element
+    @FindBy(css = ".card-title.h1")
+    private WebElement orderIsConfirmedMessage;
 
     //input data
     private String address;
@@ -148,39 +149,29 @@ public class ProductOrderPage extends BasePage{
         shippingContinueButton.click();
     }
 
-    //payment method radio click method
+    //payment method radio click methods
     public void selectBankWireOption(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
         wait.until(ExpectedConditions.elementToBeClickable(bankWireOption));
         bankWireOption.click();
     }
 
+    public void selectPayByCheckOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
+        wait.until(ExpectedConditions.elementToBeClickable(checkOption));
+        checkOption.click();
+    }
+    public void selectPayByCashOption(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
+        wait.until(ExpectedConditions.elementToBeClickable(cashOnDeliveryOption));
+        cashOnDeliveryOption.click();
+    }
+
     //terms of service checkbox click method
     public void checkTermsOfServiceCheckbox(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
-        wait.until(ExpectedConditions.elementToBeClickable(termsOfServiceCheckbox));
-        try {
-            JavascriptExecutor jsscroll = (JavascriptExecutor) driver;
-            jsscroll.executeScript("arguments[0].scrollIntoView(true);", termsOfServiceCheckbox);
-
-            JavascriptExecutor jsclick = (JavascriptExecutor) driver;
-            jsclick.executeScript("arguments[0].click();", termsOfServiceCheckbox);
-
-//            Actions actions = new Actions(driver);
-//            actions.moveToElement(termsOfServiceCheckbox).click().perform(); // -> not interactable
-
-            boolean isSelected = termsOfServiceCheckbox.isSelected();
-            System.out.println("Checkbox selected state after clicking: " + isSelected);
-
-            if (!isSelected) {
-                throw new RuntimeException("Failed to click the Terms of Service checkbox.");
-            }
-            wait.until(ExpectedConditions.visibilityOf(placeOrderButton));
-            System.out.println("Place order is now visible.");
-        } catch (Exception e) {
-            System.out.println("Element is not interactable. Error: " + e.getMessage());
-            throw new RuntimeException("Element is not interactable. Halting test.");
-        }
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
+        //wait.until(ExpectedConditions.elementToBeClickable(termsOfServiceCheckbox)); // -> this line causes the crash tests
+        termsOfServiceCheckbox.click();
     }
 
     //place order click method
@@ -229,6 +220,9 @@ public class ProductOrderPage extends BasePage{
     //dropdown menu option getters
     public String getChosenStateOption(){return illinoisStateOption.getText();}
     public String getUSCountryText(){return usChoiceOption.getText();}
+
+    //order confirmation message getter
+    public String getOrderConfirmationMessage(){return orderIsConfirmedMessage.getText();}
 
 
 

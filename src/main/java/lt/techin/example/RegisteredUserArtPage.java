@@ -46,7 +46,7 @@ public class RegisteredUserArtPage extends BasePage{
     private WebElement dimensionLink2;
     @FindBy(css = "li:nth-of-type(3) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink3;
-    @FindBy(css = "[data-id-product='3'] [data-link-action]")
+    @FindBy(css = "div:nth-of-type(1) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement bestYetToComePosterLink;
 
     //search filter remover

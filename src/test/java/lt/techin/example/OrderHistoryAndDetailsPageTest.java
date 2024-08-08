@@ -22,7 +22,7 @@ public class OrderHistoryAndDetailsPageTest extends TestMethods{
         selectBestYetToComePosterLinkTest(); // -> the link is either not clickable / visible therefore further testing here halts
     }
 
-    //Test 062 -> order and history test (box icon test) (terms of service checkbox clicking halts the test)
+    //Test 062 -> order and history test (box icon test)
     @Test
     @Tag("Single_Product_Order_And_History_Box_Icon")
     void singleProductOrderAndHistoryBoxIconTest(){
