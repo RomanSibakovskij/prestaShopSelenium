@@ -1,11 +1,12 @@
 package lt.techin.example;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class OrderHistoryAndDetailsPageTest extends TestMethods{
 
     //Test 062 -> order and history test (link test)
     @Test
+    @Tag("Single_Product_Order_And_History_Link")
     void singleProductOrderAndHistoryLinkTest(){
         clickOnSignUpTest();
 
@@ -23,6 +24,7 @@ public class OrderHistoryAndDetailsPageTest extends TestMethods{
 
     //Test 062 -> order and history test (box icon test) (terms of service checkbox clicking halts the test)
     @Test
+    @Tag("Single_Product_Order_And_History_Box_Icon")
     void singleProductOrderAndHistoryBoxIconTest(){
         clickOnSignUpTest();
 
@@ -40,6 +42,7 @@ public class OrderHistoryAndDetailsPageTest extends TestMethods{
 
     //Test 063 -> add product into shopping cart and remove it test (the icon needs to be clicked repeatedly if more than one product (quantity of the same) is present)
     @Test
+    @Tag("Single_Product_Add_And_Remove_From_Cart")
     void addAndRemoveProductFromCartTest(){
         clickOnSignUpTest();
 
