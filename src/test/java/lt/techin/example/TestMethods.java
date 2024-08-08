@@ -2056,6 +2056,102 @@ public class TestMethods extends BaseTest{
         //assert the order confirmation message is displayed as expected
         //assertEquals(productOrderPage.getOrderConfirmationMessage(), "\uE876"); // -? element cannot be found for some reason
     }
+    protected void selectBestYetToComePayByCashTest(){
+        RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
+        //assert 'Art' link is displayed on navbar
+        assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
+        System.out.println("The 'Art' link is displayed on navbar" + "\n");
+        registeredUserArtPage.clickArtLink();
+        //assert 'Best Yet To Come' poster box icon is displayed
+        assertTrue(registeredUserArtPage.isBestYetToComePosterBoxIconDisplayed(), "The 'Best Yet To Come' poster box icon isn't displayed");
+        System.out.println("The 'Best Yet To Come' poster box icon isn't displayed" + "\n");
+        registeredUserArtPage.clickBestYetToComePosterBoxIcon();
+
+        BestYetToComePosterPage bestYetToComePosterPage = new BestYetToComePosterPage(driver);
+        //assert product name is correct
+        assertEquals(bestYetToComePosterPage.getProductName(), "THE BEST IS YET TO COME' FRAMED POSTER");
+        //assert 'Add to Cart' button is displayed
+        assertTrue(bestYetToComePosterPage.isAddToCartButtonDisplayed(), "The 'Add to Cart' button isn't displayed");
+        System.out.println("The 'Add To Cart' button is displayed" + "\n");
+        bestYetToComePosterPage.clickAddToCartButton();
+
+        //assert the product was added to cart
+        assertEquals(bestYetToComePosterPage.getSuccessMessage(), "\uE876Product successfully added to your shopping cart");
+        //assert the product added bears the correct name
+        assertEquals(bestYetToComePosterPage.getAddedProductName(), "The best is yet to come' Framed poster");
+        //assert the correct amount was added to cart
+        assertEquals(bestYetToComePosterPage.getCartItemCount(), "There is 1 item in your cart.");
+
+        //assert 'Proceed to Checkout' button in pop-up is displayed
+        assertTrue(bestYetToComePosterPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
+        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
+        bestYetToComePosterPage.clickProceedToCheckoutButton();
+
+        ProductCheckoutPage productCheckoutPage = new ProductCheckoutPage(driver);
+        //assert quantity field is displayed in checkout page
+        assertTrue(productCheckoutPage.isQtyAdjusterDisplayed(), "The quantity adjuster isn't present");
+        System.out.println("The quantity adjuster is present" + "\n");
+        productCheckoutPage.inputProductQuantity();
+        //assert 'Proceed to checkout' button is displayed
+        assertTrue(productCheckoutPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
+        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
+        productCheckoutPage.clickProceedToCheckoutButton();
+
+        ProductOrderPage productOrderPage = new ProductOrderPage(driver);
+        //assert the address input field is displayed
+        assertTrue(productOrderPage.isAddressInputFieldDisplayed(), "The address input field isn't displayed");
+        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
+        productOrderPage.inputCheckoutDetails();
+        productOrderPage.inputAddressIntoInputField();
+        //assert the city input field is displayed
+        assertTrue(productOrderPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
+        System.out.println("The city input field is displayed" + "\n");
+        productOrderPage.inputCityIntoInputField();
+        //assert the state dropdown menu is displayed
+        assertTrue(productOrderPage.isStateDropdownMenuDisplayed(), "The state dropdown menu isn't displayed");
+        System.out.println("The state dropdown menu is displayed" + "\n");
+        productOrderPage.clickStateDropdownMenu();
+        //assert the valid state option is displayed
+        assertTrue(productOrderPage.isIllinoisStateDisplayed(), "The Illinois option isn't displayed");
+        System.out.println("The Illinois option is displayed" + "\n");
+        productOrderPage.clickIllinoisStateOption();
+        //assert the postal code input field is displayed
+        assertTrue(productOrderPage.isPostalCodeInputFieldDisplayed(), "The postal code input field isn't displayed");
+        System.out.println("The postal code input field is displayed" + "\n");
+        productOrderPage.inputPostalCodeIntoInputField();
+        //assert the country dropdown menu is displayed
+        assertTrue(productOrderPage.isCountryDropdownMenuDisplayed(), "The country dropdown menu isn't displayed");
+        System.out.println("The postal code input field is displayed" + "\n");
+        productOrderPage.clickCountryDropdownMenu();
+        //assert the right country is displayed
+        assertTrue(productOrderPage.isUSCountryDisplayed(), "The US option isn't displayed");
+        System.out.println("The US option is displayed" + "\n");
+        productOrderPage.clickUSOption();
+        //assert 'Continue' button is displayed
+        assertTrue(productOrderPage.isContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
+        System.out.println("The 'Continue' button is displayed" + "\n");
+        productOrderPage.clickContinueButton();
+        //assert shipping order comment input field is displayed
+        assertTrue(productOrderPage.isOrderDeliveryCommentFieldDisplayed(), "The comment input field isn't displayed");
+        System.out.println("The comment input field is displayed" + "\n");
+        productOrderPage.inputDeliveryComment();
+        //assert 'Continue' button is displayed
+        assertTrue(productOrderPage.isShippingContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
+        System.out.println("The 'Continue' button is displayed" + "\n");
+        productOrderPage.clickShippingContinueButton();
+        //assert chosen payment button option is displayed
+        assertTrue(productOrderPage.isCashOnDeliveryButtonDisplayed(), "The 'Cash On Delivery' button isn't displayed");
+        System.out.println("The 'Cash On Delivery' button is displayed" + "\n");
+        productOrderPage.selectPayByCashOption();
+        System.out.println("The 'Terms of service' checkbox is displayed" + "\n");
+        productOrderPage.checkTermsOfServiceCheckbox();
+        //assert 'Place Order' button is displayed
+        assertTrue(productOrderPage.isPlaceOrderButtonDisplayed(), "The 'Place Order' button isn't displayed");
+        System.out.println("The 'Place Order' button is displayed" + "\n");
+        productOrderPage.clickPlaceOrderButton();
+        //assert the order confirmation message is displayed as expected
+        //assertEquals(productOrderPage.getOrderConfirmationMessage(), "\uE876"); // -? element cannot be found for some reason
+    }
 
     protected void addAndRemoveBestYetToComePosterFromCartBoxIconTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);

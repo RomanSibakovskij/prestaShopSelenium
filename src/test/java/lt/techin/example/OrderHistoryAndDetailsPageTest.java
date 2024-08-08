@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 
 public class OrderHistoryAndDetailsPageTest extends TestMethods{
 
-    //Test 062 -> order and history test (link test)
+    //Test 062 -> order and history test (link test) -> pay by check option
     @Test
     @Tag("Single_Product_Order_And_History_Link")
     void singleProductOrderAndHistoryLinkTest(){
@@ -22,7 +22,7 @@ public class OrderHistoryAndDetailsPageTest extends TestMethods{
         selectBestYetToComePosterLinkTest(); // -> the link is either not clickable / visible therefore further testing here halts
     }
 
-    //Test 062 -> order and history test (box icon test)
+    //Test 062a -> order and history test (box icon test) -> pay by bank wire option
     @Test
     @Tag("Single_Product_Order_And_History_Box_Icon")
     void singleProductOrderAndHistoryBoxIconTest(){
@@ -38,6 +38,24 @@ public class OrderHistoryAndDetailsPageTest extends TestMethods{
 
         navigateToArtPageTest();
         selectBestYetToComePosterBoxIconTest();
+    }
+
+    //Test 062b -> order and history test (box icon test) -> pay by cash option
+    @Test
+    @Tag("Single_Product_Order_And_History_Box_Icon")
+    void singleProductOrderAndHistoryPayByCashTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+        selectBestYetToComePayByCashTest();
     }
 
     //Test 063 -> add product into shopping cart and remove it test (the icon needs to be clicked repeatedly if more than one product (quantity of the same) is present)
