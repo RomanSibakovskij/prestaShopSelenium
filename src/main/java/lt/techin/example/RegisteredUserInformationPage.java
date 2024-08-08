@@ -66,9 +66,14 @@ public class RegisteredUserInformationPage extends BasePage{
     @FindBy(css = "a[title='View my customer account']")
     private WebElement editedUserAccountLink;
 
+
     //negative data input warning message elements
     @FindBy(css = "aside#notifications > .container.notifications-container")
     private WebElement checkDataMessage;
+
+    //warning error message elements
+    @FindBy(css = "article[role='alert']")
+    private WebElement dataErrorMessage;
     @FindBy(css = "ul > .alert.alert-danger")
     private WebElement invalidFormatMessage;
 
@@ -88,8 +93,11 @@ public class RegisteredUserInformationPage extends BasePage{
 
     //negative test input data
     private String noFirstName;
-    private String invalidFirstName; // symbols
+    private String invalidFirstName;
     private String tooLongFirstName;
+    private String noLastName;
+    private String invalidLastName;
+    private String tooLongLastName;
 
     public RegisteredUserInformationPage(WebDriver driver) {
         super(driver);
@@ -256,9 +264,9 @@ public class RegisteredUserInformationPage extends BasePage{
             i.printStackTrace(System.out);
         }
     }
-
+    //invalid first name format
     public void inputEditedInformationDetailsInvalidFirstName(RegisterPage registerPage){
-        invalidFirstName = "@#$";
+        invalidFirstName = "%$#";
         editedLastName = TestDataGenerator.generateRandomLastname(10);
         editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
         password = registerPage.getPassword();
@@ -266,7 +274,7 @@ public class RegisteredUserInformationPage extends BasePage{
         editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
 
         System.out.println("Generated Data:" + "\n");
-        System.out.println("Expected invalid first name: " + invalidFirstName);
+        System.out.println("Expected first name: " + invalidFirstName);
         System.out.println("Edited last name: " + editedLastName);
         System.out.println("Edited email: " + editedEmailAddress);
         System.out.println("Old password: " + password);
@@ -280,7 +288,108 @@ public class RegisteredUserInformationPage extends BasePage{
         firstName = firstNameInputField.getAttribute("value");
         firstNameInputField.clear();
         firstNameInputField.sendKeys(invalidFirstName);
+    }
+    //too long first name
+    public void inputEditedInformationDetailsTooLongFirstName(RegisterPage registerPage){
+        tooLongFirstName = TestDataGenerator.generateRandomFirstname(256);
+        editedLastName = TestDataGenerator.generateRandomLastname(10);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
 
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Expected first name: " + tooLongFirstName);
+        System.out.println("Edited last name: " + editedLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editTooLongFirstName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(firstNameInputField));
+        firstName = firstNameInputField.getAttribute("value");
+        firstNameInputField.clear();
+        firstNameInputField.sendKeys(tooLongFirstName);
+    }
+    //no last name
+    public void inputEditedInformationDetailsNoLastName(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        noLastName = "";
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Expected last name: " + noLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editNoLastName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
+        lastName = lastNameInputField.getAttribute("value");
+        lastNameInputField.clear();
+        lastNameInputField.sendKeys(noLastName);
+    }
+
+    //invalid last name format
+    public void inputEditedInformationDetailsInvalidLastName(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        invalidLastName = "@#$";
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Expected last name: " + invalidLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editInvalidLastName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
+        lastName = lastNameInputField.getAttribute("value");
+        lastNameInputField.clear();
+        lastNameInputField.sendKeys(invalidLastName);
+    }
+
+    //too long last name
+    public void inputEditedInformationDetailsTooLongLastName(RegisterPage registerPage){
+        editedFirstName = TestDataGenerator.generateRandomFirstname(8);
+        tooLongLastName = TestDataGenerator.generateRandomLastname(256);
+        editedEmailAddress = TestDataGenerator.generateRandomEmailAddress(10);
+        password = registerPage.getPassword();
+        newPassword = TestDataGenerator.generateNewRandomPassword();
+        editedBirthDate = TestDataGenerator.generateRandomBirthdate(18, 75, "MM/dd/yyyy");
+
+        System.out.println("Generated Data:" + "\n");
+        System.out.println("Edited first name: " + editedFirstName);
+        System.out.println("Expected last name: " + tooLongLastName);
+        System.out.println("Edited email: " + editedEmailAddress);
+        System.out.println("Old password: " + password);
+        System.out.println("New password: " + newPassword);
+        System.out.println("Edited birthdate: " + editedBirthDate);
+    }
+
+    public void editTooLongLastName(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(800));
+        wait.until(ExpectedConditions.visibilityOf(lastNameInputField));
+        lastName = lastNameInputField.getAttribute("value");
+        lastNameInputField.clear();
+        lastNameInputField.sendKeys(tooLongLastName);
     }
 
 
@@ -331,8 +440,14 @@ public class RegisteredUserInformationPage extends BasePage{
     //edited user account name getter
     public String getEditedUserAccountName(){return editedUserAccountLink.getText();}
 
+
     // warning message getters
     public String getCheckDataMessage(){return checkDataMessage.getText();}
     public String getInvalidFormatMessage(){return invalidFormatMessage.getText();}
+
+    //error message getters
+    public String getDataErrorMessage(){return dataErrorMessage.getText();}
+    public String getNameFormatErrorMessage(){return invalidFormatMessage.getText();}
+
 
 }
