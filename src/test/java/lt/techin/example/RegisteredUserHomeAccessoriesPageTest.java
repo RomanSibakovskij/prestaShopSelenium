@@ -402,6 +402,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 035 -> click on sort by dropdown menu test
     @Test
+    @Tag("Sort_By_Menu_Click_Test")
     void clickSortByMenuTest(){
         clickOnSignUpTest();
 
@@ -420,6 +421,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 035a -> sort home accessories by sales test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortBySalesTest(){
         clickOnSignUpTest();
 
@@ -439,6 +441,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 035b -> sort home accessories by relevance test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByRelevanceTest(){
         clickOnSignUpTest();
 
@@ -458,6 +461,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 035c -> sort home accessories by name (A to Z) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByNameAToZTest(){
         clickOnSignUpTest();
 
@@ -477,6 +481,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 035d -> sort home accessories by name (Z to A) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByNameZToATest(){
         clickOnSignUpTest();
 
@@ -496,6 +501,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 035e -> sort home accessories by price (low to high) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByPriceLowToHighTest(){
         clickOnSignUpTest();
 
@@ -515,6 +521,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 035f -> sort home accessories by price (high to low) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByPriceHighToLowTest(){
         clickOnSignUpTest();
 
@@ -534,6 +541,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 035g -> sort home accessories by reference (A to Z) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByReferenceAToZTest(){
         clickOnSignUpTest();
 
@@ -553,6 +561,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 035g -> sort home accessories by reference (Z to A) test
     @Test
+    @Tag("Sort_Products_By_Categories")
     void clickSortByReferenceZToATest(){
         clickOnSignUpTest();
 
