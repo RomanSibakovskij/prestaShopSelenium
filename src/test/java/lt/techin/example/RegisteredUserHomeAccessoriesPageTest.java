@@ -1,11 +1,12 @@
 package lt.techin.example;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 025 -> navigate to Home Accessories page (link 1)test
     @Test
+    @Tag("Navigate_To_Category_Page_By_Aside_Link")
     void goToHomeAccessoriesPageLink1Test(){
         clickOnSignUpTest();
 
@@ -24,6 +25,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 025a -> navigate to Home Accessories page (link 2) test
     @Test
+    @Tag("Navigate_To_Category_Page_By_Icon_Link")
     void goToHomeAccessoriesPageLink2Test(){
         clickOnSignUpTest();
 
@@ -42,6 +44,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 025b -> navigate to Home Accessories page (box icon) test
     @Test
+    @Tag("Navigate_To_Category_Page_By_Box_Icon")
     void goToHomeAccessoriesPageBoxIconTest(){
         clickOnSignUpTest();
 
@@ -60,6 +63,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 026 -> filter home accessories products by availability (box icon) test
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterHmAccProductByAvailabilityBoxIconTests(){
         clickOnSignUpTest();
 
@@ -79,6 +83,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 026a -> filter home accessories products by availability (link) test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterHmAccProductByAvailabilityLinkTests(){
         clickOnSignUpTest();
 
@@ -98,6 +103,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 027 -> filter home accessories products by selections (box icon) test
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterHmAccProductBySelectionsBoxIconTests(){
         clickOnSignUpTest();
 
@@ -117,6 +123,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 027a -> filter home accessories products by selections (link) test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterHmAccProductBySelectionsLinkTests(){
         clickOnSignUpTest();
 
@@ -136,6 +143,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 028 -> filter home accessories products by price slider value test
     @Test
+    @Tag("Filter_Products_By_Price_Slider")
     void filterHmAccProductByPriceValueTests(){
         clickOnSignUpTest();
 
@@ -155,6 +163,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 029 -> filter home accessories products by white color (box icon) test (search shows black items for some reason)
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterHmAccProductByWhiteColorBoxIconTests(){
         clickOnSignUpTest();
 
@@ -174,6 +183,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 029a -> filter home accessories products by white color (link) test (search shows black items for some reason)
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterHmAccProductByWhiteColorLinkTests(){
         clickOnSignUpTest();
 
@@ -193,6 +203,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 030 -> filter home accessories products by black color (box icon) test
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterHmAccProductByBlackColorBoxIconTests(){
         clickOnSignUpTest();
 
@@ -212,6 +223,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 030a -> filter home accessories products by black color (link) test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterHmAccProductByBlackColorLinkTests(){
         clickOnSignUpTest();
 
@@ -231,6 +243,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 031 -> filter home accessories products by composition -> ceramic (box icon) test
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterHmAccProductByCeramicBoxIconTests(){
         clickOnSignUpTest();
 
@@ -250,6 +263,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 031a -> filter home accessories products by composition -> ceramic (link) test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterHmAccProductByCeramicLinkTests(){
         clickOnSignUpTest();
 
@@ -269,6 +283,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 032 -> filter home accessories products by composition -> polyester (box icon) test
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterHmAccProductByPolyesterBoxIconTests(){
         clickOnSignUpTest();
 
@@ -288,6 +303,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 032a -> filter home accessories products by composition -> polyester (link) test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterHmAccProductByPolyesterLinkTests(){
         clickOnSignUpTest();
 
@@ -307,6 +323,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 033 -> filter home accessories products by property (box icon) test
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterHmAccProductByPropertyBoxIconTests(){
         clickOnSignUpTest();
 
@@ -326,6 +343,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 033a -> filter home accessories products by property (link) test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterHmAccProductByPropertyLinkTests(){
         clickOnSignUpTest();
 
@@ -344,6 +362,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
     }
     //Test 034 -> filter home accessories products by brand test
     @Test
+    @Tag("Filter_Products_By_Box_Icon_Click")
     void filterHmAccProductByBrandBoxIconTests(){
         clickOnSignUpTest();
 
@@ -363,6 +382,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 034a -> filter home accessories products by brand (link) test
     @Test
+    @Tag("Filter_Products_By_Link_Click")
     void filterHmAccProductByBrandLinkTests(){
         clickOnSignUpTest();
 
