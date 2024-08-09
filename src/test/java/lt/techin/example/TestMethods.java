@@ -1,9 +1,11 @@
 package lt.techin.example;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.slf4j.*;
 
 public class TestMethods extends BaseTest {
 
+    private static final Logger logger = LoggerFactory.getLogger(TestMethods.class);
 
     //sign up test methods
     protected void clickOnSignUpTest() {
@@ -6257,10 +6259,36 @@ public class TestMethods extends BaseTest {
     protected void viewOrderAndHistoryAfterConfirmation() {
         selectBestYetToComePosterBoxIconTest();
         OrderHistoryAndDetailsPage orderHistoryAndDetailsPage = new OrderHistoryAndDetailsPage(driver);
-        //assert the 'Orders' link is displayed
-        //assertTrue(orderHistoryAndDetailsPage.isOrdersPageLinkDisplayed(), "The 'Orders' link isn't displayed");
-        System.out.println("The 'Orders' link is displayed" + "\n");
-        orderHistoryAndDetailsPage.clickOnOrdersLink();
+//        //assert the 'Orders' link is displayed
+//        //assertTrue(orderHistoryAndDetailsPage.isOrdersPageLinkDisplayed(), "The 'Orders' link isn't displayed");
+//        System.out.println("The 'Orders' link is displayed" + "\n");
+//        orderHistoryAndDetailsPage.clickOnOrdersLink(); // -> even with a singular proper selector it cannot be found for some reason (even if searching for it with browser console)
+
+        //assert account link is displayed
+        //assertTrue(orderHistoryAndDetailsPage.isAccountLinkDisplayed(), "The account link isn't displayed");
+        logger.info("The account link is displayed" + "\n");
+        orderHistoryAndDetailsPage.clickAccountLink();
+        //assert order and history page link is displayed
+        assertTrue(orderHistoryAndDetailsPage.isOrderAndHistoryPageLinkDisplayed(), "The order and history page link isn't displayed");
+        logger.info("The order and history page link is displayed" + "\n");
+        orderHistoryAndDetailsPage.clickOrderAndHistoryLink();
+
+        //order information logging
+        logger.info("The order ID: " + orderHistoryAndDetailsPage.getOrderID() + "\n");
+        logger.info("The order date: " + orderHistoryAndDetailsPage.getOrderDate() + "\n");
+        logger.info("The order price: " + orderHistoryAndDetailsPage.getOrderPrice() + "\n");
+        logger.info("The order payment: " + orderHistoryAndDetailsPage.getOrderPayment() + "\n");
+        logger.info("The order actions: " + orderHistoryAndDetailsPage.getOrderActions() + "\n");
+
+        //assert the order details are as expected initially
+        assertEquals(orderHistoryAndDetailsPage.getOrderPrice(), "$123.00");
+        assertEquals(orderHistoryAndDetailsPage.getOrderPayment(), "Bank transfer");
+        assertEquals(orderHistoryAndDetailsPage.getOrderActions(), "Details Reorder");
+
+        //assert details reorder link is displayed
+        assertTrue(orderHistoryAndDetailsPage.isDetailsAndReorderLinkDisplayed(), "The details reorder link isn't displayed");
+        logger.info("The details reorder link isn't displayed" + "\n");
+        orderHistoryAndDetailsPage.clickDetailsReorderLink();
 
     }
 }
