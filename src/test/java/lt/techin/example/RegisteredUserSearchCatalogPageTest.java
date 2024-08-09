@@ -12,6 +12,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005 -> search for "The Best is Yet To Come" mug as a registered user
     @Test
+    @DisplayName("Search Catalog For 'The Best Yet To Come' Mug")
     @Tag("Search_Catalog_For_Mugs")
     void searchCatalogMugBestTest(){
         clickOnSignUpTest();
@@ -29,6 +30,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005a -> search for "The adventure begins" mug as a registered user
     @Test
+    @DisplayName("Search Catalog For 'The Adventure Begins' Mug")
     @Tag("Search_Catalog_For_Mugs")
     void searchCatalogMugAdventureTest(){
         clickOnSignUpTest();
@@ -46,6 +48,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005b -> search for "Today is a good day" mug as a registered user somehow
     @Test
+    @DisplayName("Search Catalog For 'Today Is A Good day' Mug")
     @Tag("Search_Catalog_For_Mugs")
     void searchCatalogMugGoodDayTest(){
         clickOnSignUpTest();
@@ -63,6 +66,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005c -> search for "Customizable mug" mug as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Custom Text' Mug")
     @Tag("Search_Catalog_For_Mugs")
     void searchCatalogMugCustomTest(){
         clickOnSignUpTest();
@@ -80,6 +84,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005d -> search for "The Best is Yet To Come" framed poster as a registered user
     @Test
+    @DisplayName("Search Catalog For 'The Best Yet To Come' Poster")
     @Tag("Search_Catalog_For_Posters")
     void searchCatalogPosterBestTest(){
         clickOnSignUpTest();
@@ -97,6 +102,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005e -> search for "The adventure begins" framed poster as a registered user
     @Test
+    @DisplayName("Search Catalog For 'The Adventure Begins' Poster")
     @Tag("Search_Catalog_For_Posters")
     void searchCatalogPosterAdventureTest(){
         clickOnSignUpTest();
@@ -114,6 +120,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005f -> search for "The adventure begins" framed poster as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Today Is A Good Day' Poster")
     @Tag("Search_Catalog_For_Posters")
     void searchCatalogPosterGoodDayTest(){
         clickOnSignUpTest();
@@ -131,6 +138,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005g -> search for "Mountain fox" cushion as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Mountain Fox' Cushion")
     @Tag("Search_Catalog_For_Cushions")
     void searchCatalogCushionFoxTest(){
         clickOnSignUpTest();
@@ -148,6 +156,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005h -> search for "Brown Bear" cushion as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Brown Bear' Cushion")
     @Tag("Search_Catalog_For_Cushions")
     void searchCatalogCushionBearTest(){
         clickOnSignUpTest();
@@ -165,6 +174,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005h -> search for "Humming Bird" cushion as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Humming Bird' Cushion")
     @Tag("Search_Catalog_For_Cushions")
     void searchCatalogCushionBirdTest(){
         clickOnSignUpTest();
@@ -182,6 +192,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005i -> search for "Humming Bird" t-shirt as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Humming Bird' T-shirt")
     @Tag("Search_Catalog_For_TShirt")
     void searchCatalogTShirtBirdTest(){
         clickOnSignUpTest();
@@ -199,6 +210,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005j -> search for "Humming Bird" sweater as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Humming Bird' Sweater")
     @Tag("Search_Catalog_For_Sweater")
     void searchCatalogSweaterBirdTest(){
         clickOnSignUpTest();
@@ -216,6 +228,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005k -> search for "Mountain Fox" graphics as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Mountain Fox' Graphics")
     @Tag("Search_Catalog_For_Graphics")
     void searchCatalogGraphicsFoxTest(){
         clickOnSignUpTest();
@@ -233,6 +246,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005l -> search for "Brown Bear" graphics as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Brown Bear' Graphics")
     @Tag("Search_Catalog_For_Graphics")
     void searchCatalogGraphicsBearTest(){
         clickOnSignUpTest();
@@ -250,6 +264,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005m -> search for "Humming Bird" graphics as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Humming Bird' Graphics")
     @Tag("Search_Catalog_For_Graphics")
     void searchCatalogGraphicsBirdTest(){
         clickOnSignUpTest();
@@ -267,6 +282,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005n -> search for "Mountain Fox" notebook as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Mountain Fox' Notebook")
     @Tag("Search_Catalog_For_Notebooks")
     void searchCatalogNotebookFoxTest(){
         clickOnSignUpTest();
@@ -284,6 +300,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005o -> search for "Brown Bear" notebook as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Brown Bear' Notebook")
     @Tag("Search_Catalog_For_Notebooks")
     void searchCatalogNotebookBearTest(){
         clickOnSignUpTest();
@@ -301,6 +318,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005p -> search for "Humming Bird" notebook as a registered user
     @Test
+    @DisplayName("Search Catalog For 'Humming Bird' Notebook")
     @Tag("Search_Catalog_For_Notebooks")
     void searchCatalogNotebookBirdTest(){
         clickOnSignUpTest();
@@ -318,6 +336,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
 
     //Test 005q -> search for "Pack Mug and Poster" as a registered user
     @Test
+    @DisplayName("Search Catalog For Pack Mug And Poster")
     @Tag("Search_Catalog_For_Pack")
     void searchCatalogPackMugPosterTest(){
         clickOnSignUpTest();
