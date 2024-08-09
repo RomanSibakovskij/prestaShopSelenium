@@ -1,5 +1,6 @@
 package lt.techin.example;
 
+import org.checkerframework.checker.signature.qual.FieldDescriptor;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -44,6 +45,26 @@ public class OrderHistoryAndDetailsPage extends BasePage{
     private WebElement orderPlacementDate;
     @FindBy(css = ".hidden-xs-down .label-pill")
     private WebElement orderCurrentStatus;
+    @FindBy(css = "#delivery-address")
+    private WebElement orderDeliveryAddress;
+    @FindBy(css = "#invoice-address")
+    private WebElement orderInvoiceAddress;
+    @FindBy(css = "tbody a")
+    private WebElement orderNameLink;
+    @FindBy(css = "#order-products tbody tr td:nth-of-type(2)")
+    private WebElement orderQuantity;
+    @FindBy(css = "#order-products tr .text-xs-right:nth-of-type(3)")
+    private WebElement orderUnitPrice;
+    @FindBy(css = "#order-products tr .text-xs-right:nth-of-type(4)")
+    private WebElement orderTotalPrice;
+    @FindBy(css = ".line-products td:nth-of-type(2)")
+    private WebElement orderSubTotalPrice;
+    @FindBy(css = ".line-shipping td:nth-of-type(2)")
+    private WebElement orderShippingAndHandlingPrice;
+    @FindBy(css = ".line-tax td:nth-of-type(2)")
+    private WebElement orderTax;
+    @FindBy(css = ".line-total td:nth-of-type(2)")
+    private WebElement orderTotalCost;
 
     public OrderHistoryAndDetailsPage(WebDriver driver) {
         super(driver);
@@ -99,5 +120,22 @@ public class OrderHistoryAndDetailsPage extends BasePage{
 
     //assert the details reorder link method
     public boolean isDetailsAndReorderLinkDisplayed(){return detailsReorderLink.isDisplayed();}
+
+    //order details table getters (with reorder link)
+    public String getOrderReference(){return orderReference.getText();}
+    public String getOrderCarrier(){return orderCarrier.getText();}
+    public String getOrderPaymentMethod(){return orderPaymentMethod.getText();}
+    public String getOrderPlacementDate(){return orderPlacementDate.getText();}
+    public String getOrderCurrentStatus(){return orderCurrentStatus.getText();}
+    public String getOrderDeliveryAddress(){return orderDeliveryAddress.getText();}
+    public String getOrderInvoiceAddress(){return orderInvoiceAddress.getText();}
+    public String getOrderNameLink(){return orderNameLink.getText();}
+    public String getOrderQuantity(){return orderQuantity.getText();}
+    public String getOrderUnitPrice(){return orderUnitPrice.getText();}
+    public String getOrderTotalPrice(){return orderTotalPrice.getText();}
+    public String getOrderSubTotalPrice(){return orderSubTotalPrice.getText();}
+    public String getOrderShippingAndHandlingPrice(){return orderShippingAndHandlingPrice.getText();}
+    public String getOrderTax(){return orderTax.getText();}
+    public String getOrderTotalCost(){return orderTotalCost.getText();}
 
 }

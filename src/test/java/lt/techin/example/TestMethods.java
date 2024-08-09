@@ -6290,5 +6290,22 @@ public class TestMethods extends BaseTest {
         logger.info("The details reorder link isn't displayed" + "\n");
         orderHistoryAndDetailsPage.clickDetailsReorderLink();
 
+        //log out order details before reorder
+        logger.info("The order reference: " + orderHistoryAndDetailsPage.getOrderReference() + "\n");
+        logger.info("The order carrier: " + orderHistoryAndDetailsPage.getOrderCarrier() + "\n");
+        logger.info("The order payment method: " + orderHistoryAndDetailsPage.getOrderPaymentMethod() + "\n");
+        logger.info("The order placement date: " + orderHistoryAndDetailsPage.getOrderPlacementDate() + "\n");
+        logger.info("The order current status: " + orderHistoryAndDetailsPage.getOrderCurrentStatus() + "\n");
+        logger.info("The order delivery address: " + orderHistoryAndDetailsPage.getOrderDeliveryAddress() + "\n");
+        logger.info("The order invoice address: " + orderHistoryAndDetailsPage.getOrderInvoiceAddress() + "\n");
+        logger.info("The order name: " + orderHistoryAndDetailsPage.getOrderNameLink() + "\n");
+        logger.info("The order quantity: " + orderHistoryAndDetailsPage.getOrderQuantity() + "\n");
+        logger.info("The order unit price: " + orderHistoryAndDetailsPage.getOrderUnitPrice() + "\n");
+        logger.info("The order total price: " + orderHistoryAndDetailsPage.getOrderTotalPrice() + "\n");
+        logger.info("The order sub total price: " + orderHistoryAndDetailsPage.getOrderSubTotalPrice() + "\n");
+        logger.info("The order shipping and handling price: " + orderHistoryAndDetailsPage.getOrderShippingAndHandlingPrice() + "\n");
+        logger.info("The order tax: " + orderHistoryAndDetailsPage.getOrderTax() + "\n");
+        logger.info("The order total cost: " + orderHistoryAndDetailsPage.getOrderTotalCost() + "\n");
+
     }
 }
