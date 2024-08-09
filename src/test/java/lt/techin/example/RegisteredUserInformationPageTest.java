@@ -7,6 +7,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 059 -> navigate to information page test
     @Test
+    @DisplayName("User Navigation To Information Page")
     @Tag("Navigate_To_Information_Page")
     void navigateRegisteredUserInformationPageTest(){
         clickOnSignUpTest();
@@ -25,6 +26,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060 -> edit registered user information (male user) test
     @Test
+    @DisplayName("Edit Male User Account Information With Valid Input")
     @Tag("Edit_User_With_Valid_Data")
     void editRegisteredUserInformationMaleTest(){
         clickOnSignUpTest();
@@ -45,6 +47,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060a -> edit registered user information (male user) with no first name test
     @Test
+    @DisplayName("Edit User Account Information Without First Name")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleNoFirstNameTest(){
         clickOnSignUpTest();
@@ -65,6 +68,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060b -> edit registered user information (male user) with invalid first name test
     @Test
+    @DisplayName("Edit User Account Information Without Last Name")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleInvalidFirstNameTest(){
         clickOnSignUpTest();
@@ -86,6 +90,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060c -> edit registered user information (male user) with invalid first name test
     @Test
+    @DisplayName("Edit User Account Information With Invalid First Name")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleTooLongFirstNameTest(){
         clickOnSignUpTest();
@@ -106,6 +111,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060d -> edit registered user information (male user) with no last name test
     @Test
+    @DisplayName("Edit User Account Information Without Last Name")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleNoLastNameTest(){
         clickOnSignUpTest();
@@ -126,6 +132,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060e -> edit registered user information (male user) with invalid last name test
     @Test
+    @DisplayName("Edit User Account Information With Invalid Last Name")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleInvalidLastNameTest(){
         clickOnSignUpTest();
@@ -146,6 +153,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060f -> edit registered user information (male user) with too long last name test
     @Test
+    @DisplayName("Edit User Account Information With Too Long Last Name")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleTooLongLastNameTest(){
         clickOnSignUpTest();
@@ -166,6 +174,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060g -> edit registered user information (male user) with no email test
     @Test
+    @DisplayName("Edit User Account Information Without Email")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleNoEmailTest(){
         clickOnSignUpTest();
@@ -186,6 +195,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060h -> edit registered user information (male user) with invalid email test
     @Test
+    @DisplayName("Edit User Account Information With Invalid Email")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleInvalidEmailTest(){
         clickOnSignUpTest();
@@ -206,6 +216,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060i -> edit registered user information (male user) with too long email test
     @Test
+    @DisplayName("Edit User Account Information With Too Long Email")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleTooLongEmailTest(){
         clickOnSignUpTest();
@@ -226,6 +237,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060j -> edit registered user information (male user) with no password test
     @Test
+    @DisplayName("Edit User Account Information Without Old Password")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleNoPasswordTest(){
         clickOnSignUpTest();
@@ -246,6 +258,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060k -> edit registered user information (male user) with invalid password test
     @Test
+    @DisplayName("Edit User Account Information With Invalid Old Password")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleInvalidPasswordTest(){
         clickOnSignUpTest();
@@ -266,6 +279,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060l -> edit registered user information (male user) with no new password test (info gets updated)
     @Test
+    @DisplayName("Edit User Account Information Without New Password")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleNoNewPasswordTest(){
         clickOnSignUpTest();
@@ -286,6 +300,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060l -> edit registered user information (male user) with invalid new password test
     @Test
+    @DisplayName("Edit User Account Information With Invalid New Password")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleInvalidNewPasswordTest(){
         clickOnSignUpTest();
@@ -306,6 +321,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060m -> edit registered user information (male user) with too long new password test
     @Test
+    @DisplayName("Edit User Account Information With Too Long New Password")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleTooLongNewPasswordTest(){
         clickOnSignUpTest();
@@ -326,6 +342,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060n -> edit registered user information (male user) with matching new password test (info gets updated)
     @Test
+    @DisplayName("Edit User Account Information With Matching Passwords")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleMatchingNewPasswordTest(){
         clickOnSignUpTest();
@@ -346,6 +363,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060o -> edit registered user information (male user) with no birthdate test (info gets updated)
     @Test
+    @DisplayName("Edit User Account Information Without Birthdate")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleNoBirthDateTest(){
         clickOnSignUpTest();
@@ -366,6 +384,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060p -> edit registered user information (male user) with invalid birthdate format test (info gets updated)
     @Test
+    @DisplayName("Edit User Account Information With Invalid Birthdate Format")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationMaleInvalidBirthDateTest(){
         clickOnSignUpTest();
@@ -386,6 +405,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 060q -> edit registered user information (female user) without clicking required checkboxes
     @Test
+    @DisplayName("Edit User Account Information Without Required Checkboxes")
     @Tag("Edit_User_With_Invalid_Data")
     void editUserInformationFemaleNoRequiredCheckboxesTest(){
         clickOnSignUpTest();
@@ -406,6 +426,7 @@ public class RegisteredUserInformationPageTest extends TestMethods{
 
     //Test 061 -> edit registered user information (female user) test
     @Test
+    @DisplayName("Edit Female User Account Information With Valid Input")
     @Tag("Edit_User_With_Valid_Data")
     void editRegisteredUserInformationFemaleTest(){
         clickOnSignUpTest();
