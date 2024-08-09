@@ -1,5 +1,6 @@
 package lt.techin.example;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -7,6 +8,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 047 -> navigate to women Clothes page (link 1) test
     @Test
+    @DisplayName("User Navigation To Women Clothes Page(aside link)")
     @Tag("Navigate_To_Category_Page_By_Aside_Link")
     void goToWomenClothesPageLink1Test(){
         clickOnSignUpTest();
@@ -25,6 +27,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 047a -> navigate to women Clothes page (link 2) test
     @Test
+    @DisplayName("User Navigation To Women Clothes Page(box icon link)")
     @Tag("Navigate_To_Category_Page_By_Icon_Link")
     void goToWomenClothesPageLink2Test(){
         clickOnSignUpTest();
@@ -43,6 +46,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 047b -> navigate to women Clothes page (box icon) test
     @Test
+    @DisplayName("User Navigation To Women Clothes Page(box icon)")
     @Tag("Navigate_To_Category_Page_By_Box_Icon")
     void goToWomenClothesPageBoxIconTest(){
         clickOnSignUpTest();
@@ -61,6 +65,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 048 -> filter women clothes by availability (box icon) test
     @Test
+    @DisplayName("Filter Women Clothes By Availability(box icon)")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterWomenClothesByAvailabilityBoxIconTest(){
         clickOnSignUpTest();
@@ -80,6 +85,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 048a -> filter women clothes by availability (link) test
     @Test
+    @DisplayName("Filter Women Clothes By Availability(link)")
     @Tag("Filter_Products_By_Link_Click")
     void filterWomenClothesByAvailabilityLinkTest(){
         clickOnSignUpTest();
@@ -99,6 +105,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 049 -> filter women clothes by selections -> discounted (box icon) test
     @Test
+    @DisplayName("Filter Women Clothes By Selection[discounted](box icon)")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterWomenClothesDiscountedBoxIconTest(){
         clickOnSignUpTest();
@@ -118,6 +125,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 049a -> filter women clothes by selections -> discounted (link) test
     @Test
+    @DisplayName("Filter Women Clothes By Selection[discounted](link)")
     @Tag("Filter_Products_By_Link_Click")
     void filterWomenClothesDiscountedLinkTest(){
         clickOnSignUpTest();
@@ -137,6 +145,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 050 -> filter women clothes by selections -> new product (box icon) test
     @Test
+    @DisplayName("Filter Women Clothes By Selection[new product](box icon)")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterWomenClothesNewProductBoxIconTest(){
         clickOnSignUpTest();
@@ -156,6 +165,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 050a -> filter women clothes by selections -> new product (link) test
     @Test
+    @DisplayName("Filter Women Clothes By Selection[new product](link)")
     @Tag("Filter_Products_By_Link_Click")
     void filterWomenClothesNewProductLinkTest(){
         clickOnSignUpTest();
@@ -175,6 +185,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 051 -> filter women clothes by price slider value test
     @Test
+    @DisplayName("Filter Women Clothes By Price Slider Value")
     @Tag("Filter_Products_By_Price_Slider")
     void filterWomenClothesPriceValueTest(){
         clickOnSignUpTest();
@@ -194,6 +205,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 052 -> filter women clothes by size s (box icon) test
     @Test
+    @DisplayName("Filter Women Clothes By Size[s](box icon)")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterWomenClothesSizeSBoxIconTest(){
         clickOnSignUpTest();
@@ -213,6 +225,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 052a -> filter women clothes by size s (link) test
     @Test
+    @DisplayName("Filter Women Clothes By Size[s](link)")
     @Tag("Filter_Products_By_Link_Click")
     void filterWomenClothesSizeSLinkTest(){
         clickOnSignUpTest();
@@ -232,6 +245,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 053 -> filter women clothes by size m (box icon) test
     @Test
+    @DisplayName("Filter Women Clothes By Size[m](box icon)")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterWomenClothesSizeMBoxIconTest(){
         clickOnSignUpTest();
@@ -251,6 +265,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 053a -> filter women clothes by size m (link) test
     @Test
+    @DisplayName("Filter Women Clothes By Size[m](link)")
     @Tag("Filter_Products_By_Link_Click")
     void filterWomenClothesSizeMLinkTest(){
         clickOnSignUpTest();
@@ -270,6 +285,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 054 -> filter women clothes by size l (box icon) test
     @Test
+    @DisplayName("Filter Women Clothes By Size[l](box icon)")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterWomenClothesSizeLBoxIconTest(){
         clickOnSignUpTest();
@@ -289,6 +305,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 054a -> filter women clothes by size l (link) test
     @Test
+    @DisplayName("Filter Women Clothes By Size[l](box icon)")
     @Tag("Filter_Products_By_Link_Click")
     void filterWomenClothesSizeLLinkTest(){
         clickOnSignUpTest();
@@ -308,6 +325,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 055 -> filter women clothes by size xl (box icon) test
     @Test
+    @DisplayName("Filter Women Clothes By Size[xl](box icon)")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterWomenClothesSizeXLBoxIconTest(){
         clickOnSignUpTest();
@@ -327,6 +345,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 055a -> filter women clothes by size xl (link) test
     @Test
+    @DisplayName("Filter Women Clothes By Size[xl](box icon)")
     @Tag("Filter_Products_By_Link_Click")
     void filterWomenClothesSizeXLLinkTest(){
         clickOnSignUpTest();
@@ -346,6 +365,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 056 -> click sort by dropdown menu on women clothes page test
     @Test
+    @DisplayName("Women Clothes Sort By Menu Click Test")
     @Tag("Sort_By_Menu_Click_Test")
     void clickWomenClothesSortByDropdownTest(){
         clickOnSignUpTest();
@@ -365,6 +385,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 056a -> click sort women clothes by sales page test
     @Test
+    @DisplayName("Women Clothes Sort By Sales")
     @Tag("Sort_Products_By_Categories")
     void clickWomenClothesSortBySalesTest(){
         clickOnSignUpTest();
@@ -384,6 +405,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 056b -> click sort women clothes by relevance page test
     @Test
+    @DisplayName("Women Clothes Sort By Relevance")
     @Tag("Sort_Products_By_Categories")
     void clickWomenClothesSortByRelevanceTest(){
         clickOnSignUpTest();
@@ -403,6 +425,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 056c -> click sort women clothes by name (A to Z) page test
     @Test
+    @DisplayName("Women Clothes Sort By Name(A to Z)")
     @Tag("Sort_Products_By_Categories")
     void clickWomenClothesSortByNameAToZTest(){
         clickOnSignUpTest();
@@ -422,6 +445,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 056d -> click sort women clothes by name (Z to A) page test
     @Test
+    @DisplayName("Women Clothes Sort By Name(Z to A)")
     @Tag("Sort_Products_By_Categories")
     void clickWomenClothesSortByNameZToATest(){
         clickOnSignUpTest();
@@ -441,6 +465,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 056e -> click sort women clothes by price (low to high) page test
     @Test
+    @DisplayName("Women Clothes Sort By Price(low to high)")
     @Tag("Sort_Products_By_Categories")
     void clickWomenClothesSortByPriceLowToHighTest(){
         clickOnSignUpTest();
@@ -460,6 +485,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 056f -> click sort women clothes by price (high to low) page test
     @Test
+    @DisplayName("Women Clothes Sort By price(high to low)")
     @Tag("Sort_Products_By_Categories")
     void clickWomenClothesSortByPriceHighToLowTest(){
         clickOnSignUpTest();
@@ -479,6 +505,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 056g -> click sort women clothes by reference (A to Z) page test
     @Test
+    @DisplayName("Women Clothes Sort By Reference(A to Z)")
     @Tag("Sort_Products_By_Categories")
     void clickWomenClothesSortByReferenceAToZTest(){
         clickOnSignUpTest();
@@ -498,6 +525,7 @@ public class RegisteredUserWomenClothesPageTest extends TestMethods{
 
     //Test 056h -> click sort women clothes by reference (Z to A) page test
     @Test
+    @DisplayName("Women Clothes Sort By Reference(Z to A)")
     @Tag("Sort_Products_By_Categories")
     void clickWomenClothesSortByReferenceZToATest(){
         clickOnSignUpTest();
