@@ -7,6 +7,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 062 -> navigate to user account page (upper navbar link)
     @Test
+    @DisplayName("User Account Page Navigation(upper navbar link)")
     @Tag("Navigate_To_User_Account_NavLink")
     void navigateToUserAccountLink1Tests(){
         clickOnSignUpTest();
@@ -24,6 +25,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 063 -> navigate to user account page (footer link)
     @Test
+    @DisplayName("User Account Page Navigation(footer link)")
     @Tag("Navigate_To_User_Account_FooterLink")
     void navigateToUserAccountLink2Tests(){
         clickOnSignUpTest();
@@ -41,6 +43,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 064 -> navigate to add first address page
     @Test
+    @DisplayName("Add To First Address Page Navigation")
     @Tag("Navigate_To_First_Address_Page")
     void navigateToAddFirstAddressPageTest(){
         clickOnSignUpTest();
@@ -56,8 +59,9 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
         navigateToAddFirstAddressPage();
     }
 
-    //Test 065 -> change registered user data with valid data
+    //Test 065 -> change registered user data with valid input
     @Test
+    @DisplayName("Edit User Account Data With Valid Input[United States]")
     @Tag("Edit_Account_Data_Valid_Input")
     void changeRegisteredUserDataValidInputTest(){
         clickOnSignUpTest();
@@ -76,6 +80,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 065a -> change registered user data without first name
     @Test
+    @DisplayName("Edit User Account Data Without First Name")
     @Tag("Edit_Account_Data_No_Singular_Input")
     void changeRegisteredUserDataNoFirstNameTest(){
         clickOnSignUpTest();
@@ -94,6 +99,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 065b -> change registered user data without last name
     @Test
+    @DisplayName("Edit User Account Data Without Last Name")
     @Tag("Edit_Account_Data_No_Singular_Input")
     void changeRegisteredUserDataNoLastNameTest(){
         clickOnSignUpTest();
@@ -112,6 +118,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 065c -> change registered user data without address
     @Test
+    @DisplayName("Edit User Account Data Without Address")
     @Tag("Edit_Account_Data_No_Singular_Input")
     void changeRegisteredUserDataNoAddressTest(){
         clickOnSignUpTest();
@@ -130,6 +137,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 065d -> change registered user data without city
     @Test
+    @DisplayName("Edit User Account Data Without City")
     @Tag("Edit_Account_Data_No_Singular_Input")
     void changeRegisteredUserDataNoCityTest(){
         clickOnSignUpTest();
@@ -148,6 +156,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 065e -> change registered user data without state
     @Test
+    @DisplayName("Edit User Account Data Without State")
     @Tag("Edit_Account_Data_No_Singular_Input")
     void changeRegisteredUserDataNoStateTest(){
         clickOnSignUpTest();
@@ -166,6 +175,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 065f -> change registered user data without postal code
     @Test
+    @DisplayName("Edit User Account Data Without Postal Code")
     @Tag("Edit_Account_Data_No_Singular_Input")
     void changeRegisteredUserDataNoPostalCodeTest(){
         clickOnSignUpTest();
@@ -184,6 +194,7 @@ public class RegisteredUserAccountAddFirstAddressPageTest extends TestMethods{
 
     //Test 065g -> change registered user data with valid data (France)
     @Test
+    @DisplayName("Edit User Account Data With Valid Input [France]")
     @Tag("Edit_Account_Data_Valid_Input")
     void changeRegisteredUserDataValidInputFranceTest(){
         clickOnSignUpTest();
