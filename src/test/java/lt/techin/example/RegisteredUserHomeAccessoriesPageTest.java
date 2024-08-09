@@ -150,7 +150,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
 
     //Test 028 -> filter home accessories products by price slider value test
     @Test
-    @DisplayName("Filter Home Accessories By Price Slider")
+    @DisplayName("Filter Home Accessories By Price Slider Value")
     @Tag("Filter_Products_By_Price_Slider")
     void filterHmAccProductByPriceValueTests(){
         clickOnSignUpTest();
