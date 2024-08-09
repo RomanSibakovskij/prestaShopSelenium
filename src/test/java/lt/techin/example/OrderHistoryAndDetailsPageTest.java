@@ -21,4 +21,23 @@ public class OrderHistoryAndDetailsPageTest extends TestMethods{
         navigateToArtPageTest();
         viewOrderAndHistoryAfterConfirmation();
     }
+
+    //Test 065 -> send a message for a single product order
+    @Test
+    @Tag("Send_Message_For_Single_Product_Order")
+    void sendMessageForASingleProductOrderTest(){
+        clickOnSignUpTest();
+
+        RegisterPage registerPage = new RegisterPage(driver);
+        registerPage.inputNewUserDetails();
+
+        createNewMaleUserAccountTest(registerPage);
+        logoutFromUserAccountTest();
+        clickSignInRegisteredUserTest();
+        logInRegisteredUserTest(registerPage);
+
+        navigateToArtPageTest();
+
+        addMessageToOrderTest();
+    }
 }

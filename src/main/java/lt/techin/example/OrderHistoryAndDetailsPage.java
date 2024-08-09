@@ -66,6 +66,20 @@ public class OrderHistoryAndDetailsPage extends BasePage{
     @FindBy(css = ".line-total td:nth-of-type(2)")
     private WebElement orderTotalCost;
 
+    //add message to order elements
+    @FindBy(css = "select[name='id_product']")
+    private WebElement productDropdownSelector;
+    @FindBy(css = "select[name='id_product'] > option[value='3']")
+    private WebElement singleProductChoice;
+    @FindBy(css = "textarea[name='msgText']")
+    private WebElement messageInputField;
+    @FindBy(css = "button[name='submitMessage']")
+    private WebElement sendMessageButton;
+
+    //success message sent element
+    @FindBy(css = "article[role='alert'] li")
+    private WebElement successMessageSent;
+
     public OrderHistoryAndDetailsPage(WebDriver driver) {
         super(driver);
     }
@@ -97,6 +111,38 @@ public class OrderHistoryAndDetailsPage extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(700));
         wait.until(ExpectedConditions.elementToBeClickable(detailsReorderLink));
         detailsReorderLink.click();
+    }
+
+    //product dropdown selector click method
+    public void clickProductSelector(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", productDropdownSelector);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(700));
+        wait.until(ExpectedConditions.elementToBeClickable(productDropdownSelector));
+        productDropdownSelector.click();
+    }
+
+    //single product choice method
+    public void selectSingleProduct(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", singleProductChoice);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(700));
+        wait.until(ExpectedConditions.elementToBeClickable(singleProductChoice));
+        singleProductChoice.click();
+    }
+
+    //add message for the order method
+    public void inputOrderMessage(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", messageInputField);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(700));
+        wait.until(ExpectedConditions.visibilityOf(messageInputField));
+        messageInputField.sendKeys("I'm still waiting for the order to arrive.");
+    }
+
+    //send message for the order click method
+    public void clickSendMessage(){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sendMessageButton);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(700));
+        wait.until(ExpectedConditions.elementToBeClickable(sendMessageButton));
+        sendMessageButton.click();
     }
 
 
@@ -137,5 +183,16 @@ public class OrderHistoryAndDetailsPage extends BasePage{
     public String getOrderShippingAndHandlingPrice(){return orderShippingAndHandlingPrice.getText();}
     public String getOrderTax(){return orderTax.getText();}
     public String getOrderTotalCost(){return orderTotalCost.getText();}
+
+    // add message section element asserts
+    public boolean isProductDropdownSelectorDisplayed(){return productDropdownSelector.isDisplayed();}
+    public boolean isMessageInputFieldDisplayed(){return messageInputField.isDisplayed();}
+    public boolean isSendMessageButtonDisplayed(){return sendMessageButton.isDisplayed();}
+
+    //product choice getter
+    public String getProductOrderName(){return singleProductChoice.getText();}
+
+    //success message sent getter
+    public String getSuccessMessage(){return successMessageSent.getText();}
 
 }

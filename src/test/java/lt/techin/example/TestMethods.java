@@ -6303,4 +6303,29 @@ public class TestMethods extends BaseTest {
         logger.info("The order total cost: " + orderHistoryAndDetailsPage.getOrderTotalCost() + "\n");
 
     }
+
+    //add message to the order test method
+
+    protected void addMessageToOrderTest(){
+        viewOrderAndHistoryAfterConfirmation();
+        OrderHistoryAndDetailsPage orderHistoryAndDetailsPage = new OrderHistoryAndDetailsPage(driver);
+
+        //assert product dropdown menu is displayed
+        assertTrue(orderHistoryAndDetailsPage.isProductDropdownSelectorDisplayed(), "The product dropdown selector isn't displayed");
+        logger.info("The product dropdown selector is displayed" + "\n");
+        orderHistoryAndDetailsPage.clickProductSelector();
+        //assert the product order name is as expected
+        assertEquals(orderHistoryAndDetailsPage.getProductOrderName(), "The best is yet to come' Framed poster (Dimension: 40x60cm)");
+        orderHistoryAndDetailsPage.selectSingleProduct();
+        //assert the message input field is visible
+        assertTrue(orderHistoryAndDetailsPage.isMessageInputFieldDisplayed(), "The message input field isn't displayed");
+        logger.info("The message input field is displayed" + "\n");
+        orderHistoryAndDetailsPage.inputOrderMessage();
+        //assert the send message button is displayed
+        assertTrue(orderHistoryAndDetailsPage.isSendMessageButtonDisplayed(), "The 'Send button isn't displayed");
+        logger.info("The 'Send' button is displayed" + "\n");
+        orderHistoryAndDetailsPage.clickSendMessage();
+        //assert the success message is as expected
+        assertEquals(orderHistoryAndDetailsPage.getSuccessMessage(), "Message successfully sent");
+    }
 }
