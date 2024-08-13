@@ -76,6 +76,17 @@ public class RegisteredUserInformationPage extends BasePage{
     private WebElement dataErrorMessage;
     @FindBy(css = "ul > .alert.alert-danger")
     private WebElement invalidFormatMessage;
+    @FindBy(xpath = "//ul/li[@class='alert alert-danger']")
+    private WebElement invalidEmailAddressMessage;
+
+    @FindBy(xpath = "//ul/li[@class='alert alert-danger']")
+    private WebElement invalidPasswordLengthMessage;
+
+    @FindBy(xpath = "//p[@class='password-requirements-length']/span")
+    private WebElement passwordLengthMessage;
+
+    @FindBy(xpath = "//p[@class='password-requirements-score']/span")
+    private WebElement passwordStrengthMessage;
     @FindBy(css = "div:nth-of-type(6) ul > li:nth-of-type(1)")
     private WebElement newPasswordAlertBlock1;
     @FindBy(css = "div:nth-of-type(6) ul > li:nth-of-type(2)")
@@ -746,6 +757,10 @@ public class RegisteredUserInformationPage extends BasePage{
     // warning message getters
     public String getCheckDataMessage(){return checkDataMessage.getText();}
     public String getInvalidFormatMessage(){return invalidFormatMessage.getText();}
+    public String getInvalidEmailMessage(){return invalidEmailAddressMessage.getText();}
+    public String getInvalidLengthPasswordMessage(){return invalidPasswordLengthMessage.getText();}
+
+
 
     //error message getters
     public String getDataErrorMessage(){return dataErrorMessage.getText();}

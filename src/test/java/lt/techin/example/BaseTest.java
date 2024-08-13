@@ -19,7 +19,7 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
 //       driver.get("http://192.168.88.247");
-        driver.get("http://192.168.8.192");
+        driver.get("http://192.168.8.196");
     }
 
 
