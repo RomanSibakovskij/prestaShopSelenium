@@ -20,127 +20,55 @@ public class TestMethods extends BaseTest {
     }
 
     protected void createNewMaleUserAccountTest(RegisterPage registerPage) {
-
-//        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-        //assert show password button is displayed
-        assertTrue(registerPage.isShowPasswordButtonDisplayed(), "The 'Show' password button isn't displayed");
-        logger.info("The 'Show' password button is displayed" + "\n");
+        //'Show' password button click
         registerPage.clickShowPasswordButton();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
         registerPage.inputNewUserBirthDate();
-
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
+        //checkboxes click methods
         registerPage.clickReceiveOffersCheckbox();
 
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
 
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
     protected void createNewFemaleUserAccountTest(RegisterPage registerPage) {
 
-//        //assert first name input field is present
-        // assertTrue(registerPage.isFemaleGenderSelectorDisplayed(), "The female gender selector isn't displayed"); // -> assert cause the click to fail
-        // logger.info("The female gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectFemaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
+        //checkboxes click methods
+        registerPage.clickReceiveOffersCheckbox();
 
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
 
-        //assert 'Agree to terms' checkbox is displayed
-        // assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed"); // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); // -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed" + "\n");
+        registerPage.clickSignUpForNewsletterCheckbox();
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
@@ -163,624 +91,268 @@ public class TestMethods extends BaseTest {
     protected void logInRegisteredUserTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
-        //assert email input field is displayed
-        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
-        logger.info("The email input field is present" + "\n");
+        //assert web elements are present on the page
+        isLoginWebElementPresent(loginPage);
+        //input data
         loginPage.inputEmailAddress(registerPage.getEmailAddress());
         logger.info("Login email address: " + registerPage.getEmailAddress() + "\n"); //-> verify the email address is the same as with the registration
-
-        //assert password input field is present
-        assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
-        logger.info("The email input field is present" + "\n");
         loginPage.inputPassword(registerPage.getPassword());
         logger.info("Login password: " + registerPage.getPassword() + "\n"); //-> verify the password is the same as with the registration
-
-//        //assert 'Show' button is displayed
-        assertTrue(loginPage.isShowPasswordButtonPresent(), "The 'show' button isn't displayed");
-        logger.info("The 'Show' button is displayed");
-        //loginPage.clickShowPasswordButton(); //-> the button somehow works with the same algorithm as 'Sign In' button
-
-        //assert sign in button is present
-        assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
-        logger.info("The 'Sign in ' button is present" + "\n");
+        //sign-in click
         loginPage.clickSignInButton();
     }
 
     // negative test methods for user registration -> no input at the singular field
     protected void createNewUserAccountNoGenderTest(RegisterPage registerPage) {
 
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
+        registerPage.selectMaleGender();
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        System.out.println("The password strength message is displayed" + "\n");
-        logger.info(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
+        //checkboxes click methods
         registerPage.clickReceiveOffersCheckbox();
 
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
     protected void createNewUserAccountNoFirstNameTest(RegisterPage registerPage) {
 
-        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
+        //checkboxes click methods
         registerPage.clickReceiveOffersCheckbox();
 
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
     protected void createNewUserAccountNoLastNameTest(RegisterPage registerPage) {
 
-        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
+        //checkboxes click methods
         registerPage.clickReceiveOffersCheckbox();
 
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
     protected void createNewUserAccountNoEmailTest(RegisterPage registerPage) {
 
-        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
+        //checkboxes click methods
         registerPage.clickReceiveOffersCheckbox();
 
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
     protected void createNewUserAccountNoPasswordTest(RegisterPage registerPage) {
 
-        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
-
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
+        //checkboxes click methods
         registerPage.clickReceiveOffersCheckbox();
 
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        //passwordMessages(registerPage); -> this assert is bugged here
+
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
     protected void createNewUserAccountNoReceiveOffersCheckboxTest(RegisterPage registerPage) {
 
-        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
 
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
     protected void createNewUserAccountNoAgreeToTermsCheckboxTest(RegisterPage registerPage) {
 
-        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
 
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
     protected void createNewUserAccountNoNewsletterSignUpCheckboxTest(RegisterPage registerPage) {
 
-        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
 
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
-
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
     protected void createNewUserAccountNoCustomerDataCheckboxTest(RegisterPage registerPage) {
 
-        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
 
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
-
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
     }
 
     protected void createNewUserAccountWithTooLongFirNameTest(RegisterPage registerPage) {
 
-//        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserTooLongFirstName();
-
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-        //assert show password button is displayed
-        assertTrue(registerPage.isShowPasswordButtonDisplayed(), "The 'Show' password button isn't displayed");
-        logger.info("The 'Show' password button is displayed" + "\n");
+        //'Show' password button click
         registerPage.clickShowPasswordButton();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
         registerPage.inputNewUserBirthDate();
 
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
 
         //assert the error message is displayed
@@ -789,73 +361,28 @@ public class TestMethods extends BaseTest {
 
     protected void createNewUserAccountWithTooLongLastNameTest(RegisterPage registerPage) {
 
-//        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserTooLongLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-        //assert show password button is displayed
-        assertTrue(registerPage.isShowPasswordButtonDisplayed(), "The 'Show' password button isn't displayed");
-        logger.info("The 'Show' password button is displayed" + "\n");
+        //'Show' password button click
         registerPage.clickShowPasswordButton();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
         registerPage.inputNewUserBirthDate();
 
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        System.out.println("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
+
 
         //assert the error message is displayed
         assertEquals(registerPage.getTooLongLastNameMessage(), "The last name field is too long (255 chars max).");
@@ -863,73 +390,28 @@ public class TestMethods extends BaseTest {
 
     protected void createNewUserAccountWithTooLongEmailTest(RegisterPage registerPage) {
 
-//        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserTooLongEmailAddress();
-
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-        //assert show password button is displayed
-        assertTrue(registerPage.isShowPasswordButtonDisplayed(), "The 'Show' password button isn't displayed");
-        logger.info("The 'Show' password button is displayed" + "\n");
+        //'Show' password button click
         registerPage.clickShowPasswordButton();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
         registerPage.inputNewUserBirthDate();
 
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
+
 
         //assert the error message is displayed
         assertEquals(registerPage.getTooLongEmailAddressMessage(), "The email field is too long (255 chars max).");
@@ -937,73 +419,28 @@ public class TestMethods extends BaseTest {
 
     protected void createNewUserAccountWithInvalidEmailTest(RegisterPage registerPage) {
 
-//        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserInvalidEmailAddress();
-
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-        //assert show password button is displayed
-        assertTrue(registerPage.isShowPasswordButtonDisplayed(), "The 'Show' password button isn't displayed");
-        logger.info("The 'Show' password button is displayed" + "\n");
+        //'Show' password button click
         registerPage.clickShowPasswordButton();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
         registerPage.inputNewUserBirthDate();
 
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
+
 
         //assert the error message is as expected
         assertEquals(registerPage.getInvalidEmailMessage(), "Invalid format.");
@@ -1011,134 +448,54 @@ public class TestMethods extends BaseTest {
 
     protected void createNewUserAccountWithTooShortPasswordTest(RegisterPage registerPage) {
 
-//        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserTooShortPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
 
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
+
     }
 
     protected void createNewUserAccountWithTooLongPasswordTest(RegisterPage registerPage) {
 
-        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserTooLongPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserBirthDate();
 
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
+
 
         //assert the error message is displayed
         assertEquals(registerPage.getInvalidLengthPasswordMessage(), "Password must be between 8 and 72 characters long");
@@ -1146,67 +503,26 @@ public class TestMethods extends BaseTest {
 
     protected void createNewUserAccountWithInvalidBirthdateTest(RegisterPage registerPage) {
 
-//        //assert first name input field is present
-        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        logger.info("The male gender selector is displayed" + "\n");
+        //assert all web elements are present on the page
+        isWebElementPresent(registerPage);
+        //gender selector
         registerPage.selectMaleGender();
-
-        //assert first name input field is displayed
-        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
+        //input data
         registerPage.inputNewUserFirstName();
-
-        //assert last name input field is displayed
-        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registerPage.inputNewUserLastName();
-
-        //assert email address input field is displayed
-        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         registerPage.inputNewUserEmail();
-
-
-        //assert password input field is present
-        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         registerPage.inputNewUserPassword();
-
-        //assert birthdate input field is present
-        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is present" + "\n");
+        //'Show' password button click
+        registerPage.clickShowPasswordButton();
         registerPage.inputNewUserInvalidBirthdate();
 
-        //assert 'Receive offers' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
-        registerPage.clickReceiveOffersCheckbox();
-
-//        //assert the password related messages are displayed
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
-        logger.info("The password strength message is displayed" + "\n");
-        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
-
-        //assert 'Agree to terms' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+        //assert the password related messages are displayed
+        passwordMessages(registerPage);
+        //checkboxes click methods
         registerPage.clickAgreeToTermsCheckbox();
-
-        //assert 'Sign up for newsletter' checkbox is displayed
-        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
-        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
         registerPage.clickSignUpForNewsletterCheckbox();
-
-        //assert 'Customer data privacy' checkbox is present
-        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
-        logger.info("The 'Customer data privacy' checkbox is displayed");
         registerPage.clickCustomerDataPrivacyCheckbox();
-
-
-        //assert 'Save' account button is present
-        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
-        logger.info("The 'Save' account button is displayed" + "\n");
+        //click 'Save' button
         registerPage.clickSaveButton();
 
         //assert the error message is displayed
@@ -1216,97 +532,140 @@ public class TestMethods extends BaseTest {
     // negative registered user login test methods -> invalid / no input
     protected void logInRegisteredUserWithInvalidEmailTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
-
-        //assert email input field is displayed
-        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
-        logger.info("The email input field is present" + "\n");
+        //assert web elements are present on the page
+        isLoginWebElementPresent(loginPage);
+        //input data
         loginPage.inputInvalidLoginEmailAddress();
-
-        //assert password input field is present
-        assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
-        logger.info("The email input field is present" + "\n");
         loginPage.inputPassword(registerPage.getPassword());
-
-        //assert sign in button is present
-        assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
-        logger.info("The 'Sign in ' button is present" + "\n");
+        //sign-in click
         loginPage.clickSignInButton();
     }
 
     protected void logInRegisteredUserWithExistingEmailTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
-        //assert email input field is displayed
-        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
-        logger.info("The email input field is present" + "\n");
+        //assert web elements are present on the page
+        isLoginWebElementPresent(loginPage);
+        //input data
         loginPage.inputExistingLoginEmailAddress();
-
-        //assert password input field is present
-        assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
-        logger.info("The email input field is present" + "\n");
         loginPage.inputPassword(registerPage.getPassword());
-
-        //assert sign in button is present
-        assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
-        logger.info("The 'Sign in ' button is present" + "\n");
+        //sign-in click
         loginPage.clickSignInButton();
     }
 
     protected void logInRegisteredUserWithNoEmailTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
-        //assert email input field is displayed
-        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
-        logger.info("The email input field is present" + "\n");
+        //assert web elements are present on the page
+        isLoginWebElementPresent(loginPage);
+        //input data
         loginPage.inputNoLoginEmailAddress();
-
-        //assert password input field is present
-        assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
-        logger.info("The email input field is present" + "\n");
         loginPage.inputPassword(registerPage.getPassword());
-
-        //assert sign in button is present
-        assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
-        logger.info("The 'Sign in ' button is present" + "\n");
+        //sign-in click
         loginPage.clickSignInButton();
     }
 
     protected void logInRegisteredUserInvalidPasswordTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
-        //assert email input field is displayed
-        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
-        logger.info("The email input field is present" + "\n");
+        //assert web elements are present on the page
+        isLoginWebElementPresent(loginPage);
+        //input data
         loginPage.inputEmailAddress(registerPage.getEmailAddress());
-
-        //assert password input field is present
-        assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
-        logger.info("The email input field is present" + "\n");
         loginPage.inputInvalidLoginPassword();
-
-        //assert sign in button is present
-        assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
-        logger.info("The 'Sign in ' button is present" + "\n");
+        //sign-in click
         loginPage.clickSignInButton();
     }
 
     protected void logInRegisteredUserNoPasswordTest(RegisterPage registerPage) {
         LoginPage loginPage = new LoginPage(driver);
 
+        //assert web elements are present on the page
+        isLoginWebElementPresent(loginPage);
+        //input data
+        loginPage.inputEmailAddress(registerPage.getEmailAddress());
+        loginPage.inputNoLoginPassword();
+        //sign-in click
+        loginPage.clickSignInButton();
+    }
+
+    //element assertion methods (for registration)
+
+    protected void isWebElementPresent(RegisterPage registerPage){
+        //assert gender selector is present
+        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
+        //logger.info("The male gender selector is displayed" + "\n");
+
+        //assert first name input field is present
+        //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
+        logger.info("The male gender selector is displayed" + "\n");
+
+        //assert first name input field is displayed
+        assertTrue(registerPage.isFirstNameInputDisplayed(), "The first name input field isn't displayed");
+        logger.info("The first name input field is displayed" + "\n");
+
+        //assert last name input field is displayed
+        assertTrue(registerPage.isLastNameInputDisplayed(), "The last name input field isn't displayed");
+        logger.info("The last name input field is displayed" + "\n");
+
+        //assert email address input field is displayed
+        assertTrue(registerPage.isEmailAddressInputFieldDisplayed(), "The email address input field isn't displayed");
+        logger.info("The email address input field is displayed" + "\n");
+
+        //assert password input field is present
+        assertTrue(registerPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
+        logger.info("The password input field is displayed" + "\n");
+
+        //assert birthdate input field is present
+        assertTrue(registerPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
+        logger.info("The birthdate input field is present" + "\n");
+
+        //assert 'Receive offers' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        logger.info("The 'Receive offers' checkbox is displayed" + "\n");
+
+        //assert 'Agree to terms' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        logger.info("The 'Agree to terms' checkbox is displayed" + "\n");
+
+        //assert 'Sign up for newsletter' checkbox is displayed
+        //assertTrue(registerPage.isAgreeToTermsCheckboxDisplayed(), "The 'Agree to terms' checkbox is displayed");  // -> assert cause the click to fail
+        logger.info("The 'Sign up for newsletter' checkbox is displayed" + "\n");
+
+        //assert 'Customer data privacy' checkbox is present
+        // assertTrue(registerPage.isCustomerDataPrivacyCheckboxDisplayed(), "The 'Customer data privacy' checkbox isn't displayed"); //  -> assert cause the click to fail
+        logger.info("The 'Customer data privacy' checkbox is displayed");
+
+        //assert 'Save' account button is present
+        assertTrue(registerPage.isSaveAccountButtonDisplayed(), "The 'Save' account button isn't displayed");
+        logger.info("The 'Save' account button is displayed" + "\n");
+    }
+
+    //password message methods
+    protected void passwordMessages(RegisterPage registerPage){
+        //assert the password related messages are displayed
+        logger.info("The password strength message is displayed" + "\n");
+        assertEquals(registerPage.getPasswordLengthMessage(), "Enter a password between 8 and 72 characters");
+        logger.info("The password strength message is displayed" + "\n");
+        assertEquals(registerPage.getPasswordStrengthMessage(), "The minimum score must be: Strong");
+    }
+
+    //login page input element asserts
+
+    protected void isLoginWebElementPresent(LoginPage loginPage){
         //assert email input field is displayed
         assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
         logger.info("The email input field is present" + "\n");
-        loginPage.inputEmailAddress(registerPage.getEmailAddress());
-
         //assert password input field is present
         assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
         logger.info("The email input field is present" + "\n");
-        loginPage.inputNoLoginPassword();
-
+        //assert 'Show' button is displayed
+        assertTrue(loginPage.isShowPasswordButtonPresent(), "The 'show' button isn't displayed");
+        logger.info("The 'Show' button is displayed");
+        //loginPage.clickShowPasswordButton(); //-> the button somehow works with the same algorithm as 'Sign In' button
         //assert sign in button is present
         assertTrue(loginPage.isSignInButtonPresent(), "The 'Sign in' button isn't present");
         logger.info("The 'Sign in ' button is present" + "\n");
-        loginPage.clickSignInButton();
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
