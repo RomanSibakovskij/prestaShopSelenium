@@ -90,28 +90,28 @@ public class RegisteredUserArtPage extends BasePage{
 
     //elements
 
-    @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement availabilityFilterMessage;
 
-    @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement selectionsFilterMessage;
 
-    @FindBy(xpath = "//*[contains(text(), 'Price:')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement priceFilterMessage;
 
-    @FindBy(xpath = "//*[contains(text(), 'Composition: Matt paper')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement compositionFilterMessage;
 
-    @FindBy(xpath = "//*[contains(text(), 'Brand: Graphic Corner')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement brandFilterMessage;
 
-    @FindBy(xpath = "//*[contains(text(), 'Dimension: 40x60cm')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement dimension1FilterMessage;
 
-    @FindBy(xpath = "//*[contains(text(), 'Dimension: 60x90cm')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement dimension2FilterMessage;
 
-    @FindBy(xpath = "//*[contains(text(), 'Dimension: 80x120cm')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement dimension3FilterMessage;
 
     public RegisteredUserArtPage(WebDriver driver) {

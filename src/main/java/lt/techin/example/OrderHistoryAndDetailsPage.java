@@ -13,7 +13,8 @@ import java.time.Duration;
 public class OrderHistoryAndDetailsPage extends BasePage{
 
     //orders webpage footer link element
-    @FindBy(css = "[title='Orders']")
+//    @FindBy(css = "[title='Orders']")
+    @FindBy(xpath = "//ul[@id='footer_account_list']/li[3]/a")
     private WebElement ordersPageLink;
     @FindBy(css = ".account")
     private WebElement accountPageLink;

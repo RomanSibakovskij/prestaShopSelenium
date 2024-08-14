@@ -59,19 +59,19 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     private WebElement stAccessoriesDottedPaperBoxIcon;
 
     //filter messages
-    @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement stAccAvailabilityFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement stAccSelectionsFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Price: $12.00 - $13.00')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement stAccPriceFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Ruled')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement stAccRuledPaperFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Plain')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement stAccPlainPaperFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Squarred')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement stAccSquaredPaperFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Paper Type: Doted')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement stAccDottedPaperFilterMessage;
 
     //dropdown menu

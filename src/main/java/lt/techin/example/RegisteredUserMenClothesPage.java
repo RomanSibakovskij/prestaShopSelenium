@@ -93,25 +93,25 @@ public class RegisteredUserMenClothesPage extends BasePage{
 
 
     //filter messages
-    @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement menClothesAvailabilityFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Selections: Discounted')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement menClothesDiscountedFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement menClothesNewProductFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Price: $19.00 - $24.00')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement menClothesPriceFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Size: S')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement menClothesSizeSFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Size: M')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement menClothesSizeMFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Size: L')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement menClothesSizeLFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Size: XL')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement menClothesSizeXLFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Color: White')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement menClothesWhiteFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Color: Black')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement menClothesBlackFilterMessage;
 
     public RegisteredUserMenClothesPage(WebDriver driver) {

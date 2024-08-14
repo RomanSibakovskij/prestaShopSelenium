@@ -88,23 +88,23 @@ public class RegisteredUserHomeAccessoriesPage extends BasePage{
     private WebElement hmAccessoriesReferenceZToAOption;
 
     //filter messages
-    @FindBy(xpath = "//*[contains(text(), 'Availability: In stock')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement hmAccAvailabilityFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Selections: New product')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement hmAccSelectionsFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Price: $12.00 - $13.00')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement hmAccPriceFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Color: White')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement hmAccWhiteColorFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Color: Black')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement hmAccBlackColorFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Composition: Ceramic')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement hmAccCeramicFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Composition: Polyester')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement hmAccPolyesterFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Property: Removable cover')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement hmAccRemovableCoverFilterMessage;
-    @FindBy(xpath = "//*[contains(text(), 'Brand: Studio Design')]")
+    @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement hmAccStudioDesignFilterMessage;
 
     public RegisteredUserHomeAccessoriesPage(WebDriver driver) {

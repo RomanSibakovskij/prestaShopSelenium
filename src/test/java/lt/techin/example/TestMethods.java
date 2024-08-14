@@ -1590,7 +1590,9 @@ public class TestMethods extends BaseTest {
         System.out.println("The 'In stock' box icon link is displayed" + "\n");
         registeredUserArtPage.clickInStockBoxIconLink();
         //assert the correct text is displayed in search filter
-        //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
+//        assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
+        //remove search filter
+        registeredUserArtPage.clickRemoveSearchFilter();
     }
 
     protected void filterProductsByInStockLinkTest() {
@@ -1613,6 +1615,8 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickNewProductBoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getSelectionsFilterMessage(), "Selections: New product");
+        //remove search filter
+        registeredUserArtPage.clickRemoveSearchFilter();
     }
 
     protected void filterProductsByNewProductLinkTest() {
@@ -1659,6 +1663,8 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickCompositionBoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getCompositionFilterMessage(), "Composition: Matt paper");
+        //remove search filter
+        registeredUserArtPage.clickRemoveSearchFilter();
     }
 
     protected void filterProductsByBrandLinkTest() {
@@ -1681,6 +1687,8 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickCompositionBoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getBrandFilterMessage(), "Brand: Graphic Corner");
+        //remove search filter
+        registeredUserArtPage.clickRemoveSearchFilter();
 
     }
 
@@ -6254,9 +6262,9 @@ public class TestMethods extends BaseTest {
         selectBestYetToComePosterBoxIconTest();
         OrderHistoryAndDetailsPage orderHistoryAndDetailsPage = new OrderHistoryAndDetailsPage(driver);
 //        //assert the 'Orders' link is displayed
-//        //assertTrue(orderHistoryAndDetailsPage.isOrdersPageLinkDisplayed(), "The 'Orders' link isn't displayed");
+//         assertTrue(orderHistoryAndDetailsPage.isOrdersPageLinkDisplayed(), "The 'Orders' link isn't displayed");
 //        System.out.println("The 'Orders' link is displayed" + "\n");
-//        orderHistoryAndDetailsPage.clickOnOrdersLink(); // -> even with a singular proper selector it cannot be found for some reason (even if searching for it with browser console)
+//         orderHistoryAndDetailsPage.clickOnOrdersLink(); // -> even with a singular proper selector it cannot be found for some reason (even if searching for it with browser console)
 
         //assert account link is displayed
         //assertTrue(orderHistoryAndDetailsPage.isAccountLinkDisplayed(), "The account link isn't displayed");
