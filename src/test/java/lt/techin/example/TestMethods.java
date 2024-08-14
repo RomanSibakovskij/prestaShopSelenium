@@ -677,8 +677,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryMug1IntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -690,8 +689,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryMug2IntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -703,8 +701,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryMug3IntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -716,8 +713,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryMug4IntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -731,8 +727,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryPoster1IntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -744,8 +739,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryPoster2IntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -757,8 +751,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryPoster3IntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -771,8 +764,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryCushion1IntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -784,8 +776,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryCushion2IntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -797,8 +788,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryCushion3IntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -811,8 +801,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryTShirtIntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -825,8 +814,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQuerySweaterIntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -839,8 +827,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryGraphicsFoxIntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -852,8 +839,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryGraphicsBearIntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -865,8 +851,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryGraphicsBirdIntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -879,8 +864,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryNotebookFoxIntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -892,8 +876,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryNotebookBearIntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -905,8 +888,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryNotebookBirdIntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -918,8 +900,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
 
         //assert search bar is present
-        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
-        System.out.println("The search bar is displayed");
+        isSearchBarDisplayed(registeredUserSearchCatalogPage);
         registeredUserSearchCatalogPage.inputSearchQueryPackMugPosterIntoSearchBar();
         //assert search query result is displayed
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
@@ -927,6 +908,12 @@ public class TestMethods extends BaseTest {
         assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getPackSearchQuery() + " isn't present in search result");
     }
 
+    //web element presence assert (search page)
+    protected void isSearchBarDisplayed(RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage){
+        //assert search bar is present
+        assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
+        logger.info("The search bar is displayed" + "\n");
+    }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
