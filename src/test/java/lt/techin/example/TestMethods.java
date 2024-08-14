@@ -594,7 +594,7 @@ public class TestMethods extends BaseTest {
     protected void isWebElementPresent(RegisterPage registerPage){
         //assert gender selector is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
-        //logger.info("The male gender selector is displayed" + "\n");
+        logger.info("The male gender selector is displayed" + "\n");
 
         //assert first name input field is present
         //assertTrue(registerPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed"); -> assert cause the click to fail
@@ -924,7 +924,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
         assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
-        System.out.println("The 'Art' link is displayed on navbar" + "\n");
+        logger.info("The 'Art' link is displayed on navbar" + "\n");
         registeredUserArtPage.clickArtLink();
     }
 
@@ -933,7 +933,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserArtPage.isInStockBoxIconLinkPresent(), "The 'In stock' box icon link isn't displayed");
-        System.out.println("The 'In stock' box icon link is displayed" + "\n");
+        logger.info("The 'In stock' box icon link is displayed" + "\n");
         registeredUserArtPage.clickInStockBoxIconLink();
         //assert the correct text is displayed in search filter
 //        assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
@@ -945,7 +945,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserArtPage.isInStockLinkPresent(), "The 'In stock' link isn't displayed");
-        System.out.println("The 'In stock' link is displayed" + "\n");
+        logger.info("The 'In stock' link is displayed" + "\n");
         registeredUserArtPage.clickInStockLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
@@ -957,7 +957,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserArtPage.isNewProductBoxIconLinkPresent(), "The 'New product' box icon link isn't displayed");
-        System.out.println("The 'New product' box icon link is displayed" + "\n");
+        logger.info("The 'New product' box icon link is displayed" + "\n");
         registeredUserArtPage.clickNewProductBoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getSelectionsFilterMessage(), "Selections: New product");
@@ -969,7 +969,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserArtPage.isNewProductLinkPresent(), "The 'New product' link isn't displayed");
-        System.out.println("The 'New product' link is displayed" + "\n");
+        logger.info("The 'New product' link is displayed" + "\n");
         registeredUserArtPage.clickNewProductLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getSelectionsFilterMessage(), "Selections: New product");
@@ -982,7 +982,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by price slider is displayed
         assertTrue(registeredUserArtPage.isPriceSliderDisplayed(), "The price slider isn't displayed");
-        System.out.println("The price slider is displayed");
+        logger.info("The price slider is displayed");
         double targetPrice = 21.0;
         registeredUserArtPage.setPriceSliderValue(targetPrice);
         //remove search filter
@@ -993,7 +993,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by matt paper choice is displayed
         assertTrue(registeredUserArtPage.isCompositionLinkPresent(), "The 'Matt paper' link isn't displayed");
-        System.out.println("The 'Matt paper' link is displayed" + "\n");
+        logger.info("The 'Matt paper' link is displayed" + "\n");
         registeredUserArtPage.clickCompositionLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getCompositionFilterMessage(), "Composition: Matt paper");
@@ -1005,7 +1005,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by matt paper choice is displayed
         assertTrue(registeredUserArtPage.isCompositionBoxIconLinkDisplayed(), "The 'Matt paper' box icon link isn't displayed");
-        System.out.println("The 'Matt paper' box icon link is displayed" + "\n");
+        logger.info("The 'Matt paper' box icon link is displayed" + "\n");
         registeredUserArtPage.clickCompositionBoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getCompositionFilterMessage(), "Composition: Matt paper");
@@ -1017,7 +1017,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by graphic corner choice is displayed
         assertTrue(registeredUserArtPage.isBrandLinkPresent(), "The 'Graphic Corner' link isn't displayed");
-        System.out.println("The 'Graphic Corner' link is displayed" + "\n");
+        logger.info("The 'Graphic Corner' link is displayed" + "\n");
         registeredUserArtPage.clickBrandLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getBrandFilterMessage(), "Brand: Graphic Corner");
@@ -1029,7 +1029,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by graphic corner choice is displayed
         assertTrue(registeredUserArtPage.isBrandBoxIconLinkDisplayed(), "The 'Graphic Corner' box icon link isn't displayed");
-        System.out.println("The 'Graphic Corner' box icon link is displayed" + "\n");
+        logger.info("The 'Graphic Corner' box icon link is displayed" + "\n");
         registeredUserArtPage.clickCompositionBoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getBrandFilterMessage(), "Brand: Graphic Corner");
@@ -1042,7 +1042,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '40x60 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionLink1Present(), "The '40x60 cm' link isn't displayed");
-        System.out.println("The '40x60 cm' link is displayed" + "\n");
+        logger.info("The '40x60 cm' link is displayed" + "\n");
         registeredUserArtPage.clickDimension1Link();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 40x60cm");
@@ -1054,7 +1054,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '40x60 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionBoxIconLink1Present(), "The '40x60 cm' box icon link isn't displayed");
-        System.out.println("The '40x60 cm' box icon link is displayed" + "\n");
+        logger.info("The '40x60 cm' box icon link is displayed" + "\n");
         registeredUserArtPage.clickDimension1BoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 40x60cm");
@@ -1066,7 +1066,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '60x90 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionLink2Present(), "The '60x90 cm' link isn't displayed");
-        System.out.println("The '60x90 cm' link is displayed" + "\n");
+        logger.info("The '60x90 cm' link is displayed" + "\n");
         registeredUserArtPage.clickDimension2Link();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension2FilterMessage(), "Dimension: 60x90cm");
@@ -1078,7 +1078,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '60x90 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionBoxIconLink2Present(), "The '60x90 cm' box icon link isn't displayed");
-        System.out.println("The '60x90 cm' box icon link is displayed" + "\n");
+        logger.info("The '60x90 cm' box icon link is displayed" + "\n");
         registeredUserArtPage.clickDimension2BoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension2FilterMessage(), "Dimension: 60x90cm");
@@ -1090,7 +1090,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '80x120 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionLink3Present(), "The '80x120 cm' link isn't displayed");
-        System.out.println("The '80x120 cm' link is displayed" + "\n");
+        logger.info("The '80x120 cm' link is displayed" + "\n");
         registeredUserArtPage.clickDimension3Link();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension3FilterMessage(), "Dimension: 80x120cm");
@@ -1102,7 +1102,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by '80x120 cm' dimension choice is displayed
         assertTrue(registeredUserArtPage.isDimensionBoxIconLink3Present(), "The '80x120 cm' box icon link isn't displayed");
-        System.out.println("The '80x120 cm' box icon link is displayed" + "\n");
+        logger.info("The '80x120 cm' box icon link is displayed" + "\n");
         registeredUserArtPage.clickDimension3BoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension3FilterMessage(), "Dimension: 80x120cm");
@@ -1116,7 +1116,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the dropdown is displayed
         assertTrue(registeredUserArtPage.isSortByDropDownMenuPresent(), "The 'Sort By' dropdown menu isn't displayed");
-        System.out.println("The 'Sort By' dropdown menu is displayed" + "\n");
+        logger.info("The 'Sort By' dropdown menu is displayed" + "\n");
         registeredUserArtPage.clickSortByDropdownMenu();
     }
 
@@ -1128,7 +1128,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickSortByDropdownMenu();
         //assert the sort by sales option is displayed
         assertTrue(registeredUserArtPage.isSalesOptionDisplayed(), "The sort by 'Sales' menu option isn't displayed");
-        System.out.println("The sort by 'Sales' menu option  is displayed" + "\n");
+        logger.info("The sort by 'Sales' menu option  is displayed" + "\n");
         registeredUserArtPage.clickSalesOption();
         //assertEquals(registeredUserArtPage.getSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
     }
@@ -1139,7 +1139,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickSortByDropdownMenu();
         //assert the sort by relevance option is displayed
         assertTrue(registeredUserArtPage.isRelevanceOptionDisplayed(), "The sort by 'Relevance' menu option isn't displayed");
-        System.out.println("The sort by 'Relevance' menu option  is displayed" + "\n");
+        logger.info("The sort by 'Relevance' menu option  is displayed" + "\n");
         registeredUserArtPage.clickRelevanceOption();
         //assertEquals(registeredUserArtPage.getRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
     }
@@ -1150,7 +1150,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
         assertTrue(registeredUserArtPage.isNameAToZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
-        System.out.println("The sort by name 'A to Z' menu option is displayed" + "\n");
+        logger.info("The sort by name 'A to Z' menu option is displayed" + "\n");
         registeredUserArtPage.clickNameAToZOption();
         //assertEquals(registeredUserArtPage.getNameAToZOptionText(), "Name,A to Z"); // -> assert crashes the test, it doesn't find text
     }
@@ -1161,7 +1161,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickSortByDropdownMenu();
         //assert the sort by name 'z to a' option is displayed
         assertTrue(registeredUserArtPage.isNameZToAOptionDisplayed(), "The sort by name 'Z to A' menu option isn't displayed");
-        System.out.println("The sort by name 'Z to A' menu option is displayed" + "\n");
+        logger.info("The sort by name 'Z to A' menu option is displayed" + "\n");
         registeredUserArtPage.clickNameZToAOption();
         //assertEquals(registeredUserArtPage.getNameAToZOptionText(), "Name,Z to A"); // -> assert crashes the test, it doesn't find text
     }
@@ -1172,7 +1172,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickSortByDropdownMenu();
         //assert the sort by price 'low to high' option is displayed
         assertTrue(registeredUserArtPage.isPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
-        System.out.println("The sort by price 'low to high' menu option is displayed" + "\n");
+        logger.info("The sort by price 'low to high' menu option is displayed" + "\n");
         registeredUserArtPage.clickPriceLowToHighOption();
         //assertEquals(registeredUserArtPage.getPriceLowToHighOptionText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
 
@@ -1184,7 +1184,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickSortByDropdownMenu();
         //assert the sort by price 'high to low' option is displayed
         assertTrue(registeredUserArtPage.isPriceHighToLowOptionDisplayed(), "The sort by price 'high to low' menu option isn't displayed");
-        System.out.println("The sort by price 'high to low' menu option is displayed" + "\n");
+        logger.info("The sort by price 'high to low' menu option is displayed" + "\n");
         registeredUserArtPage.clickPriceHighToLowOption();
         //assertEquals(registeredUserArtPage.getPriceHighToLowOptionText(), "Price,high to low"); // -> assert crashes the test, it doesn't find text
     }
@@ -1195,7 +1195,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickSortByDropdownMenu();
         //assert the sort by reference 'a to z' option is displayed
         assertTrue(registeredUserArtPage.isReferenceAToZOptionDisplayed(), "The sort by reference 'a to z' menu option isn't displayed");
-        System.out.println("The sort by reference 'a to z' menu option is displayed" + "\n");
+        logger.info("The sort by reference 'a to z' menu option is displayed" + "\n");
         registeredUserArtPage.clickReferenceAToZOption();
         //assertEquals(registeredUserArtPage.getReferenceAToZOptionText(), "Reference,a to z"); // -> assert crashes the test, it doesn't find text
     }
@@ -1206,10 +1206,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickSortByDropdownMenu();
         //assert the sort by reference 'z to a' option is displayed
         assertTrue(registeredUserArtPage.isReferenceZToAOptionDisplayed(), "The sort by reference 'z to a' menu option isn't displayed");
-        System.out.println("The sort by reference 'z to a' menu option is displayed" + "\n");
+        logger.info("The sort by reference 'z to a' menu option is displayed" + "\n");
         registeredUserArtPage.clickReferenceZToAOption();
         //assertEquals(registeredUserArtPage.getReferenceZToAOptionText(), "Reference,z to a"); // -> assert crashes the test, it doesn't find text
     }
+
 
     protected void selectBestYetToComePosterLinkTest() {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
