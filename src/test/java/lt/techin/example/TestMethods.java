@@ -936,7 +936,7 @@ public class TestMethods extends BaseTest {
         logger.info("The 'In stock' box icon link is displayed" + "\n");
         registeredUserArtPage.clickInStockBoxIconLink();
         //assert the correct text is displayed in search filter
-//        assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
+       // assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
