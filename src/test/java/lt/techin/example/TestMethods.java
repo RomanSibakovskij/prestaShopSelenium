@@ -1054,10 +1054,10 @@ public class TestMethods extends BaseTest {
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 40x60cm");
         //wait until the correct number of products is displayed
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
-//        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 3)); // -> this page part has issues (probably internet/IDE throttling)
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 3));
         //get the selected category product list elements
-        //printSelectedCategoryArtProductsTest();
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }

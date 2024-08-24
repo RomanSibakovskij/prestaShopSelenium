@@ -42,7 +42,7 @@ public class RegisteredUserArtPage extends BasePage{
     private WebElement compositionLink;
     @FindBy(css = "section:nth-of-type(5) > .collapse ._gray-darker.js-search-link.search-link")
     private WebElement brandLink;
-    @FindBy(css = "li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
+    @FindBy(css = "section:nth-of-type(6) > .collapse > li:nth-of-type(1) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink1;
     @FindBy(css = "li:nth-of-type(2) > .facet-label > ._gray-darker.js-search-link.search-link")
     private WebElement dimensionLink2;
@@ -246,6 +246,8 @@ public class RegisteredUserArtPage extends BasePage{
     public void clickDimension1Link(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
         wait.until(ExpectedConditions.visibilityOf(dimensionLink1));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", dimensionLink1);
         dimensionLink1.click();
     }
 
