@@ -92,28 +92,28 @@ public class RegisteredUserArtPage extends BasePage{
 
     //elements
 
-    @FindBy(xpath = "//ul/li[@class='filter-block']")
+    @FindBy(xpath = "//ul/li[@class='filter-block']/text()")
     private WebElement availabilityFilterMessage;
 
-    @FindBy(xpath = "//ul/li[@class='filter-block']")
+    @FindBy(xpath = "//ul/li[@class='filter-block']/text()")
     private WebElement selectionsFilterMessage;
 
-    @FindBy(xpath = "//ul/li[@class='filter-block']")
+    @FindBy(xpath = "//ul/li[@class='filter-block']/text()")
     private WebElement priceFilterMessage;
 
-    @FindBy(xpath = "//ul/li[@class='filter-block']")
+    @FindBy(xpath = "//ul/li[@class='filter-block']/text()")
     private WebElement compositionFilterMessage;
 
-    @FindBy(xpath = "//ul/li[@class='filter-block']")
+    @FindBy(xpath = "//ul/li[@class='filter-block']/text()")
     private WebElement brandFilterMessage;
 
-    @FindBy(xpath = "//ul/li[@class='filter-block']")
+    @FindBy(xpath = "//ul/li[@class='filter-block']/text()")
     private WebElement dimension1FilterMessage;
 
-    @FindBy(xpath = "//ul/li[@class='filter-block']")
+    @FindBy(xpath = "//ul/li[@class='filter-block']/text()")
     private WebElement dimension2FilterMessage;
 
-    @FindBy(xpath = "//ul/li[@class='filter-block']")
+    @FindBy(xpath = "//ul/li[@class='filter-block']/text()")
     private WebElement dimension3FilterMessage;
 
     //products web elements

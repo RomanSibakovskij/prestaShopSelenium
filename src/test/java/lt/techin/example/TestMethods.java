@@ -909,6 +909,7 @@ public class TestMethods extends BaseTest {
 //        assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
         //Get the selected category product list elements
         printSelectedCategoryProductsTest();
+       // assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
