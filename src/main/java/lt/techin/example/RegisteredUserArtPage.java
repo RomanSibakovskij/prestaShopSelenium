@@ -117,9 +117,13 @@ public class RegisteredUserArtPage extends BasePage{
     private WebElement dimension3FilterMessage;
 
     //products web elements
-    private final List<WebElement> productImageElements = driver.findElements(By.xpath("//img[@loading='lazy']"));
-    private final List<WebElement> productNameElements = driver.findElements(By.xpath("//h2[@class='h3 product-title']"));
-    private final List<WebElement> productPriceElements = driver.findElements(By.xpath("//span[@class='price']"));
+    private List<WebElement> productImageElements = driver.findElements(By.xpath("//img[@loading='lazy']"));
+    private List<WebElement> productNameElements = driver.findElements(By.xpath("//h2[@class='h3 product-title']"));
+    private List<WebElement> productPriceElements = driver.findElements(By.xpath("//span[@class='price']"));
+
+    // Locator for product names
+    private By productNameLocator = By.xpath("//h2[@class='h3 product-title']");
+
 
     public RegisteredUserArtPage(WebDriver driver) {
         super(driver);
@@ -354,13 +358,12 @@ public class RegisteredUserArtPage extends BasePage{
         Actions actions = new Actions(driver);
         actions.moveToElement(referenceZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
+    //product elements list (for count)
+    private List<WebElement> getProductElements() {return driver.findElements(productNameLocator);}
 
     // products list methods
-
     public List<String> getProductImages() {
-
         List<String> productImages = new ArrayList<>();
-
         for (WebElement productImage : productImageElements) {
             if (productImage.isDisplayed()) {
                 String imageSrc = productImage.getAttribute("src");
@@ -373,9 +376,7 @@ public class RegisteredUserArtPage extends BasePage{
     }
 
     public List<String> getProductNames() {
-
         List<String> productNames = new ArrayList<>();
-
         for (WebElement product : productNameElements) {
             String name = product.getText();
             productNames.add(name);
@@ -384,15 +385,14 @@ public class RegisteredUserArtPage extends BasePage{
     }
 
     public List<String> getProductPrices() {
-
         List<String> productPrices = new ArrayList<>();
-
         for (WebElement product : productPriceElements) {
             String price = product.getText();
             productPrices.add(price);
         }
         return productPrices;
     }
+
     //product selector box icon/link
 
     public void clickBestYetToComePosterBoxIcon(){
@@ -550,8 +550,12 @@ public class RegisteredUserArtPage extends BasePage{
     //product title getter
     public String getBestYetToComePosterLinkText(){return bestYetToComePosterLink.getText();}
 
-    // product list element getter
-    public List<WebElement> getProductNameElements() {
-        return productNameElements;
+    // Method to get the product count
+    public int getProductCount() {
+        return getProductElements().size();
+    }
+    //locator getter
+    public By getProductLocator() {
+        return productNameLocator;
     }
 }

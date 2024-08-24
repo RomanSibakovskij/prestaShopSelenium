@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 
 public class RegisteredUserArtPageTest extends TestMethods {
 
+
     //Test 006 -> navigate to Art page test
     @Test
     @DisplayName("User Navigation To Art Page")

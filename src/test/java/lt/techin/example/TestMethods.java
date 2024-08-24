@@ -2,8 +2,11 @@ package lt.techin.example;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.*;
 
+import java.time.Duration;
 import java.util.List;
 
 public class TestMethods extends BaseTest {
@@ -907,8 +910,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickInStockBoxIconLink();
         //assert the correct text is displayed in search filter
 //        assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 7));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
        // assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
@@ -921,8 +927,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickInStockLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getAvailabilityFilterMessage(), "Availability: In stock");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 7));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -934,8 +943,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickNewProductBoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getSelectionsFilterMessage(), "Selections: New product");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 7));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -947,8 +959,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickNewProductLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getSelectionsFilterMessage(), "Selections: New product");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 7));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -961,7 +976,7 @@ public class TestMethods extends BaseTest {
         double targetPrice = 21.0;
         registeredUserArtPage.setPriceSliderValue(targetPrice);
         //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+//        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -973,8 +988,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickCompositionLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getCompositionFilterMessage(), "Composition: Matt paper");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -986,8 +1004,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickCompositionBoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getCompositionFilterMessage(), "Composition: Matt paper");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -999,8 +1020,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickBrandLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getBrandFilterMessage(), "Brand: Graphic Corner");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 6));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -1009,11 +1033,14 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert the filter by graphic corner choice is displayed
         assertTrue(registeredUserArtPage.isBrandBoxIconLinkDisplayed(), "The 'Graphic Corner' box icon link isn't displayed");
-        registeredUserArtPage.clickCompositionBoxIconLink();
+        registeredUserArtPage.clickBrandBoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getBrandFilterMessage(), "Brand: Graphic Corner");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 6));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
 
@@ -1026,8 +1053,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickDimension1Link();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 40x60cm");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+//        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 3)); // -> this page part has issues (probably internet/IDE throttling)
+        //get the selected category product list elements
+        //printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -1039,8 +1069,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickDimension1BoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension1FilterMessage(), "Dimension: 40x60cm");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -1052,8 +1085,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickDimension2Link();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension2FilterMessage(), "Dimension: 60x90cm");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -1065,8 +1101,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickDimension2BoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension2FilterMessage(), "Dimension: 60x90cm");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -1078,8 +1117,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickDimension3Link();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension3FilterMessage(), "Dimension: 80x120cm");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -1091,8 +1133,11 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickDimension3BoxIconLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getDimension3FilterMessage(), "Dimension: 80x120cm");
-        //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserArtPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryArtProductsTest();
         //remove search filter
         registeredUserArtPage.clickRemoveSearchFilter();
     }
@@ -1117,7 +1162,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickSalesOption();
         //assertEquals(registeredUserArtPage.getSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        printSelectedCategoryArtProductsTest();
     }
 
     protected void sortProductsByRelevanceTest() {
@@ -1129,7 +1174,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickRelevanceOption();
         //assertEquals(registeredUserArtPage.getRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        printSelectedCategoryArtProductsTest();
     }
 
     protected void sortProductsByNameAToZTest() {
@@ -1151,7 +1196,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickNameZToAOption();
         //assertEquals(registeredUserArtPage.getNameAToZOptionText(), "Name,Z to A"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        printSelectedCategoryArtProductsTest();
     }
 
     protected void sortProductsByPriceLowToHighTest() {
@@ -1163,7 +1208,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickPriceLowToHighOption();
         //assertEquals(registeredUserArtPage.getPriceLowToHighOptionText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        printSelectedCategoryArtProductsTest();
 
     }
 
@@ -1176,7 +1221,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickPriceHighToLowOption();
         //assertEquals(registeredUserArtPage.getPriceHighToLowOptionText(), "Price,high to low"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        printSelectedCategoryArtProductsTest();
     }
 
     protected void sortProductsByReferenceAToZTest() {
@@ -1188,7 +1233,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickReferenceAToZOption();
         //assertEquals(registeredUserArtPage.getReferenceAToZOptionText(), "Reference,a to z"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        printSelectedCategoryArtProductsTest();
     }
 
     protected void sortProductsByReferenceZToATest() {
@@ -1200,7 +1245,7 @@ public class TestMethods extends BaseTest {
         registeredUserArtPage.clickReferenceZToAOption();
         //assertEquals(registeredUserArtPage.getReferenceZToAOptionText(), "Reference,z to a"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryProductsTest();
+        printSelectedCategoryArtProductsTest();
     }
 
 
@@ -1261,29 +1306,22 @@ public class TestMethods extends BaseTest {
         productOrderPage.clickCountryDropdownMenu();
         //assert the right country is displayed
         assertTrue(productOrderPage.isUSCountryDisplayed(), "The US option isn't displayed");
-        System.out.println("The US option is displayed" + "\n");
         productOrderPage.clickUSOption();
         //assert 'Continue' button is displayed
         assertTrue(productOrderPage.isContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
-        System.out.println("The 'Continue' button is displayed" + "\n");
         productOrderPage.clickContinueButton();
         //assert shipping order comment input field is displayed
         assertTrue(productOrderPage.isOrderDeliveryCommentFieldDisplayed(), "The comment input field isn't displayed");
-        System.out.println("The comment input field is displayed" + "\n");
         productOrderPage.inputDeliveryComment();
         //assert 'Continue' button is displayed
         assertTrue(productOrderPage.isShippingContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
-        System.out.println("The 'Continue' button is displayed" + "\n");
         productOrderPage.clickShippingContinueButton();
         //assert 'Pay By Check' option is displayed
         assertTrue(productOrderPage.isCheckButtonDisplayed(), "The 'Pay By Check' button isn't displayed");
-        System.out.println("The 'Continue' button is displayed" + "\n");
         productOrderPage.selectPayByCheckOption();
-        System.out.println("The 'Terms of service' checkbox is displayed" + "\n");
         productOrderPage.checkTermsOfServiceCheckbox();
         //assert 'Place Order' button is displayed
         assertTrue(productOrderPage.isPlaceOrderButtonDisplayed(), "The 'Place Order' button isn't displayed");
-        System.out.println("The 'Place Order' button is displayed" + "\n");
         productOrderPage.clickPlaceOrderButton();
         //assert the order confirmation message is displayed as expected
         //assertEquals(productOrderPage.getOrderConfirmationMessage(), "\uE876"); // -> element cannot be found for some reason
@@ -1293,11 +1331,9 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
         assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
-        System.out.println("The 'Art' link is displayed on navbar" + "\n");
         registeredUserArtPage.clickArtLink();
         //assert 'Best Yet To Come' poster box icon is displayed
         assertTrue(registeredUserArtPage.isBestYetToComePosterBoxIconDisplayed(), "The 'Best Yet To Come' poster box icon isn't displayed");
-        System.out.println("The 'Best Yet To Come' poster box icon is displayed" + "\n");
         registeredUserArtPage.clickBestYetToComePosterBoxIcon();
 
         BestYetToComePosterPage bestYetToComePosterPage = new BestYetToComePosterPage(driver);
@@ -1305,7 +1341,6 @@ public class TestMethods extends BaseTest {
         assertEquals(bestYetToComePosterPage.getProductName(), "THE BEST IS YET TO COME' FRAMED POSTER");
         //assert 'Add to Cart' button is displayed
         assertTrue(bestYetToComePosterPage.isAddToCartButtonDisplayed(), "The 'Add to Cart' button isn't displayed");
-        System.out.println("The 'Add To Cart' button is displayed" + "\n");
         bestYetToComePosterPage.clickAddToCartButton();
 
         //assert the product was added to cart
@@ -1317,70 +1352,54 @@ public class TestMethods extends BaseTest {
 
         //assert 'Proceed to Checkout' button in pop-up is displayed
         assertTrue(bestYetToComePosterPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
-        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
         bestYetToComePosterPage.clickProceedToCheckoutButton();
 
         ProductCheckoutPage productCheckoutPage = new ProductCheckoutPage(driver);
         //assert quantity field is displayed in checkout page
         assertTrue(productCheckoutPage.isQtyAdjusterDisplayed(), "The quantity adjuster isn't present");
-        System.out.println("The quantity adjuster is present" + "\n");
         productCheckoutPage.inputProductQuantity();
         //assert 'Proceed to checkout' button is displayed
         assertTrue(productCheckoutPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
-        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
         productCheckoutPage.clickProceedToCheckoutButton();
 
         ProductOrderPage productOrderPage = new ProductOrderPage(driver);
         //assert the address input field is displayed
         assertTrue(productOrderPage.isAddressInputFieldDisplayed(), "The address input field isn't displayed");
-        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
         productOrderPage.inputCheckoutDetails();
         productOrderPage.inputAddressIntoInputField();
         //assert the city input field is displayed
         assertTrue(productOrderPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
-        System.out.println("The city input field is displayed" + "\n");
         productOrderPage.inputCityIntoInputField();
         //assert the state dropdown menu is displayed
         assertTrue(productOrderPage.isStateDropdownMenuDisplayed(), "The state dropdown menu isn't displayed");
-        System.out.println("The state dropdown menu is displayed" + "\n");
         productOrderPage.clickStateDropdownMenu();
         //assert the valid state option is displayed
         assertTrue(productOrderPage.isIllinoisStateDisplayed(), "The Illinois option isn't displayed");
-        System.out.println("The Illinois option is displayed" + "\n");
         productOrderPage.clickIllinoisStateOption();
         //assert the postal code input field is displayed
         assertTrue(productOrderPage.isPostalCodeInputFieldDisplayed(), "The postal code input field isn't displayed");
-        System.out.println("The postal code input field is displayed" + "\n");
         productOrderPage.inputPostalCodeIntoInputField();
         //assert the country dropdown menu is displayed
         assertTrue(productOrderPage.isCountryDropdownMenuDisplayed(), "The country dropdown menu isn't displayed");
-        System.out.println("The postal code input field is displayed" + "\n");
         productOrderPage.clickCountryDropdownMenu();
         //assert the right country is displayed
         assertTrue(productOrderPage.isUSCountryDisplayed(), "The US option isn't displayed");
-        System.out.println("The US option is displayed" + "\n");
         productOrderPage.clickUSOption();
         //assert 'Continue' button is displayed
         assertTrue(productOrderPage.isContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
-        System.out.println("The 'Continue' button is displayed" + "\n");
         productOrderPage.clickContinueButton();
         //assert shipping order comment input field is displayed
         assertTrue(productOrderPage.isOrderDeliveryCommentFieldDisplayed(), "The comment input field isn't displayed");
-        System.out.println("The comment input field is displayed" + "\n");
         productOrderPage.inputDeliveryComment();
         //assert 'Continue' button is displayed
         assertTrue(productOrderPage.isShippingContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
-        System.out.println("The 'Continue' button is displayed" + "\n");
         productOrderPage.clickShippingContinueButton();
         //assert chosen payment button option is displayed
         assertTrue(productOrderPage.isBankWireButtonDisplayed(), "The 'Bank wire' button isn't displayed");
-        System.out.println("The 'Bank wire' button is displayed" + "\n");
         productOrderPage.selectBankWireOption();
-        System.out.println("The 'Terms of service' checkbox is displayed" + "\n");
         productOrderPage.checkTermsOfServiceCheckbox();
         //assert 'Place Order' button is displayed
         assertTrue(productOrderPage.isPlaceOrderButtonDisplayed(), "The 'Place Order' button isn't displayed");
-        System.out.println("The 'Place Order' button is displayed" + "\n");
         productOrderPage.clickPlaceOrderButton();
         //assert the order confirmation message is displayed as expected
         //assertEquals(productOrderPage.getOrderConfirmationMessage(), "\uE876"); // -? element cannot be found for some reason
@@ -1390,11 +1409,9 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
         assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
-        System.out.println("The 'Art' link is displayed on navbar" + "\n");
         registeredUserArtPage.clickArtLink();
         //assert 'Best Yet To Come' poster box icon is displayed
         assertTrue(registeredUserArtPage.isBestYetToComePosterBoxIconDisplayed(), "The 'Best Yet To Come' poster box icon isn't displayed");
-        System.out.println("The 'Best Yet To Come' poster box icon is displayed" + "\n");
         registeredUserArtPage.clickBestYetToComePosterBoxIcon();
 
         BestYetToComePosterPage bestYetToComePosterPage = new BestYetToComePosterPage(driver);
@@ -1402,7 +1419,6 @@ public class TestMethods extends BaseTest {
         assertEquals(bestYetToComePosterPage.getProductName(), "THE BEST IS YET TO COME' FRAMED POSTER");
         //assert 'Add to Cart' button is displayed
         assertTrue(bestYetToComePosterPage.isAddToCartButtonDisplayed(), "The 'Add to Cart' button isn't displayed");
-        System.out.println("The 'Add To Cart' button is displayed" + "\n");
         bestYetToComePosterPage.clickAddToCartButton();
 
         //assert the product was added to cart
@@ -1414,70 +1430,54 @@ public class TestMethods extends BaseTest {
 
         //assert 'Proceed to Checkout' button in pop-up is displayed
         assertTrue(bestYetToComePosterPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
-        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
         bestYetToComePosterPage.clickProceedToCheckoutButton();
 
         ProductCheckoutPage productCheckoutPage = new ProductCheckoutPage(driver);
         //assert quantity field is displayed in checkout page
         assertTrue(productCheckoutPage.isQtyAdjusterDisplayed(), "The quantity adjuster isn't present");
-        System.out.println("The quantity adjuster is present" + "\n");
         productCheckoutPage.inputProductQuantity();
         //assert 'Proceed to checkout' button is displayed
         assertTrue(productCheckoutPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
-        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
         productCheckoutPage.clickProceedToCheckoutButton();
 
         ProductOrderPage productOrderPage = new ProductOrderPage(driver);
         //assert the address input field is displayed
         assertTrue(productOrderPage.isAddressInputFieldDisplayed(), "The address input field isn't displayed");
-        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
         productOrderPage.inputCheckoutDetails();
         productOrderPage.inputAddressIntoInputField();
         //assert the city input field is displayed
         assertTrue(productOrderPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
-        System.out.println("The city input field is displayed" + "\n");
         productOrderPage.inputCityIntoInputField();
         //assert the state dropdown menu is displayed
         assertTrue(productOrderPage.isStateDropdownMenuDisplayed(), "The state dropdown menu isn't displayed");
-        System.out.println("The state dropdown menu is displayed" + "\n");
         productOrderPage.clickStateDropdownMenu();
         //assert the valid state option is displayed
         assertTrue(productOrderPage.isIllinoisStateDisplayed(), "The Illinois option isn't displayed");
-        System.out.println("The Illinois option is displayed" + "\n");
         productOrderPage.clickIllinoisStateOption();
         //assert the postal code input field is displayed
         assertTrue(productOrderPage.isPostalCodeInputFieldDisplayed(), "The postal code input field isn't displayed");
-        System.out.println("The postal code input field is displayed" + "\n");
         productOrderPage.inputPostalCodeIntoInputField();
         //assert the country dropdown menu is displayed
         assertTrue(productOrderPage.isCountryDropdownMenuDisplayed(), "The country dropdown menu isn't displayed");
-        System.out.println("The postal code input field is displayed" + "\n");
         productOrderPage.clickCountryDropdownMenu();
         //assert the right country is displayed
         assertTrue(productOrderPage.isUSCountryDisplayed(), "The US option isn't displayed");
-        System.out.println("The US option is displayed" + "\n");
         productOrderPage.clickUSOption();
         //assert 'Continue' button is displayed
         assertTrue(productOrderPage.isContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
-        System.out.println("The 'Continue' button is displayed" + "\n");
         productOrderPage.clickContinueButton();
         //assert shipping order comment input field is displayed
         assertTrue(productOrderPage.isOrderDeliveryCommentFieldDisplayed(), "The comment input field isn't displayed");
-        System.out.println("The comment input field is displayed" + "\n");
         productOrderPage.inputDeliveryComment();
         //assert 'Continue' button is displayed
         assertTrue(productOrderPage.isShippingContinueButtonDisplayed(), "The 'Continue' button isn't displayed");
-        System.out.println("The 'Continue' button is displayed" + "\n");
         productOrderPage.clickShippingContinueButton();
         //assert chosen payment button option is displayed
         assertTrue(productOrderPage.isCashOnDeliveryButtonDisplayed(), "The 'Cash On Delivery' button isn't displayed");
-        System.out.println("The 'Cash On Delivery' button is displayed" + "\n");
         productOrderPage.selectPayByCashOption();
-        System.out.println("The 'Terms of service' checkbox is displayed" + "\n");
         productOrderPage.checkTermsOfServiceCheckbox();
         //assert 'Place Order' button is displayed
         assertTrue(productOrderPage.isPlaceOrderButtonDisplayed(), "The 'Place Order' button isn't displayed");
-        System.out.println("The 'Place Order' button is displayed" + "\n");
         productOrderPage.clickPlaceOrderButton();
         //assert the order confirmation message is displayed as expected
         //assertEquals(productOrderPage.getOrderConfirmationMessage(), "\uE876"); // -? element cannot be found for some reason
@@ -1487,11 +1487,9 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //assert 'Art' link is displayed on navbar
         assertTrue(registeredUserArtPage.isArtPageLinkPresent(), "The 'Art' link isn't displayed on navbar");
-        System.out.println("The 'Art' link is displayed on navbar" + "\n");
         registeredUserArtPage.clickArtLink();
         //assert 'Best Yet To Come' poster box icon is displayed
         assertTrue(registeredUserArtPage.isBestYetToComePosterBoxIconDisplayed(), "The 'Best Yet To Come' poster box icon isn't displayed");
-        System.out.println("The 'Best Yet To Come' poster box icon is displayed" + "\n");
         registeredUserArtPage.clickBestYetToComePosterBoxIcon();
 
         BestYetToComePosterPage bestYetToComePosterPage = new BestYetToComePosterPage(driver);
@@ -1499,7 +1497,6 @@ public class TestMethods extends BaseTest {
         assertEquals(bestYetToComePosterPage.getProductName(), "THE BEST IS YET TO COME' FRAMED POSTER");
         //assert 'Add to Cart' button is displayed
         assertTrue(bestYetToComePosterPage.isAddToCartButtonDisplayed(), "The 'Add to Cart' button isn't displayed");
-        System.out.println("The 'Add To Cart' button is displayed" + "\n");
         bestYetToComePosterPage.clickAddToCartButton();
 
         //assert the product was added to cart
@@ -1511,17 +1508,14 @@ public class TestMethods extends BaseTest {
 
         //assert 'Proceed to Checkout' button in pop-up is displayed
         assertTrue(bestYetToComePosterPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
-        System.out.println("The 'Proceed To Checkout' button is displayed" + "\n");
         bestYetToComePosterPage.clickProceedToCheckoutButton();
 
         ProductCheckoutPage productCheckoutPage = new ProductCheckoutPage(driver);
 //        //assert quantity field is displayed in checkout page
 //        assertTrue(productCheckoutPage.isQtyAdjusterDisplayed(), "The quantity adjuster isn't present");
-//        System.out.println("The quantity adjuster is present" + "\n");
 //        productCheckoutPage.inputProductQuantity();
         //assert product delete icon is displayed
         assertTrue(productCheckoutPage.isDeleteProductIconDisplayed(), "The delete icon isn't displayed");
-        System.out.println("The delete icon is present" + "\n");
         productCheckoutPage.clickRemoveProductIcon();
         //assert delete confirmation message is as expected
         assertEquals(productCheckoutPage.getDeleteMessageConfirmation(), "There are no more items in your cart");
@@ -1536,16 +1530,18 @@ public class TestMethods extends BaseTest {
     }
 
 //    //product list names print method
-    protected void printSelectedCategoryProductsTest(){
+    protected void printSelectedCategoryArtProductsTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //Get the selected category product images
         List<String> productImages = registeredUserArtPage.getProductImages();
         // Print out each image URL or message
         for (String image : productImages) {
-            System.out.println("Product image in the list: " + image);
+            logger.info("Product image in the list: " + image);
+            System.out.println("\n");
         }
         // Get the selected category product names
         List<String> productNames = registeredUserArtPage.getProductNames();
+        logger.info("Total number of products in the selected category: " + productNames.size()); //product count
         // Print the selected category product names
         for (String name : productNames) {
             logger.info("Product present in the list: " + "\n" + name);
@@ -1567,7 +1563,6 @@ public class TestMethods extends BaseTest {
 
         //assert accessories link is displayed on navbar
         assertTrue(registeredUserStationaryAccessoriesPage.isAccessoriesPageLinkDisplayed(), "The accessories page link isn't displayed on navbar");
-        System.out.println("The accessories page link is displayed on navbar" + "\n");
         registeredUserStationaryAccessoriesPage.clickAccessoriesPageLink();
     }
 
@@ -1578,7 +1573,6 @@ public class TestMethods extends BaseTest {
 
         //assert accessories link is displayed on navbar
         assertTrue(registeredUserStationaryAccessoriesPage.isStationaryAccessoriesPageLink1Displayed(), "The stationary accessories page link1 isn't displayed");
-        System.out.println("The stationary accessories page link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStationaryAccessoriesPageLink1();
     }
 
@@ -1587,7 +1581,6 @@ public class TestMethods extends BaseTest {
 
         //assert accessories link is displayed on navbar
         assertTrue(registeredUserStationaryAccessoriesPage.isStationaryAccessoriesPageLink2Displayed(), "The stationary accessories page link2 isn't displayed");
-        System.out.println("The accessories page link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStationaryAccessoriesPageLink2();
     }
 
@@ -1596,7 +1589,6 @@ public class TestMethods extends BaseTest {
 
         //assert accessories link is displayed on navbar
         assertTrue(registeredUserStationaryAccessoriesPage.isStationaryAccessoriesPageBoxIconDisplayed(), "The stationary accessories page box icon isn't displayed");
-        System.out.println("The stationary accessories page box icon is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStationaryAccessoriesPageBoxIcon();
     }
 
@@ -1607,10 +1599,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'in stock' box icon is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesInStockBoxIconDisplayed(), "The stationary accessories 'in stock' box icon isn't displayed");
-        System.out.println("The stationary accessories page 'in stock' box icon is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccInStockBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1620,10 +1616,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'in stock' link is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesInStockLinkDisplayed(), "The stationary accessories 'in stock' link isn't displayed");
-        System.out.println("The stationary accessories page 'in stock' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccInStockLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
@@ -1634,10 +1634,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesNewProductBoxIconDisplayed(), "The stationary accessories 'in stock' link isn't displayed");
-        System.out.println("The stationary accessories page 'in stock' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccNewProductBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSelectionsFilterMessage(), "Selections: New product"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
@@ -1648,10 +1652,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' link is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesNewProductLinkDisplayed(), "The stationary accessories 'new product' link isn't displayed");
-        System.out.println("The stationary accessories page 'new product' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccNewProductLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSelectionsFilterMessage(), "Selections: New product"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
@@ -1662,11 +1670,12 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' link is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesPriceSliderDisplayed(), "The stationary accessories price slider isn't displayed");
-        System.out.println("The stationary accessories page price slider is displayed" + "\n");
         double targetPrice = 12.5;
         registeredUserStationaryAccessoriesPage.setStAccessoriesPriceSliderValue(targetPrice);
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccPriceFilterMessage(), "Price: $12.00 - $13.00"); -> assert crashes the test
+        //Get the selected category product list elements
+        //printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1676,10 +1685,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesRuledPaperBoxIconDisplayed(), "The stationary accessories 'ruled' box icon isn't displayed");
-        System.out.println("The stationary accessories page 'ruled' box icon is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccRuledPaperBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccRuledPaperFilterMessage(), "Paper Type: Ruled"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
@@ -1690,10 +1703,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' link is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesRuledPaperLinkDisplayed(), "The stationary accessories 'ruled' link isn't displayed");
-        System.out.println("The stationary accessories page 'ruled' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccRuledPaperLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccRuledPaperFilterMessage(), "Paper Type: Ruled"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
@@ -1704,10 +1721,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesPlainPaperBoxIconDisplayed(), "The stationary accessories 'plain' box icon isn't displayed");
-        System.out.println("The stationary accessories page 'plain' box icon is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccPlainPaperBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccPlainPaperFilterMessage(), "Paper Type: Plain"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1717,10 +1738,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' link is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesPlainPaperLinkDisplayed(), "The stationary accessories 'plain' link isn't displayed");
-        System.out.println("The stationary accessories page 'plain' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccPlainPaperLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccPlainPaperFilterMessage(), "Paper Type: Plain"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1729,11 +1754,15 @@ public class TestMethods extends BaseTest {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' box icon is displayed
-        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperBoxIconDisplayed(), "The stationary accessories 'squarred' box icon isn't displayed");
-        System.out.println("The stationary accessories page 'squarred' box icon is displayed" + "\n");
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperBoxIconDisplayed(), "The stationary accessories 'squared' box icon isn't displayed");
         registeredUserStationaryAccessoriesPage.clickStAccSquaredPaperBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSquaredPaperFilterMessage(), "Paper Type: Squared"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1743,10 +1772,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' link is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperLinkDisplayed(), "The stationary accessories 'squarred' link isn't displayed");
-        System.out.println("The stationary accessories page 'squarred' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccSquaredPaperLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSquaredPaperFilterMessage(), "Paper Type: Squared"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1756,10 +1789,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesDottedPaperBoxIconDisplayed(), "The stationary accessories 'dotted' box icon isn't displayed");
-        System.out.println("The stationary accessories page 'dotted' box icon is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccDottedPaperBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccDottedPaperFilterMessage(), "Paper Type: Doted"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1769,10 +1806,14 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' link is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesDottedPaperLinkDisplayed(), "The stationary accessories 'dotted' link isn't displayed");
-        System.out.println("The stationary accessories page 'dotted' link is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccDottedPaperLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccDottedPaperFilterMessage(), "Paper Type: Doted"); -> assert crashes the test
+        //wait until the correct number of products is displayed
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
+        wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
+        //get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1783,7 +1824,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
         //assert the dropdown is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
-        System.out.println("The 'Sort By' dropdown menu is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
     }
 
@@ -1795,10 +1835,11 @@ public class TestMethods extends BaseTest {
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
         //assert the sort by sales option is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSalesOptionDisplayed(), "The sort by 'Sales' menu option isn't displayed");
-        System.out.println("The sort by 'Sales' menu option  is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccessoriesSalesOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByRelevanceTest() {
@@ -1807,10 +1848,11 @@ public class TestMethods extends BaseTest {
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
         //assert the sort by relevance option is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesRelevanceOptionDisplayed(), "The sort by 'Relevance' menu option isn't displayed");
-        System.out.println("The sort by 'Relevance' menu option  is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccessoriesRelevanceOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByNameAToZTest() {
@@ -1819,10 +1861,11 @@ public class TestMethods extends BaseTest {
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesNameAToZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
-        System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccessoriesNameAToZOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesNameAToZOptionText(), "Name,A to Z"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByNameZToATest() {
@@ -1831,10 +1874,11 @@ public class TestMethods extends BaseTest {
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesNameZToAOptionDisplayed(), "The sort by name 'Z to A' menu option isn't displayed");
-        System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccessoriesNameZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesNameZtoAOptionText(), "Name,Z to A"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByPriceLowToHighTest() {
@@ -1843,10 +1887,11 @@ public class TestMethods extends BaseTest {
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
-        System.out.println("The sort by price 'low to high' menu option  is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccessoriesPriceLowToHighOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesPriceLowToHighText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByPriceHighToLowTest() {
@@ -1855,10 +1900,11 @@ public class TestMethods extends BaseTest {
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesPriceHighToLowOptionDisplayed(), "The sort by price 'high to low' menu option isn't displayed");
-        System.out.println("The sort by price 'high to low' menu option  is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccessoriesPriceHighToLowOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesPriceHighToLowText(), "Price,high to low"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByReferenceAToZTest() {
@@ -1867,10 +1913,11 @@ public class TestMethods extends BaseTest {
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesReferenceAToZOptionDisplayed(), "The sort by reference 'A to Z' menu option isn't displayed");
-        System.out.println("The sort by reference 'A to Z' menu option  is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccessoriesReferenceAToZOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesReferenceAToZText(), "Reference,A to Z"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByReferenceZToATest() {
@@ -1879,10 +1926,34 @@ public class TestMethods extends BaseTest {
         registeredUserStationaryAccessoriesPage.clickStSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
         assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesReferenceZToAOptionDisplayed(), "The sort by reference 'Z to A' menu option isn't displayed");
-        System.out.println("The sort by reference 'Z to A' menu option  is displayed" + "\n");
         registeredUserStationaryAccessoriesPage.clickStAccessoriesReferenceZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesReferenceAToZText(), "Reference,A to Z"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryHmAccessoriesProductsTest();
+    }
+
+    //product list names print method
+    protected void printSelectedCategoryHmAccessoriesProductsTest(){
+        RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
+        //Get the selected category product images
+        List<String> productImages = registeredUserStationaryAccessoriesPage.getProductImages();
+        // Print out each image URL or message
+        for (String image : productImages) {
+            System.out.println("Product image in the list: " + image);
+        }
+        // Get the selected category product names
+        List<String> productNames = registeredUserStationaryAccessoriesPage.getProductNames();
+        // Print the selected category product names
+        for (String name : productNames) {
+            logger.info("Product present in the list: " + "\n" + name);
+        }
+        // Get the selected category product prices
+        List<String> productPrices = registeredUserStationaryAccessoriesPage.getProductPrices();
+        // Print the selected category product names
+        for (String price : productPrices) {
+            logger.info("Product price in the list: " + "\n" + price);
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

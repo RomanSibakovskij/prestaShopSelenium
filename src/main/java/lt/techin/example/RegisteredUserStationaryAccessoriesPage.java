@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RegisteredUserStationaryAccessoriesPage extends BasePage{
 
@@ -105,6 +107,13 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     @FindBy(css = ".dropdown-menu .js-search-link:nth-of-type(8)")
     private WebElement stAccessoriesReferenceZToAOption;
 
+    //products web elements
+    private final List<WebElement> productImageElements = driver.findElements(By.xpath("//img[@loading='lazy']"));
+    private final List<WebElement> productNameElements = driver.findElements(By.xpath("//h2[@class='h3 product-title']"));
+    private final List<WebElement> productPriceElements = driver.findElements(By.xpath("//span[@class='price']"));
+
+    // Locator for product names
+    private By productNameLocator = By.xpath("//h2[@class='h3 product-title']");
 
 
     public RegisteredUserStationaryAccessoriesPage(WebDriver driver) {
@@ -332,6 +341,39 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
         Actions actions = new Actions(driver);
         actions.moveToElement(stAccessoriesReferenceZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
+    //product elements list (for count)
+    private List<WebElement> getProductElements() {return driver.findElements(productNameLocator);}
+    // products list methods
+    public List<String> getProductImages() {
+        List<String> productImages = new ArrayList<>();
+        for (WebElement productImage : productImageElements) {
+            if (productImage.isDisplayed()) {
+                String imageSrc = productImage.getAttribute("src");
+                productImages.add(imageSrc);
+            } else {
+                productImages.add("Image not displayed");
+            }
+        }
+        return productImages;
+    }
+
+    public List<String> getProductNames() {
+        List<String> productNames = new ArrayList<>();
+        for (WebElement product : productNameElements) {
+            String name = product.getText();
+            productNames.add(name);
+        }
+        return productNames;
+    }
+
+    public List<String> getProductPrices() {
+        List<String> productPrices = new ArrayList<>();
+        for (WebElement product : productPriceElements) {
+            String price = product.getText();
+            productPrices.add(price);
+        }
+        return productPrices;
+    }
     //remove search filter
 
     public void clickRemoveSearchFilter(){
@@ -447,5 +489,14 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     }
     public String getStAccessoriesReferenceZToAOptionText(){
         return stAccessoriesReferenceZToAOption.getText();
+    }
+
+    // Method to get the product count
+    public int getProductCount() {
+        return getProductElements().size();
+    }
+    //locator getter
+    public By getProductLocator() {
+        return productNameLocator;
     }
 }
