@@ -18,8 +18,7 @@ public class BaseTest {
         options.addArguments("--disable-search-engine-choice-screen");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.get("http://192.168.88.247");
-//        driver.get("http://192.168.8.196");
+        driver.get("http://192.168.8.187");
     }
 
 
@@ -27,7 +26,7 @@ public class BaseTest {
     @AfterEach
     public void close() {
         try {
-            Thread.sleep(4000);
+            Thread.sleep(1100);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

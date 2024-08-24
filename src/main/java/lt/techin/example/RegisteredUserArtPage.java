@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RegisteredUserArtPage extends BasePage{
 
@@ -113,6 +115,11 @@ public class RegisteredUserArtPage extends BasePage{
 
     @FindBy(xpath = "//ul/li[@class='filter-block']")
     private WebElement dimension3FilterMessage;
+
+    //products web elements
+    private final List<WebElement> productImageElements = driver.findElements(By.xpath("//img[@loading='lazy']"));
+    private final List<WebElement> productNameElements = driver.findElements(By.xpath("//h2[@class='h3 product-title']"));
+    private final List<WebElement> productPriceElements = driver.findElements(By.xpath("//span[@class='price']"));
 
     public RegisteredUserArtPage(WebDriver driver) {
         super(driver);
@@ -348,6 +355,44 @@ public class RegisteredUserArtPage extends BasePage{
         actions.moveToElement(referenceZToAOption).clickAndHold().pause(Duration.ofMillis(1200)).release().perform();
     }
 
+    // products list methods
+
+    public List<String> getProductImages() {
+
+        List<String> productImages = new ArrayList<>();
+
+        for (WebElement productImage : productImageElements) {
+            if (productImage.isDisplayed()) {
+                String imageSrc = productImage.getAttribute("src");
+                productImages.add(imageSrc);
+            } else {
+                productImages.add("Image not displayed");
+            }
+        }
+        return productImages;
+    }
+
+    public List<String> getProductNames() {
+
+        List<String> productNames = new ArrayList<>();
+
+        for (WebElement product : productNameElements) {
+            String name = product.getText();
+            productNames.add(name);
+        }
+        return productNames;
+    }
+
+    public List<String> getProductPrices() {
+
+        List<String> productPrices = new ArrayList<>();
+
+        for (WebElement product : productPriceElements) {
+            String price = product.getText();
+            productPrices.add(price);
+        }
+        return productPrices;
+    }
     //product selector box icon/link
 
     public void clickBestYetToComePosterBoxIcon(){
@@ -505,4 +550,8 @@ public class RegisteredUserArtPage extends BasePage{
     //product title getter
     public String getBestYetToComePosterLinkText(){return bestYetToComePosterLink.getText();}
 
+    // product list element getter
+    public List<WebElement> getProductNameElements() {
+        return productNameElements;
+    }
 }
