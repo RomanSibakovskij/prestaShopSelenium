@@ -25,6 +25,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 007 -> filter product display by availability in stock (box icon)
     @Test
     @DisplayName("Art Product Filter By Box Icon(availability)")
+    @Tag("Filter_Art_Products_By_Box_Icon_Click")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterByInStockBoxIconTest(){
         clickOnSignUpTest();
@@ -44,6 +45,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 007a -> filter product display by availability in stock (link)
     @Test
     @DisplayName("Art Product Filter By Link(availability)")
+    @Tag("Filter_Art_Products_By_Link_Click")
     @Tag("Filter_Products_By_Link_Click")
     void filterByInStockLinkTest(){
         clickOnSignUpTest();
@@ -63,6 +65,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 008 -> filter product display by availability in stock (box icon)
     @Test
     @DisplayName("Art Product Filter By Box Icon(new product)")
+    @Tag("Filter_Art_Products_By_Box_Icon_Click")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterByNewProductBoxIconTest(){
         clickOnSignUpTest();
@@ -82,6 +85,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 008a -> filter product display by availability in stock (link)
     @Test
     @DisplayName("Art Product Filter By Link(new product)")
+    @Tag("Filter_Art_Products_By_Link_Click")
     @Tag("Filter_Products_By_Link_Click")
     void filterByNewProductLinkTest(){
         clickOnSignUpTest();
@@ -101,6 +105,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 009 -> filter product by price test
     @Test
     @DisplayName("Art Product Filter By Price Slider Value")
+    @Tag("Filter_Art_Products_By_Link_Click")
     @Tag("Filter_Products_By_Price_Slider")
     void filterProductsByPriceSliderTests() {
         clickOnSignUpTest();
@@ -120,6 +125,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 010 -> filter product by product composition test (box icon)
     @Test
     @DisplayName("Art Product Filter By Box Icon(composition)")
+    @Tag("Filter_Art_Products_By_Box_Icon_Click")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterProductsByCompositionBoxIconTest() {
         clickOnSignUpTest();
@@ -139,6 +145,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 010a -> filter product by product composition test
     @Test
     @DisplayName("Art Product Filter By Link(composition)")
+    @Tag("Filter_Art_Products_By_Link_Click")
     @Tag("Filter_Products_By_Link_Click")
     void filterProductsByCompositionLinkTests() {
         clickOnSignUpTest();
@@ -158,6 +165,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 011 -> filter product by product composition test (box icon) (element click intercepted)
     @Test
     @DisplayName("Art Product Filter By Box Icon(brand)")
+    @Tag("Filter_Art_Products_By_Box_Icon_Click")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterProductsByBrandBoxIconTest() {
         clickOnSignUpTest();
@@ -177,6 +185,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 011a -> filter product by product composition test
     @Test
     @DisplayName("Art Product Filter By Link(brand)")
+    @Tag("Filter_Art_Products_By_Link_Click")
     @Tag("Filter_Products_By_Link_Click")
     void filterProductsByBrandLinkTests() {
         clickOnSignUpTest();
@@ -196,6 +205,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 012 -> filter product by product composition test (box icon)
     @Test
     @DisplayName("Art Product Filter By Box Icon(40x60 cm)")
+    @Tag("Filter_Art_Products_By_Box_Icon_Click")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterProductsByDimension1BoxIconTest() {
         clickOnSignUpTest();
@@ -215,6 +225,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 012a -> filter product by product composition test
     @Test
     @DisplayName("Art Product Filter By Link(40x60 cm)")
+    @Tag("Filter_Art_Products_By_Link_Click")
     @Tag("Filter_Products_By_Link_Click")
     void filterProductsByDimension1LinkTests() {
         clickOnSignUpTest();
@@ -234,6 +245,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 013 -> filter product by product composition test (box icon)
     @Test
     @DisplayName("Art Product Filter By Box Icon(60x90 cm)")
+    @Tag("Filter_Art_Products_By_Box_Icon_Click")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterProductsByDimension2BoxIconTest() {
         clickOnSignUpTest();
@@ -253,6 +265,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 013a -> filter product by product composition test
     @Test
     @DisplayName("Art Product Filter By Link(60x90 cm)")
+    @Tag("Filter_Art_Products_By_Link_Click")
     @Tag("Filter_Products_By_Link_Click")
     void filterProductsByDimension2LinkTests() {
         clickOnSignUpTest();
@@ -272,6 +285,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 014 -> filter product by product composition test (box icon)
     @Test
     @DisplayName("Art Product Filter By Box Icon(80x120 cm)")
+    @Tag("Filter_Art_Products_By_Box_Icon_Click")
     @Tag("Filter_Products_By_Box_Icon_Click")
     void filterProductsByDimension3BoxIconTest() {
         clickOnSignUpTest();
@@ -291,6 +305,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 014a -> filter product by product composition test
     @Test
     @DisplayName("Art Product Filter By Link(80x120 cm)")
+    @Tag("Filter_Art_Products_By_Link_Click")
     @Tag("Filter_Products_By_Link_Click")
     void filterProductsByDimension3LinkTests() {
         clickOnSignUpTest();
@@ -310,6 +325,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 015 -> click on sort by dropdown menu test
     @Test
     @DisplayName("Art Sort By Menu Click Test")
+    @Tag("Art_Sort_By_Menu_Click_Test")
     @Tag("Sort_By_Menu_Click_Test")
     void clickSortByMenuTest() {
         clickOnSignUpTest();
@@ -329,6 +345,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 015a -> sort products by sales test
     @Test
     @DisplayName("Art Product Sort By Sales")
+    @Tag("Sort_Art_Products_By_Categories")
     @Tag("Sort_Products_By_Categories")
     void sortProductsBySalesTests() {
         clickOnSignUpTest();
@@ -348,6 +365,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 015b -> sort products by relevance test
     @Test
     @DisplayName("Art Product Sort By Relevance")
+    @Tag("Sort_Art_Products_By_Categories")
     @Tag("Sort_Products_By_Categories")
     void sortProductsByRelevanceTests() {
         clickOnSignUpTest();
@@ -367,6 +385,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 015c -> sort products by name (A to Z) test
     @Test
     @DisplayName("Art Product Sort By Name(A to Z)")
+    @Tag("Sort_Art_Products_By_Categories")
     @Tag("Sort_Products_By_Categories")
     void sortProductsByNameAToZTests() {
         clickOnSignUpTest();
@@ -386,6 +405,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 015d -> sort products by name (Z to A) test
     @Test
     @DisplayName("Art Product Sort By Name(Z to A)")
+    @Tag("Sort_Art_Products_By_Categories")
     @Tag("Sort_Products_By_Categories")
     void sortProductsByNameZToATests() {
         clickOnSignUpTest();
@@ -405,6 +425,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 015e -> sort products by price (low to high) test
     @Test
     @DisplayName("Art Product Sort By Price(low to high)")
+    @Tag("Sort_Art_Products_By_Categories")
     @Tag("Sort_Products_By_Categories")
     void sortProductsByPriceLowToHighTests() {
         clickOnSignUpTest();
@@ -424,6 +445,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 015f -> sort products by price (high to low) test
     @Test
     @DisplayName("Art Product Sort By Price(high to low)")
+    @Tag("Sort_Art_Products_By_Categories")
     @Tag("Sort_Products_By_Categories")
     void sortProductsByPriceHighToLowTests() {
         clickOnSignUpTest();
@@ -443,6 +465,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 015g -> sort products by reference (a to z) test
     @Test
     @DisplayName("Art Product Sort By Reference(A to Z)")
+    @Tag("Sort_Art_Products_By_Categories")
     @Tag("Sort_Products_By_Categories")
     void sortProductsByReferenceAToZTests() {
         clickOnSignUpTest();
@@ -462,6 +485,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 015h -> sort products by reference (z to a) test
     @Test
     @DisplayName("Art Product Sort By Reference(Z to A)")
+    @Tag("Sort_Art_Products_By_Categories")
     @Tag("Sort_Products_By_Categories")
     void sortProductsByReferenceZToATests() {
         clickOnSignUpTest();
@@ -477,8 +501,4 @@ public class RegisteredUserArtPageTest extends TestMethods {
         navigateToArtPageTest();
         sortProductsByReferenceZToATest();
     }
-
-
-
-
 }

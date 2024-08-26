@@ -1936,7 +1936,7 @@ public class TestMethods extends BaseTest {
     //product list names print method
     protected void printSelectedCategoryHmAccessoriesProductsTest(){
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
-        //Get the selected category product images
+        //Get the selected category product images // -> with proper elements selector it throws StaleElementReferenceException
         List<String> productImages = registeredUserStationaryAccessoriesPage.getProductImages();
         // Print out each image URL or message
         for (String image : productImages) {
