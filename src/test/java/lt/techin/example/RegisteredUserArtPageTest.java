@@ -105,7 +105,7 @@ public class RegisteredUserArtPageTest extends TestMethods {
     //Test 009 -> filter product by price test
     @Test
     @DisplayName("Art Product Filter By Price Slider Value")
-    @Tag("Filter_Art_Products_By_Link_Click")
+    @Tag("Filter_Art_Products_By_Price_Slider")
     @Tag("Filter_Products_By_Price_Slider")
     void filterProductsByPriceSliderTests() {
         clickOnSignUpTest();

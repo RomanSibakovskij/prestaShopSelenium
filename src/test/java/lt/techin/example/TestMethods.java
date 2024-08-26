@@ -19,8 +19,6 @@ public class TestMethods extends BaseTest {
 
         //assert signin link is displayed
         assertTrue(homePage.isSignUpLinkDisplayed(), "The sign in link isn't displayed");
-        logger.info("The sign in link is displayed" + "\n");
-
         homePage.clickSignUpLink();
     }
 
@@ -81,7 +79,6 @@ public class TestMethods extends BaseTest {
         HomePage homePage = new HomePage(driver);
         //assert 'Sign out' link is present
         assertTrue(homePage.isSignOutLinkDisplayed(), "The sign out link isn't displayed");
-        logger.info("The sign out link is displayed" + "\n");
         homePage.clickSignOutLink();
     }
 
@@ -89,7 +86,6 @@ public class TestMethods extends BaseTest {
         HomePage homePage = new HomePage(driver);
         //assert sign in link is displayed
         assertTrue(homePage.isSignInLinkDisplayed(), "The 'Sign In' link isn't displayed");
-        logger.info("The 'Sign In' link is displayed" + "\n");
         homePage.clickSignInLink();
     }
     // registered user login with valid data
@@ -1606,7 +1602,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1623,7 +1619,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
@@ -1641,7 +1637,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
@@ -1659,7 +1655,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
@@ -1692,7 +1688,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
@@ -1710,7 +1706,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
 
@@ -1728,7 +1724,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1745,7 +1741,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1762,7 +1758,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1779,7 +1775,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1796,7 +1792,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1813,7 +1809,7 @@ public class TestMethods extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1300));
         wait.until(ExpectedConditions.numberOfElementsToBe(registeredUserStationaryAccessoriesPage.getProductLocator(), 3));
         //get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
         //remove search filter
         registeredUserStationaryAccessoriesPage.clickRemoveSearchFilter();
     }
@@ -1839,7 +1835,7 @@ public class TestMethods extends BaseTest {
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByRelevanceTest() {
@@ -1852,7 +1848,7 @@ public class TestMethods extends BaseTest {
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByNameAToZTest() {
@@ -1865,7 +1861,7 @@ public class TestMethods extends BaseTest {
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesNameAToZOptionText(), "Name,A to Z"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByNameZToATest() {
@@ -1878,7 +1874,7 @@ public class TestMethods extends BaseTest {
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesNameZtoAOptionText(), "Name,Z to A"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByPriceLowToHighTest() {
@@ -1891,7 +1887,7 @@ public class TestMethods extends BaseTest {
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesPriceLowToHighText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByPriceHighToLowTest() {
@@ -1904,7 +1900,7 @@ public class TestMethods extends BaseTest {
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesPriceHighToLowText(), "Price,high to low"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByReferenceAToZTest() {
@@ -1917,7 +1913,7 @@ public class TestMethods extends BaseTest {
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesReferenceAToZText(), "Reference,A to Z"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
     }
 
     protected void sortStAccessoriesProductsByReferenceZToATest() {
@@ -1930,18 +1926,18 @@ public class TestMethods extends BaseTest {
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccessoriesReferenceAToZText(), "Reference,A to Z"); // -> assert crashes the test, it doesn't find text
         //Get the selected category product list elements
-        printSelectedCategoryHmAccessoriesProductsTest();
+        printSelectedCategoryStAccessoriesProductsTest();
     }
 
     //product list names print method
-    protected void printSelectedCategoryHmAccessoriesProductsTest(){
+    protected void printSelectedCategoryStAccessoriesProductsTest(){
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
-        //Get the selected category product images // -> with proper elements selector it throws StaleElementReferenceException
-        List<String> productImages = registeredUserStationaryAccessoriesPage.getProductImages();
-        // Print out each image URL or message
-        for (String image : productImages) {
-            System.out.println("Product image in the list: " + image);
-        }
+        //Get the selected category product images // -> with proper elements selector it throws StaleElementReferenceException (box icon ruled paper,availability)
+//        List<String> productImages = registeredUserStationaryAccessoriesPage.getProductImages();
+//        // Print out each image URL or message
+//        for (String image : productImages) {
+//            System.out.println("Product image in the list: " + image);
+//        }
         // Get the selected category product names
         List<String> productNames = registeredUserStationaryAccessoriesPage.getProductNames();
         // Print the selected category product names

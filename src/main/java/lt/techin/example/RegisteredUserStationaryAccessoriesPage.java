@@ -377,7 +377,7 @@ public class RegisteredUserStationaryAccessoriesPage extends BasePage{
     //remove search filter
 
     public void clickRemoveSearchFilter(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(870));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.visibilityOf(removeFilterIcon));
         removeFilterIcon.click();
     }
