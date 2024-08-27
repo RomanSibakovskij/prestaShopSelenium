@@ -6,7 +6,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.*;
 
+import java.sql.*;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class TestMethods extends BaseTest {
@@ -44,6 +47,8 @@ public class TestMethods extends BaseTest {
         registerPage.clickAgreeToTermsCheckbox();
         registerPage.clickSignUpForNewsletterCheckbox();
         registerPage.clickCustomerDataPrivacyCheckbox();
+	//data insertion into database method
+        insertDataTest(registerPage);
         //click 'Save' button
         registerPage.clickSaveButton();
     }
@@ -71,8 +76,47 @@ public class TestMethods extends BaseTest {
         registerPage.clickAgreeToTermsCheckbox();
         registerPage.clickSignUpForNewsletterCheckbox();
         registerPage.clickCustomerDataPrivacyCheckbox();
+	//data insertion into database method
+        insertDataTest(registerPage);
         //click 'Save' button
         registerPage.clickSaveButton();
+    }
+
+    protected void insertDataTest(RegisterPage registerPage) {
+        String sql = "INSERT INTO UserRegisterData (FirstName, LastName, Email, Password, Birthdate) VALUES (?, ?, ?, ?, ?)";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // data getters from RegisterPage
+            String firstName = registerPage.getFirstName();
+            String lastName = registerPage.getLastName();
+            String email = registerPage.getEmailAddress();
+            String password = registerPage.getPassword();
+            String dateString = registerPage.getBirthDate();
+
+            // data log (inserted into database)
+            logger.info("Inserting data into database:");
+            logger.info("First Name: " + firstName);
+            logger.info("Last Name: " + lastName);
+            logger.info("Email: " + email);
+            logger.info("Password: " + password);
+            logger.info("Birthdate: " + dateString);
+
+            // parse and set Birthdate
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+            LocalDate localDate = LocalDate.parse(dateString, formatter);
+            Date sqlDate = Date.valueOf(localDate);
+
+            // set parameters and execute update
+            pstmt.setString(1, firstName);
+            pstmt.setString(2, lastName);
+            pstmt.setString(3, email);
+            pstmt.setString(4, password);
+            pstmt.setDate(5, sqlDate);
+
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            logger.warn("SQL Error: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     protected void logoutFromUserAccountTest() {

@@ -413,6 +413,11 @@ public class RegisterPage extends BasePage{
         return this.password;
     }
 
+    //getters for firstname, lastname, birthdate
+    public String getFirstName(){return firstName;}
+    public String getLastName(){return lastName;}
+    public String getBirthDate(){return birthDate;}
+
     //getters for first / last name error messages
 
     public String getTooLongFirstNameMessage(){
