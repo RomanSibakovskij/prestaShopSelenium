@@ -699,6 +699,8 @@ public class TestMethods extends BaseTest {
         //assertTrue(registeredUserSearchCatalogPage.isSearchQueryResultPopUpDisplayed(), "The search query result isn't displayed");
         boolean isProductFound = registeredUserSearchCatalogPage.isProductPresent(registeredUserSearchCatalogPage.getMugTheBestQuery());
         assertTrue(isProductFound, "The product with the name " + registeredUserSearchCatalogPage.getMugTheBestQuery() + " isn't present in search result");
+        //product list elements
+        printSearchProductNamesTest();
     }
 
     protected void searchForMugAdventureInSearchCatalogTest() {
@@ -928,6 +930,18 @@ public class TestMethods extends BaseTest {
     protected void isSearchBarDisplayed(RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage){
         //assert search bar is present
         assertTrue(registeredUserSearchCatalogPage.isSearchBarDisplayed(), "The search bar isn't displayed");
+    }
+
+    //product list names print method
+    protected void printSearchProductNamesTest(){
+        RegisteredUserSearchCatalogPage registeredUserSearchCatalogPage = new RegisteredUserSearchCatalogPage(driver);
+        // Get the selected category product names
+        List<String> productNames = registeredUserSearchCatalogPage.getProductNames();
+        logger.info("Total number of products in the selected category: " + productNames.size()); //product count
+        // Print the selected category product names
+        for (String name : productNames) {
+            logger.info("Product present in the list: " + "\n" + name);
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1569,7 +1583,7 @@ public class TestMethods extends BaseTest {
         assertTrue(bestYetToComePosterPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
     }
 
-//    //product list names print method
+    //product list names print method
     protected void printSelectedCategoryArtProductsTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
         //Get the selected category product images

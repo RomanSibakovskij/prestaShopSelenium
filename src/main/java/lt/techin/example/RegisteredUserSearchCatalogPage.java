@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RegisteredUserSearchCatalogPage extends BasePage{
@@ -15,8 +16,6 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     //elements
     @FindBy(css = "input[name='s']")
     private WebElement searchBar;
-    @FindBy(css = "//body[@id='index']/ul")
-    private WebElement searchQueryResult;
     @FindBy(css = "ul.ui-autocomplete")
     private WebElement searchResultsDropdown;
 
@@ -39,6 +38,8 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
     private String notebook2Query = "Brown bear notebook";
     private String notebook3Query = "Hummingbird notebook";
     private String packQuery = "Pack Mug + Framed poster";
+
+    private List<WebElement> productNameElements = driver.findElements(By.xpath("//ul[@id='ui-id-1']/li"));
 
 
     public RegisteredUserSearchCatalogPage(WebDriver driver) {
@@ -191,6 +192,15 @@ public class RegisteredUserSearchCatalogPage extends BasePage{
             }
         }
         return false;
+    }
+
+    public List<String> getProductNames() {
+        List<String> productNames = new ArrayList<>();
+        for (WebElement product : productNameElements) {
+            String name = product.getText();
+            productNames.add(name);
+        }
+        return productNames;
     }
 
     //assert methods

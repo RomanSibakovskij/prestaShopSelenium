@@ -1,7 +1,7 @@
 package lt.techin.example;
 
 import org.junit.jupiter.api.*;
-//import org.junit.jupiter.api.Test;
+
 
 public class RegistrationPageTest extends TestMethods {
 
