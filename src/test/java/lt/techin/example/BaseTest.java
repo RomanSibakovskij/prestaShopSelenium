@@ -22,13 +22,13 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("http://192.168.8.187");
-        // set up database connection
-        try {
-            conn = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/userdb", "sa", "");
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Failed to connect to the database", e);
-        }
+//        // set up database connection
+//        try {
+//            conn = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/userdb", "sa", "");
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            throw new RuntimeException("Failed to connect to the database", e);
+//        }
     }
 
     @AfterEach
@@ -39,13 +39,13 @@ public class BaseTest {
             throw new RuntimeException(e);
         }
         driver.quit();
-	// terminate database connection
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+//	// terminate database connection
+//        if (conn != null) {
+//            try {
+//                conn.close();
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 }
