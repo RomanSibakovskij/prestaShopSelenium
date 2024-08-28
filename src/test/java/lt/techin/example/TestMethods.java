@@ -2053,10 +2053,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesInStockLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByAvailabilityBoxIconTest() {
@@ -2068,10 +2068,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesInStockBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductBySelectionsLinkTest() {
@@ -2083,10 +2083,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesNewProductLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccAvailabilityFilterMessage(), "Selections: New product"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductBySelectionsBoxIconTest() {
@@ -2098,10 +2098,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesNewProductBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSelectionsFilterMessage(), "Selections: New product"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByPriceSliderTest() {
@@ -2114,10 +2114,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.setHmAccessoriesPriceSliderValue(targetPrice);
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccPriceFilterMessage(), "Price: $12.00 - $13.00"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByWhiteColorLinkTest() {
@@ -2129,10 +2129,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesWhiteColorLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccWhiteColorFilterMessage(), "Color: White"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByWhiteColorBoxIconTest() {
@@ -2144,10 +2144,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesWhiteBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccWhiteColorFilterMessage(), "Color: White"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByBlackColorLinkTest() {
@@ -2159,10 +2159,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesBlackColorLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccBlackColorFilterMessage(), "Color: Black"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByBlackColorBoxIconTest() {
@@ -2174,10 +2174,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesBlackBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccBlackColorFilterMessage(), "Color: Black"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByCeramicLinkTest() {
@@ -2189,10 +2189,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesCeramicLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccCeramicFilterMessage(), "Composition: Ceramic"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByCeramicBoxIconTest() {
@@ -2204,10 +2204,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesCeramicBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccCeramicFilterMessage(), "Composition: Ceramic"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByPolyesterLinkTest() {
@@ -2219,10 +2219,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesPolyesterLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccPolyesterFilterMessage(), "Composition: Polyester"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByPolyesterBoxIconTest() {
@@ -2234,10 +2234,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesPolyesterBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccPolyesterFilterMessage(), "Composition: Polyester"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByRemovableCoverLinkTest() {
@@ -2249,10 +2249,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesRemovableCoverLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccRemovableCoverFilterMessage(), "Property: Removable cover"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByRemovableCoverBoxIconTest() {
@@ -2264,10 +2264,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesRemovableCoverBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccRemovableCoverFilterMessage(), "Property: Removable cover"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByStudioDesignLinkTest() {
@@ -2279,10 +2279,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesStudioDesignLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccStudioDesignFilterMessage(), "Brand: Studio Design"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     protected void filterHmAccProductByStudioDesignBoxIconTest() {
@@ -2294,10 +2294,10 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesStudioDesignBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccStudioDesignFilterMessage(), "Brand: Studio Design"); -> assert crashes the test
-        //remove search filter
-        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
         //Get the selected category product list elements
         printSelectedCategoryHmAccessoriesProductsTest();
+        //remove search filter
+        registeredUserHomeAccessoriesPage.clickRemoveSearchFilter();
     }
 
     // dropdown menu test method
@@ -2493,6 +2493,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesInStockBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesAvailabilityFilterMessage(), "Availability: In stock");
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2505,6 +2507,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesInStockLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesAvailabilityFilterMessage(), "Availability: In stock");
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2517,6 +2521,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesDiscountedBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesDiscountedFilterMessage(), "Selections: Discounted");
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2529,6 +2535,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesDiscountedLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesDiscountedFilterMessage(), "Selections: Discounted");
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2541,6 +2549,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesNewProductBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesNewProductFilterMessage(), "Selections: New product");
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2553,6 +2563,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesNewProductLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesNewProductFilterMessage(), "Selections: New product");
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2567,6 +2579,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.setMenClothesPriceSliderValue(targetPrice);
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesPriceFilterMessage(), "Price: $19.00 - $24.00"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2579,6 +2593,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSizeSBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeSFilterMessage(), "Size: S"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2591,6 +2607,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSizeSLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeSFilterMessage(), "Size: S"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2603,6 +2621,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSizeMBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeMFilterMessage(), "Size: M"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2615,6 +2635,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSizeMLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeMFilterMessage(), "Size: M"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2627,6 +2649,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSizeLBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeLFilterMessage(), "Size: L"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2639,6 +2663,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSizeLLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeLFilterMessage(), "Size: L"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2651,6 +2677,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSizeXLBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeXLFilterMessage(), "Size: XL"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2663,6 +2691,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSizeXLLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeXLFilterMessage(), "Size: XL"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2675,6 +2705,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesWhiteBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeWhiteFilterMessage(), "Color: White"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2687,6 +2719,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesWhiteLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeWhiteFilterMessage() "Color: White"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2699,6 +2733,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesBlackBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeBlackFilterMessage(), "Color: Black"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2711,6 +2747,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesBlackLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeBlackFilterMessage() "Color: Black"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
         //remove search filter
         registeredUserMenClothesPage.clickRemoveSearchFilter();
     }
@@ -2737,6 +2775,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSalesOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
     }
 
     protected void sortMenClothesByRelevanceTest() {
@@ -2749,6 +2789,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesRelevanceOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
     }
 
     protected void sortMenClothesByNameAToZTest() {
@@ -2761,6 +2803,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesNameAToZOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
     }
 
     protected void sortMenClothesByNameZToATest() {
@@ -2773,6 +2817,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesNameZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesNameZToAOptionText(), "Name, Z to A"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
     }
 
     protected void sortMenClothesByPriceLowToHighTest() {
@@ -2785,6 +2831,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesPriceLowToHighOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesPriceLowToHighOptionText(), "Price, low to high"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
     }
 
     protected void sortMenClothesByPriceHighToLowTest() {
@@ -2797,6 +2845,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesPriceHighToLowOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesPriceHighToLowOptionText(), "Price, high to low"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
     }
 
     protected void sortMenClothesByReferenceAToZTest() {
@@ -2809,6 +2859,8 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesReferenceAToZOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
     }
 
     protected void sortMenClothesByReferenceZToATest() {
@@ -2821,6 +2873,31 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesReferenceZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesReferenceZToAOptionText(), "Reference, Z to A"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryMenClothesTest();
+    }
+
+    //product list names print method
+    protected void printSelectedCategoryMenClothesTest(){
+        RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
+        //Get the selected category product images // -> with proper elements selector it throws StaleElementReferenceException (box icon ruled paper,availability)
+        List<String> productImages = registeredUserMenClothesPage.getProductImages();
+        // Print out each image URL or message
+        for (String image : productImages) {
+            System.out.println("Product image in the list: " + image);
+        }
+        // Get the selected category product names
+        List<String> productNames = registeredUserMenClothesPage.getProductNames();
+        // Print the selected category product names
+        for (String name : productNames) {
+            logger.info("Product present in the list: " + "\n" + name);
+        }
+        // Get the selected category product prices
+        List<String> productPrices = registeredUserMenClothesPage.getProductPrices();
+        // Print the selected category product names
+        for (String price : productPrices) {
+            logger.info("Product price in the list: " + "\n" + price);
+        }
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
