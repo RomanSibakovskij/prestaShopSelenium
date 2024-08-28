@@ -2019,7 +2019,6 @@ public class TestMethods extends BaseTest {
 
         //assert accessories link is displayed on navbar
         assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesPageLink1Displayed(), "The home accessories page link1 isn't displayed");
-        System.out.println("The home accessories page link1 is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesPageLink1();
     }
 
@@ -2028,7 +2027,6 @@ public class TestMethods extends BaseTest {
 
         //assert accessories link is displayed on navbar
         assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesPageLink2Displayed(), "The home accessories page link2 isn't displayed");
-        System.out.println("The home accessories page link2 is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesPageLink2();
     }
 
@@ -2037,7 +2035,6 @@ public class TestMethods extends BaseTest {
 
         //assert accessories link is displayed on navbar
         assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesPageBoxIconDisplayed(), "The home accessories page box icon isn't displayed");
-        System.out.println("The home accessories page box icon is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesPageBoxIcon();
     }
 
@@ -2049,7 +2046,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'in stock' link is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesInStockLinkDisplayed(), "The home accessories 'in stock' link isn't displayed");
-        System.out.println("The home accessories page 'in stock' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesInStockLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
@@ -2064,7 +2060,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesInStockBoxIconDisplayed(), "The home accessories 'in stock' link isn't displayed");
-        System.out.println("The home accessories page 'in stock' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesInStockBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccAvailabilityFilterMessage(), "Availability: In stock"); -> assert crashes the test
@@ -2079,7 +2074,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'in stock' link is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesNewProductLinkDisplayed(), "The home accessories 'new product' link isn't displayed");
-        System.out.println("The home accessories page 'new product' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesNewProductLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccAvailabilityFilterMessage(), "Selections: New product"); -> assert crashes the test
@@ -2094,7 +2088,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHomeAccessoriesNewProductBoxIconDisplayed(), "The home accessories 'new product' link isn't displayed");
-        System.out.println("The home accessories page 'new product' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesNewProductBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSelectionsFilterMessage(), "Selections: New product"); -> assert crashes the test
@@ -2109,7 +2102,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' link is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesPriceSliderDisplayed(), "The stationary accessories price slider isn't displayed");
-        System.out.println("The stationary accessories page price slider is displayed" + "\n");
         double targetPrice = 25.0;
         registeredUserHomeAccessoriesPage.setHmAccessoriesPriceSliderValue(targetPrice);
         //assert the correct message is displayed
@@ -2125,7 +2117,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'in stock' link is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesWhiteColorLinkDisplayed(), "The home accessories 'white' link isn't displayed");
-        System.out.println("The home accessories page 'white' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesWhiteColorLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccWhiteColorFilterMessage(), "Color: White"); -> assert crashes the test
@@ -2140,7 +2131,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesWhiteBoxIconDisplayed(), "The home accessories 'white' box icon isn't displayed");
-        System.out.println("The home accessories page 'white' box icon is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesWhiteBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccWhiteColorFilterMessage(), "Color: White"); -> assert crashes the test
@@ -2155,7 +2145,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'in stock' link is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesBlackLinkDisplayed(), "The home accessories 'black' link isn't displayed");
-        System.out.println("The home accessories page 'black' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesBlackColorLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccBlackColorFilterMessage(), "Color: Black"); -> assert crashes the test
@@ -2170,7 +2159,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesBlackBoxIconDisplayed(), "The home accessories 'black' box icon isn't displayed");
-        System.out.println("The home accessories page 'black' box icon is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesBlackBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccBlackColorFilterMessage(), "Color: Black"); -> assert crashes the test
@@ -2185,7 +2173,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'in stock' link is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesCeramicLinkDisplayed(), "The home accessories 'ceramic' link isn't displayed");
-        System.out.println("The home accessories page 'ceramic' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesCeramicLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccCeramicFilterMessage(), "Composition: Ceramic"); -> assert crashes the test
@@ -2200,7 +2187,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesCeramicBoxIconDisplayed(), "The home accessories 'ceramic' box icon isn't displayed");
-        System.out.println("The home accessories page 'ceramic' box icon is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesCeramicBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccCeramicFilterMessage(), "Composition: Ceramic"); -> assert crashes the test
@@ -2215,7 +2201,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'in stock' link is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesPolyesterLinkDisplayed(), "The home accessories 'polyester' link isn't displayed");
-        System.out.println("The home accessories page 'polyester' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesPolyesterLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccPolyesterFilterMessage(), "Composition: Polyester"); -> assert crashes the test
@@ -2230,7 +2215,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesPolyesterBoxIconDisplayed(), "The home accessories 'polyester' box icon isn't displayed");
-        System.out.println("The home accessories page 'polyester' box icon is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesPolyesterBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccPolyesterFilterMessage(), "Composition: Polyester"); -> assert crashes the test
@@ -2245,7 +2229,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'in stock' link is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesRemovableCoverLinkDisplayed(), "The home accessories 'removable cover' link isn't displayed");
-        System.out.println("The home accessories page 'removable cover' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesRemovableCoverLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccRemovableCoverFilterMessage(), "Property: Removable cover"); -> assert crashes the test
@@ -2260,7 +2243,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesRemovableCoverBoxIconDisplayed(), "The home accessories 'removable cover' box icon isn't displayed");
-        System.out.println("The home accessories page 'removable cover' box icon is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesRemovableCoverBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccRemovableCoverFilterMessage(), "Property: Removable cover"); -> assert crashes the test
@@ -2275,7 +2257,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'in stock' link is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesStudioDesignLinkDisplayed(), "The home accessories 'studio design' link isn't displayed");
-        System.out.println("The home accessories page 'studio design' link is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesStudioDesignLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccStudioDesignFilterMessage(), "Brand: Studio Design"); -> assert crashes the test
@@ -2290,7 +2271,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' box icon is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesStudioDesignBoxIconDisplayed(), "The home accessories 'studio design' box icon isn't displayed");
-        System.out.println("The home accessories page 'studio design' box icon is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHomeAccessoriesStudioDesignBoxIcon();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccStudioDesignFilterMessage(), "Brand: Studio Design"); -> assert crashes the test
@@ -2306,7 +2286,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
         //assert the dropdown is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
-        System.out.println("The 'Sort By' dropdown menu is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
     }
 
@@ -2318,7 +2297,6 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
         //assert the sort by sales option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesSalesOptionDisplayed(), "The sort by 'Sales' menu option isn't displayed");
-        System.out.println("The sort by 'Sales' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesSalesOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
@@ -2332,7 +2310,6 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
         //assert the sort by relevance option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesRelevanceOptionDisplayed(), "The sort by 'Relevance' menu option isn't displayed");
-        System.out.println("The sort by 'Relevance' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesRelevanceOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
@@ -2346,7 +2323,6 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesNameAToZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
-        System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesNameAToZOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
@@ -2360,7 +2336,6 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
         //assert the sort by name 'z to a' option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesNameZToAOptionDisplayed(), "The sort by name 'Z to A' menu option isn't displayed");
-        System.out.println("The sort by name 'Z to A' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesNameZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesNameZToAOptionText(), "Name, Z to A"); // -> assert crashes the test, it doesn't find text
@@ -2374,7 +2349,6 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
         //assert the sort by price 'low to high' option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
-        System.out.println("The sort by price 'low to high' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesPriceLowToHighOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesPriceLowToHighOptionText(), "Price, low to high"); // -> assert crashes the test, it doesn't find text
@@ -2388,7 +2362,6 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
         //assert the sort by price 'high to low' option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesPriceHighToLowOptionDisplayed(), "The sort by price 'high to low' menu option isn't displayed");
-        System.out.println("The sort by price 'high to low' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesPriceHighToLowOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesPriceHighToLowOptionText(), "Price, high to low"); // -> assert crashes the test, it doesn't find text
@@ -2402,7 +2375,6 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
         //assert the sort by reference 'A to Z' option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesReferenceAToZOptionDisplayed(), "The sort by reference 'A to Z' menu option isn't displayed");
-        System.out.println("The sort by reference 'A to Z' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesReferenceAToZOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
@@ -2416,7 +2388,6 @@ public class TestMethods extends BaseTest {
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
         //assert the sort by reference 'Z to A' option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesReferenceZToAOptionDisplayed(), "The sort by reference 'Z to A' menu option isn't displayed");
-        System.out.println("The sort by reference 'Z to A' menu option  is displayed" + "\n");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesReferenceZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getHmAccessoriesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
@@ -2455,7 +2426,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert 'Clothes' link is displayed on navbar
         assertTrue(registeredUserMenClothesPage.isClothesPageLinkDisplayed(), "The 'Clothes' link isn't displayed on navbar");
-        System.out.println("The 'Clothes' link is displayed on navbar" + "\n");
         registeredUserMenClothesPage.clickOnClothesPageLink();
     }
 
@@ -2463,7 +2433,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert 'Men' clothes link1 is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPageLink1Displayed(), "The 'Men' clothes link1 isn't displayed");
-        System.out.println("The 'Men' clothes link1 is displayed" + "\n");
         registeredUserMenClothesPage.clickOnMenClothesPageLink1();
     }
 
@@ -2471,7 +2440,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert 'Men' clothes link2 is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPageLink2Displayed(), "The 'Men' clothes link2 isn't displayed");
-        System.out.println("The 'Men' clothes link2 is displayed" + "\n");
         registeredUserMenClothesPage.clickOnMenClothesPageLink2();
     }
 
@@ -2479,7 +2447,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert 'Men' clothes box icon is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPageBoxIconDisplayed(), "The 'Men' clothes box icon isn't displayed");
-        System.out.println("The 'Men' clothes box icon is displayed" + "\n");
         registeredUserMenClothesPage.clickOnMenClothesPageBoxIcon();
     }
 
@@ -2489,7 +2456,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesInStockBoxIconDisplayed(), "The 'In stock' box icon link isn't displayed");
-        System.out.println("The 'In stock' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesInStockBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesAvailabilityFilterMessage(), "Availability: In stock");
@@ -2503,7 +2469,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesInStockLinkDisplayed(), "The 'In stock' link isn't displayed");
-        System.out.println("The 'In stock' link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesInStockLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesAvailabilityFilterMessage(), "Availability: In stock");
@@ -2517,7 +2482,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by discounted choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesDiscountedBoxIconDisplayed(), "The 'Discounted' box icon link isn't displayed");
-        System.out.println("The 'Discounted' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesDiscountedBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesDiscountedFilterMessage(), "Selections: Discounted");
@@ -2531,7 +2495,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by discounted choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesDiscountedLinkDisplayed(), "The 'Discounted' link isn't displayed");
-        System.out.println("The 'Discounted' link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesDiscountedLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesDiscountedFilterMessage(), "Selections: Discounted");
@@ -2545,7 +2508,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesNewProductBoxIconDisplayed(), "The 'New product' box icon link isn't displayed");
-        System.out.println("The 'New Product' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesNewProductBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesNewProductFilterMessage(), "Selections: New product");
@@ -2559,7 +2521,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesNewProductLinkDisplayed(), "The 'New product' link isn't displayed");
-        System.out.println("The 'New product' link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesNewProductLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesNewProductFilterMessage(), "Selections: New product");
@@ -2574,7 +2535,6 @@ public class TestMethods extends BaseTest {
 
         //assert product 'new product' link is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPriceSliderDisplayed(), "The men clothes price slider isn't displayed");
-        System.out.println("The men clothes page price slider is displayed" + "\n");
         double targetPrice = 22.0;
         registeredUserMenClothesPage.setMenClothesPriceSliderValue(targetPrice);
         //assert the correct message is displayed
@@ -2589,7 +2549,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size s choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeSBoxIconDisplayed(), "The men clothes 'Size S' box icon link isn't displayed");
-        System.out.println("The men clothes 'Size S' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesSizeSBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeSFilterMessage(), "Size: S"); -> assert crashes the test
@@ -2603,7 +2562,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size s choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeSLinkDisplayed(), "The men clothes 'Size S' link isn't displayed");
-        System.out.println("The men clothes 'Size S' link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesSizeSLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeSFilterMessage(), "Size: S"); -> assert crashes the test
@@ -2617,7 +2575,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size m choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeMBoxIconDisplayed(), "The men clothes 'Size M' box icon link isn't displayed");
-        System.out.println("The men clothes 'Size M' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesSizeMBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeMFilterMessage(), "Size: M"); -> assert crashes the test
@@ -2631,7 +2588,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size m choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeMLinkDisplayed(), "The men clothes 'Size M' link isn't displayed");
-        System.out.println("The men clothes 'Size M' link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesSizeMLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeMFilterMessage(), "Size: M"); -> assert crashes the test
@@ -2645,7 +2601,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size l choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeLBoxIconDisplayed(), "The men clothes 'Size L' box icon link isn't displayed");
-        System.out.println("The men clothes 'Size L' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesSizeLBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeLFilterMessage(), "Size: L"); -> assert crashes the test
@@ -2659,7 +2614,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size l choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeLLinkDisplayed(), "The men clothes 'Size L' link isn't displayed");
-        System.out.println("The men clothes 'Size L' link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesSizeLLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeLFilterMessage(), "Size: L"); -> assert crashes the test
@@ -2673,7 +2627,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size xl choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeXLBoxIconDisplayed(), "The men clothes 'Size XL' box icon link isn't displayed");
-        System.out.println("The men clothes 'Size XL' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesSizeXLBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeXLFilterMessage(), "Size: XL"); -> assert crashes the test
@@ -2687,7 +2640,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by size xl choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSizeXLLinkDisplayed(), "The men clothes 'Size XL' link isn't displayed");
-        System.out.println("The men clothes 'Size XL' link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesSizeXLLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeXLFilterMessage(), "Size: XL"); -> assert crashes the test
@@ -2701,7 +2653,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by white color choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesWhiteBoxIconDisplayed(), "The men clothes color 'White' box icon link isn't displayed");
-        System.out.println("The men clothes color 'White' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesWhiteBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeWhiteFilterMessage(), "Color: White"); -> assert crashes the test
@@ -2715,7 +2666,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by white color choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesWhiteLinkDisplayed(), "The men clothes color 'White' link isn't displayed");
-        System.out.println("The men clothes color 'White' link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesWhiteLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeWhiteFilterMessage() "Color: White"); -> assert crashes the test
@@ -2729,7 +2679,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by black color choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesBlackBoxIconDisplayed(), "The men clothes color 'Black' box icon link isn't displayed");
-        System.out.println("The men clothes color 'Black' box icon link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesBlackBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeBlackFilterMessage(), "Color: Black"); -> assert crashes the test
@@ -2743,7 +2692,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the filter by black color choice is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesBlackLinkDisplayed(), "The men clothes color 'Black' link isn't displayed");
-        System.out.println("The men clothes color 'Black' link is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesBlackLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getMenClothesSizeBlackFilterMessage() "Color: Black"); -> assert crashes the test
@@ -2759,7 +2707,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
         //assert the dropdown is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
-        System.out.println("The 'Sort By' dropdown menu is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
     }
 
@@ -2771,7 +2718,6 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
         //assert the sort by sales option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesSalesOptionDisplayed(), "The sort by 'Sales' menu option isn't displayed");
-        System.out.println("The sort by 'Sales' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesSalesOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
@@ -2785,7 +2731,6 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
         //assert the sort by relevance option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesRelevanceOptionDisplayed(), "The sort by 'Relevance' menu option isn't displayed");
-        System.out.println("The sort by 'Relevance' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesRelevanceOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
@@ -2799,7 +2744,6 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
         //assert the sort by name 'A to Z' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesNameAToZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
-        System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesNameAToZOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
@@ -2813,7 +2757,6 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
         //assert the sort by name 'Z to A' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesNameZToAOptionDisplayed(), "The sort by name 'Z to A' menu option isn't displayed");
-        System.out.println("The sort by name 'Z to A' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesNameZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesNameZToAOptionText(), "Name, Z to A"); // -> assert crashes the test, it doesn't find text
@@ -2827,7 +2770,6 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
         //assert the sort by price 'low to high' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
-        System.out.println("The sort by price 'low to high' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesPriceLowToHighOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesPriceLowToHighOptionText(), "Price, low to high"); // -> assert crashes the test, it doesn't find text
@@ -2841,7 +2783,6 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
         //assert the sort by price 'high to low' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPriceHighToLowOptionDisplayed(), "The sort by price 'high to low' menu option isn't displayed");
-        System.out.println("The sort by price 'low to high' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesPriceHighToLowOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesPriceHighToLowOptionText(), "Price, high to low"); // -> assert crashes the test, it doesn't find text
@@ -2855,7 +2796,6 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
         //assert the sort by reference 'A to Z' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesReferenceAToZOptionDisplayed(), "The sort by reference 'A to Z' menu option isn't displayed");
-        System.out.println("The sort by reference 'A to Z' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesReferenceAToZOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
@@ -2869,7 +2809,6 @@ public class TestMethods extends BaseTest {
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
         //assert the sort by reference 'Z to A' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesReferenceZToAOptionDisplayed(), "The sort by reference 'Z to A' menu option isn't displayed");
-        System.out.println("The sort by reference 'Z to A' menu option  is displayed" + "\n");
         registeredUserMenClothesPage.clickMenClothesReferenceZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getMenClothesReferenceZToAOptionText(), "Reference, Z to A"); // -> assert crashes the test, it doesn't find text
@@ -2908,7 +2847,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert 'Women' clothes link1 is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPageLink1Displayed(), "The 'Women' clothes link1 isn't displayed");
-        System.out.println("The 'Women' clothes link1 is displayed" + "\n");
         registeredUserWomenClothesPage.clickOnWomenClothesPageLink1();
     }
 
@@ -2916,7 +2854,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert 'Women' clothes link2 is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPageLink2Displayed(), "The 'Women' clothes link2 isn't displayed");
-        System.out.println("The 'Women' clothes link2 is displayed" + "\n");
         registeredUserWomenClothesPage.clickOnWomenClothesPageLink2();
     }
 
@@ -2924,7 +2861,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert 'Women' clothes box icon is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPageBoxIconDisplayed(), "The 'Women' clothes box icon isn't displayed");
-        System.out.println("The 'Women' clothes box icon is displayed" + "\n");
         registeredUserWomenClothesPage.clickOnWomenClothesPageBoxIcon();
     }
 
@@ -2934,10 +2870,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesInStockBoxIconDisplayed(), "The 'In stock' box icon link isn't displayed");
-        System.out.println("The 'In stock' box icon link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesInStockBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesAvailabilityFilterMessage(), "Availability: In stock");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -2946,10 +2883,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by in stock choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesInStockLinkDisplayed(), "The 'In stock' link isn't displayed");
-        System.out.println("The 'In stock' link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesInStockLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesAvailabilityFilterMessage(), "Availability: In stock");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -2958,10 +2896,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by discounted choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesDiscountedBoxIconDisplayed(), "The selections 'Discounted' box icon link isn't displayed");
-        System.out.println("The selections 'Discounted' box icon link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesDiscountedBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesDiscountedFilterMessage(), "Selections: Discounted");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -2970,10 +2909,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by discounted choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesDiscountedLinkDisplayed(), "The selections 'Discounted' link isn't displayed");
-        System.out.println("The selections 'Discounted' link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesDiscountedLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesDiscountedFilterMessage(), "Selections: Discounted");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -2982,10 +2922,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesNewProductBoxIconDisplayed(), "The selections 'New product' box icon link isn't displayed");
-        System.out.println("The selections 'New product' box icon link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesNewProductBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesNewProductFilterMessage(), "Selections: New product");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -2994,10 +2935,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by new product choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesNewProductLinkDisplayed(), "The selections 'New product' link isn't displayed");
-        System.out.println("The selections 'New product' link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesNewProductLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesNewProductFilterMessage(), "Selections: New product");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -3007,11 +2949,12 @@ public class TestMethods extends BaseTest {
 
         //assert price slider is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPriceSliderDisplayed(), "The women clothes price slider isn't displayed");
-        System.out.println("The women clothes page price slider is displayed" + "\n");
         double targetPrice = 30.0;
         registeredUserWomenClothesPage.setMenClothesPriceSliderValue(targetPrice);
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesPriceFilterMessage(), "Price: $30.00 - $36.00"); -> assert crashes the test
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -3020,10 +2963,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size s choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeSBoxIconDisplayed(), "The size 'S' box icon link isn't displayed");
-        System.out.println("The size 'S' box icon link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSizeSBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesSizeSFilterMessage(), "Size: S");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -3032,10 +2976,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size s choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeSLinkDisplayed(), "The size 'S' link isn't displayed");
-        System.out.println("The size 'S' link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSizeSLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesSizeSFilterMessage(), "Size: S");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -3044,10 +2989,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size m choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeMBoxIconDisplayed(), "The size 'M' box icon link isn't displayed");
-        System.out.println("The size 'M' box icon link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSizeMBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesSizeMFilterMessage(), "Size: M");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -3056,10 +3002,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size m choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeMLinkDisplayed(), "The size 'M' link isn't displayed");
-        System.out.println("The size 'M' link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSizeMLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesSizeMFilterMessage(), "Size: M");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -3068,10 +3015,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size l choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeLBoxIconDisplayed(), "The size 'L' box icon link isn't displayed");
-        System.out.println("The size 'L' box icon link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSizeLBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesSizeLFilterMessage(), "Size: L");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -3080,10 +3028,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size l choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeLLinkDisplayed(), "The size 'L' link isn't displayed");
-        System.out.println("The size 'L' link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSizeLLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesSizeLFilterMessage(), "Size: L");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -3092,10 +3041,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size xl choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeXLBoxIconDisplayed(), "The size 'XL' box icon link isn't displayed");
-        System.out.println("The size 'XL' box icon link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSizeXLBoxIcon();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesSizeXLFilterMessage(), "Size: XL");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -3104,10 +3054,11 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the filter by size xl choice is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSizeXLLinkDisplayed(), "The size 'XL' link isn't displayed");
-        System.out.println("The size 'XL' link is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSizeXLLink();
         //assert the correct text is displayed in search filter
         //assertEquals(registeredUserArtPage.getWomenClothesSizeXLFilterMessage(), "Size: XL");
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
         //remove search filter
         registeredUserWomenClothesPage.clickRemoveSearchFilter();
     }
@@ -3118,7 +3069,6 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
         //assert the dropdown is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSortByDropdownMenuDisplayed(), "The 'Sort By' dropdown menu isn't displayed");
-        System.out.println("The 'Sort By' dropdown menu is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
     }
 
@@ -3130,10 +3080,11 @@ public class TestMethods extends BaseTest {
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
         //assert the sort by sales option is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesSalesOptionDisplayed(), "The sort by 'Sales' menu option isn't displayed");
-        System.out.println("The sort by 'Sales' menu option  is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesSalesOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesSalesOptionText(), "Sales, highest to lowest"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
     }
 
     protected void sortWomenClothesByRelevanceTest() {
@@ -3142,10 +3093,11 @@ public class TestMethods extends BaseTest {
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
         //assert the sort by relevance option is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesRelevanceOptionDisplayed(), "The sort by 'Relevance' menu option isn't displayed");
-        System.out.println("The sort by 'Relevance' menu option  is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesRelevanceOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesRelevanceOptionText(), "Relevance"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
     }
 
     protected void sortWomenClothesByNameAToZTest() {
@@ -3154,10 +3106,11 @@ public class TestMethods extends BaseTest {
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
         //assert the sort by name 'a to z' option is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesNameAToZOptionDisplayed(), "The sort by name 'A to Z' menu option isn't displayed");
-        System.out.println("The sort by name 'A to Z' menu option  is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesNameAToZOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesNameAToZOptionText(), "Name, A to Z"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
     }
 
     protected void sortWomenClothesByNameZToATest() {
@@ -3166,10 +3119,11 @@ public class TestMethods extends BaseTest {
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
         //assert the sort by name 'z to a' option is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesNameZToAOptionDisplayed(), "The sort by name 'Z to A' menu option isn't displayed");
-        System.out.println("The sort by name 'Z to A' menu option  is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesNameZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesNameZToAOptionText(), "Name, Z to A"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
     }
 
     protected void sortWomenClothesByPriceLowToHighTest() {
@@ -3178,10 +3132,11 @@ public class TestMethods extends BaseTest {
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
         //assert the sort by price 'low to high' option is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
-        System.out.println("The sort by price 'low to high' menu option  is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesPriceLowToHighOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesPriceLowToHighOptionText(), "Price, low to high"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
     }
 
     protected void sortWomenClothesByPriceHighToLowTest() {
@@ -3190,10 +3145,11 @@ public class TestMethods extends BaseTest {
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
         //assert the sort by price 'high to low' option is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPriceHighToLowOptionDisplayed(), "The sort by price 'high to low' menu option isn't displayed");
-        System.out.println("The sort by price 'high to low' menu option  is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesPriceHighToLowOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesPriceHighToLowOptionText(), "Price, high to low"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
     }
 
     protected void sortWomenClothesByReferenceAToZTest() {
@@ -3202,10 +3158,11 @@ public class TestMethods extends BaseTest {
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
         //assert the sort by reference 'A to Z' option is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesReferenceAToZOptionDisplayed(), "The sort by reference 'A to Z' menu option isn't displayed");
-        System.out.println("The sort by reference 'A to Z' menu option  is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesReferenceAToZOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesReferenceAToZOptionText(), "Reference, A to Z"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
     }
 
     protected void sortWomenClothesByReferenceZToATest() {
@@ -3214,10 +3171,34 @@ public class TestMethods extends BaseTest {
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
         //assert the sort by reference 'Z to A' option is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesReferenceZToAOptionDisplayed(), "The sort by reference 'Z to A' menu option isn't displayed");
-        System.out.println("The sort by reference 'Z to A' menu option  is displayed" + "\n");
         registeredUserWomenClothesPage.clickWomenClothesReferenceZToAOption();
         //assert the correct text is input in option
         //assertEquals(registeredUserStationaryAccessoriesPage.getWomenClothesReferenceZToAOptionText(), "Reference, Z to A"); // -> assert crashes the test, it doesn't find text
+        //Get the selected category product list elements
+        printSelectedCategoryWomenClothesTest();
+    }
+
+    //product list names print method
+    protected void printSelectedCategoryWomenClothesTest(){
+        RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
+        //Get the selected category product images // -> with proper elements selector it throws StaleElementReferenceException (box icon ruled paper,availability)
+        List<String> productImages = registeredUserWomenClothesPage.getProductImages();
+        // Print out each image URL or message
+        for (String image : productImages) {
+            System.out.println("Product image in the list: " + image);
+        }
+        // Get the selected category product names
+        List<String> productNames = registeredUserWomenClothesPage.getProductNames();
+        // Print the selected category product names
+        for (String name : productNames) {
+            logger.info("Product present in the list: " + "\n" + name);
+        }
+        // Get the selected category product prices
+        List<String> productPrices = registeredUserWomenClothesPage.getProductPrices();
+        // Print the selected category product names
+        for (String price : productPrices) {
+            logger.info("Product price in the list: " + "\n" + price);
+        }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3229,7 +3210,6 @@ public class TestMethods extends BaseTest {
 
         //assert the all products link is displayed
         assertTrue(registeredUserWishListPage.isAllProductsLinkDisplayed(), "The 'All Products' link isn't displayed");
-        System.out.println("The 'All Products' link is displayed" + "\n");
         registeredUserWishListPage.clickAllProductsLink();
     }
 
@@ -3240,23 +3220,19 @@ public class TestMethods extends BaseTest {
 
         //assert the t-shirt wishlist button is displayed
         assertTrue(registeredUserWishListPage.isTShirtWishListButtonDisplayed(), "The t-shirt wishlist button isn't displayed");
-        System.out.println("The t-shirt wishlist button is displayed" + "\n");
         //assert the correct product is being selected for wishlist
         //assertEquals(registeredUserWishListPage.getTShirtProductTitle(), "Hummingbird printed t-shirt");
         registeredUserWishListPage.clickTShirtWishListButton();
         //assert the 'My wishlist' link is displayed in 'My wishlists' pop-up box
         assertTrue(registeredUserWishListPage.isMyWishListLinkDisplayed(), "The 'My wishlist' link isn't displayed");
-        System.out.println("The 'My wishlist' link is displayed" + "\n");
         registeredUserWishListPage.clickMyWishListLink();
         //assert the success pop up has the correct text
         //assertEquals(registeredUserWishListPage.getProductAddedPopUpMessage(), "Product added");
         //assert the 'Wishlist' link is displayed
         assertTrue(registeredUserWishListPage.isWishListPageLinkDisplayed(), "The 'Wishlist' page isn't displayed");
-        System.out.println("The 'Wishlist' page is displayed" + "\n");
         registeredUserWishListPage.clickWishListLink();
         //assert 'My wishlist' inner box link is displayed
         //assertTrue(registeredUserWishListPage.isWishListInnerLinkDisplayed(), "The 'My wishlist' inner link isn't displayed");
-        System.out.println("The 'My wishlist' inner link is displayed" + "\n");
         registeredUserWishListPage.clickWishListInnerLink();
         //assert correct product has been added to wishlist
         //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "Hummingbird printed t-shirt");
@@ -3267,19 +3243,16 @@ public class TestMethods extends BaseTest {
 
         //assert the sweater wishlist button is displayed
         assertTrue(registeredUserWishListPage.isSweaterWishListButtonDisplayed(), "The sweater wishlist button isn't displayed");
-        System.out.println("The sweater wishlist button is displayed" + "\n");
         //assert the correct product is being selected for wishlist
         //assertEquals(registeredUserWishListPage.getSweaterProductTitle(), "Hummingbird printed sweater");
         registeredUserWishListPage.clickSweaterWishListButton();
         //assert the 'My wishlist' link is displayed in 'My wishlists' pop-up box
         assertTrue(registeredUserWishListPage.isMyWishListLinkDisplayed(), "The 'My wishlist' link isn't displayed");
-        System.out.println("The 'My wishlist' link is displayed" + "\n");
         registeredUserWishListPage.clickMyWishListLink();
         //assert the success pop up has the correct text
         //assertEquals(registeredUserWishListPage.getProductAddedPopUpMessage(), "Product added");
         //assert the 'Wishlist' link is displayed
         assertTrue(registeredUserWishListPage.isWishListPageLinkDisplayed(), "The 'Wishlist' page isn't displayed");
-        System.out.println("The 'Wishlist' page is displayed" + "\n");
         registeredUserWishListPage.clickWishListLink();
         //assert 'My wishlist' inner box link is displayed
         //assertTrue(registeredUserWishListPage.isWishListInnerLinkDisplayed(), "The 'My wishlist' inner link isn't displayed");

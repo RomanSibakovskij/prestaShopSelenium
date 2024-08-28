@@ -410,7 +410,6 @@ public class RegisteredUserMenClothesPage extends BasePage{
         return productPrices;
     }
 
-
     //remove search filter
 
     public void clickRemoveSearchFilter(){
