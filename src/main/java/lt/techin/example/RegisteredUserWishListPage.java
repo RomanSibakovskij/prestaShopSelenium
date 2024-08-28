@@ -61,7 +61,6 @@ public class RegisteredUserWishListPage extends BasePage{
     @FindBy(css = "[data-id-product='19'] .wishlist-button-add")
     private WebElement mugCustomTextWishListButton;
 
-
     //success popup
     @FindBy(css = ".success.wishlist-toast")
     private WebElement productAddedPopUp;
@@ -110,7 +109,6 @@ public class RegisteredUserWishListPage extends BasePage{
     @FindBy(css = "div:nth-of-type(19) > .js-product-miniature.product-miniature.reviews-loaded h2 > a")
     private WebElement mugCustomProductTitle;
 
-
     //added product title
     @FindBy(css = ".wishlist-product-title")
     private WebElement addedProductName;
@@ -121,7 +119,6 @@ public class RegisteredUserWishListPage extends BasePage{
     }
 
     // click methods
-
     public void clickAllProductsLink(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(1200));
         wait.until(ExpectedConditions.elementToBeClickable(allProductsLink));
