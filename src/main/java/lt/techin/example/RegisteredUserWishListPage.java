@@ -113,7 +113,6 @@ public class RegisteredUserWishListPage extends BasePage{
     @FindBy(css = ".wishlist-product-title")
     private WebElement addedProductName;
 
-
     public RegisteredUserWishListPage(WebDriver driver) {
         super(driver);
     }
@@ -369,6 +368,5 @@ public class RegisteredUserWishListPage extends BasePage{
 
     //success popup getter
     public String getProductAddedPopUpMessage(){return productAddedPopUp.getText();}
-
 
 }
