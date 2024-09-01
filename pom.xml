@@ -21,6 +21,11 @@
             <version>5.11.0-M2</version>
             <scope>compile</scope>
         </dependency>
+		<dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-devtools-v128</artifactId>
+        <version>4.24.0</version>
+    </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
