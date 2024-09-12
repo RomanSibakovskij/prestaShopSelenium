@@ -16,7 +16,7 @@ public class TestMethods extends BaseTest {
     protected void clickOnSignUpTest() {
         HomePage homePage = new HomePage(driver);
 
-        //assert signin link is displayed
+        //assert sign-in link is displayed
         assertTrue(homePage.isSignUpLinkDisplayed(), "The sign in link isn't displayed");
         homePage.clickSignUpLink();
     }
@@ -1211,7 +1211,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
 
         registeredUserArtPage.clickSortByDropdownMenu();
-        //assert the sort by price 'low to high' option is displayed
+        //assert the sort by price 'low -> high' option is displayed
         assertTrue(registeredUserArtPage.isPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
         registeredUserArtPage.clickPriceLowToHighOption();
         //assertEquals(registeredUserArtPage.getPriceLowToHighOptionText(), "Price,low to high"); // -> assert crashes the test, it doesn't find text
@@ -1771,7 +1771,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserStationaryAccessoriesPage registeredUserStationaryAccessoriesPage = new RegisteredUserStationaryAccessoriesPage(driver);
 
         //assert product 'new product' link is displayed
-        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperLinkDisplayed(), "The stationary accessories 'squarred' link isn't displayed");
+        assertTrue(registeredUserStationaryAccessoriesPage.isStAccessoriesSquaredPaperLinkDisplayed(), "The stationary accessories 'squared' link isn't displayed");
         registeredUserStationaryAccessoriesPage.clickStAccSquaredPaperLink();
         //assert the correct message is displayed
         //assertEquals(registeredUserStationaryAccessoriesPage.getStAccSquaredPaperFilterMessage(), "Paper Type: Squared"); -> assert crashes the test
@@ -2293,7 +2293,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserHomeAccessoriesPage registeredUserHomeAccessoriesPage = new RegisteredUserHomeAccessoriesPage(driver);
 
         registeredUserHomeAccessoriesPage.clickHmSortByDropdownMenu();
-        //assert the sort by price 'low to high' option is displayed
+        //assert the sort by price 'low -> high' option is displayed
         assertTrue(registeredUserHomeAccessoriesPage.isHmAccessoriesPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
         registeredUserHomeAccessoriesPage.clickHmAccessoriesPriceLowToHighOption();
         //assert the correct text is input in option
@@ -2714,7 +2714,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserMenClothesPage registeredUserMenClothesPage = new RegisteredUserMenClothesPage(driver);
 
         registeredUserMenClothesPage.clickMenClothesSortByDropdownMenu();
-        //assert the sort by price 'low to high' option is displayed
+        //assert the sort by price 'low -> high' option is displayed
         assertTrue(registeredUserMenClothesPage.isMenClothesPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
         registeredUserMenClothesPage.clickMenClothesPriceLowToHighOption();
         //assert the correct text is input in option
@@ -3076,7 +3076,7 @@ public class TestMethods extends BaseTest {
         RegisteredUserWomenClothesPage registeredUserWomenClothesPage = new RegisteredUserWomenClothesPage(driver);
 
         registeredUserWomenClothesPage.clickWomenClothesSortByDropdownMenu();
-        //assert the sort by price 'low to high' option is displayed
+        //assert the sort by price 'low -> high' option is displayed
         assertTrue(registeredUserWomenClothesPage.isWomenClothesPriceLowToHighOptionDisplayed(), "The sort by price 'low to high' menu option isn't displayed");
         registeredUserWomenClothesPage.clickWomenClothesPriceLowToHighOption();
         //assert the correct text is input in option
@@ -3211,7 +3211,7 @@ public class TestMethods extends BaseTest {
         //assert the sweater wishlist button is displayed
         assertTrue(registeredUserWishListPage.isPictureBestYetWishListButtonDisplayed(), "The picture 'Best Yet To Come' wishlist button isn't displayed");
         //assert the correct product is being selected for wishlist
-        //assertEquals(registeredUserWishListPage.getPictureBestYetProductTitle(), "The Best Is Yet To Come' Framed Poster");
+        //assertEquals(registeredUserWishListPage.getPictureBestYetProductTitle(), "'The Best Is Yet To Come' Framed Poster");
         registeredUserWishListPage.clickPictureBestYetWishListButton();
         //assert the 'My wishlist' link is displayed in 'My wishlists' pop-up box
         //assertTrue(registeredUserWishListPage.isMyWishListLinkDisplayed(), "The 'My wishlist' link isn't displayed" + "\n");  // -> assert fails due to poor internet performance
@@ -3225,7 +3225,7 @@ public class TestMethods extends BaseTest {
         // assertTrue(registeredUserWishListPage.isWishListInnerLinkDisplayed(), "The 'My wishlist' inner link isn't displayed");
         registeredUserWishListPage.clickWishListInnerLink();
         //assert correct product has been added to wishlist
-        //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "The best is yet to come' Framed poster");
+        //assertEquals(registeredUserWishListPage.getAddedProductTitle(), "'The best is yet to come' Framed poster");
     }
 
     protected void addPictureAdventureBeginsWishListButtonTest() {
