@@ -1529,14 +1529,6 @@ public class TestMethods extends BaseTest {
         assertEquals(productCheckoutPage.getDeleteMessageConfirmation(), "There are no more items in your cart");
     }
 
-    //single product web element assert method
-    protected void isBestYetToComeWebElementDisplayed(BestYetToComePosterPage bestYetToComePosterPage){
-        //assert 'Add to Cart' button is displayed
-        assertTrue(bestYetToComePosterPage.isAddToCartButtonDisplayed(), "The 'Add to Cart' button isn't displayed");
-        //assert 'Proceed to Checkout' button in pop-up is displayed
-        assertTrue(bestYetToComePosterPage.isProceedToCheckoutButtonDisplayed(), "The 'Proceed To Checkout' button isn't displayed");
-    }
-
     //product list names print method
     protected void printSelectedCategoryArtProductsTest(){
         RegisteredUserArtPage registeredUserArtPage = new RegisteredUserArtPage(driver);
