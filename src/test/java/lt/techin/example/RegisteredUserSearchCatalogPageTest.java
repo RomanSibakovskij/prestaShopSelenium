@@ -43,7 +43,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
         clickSignInRegisteredUserTest();
         logInRegisteredUserTest(registerPage);
 
-        searchForMugBestInSearchCatalogTest();
+        searchForMugAdventureInSearchCatalogTest();
     }
 
     //Test 005b -> search for "Today is a good day" mug as a registered user somehow
@@ -331,7 +331,7 @@ public class RegisteredUserSearchCatalogPageTest extends TestMethods{
         clickSignInRegisteredUserTest();
         logInRegisteredUserTest(registerPage);
 
-        searchForNotebookBearInSearchCatalogTest();
+        searchForNotebookBirdInSearchCatalogTest();
     }
 
     //Test 005q -> search for "Pack Mug and Poster" as a registered user
