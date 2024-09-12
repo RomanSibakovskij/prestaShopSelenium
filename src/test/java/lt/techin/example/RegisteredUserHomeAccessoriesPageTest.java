@@ -215,7 +215,7 @@ public class RegisteredUserHomeAccessoriesPageTest extends TestMethods{
         navigateToAccessoriesPageTest();
         navigateToHomeAccessoriesPageLink1Test();
 
-        filterHmAccProductByWhiteColorBoxIconTest();
+        filterHmAccProductByWhiteColorLinkTest();
     }
 
     //Test 030 -> filter home accessories products by black color (box icon) test
