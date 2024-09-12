@@ -628,7 +628,7 @@ public class TestMethods extends BaseTest {
 
     protected void isLoginWebElementPresent(LoginPage loginPage){
         //assert email input field is displayed
-        assertTrue(loginPage.isEmailInputfieldPresent(), "The email input field isn't present");
+        assertTrue(loginPage.isEmailInputFieldPresent(), "The email input field isn't present");
         //assert password input field is present
         assertTrue(loginPage.isPasswordInputFieldPresent(), "The email input field isn't present");
         //assert 'Show' button is displayed

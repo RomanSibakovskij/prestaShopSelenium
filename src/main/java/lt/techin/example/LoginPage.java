@@ -90,18 +90,10 @@ public class LoginPage extends BasePage{
 
     //assert methods
 
-    public boolean isEmailInputfieldPresent(){
-        return emailInputField.isDisplayed();
-    }
+    public boolean isEmailInputFieldPresent(){return emailInputField.isDisplayed();}
 
-    public boolean isPasswordInputFieldPresent(){
-        return passwordInputField.isDisplayed();
-    }
+    public boolean isPasswordInputFieldPresent(){return passwordInputField.isDisplayed();}
 
-    public boolean isShowPasswordButtonPresent(){
-        return showButton.isDisplayed();
-    }
-    public boolean isSignInButtonPresent(){
-        return signInButton.isDisplayed();
-    }
+    public boolean isShowPasswordButtonPresent(){return showButton.isDisplayed();}
+    public boolean isSignInButtonPresent(){return signInButton.isDisplayed();}
 }

@@ -1,6 +1,5 @@
 package lt.techin.example;
 
-import org.checkerframework.checker.signature.qual.FieldDescriptor;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +12,6 @@ import java.time.Duration;
 public class OrderHistoryAndDetailsPage extends BasePage{
 
     //orders webpage footer link element
-//    @FindBy(css = "[title='Orders']")
     @FindBy(xpath = "//ul[@id='footer_account_list']/li[3]/a")
     private WebElement ordersPageLink;
     @FindBy(css = ".account")
