@@ -5,11 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.*;
-
-import java.sql.*;
 import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class TestMethods extends BaseTest {
@@ -47,9 +43,7 @@ public class TestMethods extends BaseTest {
         registerPage.clickAgreeToTermsCheckbox();
         registerPage.clickSignUpForNewsletterCheckbox();
         registerPage.clickCustomerDataPrivacyCheckbox();
-	//data insertion into database method
-        //insertDataTest(registerPage);
-        //click 'Save' button
+
         registerPage.clickSaveButton();
     }
 
@@ -76,47 +70,7 @@ public class TestMethods extends BaseTest {
         registerPage.clickAgreeToTermsCheckbox();
         registerPage.clickSignUpForNewsletterCheckbox();
         registerPage.clickCustomerDataPrivacyCheckbox();
-	//data insertion into database method
-        //insertDataTest(registerPage);
-        //click 'Save' button
         registerPage.clickSaveButton();
-    }
-
-    protected void insertDataTest(RegisterPage registerPage) {
-        String sql = "INSERT INTO UserRegisterData (FirstName, LastName, Email, Password, Birthdate) VALUES (?, ?, ?, ?, ?)";
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            // data getters from RegisterPage
-            String firstName = registerPage.getFirstName();
-            String lastName = registerPage.getLastName();
-            String email = registerPage.getEmailAddress();
-            String password = registerPage.getPassword();
-            String dateString = registerPage.getBirthDate();
-
-            // data log (inserted into database)
-            logger.info("Inserting data into database:");
-            logger.info("First Name: " + firstName);
-            logger.info("Last Name: " + lastName);
-            logger.info("Email: " + email);
-            logger.info("Password: " + password);
-            logger.info("Birthdate: " + dateString);
-
-            // parse and set Birthdate
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-            LocalDate localDate = LocalDate.parse(dateString, formatter);
-            Date sqlDate = Date.valueOf(localDate);
-
-            // set parameters and execute update
-            pstmt.setString(1, firstName);
-            pstmt.setString(2, lastName);
-            pstmt.setString(3, email);
-            pstmt.setString(4, password);
-            pstmt.setDate(5, sqlDate);
-
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            logger.warn("SQL Error: " + e.getMessage());
-            e.printStackTrace();
-        }
     }
 
     protected void logoutFromUserAccountTest() {
@@ -1595,10 +1549,10 @@ public class TestMethods extends BaseTest {
         }
         // Get the selected category product names
         List<String> productNames = registeredUserArtPage.getProductNames();
-        logger.info("Total number of products in the selected category: " + productNames.size()); //product count
+        logger.info("Total number of products in the art category: " + productNames.size()); //product count
         // Print the selected category product names
         for (String name : productNames) {
-            logger.info("Product present in the list: " + "\n" + name);
+            logger.info("Art product present in the list: " + "\n" + name);
         }
         // Get the selected category product prices
         List<String> productPrices = registeredUserArtPage.getProductPrices();
@@ -4024,7 +3978,6 @@ public class TestMethods extends BaseTest {
 
         //assert the information link is displayed in the white frame
         assertTrue(registeredUserInformationPage.isInformationLinkDisplayed(), "The information link isn't displayed");
-        logger.info("The information link is displayed" + "\n");
         registeredUserInformationPage.clickInformationLink();
     }
 
@@ -4034,46 +3987,32 @@ public class TestMethods extends BaseTest {
     protected void isInformationPageWebElementDisplayed(RegisteredUserInformationPage registeredUserInformationPage){
         //assert the male gender selector is displayed
         assertTrue(registeredUserInformationPage.isMaleGenderSelectorDisplayed(), "The male gender selector isn't displayed");
-        logger.info("The male gender selector is displayed" + "\n");
         //assert first name input field is displayed
         assertTrue(registeredUserInformationPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
         //assert last name input field is displayed
-        assertTrue(registeredUserInformationPage.isLastNameInputFieldDisplayed(), "The lastst name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
+        assertTrue(registeredUserInformationPage.isLastNameInputFieldDisplayed(), "The last name input field isn't displayed");
         //assert email address input field is displayed
         assertTrue(registeredUserInformationPage.isEmailInputFieldDisplayed(), "The email address input field isn't displayed");
-        logger.info("The email address input field is displayed" + "\n");
         //assert password input field is displayed
         assertTrue(registeredUserInformationPage.isPasswordInputFieldDisplayed(), "The password input field isn't displayed");
-        logger.info("The password input field is displayed" + "\n");
         //assert 'Show' button is displayed
         assertTrue(registeredUserInformationPage.isPasswordShowButtonDisplayed(), "The password 'Show' button isn't displayed");
-        logger.info("The password 'Show' button is displayed" + "\n");
         //assert new password input field is displayed
         assertTrue(registeredUserInformationPage.isNewPasswordInputFieldDisplayed(), "The new password input field isn't displayed");
-        logger.info("The new password input field is displayed" + "\n");
         //assert 'Show' button is displayed (new password)
         assertTrue(registeredUserInformationPage.isNewPasswordShowButtonDisplayed(), "The new password 'Show' button isn't displayed");
-        logger.info("The new password 'Show' button is displayed" + "\n");
         //assert birthdate input field is displayed
         assertTrue(registeredUserInformationPage.isBirthDateInputFieldDisplayed(), "The birthdate input field isn't displayed");
-        logger.info("The birthdate input field is displayed" + "\n");
         //assert the 'Receive Offers' checkbox is displayed
         assertTrue(registeredUserInformationPage.isReceiveOffersCheckboxDisplayed(), "The 'Receive Offers' checkbox isn't displayed");
-        logger.info("The 'Receive Offers' checkbox is displayed" + "\n");
         //assert 'Agree to Terms' checkbox is displayed
         assertTrue(registeredUserInformationPage.isAgreeToTermsCheckboxDisplayed(), "The 'Receive Offers' checkbox isn't displayed");
-        logger.info("The 'Receive Offers' checkbox is displayed" + "\n");
         //assert 'Sign Up to Newsletter' checkbox is displayed
         assertTrue(registeredUserInformationPage.isSignUpNewsletterCheckboxDisplayed(), "The 'Sign Up to Newsletter' checkbox isn't displayed");
-        logger.info("The 'Sign Up to Newsletter' checkbox is displayed" + "\n");
         //assert 'Data Privacy' checkbox is displayed
         assertTrue(registeredUserInformationPage.isDataPrivacyCheckboxDisplayed(), "The 'Data Privacy' checkbox isn't displayed");
-        logger.info("The 'Data Privacy' checkbox is displayed" + "\n");
         //assert 'Save' button is displayed
         assertTrue(registeredUserInformationPage.isSaveButtonDisplayed(), "The 'Save' button isn't displayed");
-        logger.info("The 'Save' button is displayed" + "\n");
     }
 
     protected void editMaleUserDataWithValidDataTest(RegisterPage registerPage) {
@@ -4088,18 +4027,18 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
         registeredUserInformationPage.clickShowPassword();
@@ -4108,14 +4047,14 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.clickShowNewPassword();
         //assert the passwords were indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
         //checkboxes click
         registeredUserInformationPage.clickReceiveOffersCheckbox();
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4126,11 +4065,10 @@ public class TestMethods extends BaseTest {
 
         //assert the success message is displayed
         assertEquals(registeredUserInformationPage.getSuccessEditMessage(), "Information successfully updated.");
-        logger.info("The success message is: " + registeredUserInformationPage.getSuccessEditMessage() + "\n");
+//        logger.info("The success message is: " + registeredUserInformationPage.getSuccessEditMessage() + "\n");
 
         //assert 'Return to your account' link is displayed
         assertTrue(registeredUserInformationPage.isReturnBackLinkDisplayed(), "The 'Return to your account' link isn't displayed");
-        logger.info("The 'Return to your account' link is displayed" + "\n");
         registeredUserInformationPage.clickBackToAccount();
 
         //assert the user account name displayed in navbar link has indeed changed
@@ -4146,25 +4084,24 @@ public class TestMethods extends BaseTest {
         isInformationPageWebElementDisplayed(registeredUserInformationPage);
         //assert the female gender selector is displayed
         assertTrue(registeredUserInformationPage.isFemaleGenderSelectorDisplayed(), "The female gender selector isn't displayed");
-        logger.info("The female gender selector is displayed" + "\n");
         registeredUserInformationPage.clickFemaleGenderSelector();
         //input data
         registeredUserInformationPage.inputEditedInformationDetails(registerPage);
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
         registeredUserInformationPage.clickShowPassword();
@@ -4173,14 +4110,14 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.clickShowNewPassword();
         //assert the passwords were indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click methods
         registeredUserInformationPage.clickReceiveOffersCheckbox();
@@ -4193,16 +4130,14 @@ public class TestMethods extends BaseTest {
 
         //assert the success message is displayed
         assertEquals(registeredUserInformationPage.getSuccessEditMessage(), "Information successfully updated.");
-        logger.info("The success message is: " + registeredUserInformationPage.getSuccessEditMessage() + "\n");
 
         //assert 'Return to your account' link is displayed
         assertTrue(registeredUserInformationPage.isReturnBackLinkDisplayed(), "The 'Return to your account' link isn't displayed");
-        logger.info("The 'Return to your account' link is displayed" + "\n");
         registeredUserInformationPage.clickBackToAccount();
 
         //assert the user account name displayed in navbar link has indeed changed
         assertEquals(registeredUserInformationPage.getEditedUserAccountName(), registeredUserInformationPage.getEditedFirstName().concat(" ").concat(registeredUserInformationPage.getEditedLastName()));
-        System.out.println("The edited user account name is: " + registeredUserInformationPage.getEditedFirstName().concat(" ").concat(registeredUserInformationPage.getEditedLastName()));
+        logger.info("The edited user account name is: " + registeredUserInformationPage.getEditedFirstName().concat(" ").concat(registeredUserInformationPage.getEditedLastName()));
     }
 
     //negative test methods
@@ -4222,27 +4157,27 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.inputNewPassword();
         //assert the passwords were indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
         registeredUserInformationPage.clickDataPrivacyCheckbox();
@@ -4267,32 +4202,32 @@ public class TestMethods extends BaseTest {
 
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.inputNewPassword();
         //assert the passwords were indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
         registeredUserInformationPage.clickDataPrivacyCheckbox();
@@ -4323,27 +4258,27 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.inputNewPassword();
         //assert the passwords were indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
         registeredUserInformationPage.clickDataPrivacyCheckbox();
@@ -4369,28 +4304,28 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editNoLastName();
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.inputNewPassword();
         //assert the passwords were indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
         registeredUserInformationPage.clickDataPrivacyCheckbox();
@@ -4412,28 +4347,29 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
+
         registeredUserInformationPage.editInvalidLastName();
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.inputNewPassword();
         //assert the passwords were indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4460,28 +4396,28 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editTooLongLastName();
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.inputNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4509,13 +4445,13 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editNoEmail();
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
@@ -4523,14 +4459,14 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.inputNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4554,13 +4490,13 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editInvalidEmail();
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
@@ -4568,14 +4504,14 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.inputNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4603,13 +4539,13 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editTooLongEmail();
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
@@ -4617,14 +4553,14 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.inputNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4652,32 +4588,32 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editNoPassword();
 
         registeredUserInformationPage.inputNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4701,32 +4637,32 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editInvalidPassword();
 
         registeredUserInformationPage.inputNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4754,32 +4690,32 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.editNoNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4790,7 +4726,6 @@ public class TestMethods extends BaseTest {
 
         //assert the success message is displayed
         assertEquals(registeredUserInformationPage.getSuccessEditMessage(), "Information successfully updated.");
-        logger.info("The success message is: " + registeredUserInformationPage.getSuccessEditMessage() + "\n");
     }
 
     //information edit test methods (male user) -> invalid new password test
@@ -4807,32 +4742,32 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.editInvalidNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4861,32 +4796,32 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.editTooLongNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4914,32 +4849,32 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.editMatchingNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //checkboxes click
         registeredUserInformationPage.clickAgreeToTermsCheckbox();
@@ -4950,7 +4885,6 @@ public class TestMethods extends BaseTest {
 
         //assert the success message is displayed
         assertEquals(registeredUserInformationPage.getSuccessEditMessage(), "Information successfully updated.");
-        logger.info("The success message is: " + registeredUserInformationPage.getSuccessEditMessage() + "\n");
     }
 
     //information edit test methods (male user) -> no birthdate test
@@ -4967,26 +4901,26 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.inputNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editNoBirthDate();
 
@@ -5012,26 +4946,26 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
 
         registeredUserInformationPage.inputNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editInvalidBirthDate();
 
@@ -5057,7 +4991,6 @@ public class TestMethods extends BaseTest {
 
         //assert the female gender selector is displayed
         assertTrue(registeredUserInformationPage.isFemaleGenderSelectorDisplayed(), "The female gender selector isn't displayed");
-        logger.info("The female gender selector is displayed" + "\n");
         registeredUserInformationPage.clickFemaleGenderSelector();
 
         //input data
@@ -5065,18 +4998,19 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.editFirstName();
         //assert the first names were indeed changed
         assertNotEquals(registeredUserInformationPage.getFirstName(), registeredUserInformationPage.getEditedFirstName());
-        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
-        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+        //log first name changes into console
+        logEditedFirstNameChanges(registeredUserInformationPage);
+
         registeredUserInformationPage.editLastName();
         //assert the last names were indeed changed
         assertNotEquals(registeredUserInformationPage.getLastName(), registeredUserInformationPage.getEditedLastName());
-        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
-        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+        //log last name changes into console
+        logEditedLastNameChanges(registeredUserInformationPage);
         registeredUserInformationPage.editEmailAddress();
         //assert the email addresses were indeed changed
         assertNotEquals(registeredUserInformationPage.getEmailAddress(), registeredUserInformationPage.getEditedEmailAddress());
-        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
-        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+        //log email address changes into console
+        logEditedEmailChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.inputOldPassword(registerPage.getPassword());
         registeredUserInformationPage.clickShowPassword();
@@ -5085,20 +5019,45 @@ public class TestMethods extends BaseTest {
         registeredUserInformationPage.clickShowNewPassword();
         //assert the password was indeed changed
         assertNotEquals(registeredUserInformationPage.getPassword(), registeredUserInformationPage.getNewPassword());
-        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
-        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+        //log password changes into console
+        logEditedPasswordChanges(registeredUserInformationPage);
 
         registeredUserInformationPage.editBirthdate();
         //assert the birthdate was indeed changed
         assertNotEquals(registeredUserInformationPage.getBirthDate(), registeredUserInformationPage.getEditedBirthDate());
-        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
-        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+        //log birthdate changes into console
+        logEditedBirthDateChanges(registeredUserInformationPage);
 
         //save button click
         registeredUserInformationPage.clickSaveButton();
 
     }
 
+    //edit information first name logger method
+    protected void logEditedFirstNameChanges(RegisteredUserInformationPage registeredUserInformationPage){
+        logger.info("Old first name: " + registeredUserInformationPage.getFirstName() + "\n");
+        logger.info("New first name: " + registeredUserInformationPage.getEditedFirstName() + "\n");
+    }
+    //edit information last name logger
+    protected void logEditedLastNameChanges(RegisteredUserInformationPage registeredUserInformationPage){
+        logger.info("Old last name: " + registeredUserInformationPage.getLastName() + "\n");
+        logger.info("New last name: " + registeredUserInformationPage.getEditedLastName() + "\n");
+    }
+    //edit information email address logger
+    protected void logEditedEmailChanges(RegisteredUserInformationPage registeredUserInformationPage){
+        logger.info("Old email address: " + registeredUserInformationPage.getEmailAddress() + "\n");
+        logger.info("New email address: " + registeredUserInformationPage.getEditedEmailAddress() + "\n");
+    }
+    //edit information password logger
+    protected void logEditedPasswordChanges(RegisteredUserInformationPage registeredUserInformationPage){
+        logger.info("Old password: " + registeredUserInformationPage.getPassword() + "\n");
+        logger.info("New password: " + registeredUserInformationPage.getNewPassword() + "\n");
+    }
+    //edit information birthdate logger
+    protected void logEditedBirthDateChanges(RegisteredUserInformationPage registeredUserInformationPage){
+        logger.info("Old birthdate: " + registeredUserInformationPage.getBirthDate() + "\n");
+        logger.info("New birthdate: " + registeredUserInformationPage.getEditedBirthDate() + "\n");
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -5109,7 +5068,6 @@ public class TestMethods extends BaseTest {
         OrderHistoryAndDetailsPage orderHistoryAndDetailsPage = new OrderHistoryAndDetailsPage(driver);
 //        //assert the 'Orders' link is displayed
 //         assertTrue(orderHistoryAndDetailsPage.isOrdersPageLinkDisplayed(), "The 'Orders' link isn't displayed");
-//        System.out.println("The 'Orders' link is displayed" + "\n");
 //         orderHistoryAndDetailsPage.clickOnOrdersLink(); // -> even with a singular proper selector it cannot be found for some reason (even if searching for it with browser console)
 
         //assert account link is displayed
