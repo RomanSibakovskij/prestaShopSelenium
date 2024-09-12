@@ -894,7 +894,7 @@ public class TestMethods extends BaseTest {
         logger.info("Total number of products in the selected category: " + productNames.size()); //product count
         // Print the selected category product names
         for (String name : productNames) {
-            logger.info("Product present in the list: " + "\n" + name);
+            logger.info("Search product present in the list: " + "\n" + name);
         }
     }
 
@@ -1558,7 +1558,7 @@ public class TestMethods extends BaseTest {
         List<String> productPrices = registeredUserArtPage.getProductPrices();
         // Print the selected category product names
         for (String price : productPrices) {
-            logger.info("Product price in the list: " + "\n" + price);
+            logger.info("Art product price in the list: " + "\n" + price);
         }
     }
 
@@ -1954,13 +1954,13 @@ public class TestMethods extends BaseTest {
         List<String> productNames = registeredUserStationaryAccessoriesPage.getProductNames();
         // Print the selected category product names
         for (String name : productNames) {
-            logger.info("Product present in the list: " + "\n" + name);
+            logger.info("Stationary accessory present in the list: " + "\n" + name);
         }
         // Get the selected category product prices
         List<String> productPrices = registeredUserStationaryAccessoriesPage.getProductPrices();
         // Print the selected category product names
         for (String price : productPrices) {
-            logger.info("Product price in the list: " + "\n" + price);
+            logger.info("Stationary accessory price in the list: " + "\n" + price);
         }
     }
 
@@ -2362,13 +2362,13 @@ public class TestMethods extends BaseTest {
         List<String> productNames = registeredUserHomeAccessoriesPage.getProductNames();
         // Print the selected category product names
         for (String name : productNames) {
-            logger.info("Product present in the list: " + "\n" + name);
+            logger.info("Home accessories present in the list: " + "\n" + name);
         }
         // Get the selected category product prices
         List<String> productPrices = registeredUserHomeAccessoriesPage.getProductPrices();
         // Print the selected category product names
         for (String price : productPrices) {
-            logger.info("Product price in the list: " + "\n" + price);
+            logger.info("Home accessories price in the list: " + "\n" + price);
         }
     }
 
@@ -2783,13 +2783,13 @@ public class TestMethods extends BaseTest {
         List<String> productNames = registeredUserMenClothesPage.getProductNames();
         // Print the selected category product names
         for (String name : productNames) {
-            logger.info("Product present in the list: " + "\n" + name);
+            logger.info("Men clothes present in the list: " + "\n" + name);
         }
         // Get the selected category product prices
         List<String> productPrices = registeredUserMenClothesPage.getProductPrices();
         // Print the selected category product names
         for (String price : productPrices) {
-            logger.info("Product price in the list: " + "\n" + price);
+            logger.info("Men clothes price in the list: " + "\n" + price);
         }
     }
 
@@ -3705,38 +3705,30 @@ public class TestMethods extends BaseTest {
 
         //assert first name input field is displayed
         assertTrue(registeredUserAccountPage.isFirstNameInputFieldDisplayed(), "The first name input field isn't displayed");
-        logger.info("The first name input field is displayed" + "\n");
         registeredUserAccountPage.inputEditedUserFrenchDetails();
         registeredUserAccountPage.changeFirstName();
         //assert last name input field is displayed
         assertTrue(registeredUserAccountPage.isLastNameInputFieldDisplayed(), "The last name input field isn't displayed");
-        logger.info("The last name input field is displayed" + "\n");
         registeredUserAccountPage.changeLastName();
         //assert address input field is displayed
         assertTrue(registeredUserAccountPage.isAddressInputFieldDisplayed(), "The last name input field isn't displayed");
-        logger.info("The address input field is displayed" + "\n");
         registeredUserAccountPage.addUserAddress();
         //assert city input field is displayed
         assertTrue(registeredUserAccountPage.isCityInputFieldDisplayed(), "The city input field isn't displayed");
-        logger.info("The city input field is displayed" + "\n");
         registeredUserAccountPage.addUserFrenchCity();
         //assert postal code input field is displayed
         assertTrue(registeredUserAccountPage.isPostalCodeInputFieldDisplayed(), "The postal code input field isn't displayed");
-        logger.info("The postal code input field is displayed" + "\n");
         registeredUserAccountPage.addUserFrenchPostalCode();
         //assert country dropdown menu is displayed
         assertTrue(registeredUserAccountPage.isCountryDropdownMenuDisplayed(), "The country dropdown menu isn't displayed");
-        logger.info("The country dropdown menu is displayed" + "\n");
         registeredUserAccountPage.clickCountryDropdownMenu();
         //assert chosen country option is displayed
         assertTrue(registeredUserAccountPage.isFranceCountryDisplayed(), "The France option isn't displayed");
-        logger.info("The France option is displayed" + "\n");
         registeredUserAccountPage.clickFranceOption();
         //assert the correct country is selected
         assertEquals(registeredUserAccountPage.getFranceCountryText(), "France");
         //assert save button is displayed
         assertTrue(registeredUserAccountPage.isSaveButtonDisplayed(), "The save button isn't displayed");
-        logger.info("The save button is displayed" + "\n");
         registeredUserAccountPage.clickSaveButton();
         //assert success message is displayed
         assertEquals(registeredUserAccountPage.getSuccessMessageText(), "Address successfully added.");
@@ -4073,7 +4065,8 @@ public class TestMethods extends BaseTest {
 
         //assert the user account name displayed in navbar link has indeed changed
         assertEquals(registeredUserInformationPage.getEditedUserAccountName(), registeredUserInformationPage.getEditedFirstName().concat(" ").concat(registeredUserInformationPage.getEditedLastName()));
-        logger.info("The edited user account name is: " + registeredUserInformationPage.getEditedFirstName().concat(" ").concat(registeredUserInformationPage.getEditedLastName()));
+        //log edited user account name changes
+        confirmEditedFirstName(registeredUserInformationPage);
     }
 
     //information edit test methods (female user)
@@ -4137,6 +4130,12 @@ public class TestMethods extends BaseTest {
 
         //assert the user account name displayed in navbar link has indeed changed
         assertEquals(registeredUserInformationPage.getEditedUserAccountName(), registeredUserInformationPage.getEditedFirstName().concat(" ").concat(registeredUserInformationPage.getEditedLastName()));
+        //log edited user account name changes
+        confirmEditedFirstName(registeredUserInformationPage);
+    }
+
+    //edited first name logger method
+    protected void confirmEditedFirstName(RegisteredUserInformationPage registeredUserInformationPage){
         logger.info("The edited user account name is: " + registeredUserInformationPage.getEditedFirstName().concat(" ").concat(registeredUserInformationPage.getEditedLastName()));
     }
 
